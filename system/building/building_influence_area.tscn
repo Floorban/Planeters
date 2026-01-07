@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6ceimbo0cmpi"]
+
+[ext_resource type="Script" uid="uid://dbbi1m3nysrmx" path="res://system/building/building_influence_area.gd" id="1_ftryo"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ftryo"]
+
+[node name="BuildingInfluenceArea" type="Area3D"]
+collision_layer = 0
+script = ExtResource("1_ftryo")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+
+[node name="CollisionShape" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_ftryo")
+debug_color = Color(0.14844191, 0.5591585, 0.22339624, 0.8235294)

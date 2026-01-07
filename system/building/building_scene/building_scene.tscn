@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2ntv3rjj6ldp"]
+
+[ext_resource type="Script" uid="uid://bccv6upeqtltp" path="res://system/building/building_scene/building.gd" id="1_ilrdr"]
+[ext_resource type="PackedScene" uid="uid://c6ceimbo0cmpi" path="res://system/building/building_influence_area.tscn" id="2_sw7x1"]
+[ext_resource type="PackedScene" uid="uid://d1vrueo1wvxgo" path="res://building_info.tscn" id="3_xd8ld"]
+
+[node name="BuildingScene" type="StaticBody3D"]
+script = ExtResource("1_ilrdr")
+
+[node name="OverlapArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OverlapArea"]
+
+[node name="BuildingInfluenceArea" parent="." instance=ExtResource("2_sw7x1")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BuildingInfo" parent="CanvasLayer" instance=ExtResource("3_xd8ld")]
+unique_name_in_owner = true
+visible = false

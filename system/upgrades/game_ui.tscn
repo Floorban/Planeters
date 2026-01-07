@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://drl85mh4n5uff"]
+
+[ext_resource type="Script" uid="uid://c5j2exokufugr" path="res://system/upgrades/game_ui.gd" id="1_oaw30"]
+[ext_resource type="Texture2D" uid="uid://bdfjcksnww7hw" path="res://asset/circle.png" id="1_ue6oa"]
+
+[node name="GameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_oaw30")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="."]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = -24.0
+grow_vertical = 0
+step = 0.1
+value = 75.8
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("1_ue6oa")
+texture_progress = ExtResource("1_ue6oa")
+tint_under = Color(0.2291123, 0.22911209, 0.22911227, 0.08627451)
+tint_progress = Color(0.03499972, 0.99509245, 0, 1)
+
+[node name="Label" type="Label" parent="ProgressBar"]
+custom_minimum_size = Vector2(3000, 3000)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 2850.0
+offset_bottom = 2850.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+theme_override_font_sizes/font_size = 384
+horizontal_alignment = 1
+vertical_alignment = 1

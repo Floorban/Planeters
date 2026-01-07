@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1vrueo1wvxgo"]
+
+[ext_resource type="Script" uid="uid://b8s47trsgwnh3" path="res://building_info.gd" id="1_lajdy"]
+
+[node name="BuildingInfo" type="Panel"]
+custom_minimum_size = Vector2(180, 210)
+offset_right = 150.0
+offset_bottom = 200.0
+script = ExtResource("1_lajdy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="NameLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Building Name"
+horizontal_alignment = 1
+
+[node name="InfoContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/InfoContainer"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="ProductionLabel" type="Label" parent="VBoxContainer/InfoContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "$ 200000 / 2.0s"
+
+[node name="ProductionInTotal" type="Label" parent="VBoxContainer/InfoContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "In Total:"
+
+[node name="ProductionLastRound" type="Label" parent="VBoxContainer/InfoContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Last Round: "
+
+[node name="ActionContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 12
+
+[node name="RemoveButton" type="Button" parent="VBoxContainer/ActionContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.41974527, 0.3414519, 0.14788169, 1)
+text = "Remove
+(upgrade required)"

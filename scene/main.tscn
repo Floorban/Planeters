@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://osbdruhhokep"]
+
+[ext_resource type="PackedScene" uid="uid://d4n3ilc1fuuvr" path="res://system/building/building_manager.tscn" id="2_b5f6u"]
+[ext_resource type="PackedScene" uid="uid://kseiabufssdw" path="res://system/upgrades/skill_tree.tscn" id="4_brvut"]
+[ext_resource type="PackedScene" uid="uid://bovw76p1yq6qq" path="res://system/camera/camera_controller.tscn" id="7_mswub"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wp4xf"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bwoly"]
+panorama = SubResource("CompressedTexture2D_wp4xf")
+energy_multiplier = 0.2
+
+[sub_resource type="Sky" id="Sky_dn85q"]
+sky_material = SubResource("PanoramaSkyMaterial_bwoly")
+
+[sub_resource type="Environment" id="Environment_rqouq"]
+background_mode = 1
+background_color = Color(0.13319641, 0.13319638, 0.13319644, 0.9529412)
+sky = SubResource("Sky_dn85q")
+tonemap_mode = 2
+sdfgi_enabled = true
+
+[node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rqouq")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+shadow_opacity = 0.9
+directional_shadow_mode = 1
+directional_shadow_split_1 = 0.3
+directional_shadow_blend_splits = true
+
+[node name="BuildingManager" parent="." instance=ExtResource("2_b5f6u")]
+
+[node name="CameraController" parent="." instance=ExtResource("7_mswub")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 25.50497, 0, 0)
+arm_length_min = -5.0
+arm_length_max = 5.0
+
+[node name="SkillTree" parent="." instance=ExtResource("4_brvut")]
+visible = false

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhmbt6aaj01ur"]
+
+[ext_resource type="Script" uid="uid://dehyau7yhc0fc" path="res://system/input/player_input.gd" id="1_mb0e4"]
+
+[node name="PlayerInput" type="Node"]
+script = ExtResource("1_mb0e4")
+mouse_sensitivity = 1.0

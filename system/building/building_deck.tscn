@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bvwhirod04hjb"]
+
+[node name="BuildingDeck" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="ItemList" type="ItemList" parent="."]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+max_columns = 4
+
+[node name="InfoPanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(180, 110)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 489.0
+offset_top = -127.0
+offset_right = 669.0
+offset_bottom = -17.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InfoPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="NameLabel" type="Label" parent="InfoPanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Building Name"
+horizontal_alignment = 1
+
+[node name="ProductionLabel" type="Label" parent="InfoPanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "$ 200000 / 2.0s"
+horizontal_alignment = 1
+
+[node name="PriceLabel" type="Label" parent="InfoPanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "$ 2000"
+horizontal_alignment = 1

@@ -1,0 +1,86 @@
+[gd_scene load_steps=4 format=3 uid="uid://kseiabufssdw"]
+
+[ext_resource type="PackedScene" uid="uid://beeci88ete627" path="res://system/upgrades/skill_button.tscn" id="1_217a5"]
+[ext_resource type="Script" uid="uid://cc47oyb7ydnsv" path="res://system/upgrades/skill_tree.gd" id="1_fmctd"]
+[ext_resource type="Resource" uid="uid://be31pom3212iw" path="res://system/upgrades/skill_data/bonus_production_1.tres" id="3_6wgvp"]
+
+[node name="SkillTree" type="Control" node_paths=PackedStringArray("skill_nodes")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_fmctd")
+skill_nodes = [NodePath("SkillButton")]
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5106012, 0.5106013, 0.5106011, 0.64705884)
+
+[node name="SkillButton" parent="." instance=ExtResource("1_217a5")]
+layout_mode = 0
+offset_left = 651.0
+offset_top = 672.0
+offset_right = 671.0
+offset_bottom = 692.0
+disabled = false
+skill = ExtResource("3_6wgvp")
+
+[node name="SkillButton2" parent="SkillButton" instance=ExtResource("1_217a5")]
+layout_mode = 0
+offset_left = -246.0
+offset_top = -191.0
+offset_right = -226.0
+offset_bottom = -171.0
+
+[node name="SkillButton4" parent="SkillButton/SkillButton2" instance=ExtResource("1_217a5")]
+layout_mode = 0
+offset_left = -263.0
+offset_top = -238.0
+offset_right = -243.0
+offset_bottom = -218.0
+
+[node name="SkillButton5" parent="SkillButton/SkillButton2" instance=ExtResource("1_217a5")]
+layout_mode = 0
+offset_left = 35.0
+offset_top = -220.0
+offset_right = 55.0
+offset_bottom = -200.0
+
+[node name="SkillButton3" parent="SkillButton" instance=ExtResource("1_217a5")]
+layout_mode = 0
+offset_left = 220.0
+offset_top = -203.0
+offset_right = 240.0
+offset_bottom = -183.0
+
+[node name="SkillButton6" parent="SkillButton/SkillButton3" instance=ExtResource("1_217a5")]
+layout_mode = 0
+offset_left = -150.0
+offset_top = -181.0
+offset_right = -130.0
+offset_bottom = -161.0
+
+[node name="SkillButton7" parent="SkillButton/SkillButton3" instance=ExtResource("1_217a5")]
+layout_mode = 0
+offset_left = 82.0
+offset_top = -160.0
+offset_right = 102.0
+offset_bottom = -140.0
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 48
+text = "CLOSE"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

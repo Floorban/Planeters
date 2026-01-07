@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="BonusProductionEffect" load_steps=2 format=3 uid="uid://ddy4vvoitycy1"]
+
+[ext_resource type="Script" uid="uid://lxfy1g4oypy7" path="res://system/upgrades/skill_effect/bonus_production_effect.gd" id="1_8td5a"]
+
+[resource]
+script = ExtResource("1_8td5a")
+metadata/_custom_type_script = "uid://lxfy1g4oypy7"

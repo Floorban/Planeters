@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bewgax5ofq6qs"
+path="res://.godot/imported/structure_low.obj-8b9daf7484ab86932f3655d3db761ebc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/structure_low.obj-8b9daf7484ab86932f3655d3db761ebc.mesh"]
+
+source_file="res://asset/KayKit_Space_Base_Bits_1.0_FREE/KayKit_Space_Base_Bits_1.0_FREE/Assets/obj/structure_low.obj"
+dest_files=["res://.godot/imported/structure_low.obj-8b9daf7484ab86932f3655d3db761ebc.mesh", "res://.godot/imported/structure_low.obj-8b9daf7484ab86932f3655d3db761ebc.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

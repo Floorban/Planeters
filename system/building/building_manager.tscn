@@ -1,0 +1,19 @@
+[gd_scene load_steps=7 format=3 uid="uid://d4n3ilc1fuuvr"]
+
+[ext_resource type="Script" uid="uid://d2cpvqchi7trf" path="res://system/building/building_manager.gd" id="1_vdbu3"]
+[ext_resource type="Script" uid="uid://c4k6wrivtidma" path="res://system/building/building_item_data/building_item_data.gd" id="2_7tel5"]
+[ext_resource type="PackedScene" uid="uid://bvwhirod04hjb" path="res://system/building/building_deck.tscn" id="2_vdtln"]
+[ext_resource type="Resource" uid="uid://bqgdow2v5shcu" path="res://system/building/building_item_data/building_item_1.tres" id="3_7d51v"]
+[ext_resource type="Resource" uid="uid://c4ueh5m5ea1xp" path="res://system/building/building_item_data/building_item_2.tres" id="4_6m4dl"]
+[ext_resource type="Resource" uid="uid://t1ikv5wnngmg" path="res://system/building/building_item_data/building_item_3.tres" id="5_swwrw"]
+
+[node name="BuildingManager" type="Node3D"]
+script = ExtResource("1_vdbu3")
+buildings_in_deck = Array[ExtResource("2_7tel5")]([ExtResource("3_7d51v"), ExtResource("4_6m4dl"), ExtResource("5_swwrw")])
+
+[node name="BuildingDeck" parent="." instance=ExtResource("2_vdtln")]
+
+[node name="InfoPanel" parent="BuildingDeck" index="1"]
+visible = false
+
+[editable path="BuildingDeck"]

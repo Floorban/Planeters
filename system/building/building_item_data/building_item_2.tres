@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BuildingData" load_steps=4 format=3 uid="uid://c4ueh5m5ea1xp"]
+
+[ext_resource type="Texture2D" uid="uid://hb40qyiv4gka" path="res://asset/Free-Skill-32x32-Icons-for-Cyberpunk-Game/1 Icons/1/Skillicon1_18.png" id="1_kjkfa"]
+[ext_resource type="PackedScene" uid="uid://4btxdl7peomx" path="res://system/building/building_scene/building_2.tscn" id="2_kjkfa"]
+[ext_resource type="Script" uid="uid://c4k6wrivtidma" path="res://system/building/building_item_data/building_item_data.gd" id="3_jmh0b"]
+
+[resource]
+script = ExtResource("3_jmh0b")
+building_scene = ExtResource("2_kjkfa")
+building_icon = ExtResource("1_kjkfa")
+metadata/_custom_type_script = "uid://c4k6wrivtidma"

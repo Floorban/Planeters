@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BuildingData" load_steps=2 format=3 uid="uid://brylsc5j5xl0k"]
+
+[ext_resource type="Script" uid="uid://bsjqfxd8pa3fa" path="res://system/building/building_data/building_data.gd" id="1_asyrq"]
+
+[resource]
+script = ExtResource("1_asyrq")
+needed_points = 5
+produced_time = 5.0
+produced_points = 1
+metadata/_custom_type_script = "uid://bsjqfxd8pa3fa"
