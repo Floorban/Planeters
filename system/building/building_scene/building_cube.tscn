@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dk30s8rja5xpj"]
+
+[ext_resource type="PackedScene" uid="uid://c2ntv3rjj6ldp" path="res://system/building/building_scene/building_scene.tscn" id="1_8ucxk"]
+[ext_resource type="Resource" uid="uid://65wsj6w6k10" path="res://system/building/building_data/building_cube.tres" id="2_vfyfs"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8ucxk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vfyfs"]
+
+[node name="BuildingCube" node_paths=PackedStringArray("meshes") instance=ExtResource("1_8ucxk")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+building_name = "cube"
+meshes = [NodePath("MeshInstance3D")]
+data = ExtResource("2_vfyfs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21899766, 0)
+mesh = SubResource("BoxMesh_8ucxk")
+
+[node name="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21899766, 0)
+shape = SubResource("BoxShape3D_vfyfs")
+
+[node name="RayCast3D1" parent="GroundChecks" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46294808, -0.23599142, 0.46294796)
+
+[node name="RayCast3D2" parent="GroundChecks" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45489645, -0.23599142, 0.45892227)
+
+[node name="RayCast3D3" parent="GroundChecks" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45489693, -0.23599142, -0.4508711)
+
+[node name="RayCast3D4" parent="GroundChecks" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45892215, -0.23599142, -0.4548967)

@@ -41,9 +41,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5p5xt")
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_v0w73"]
-height = 1.4013672
-radius = 1.097168
+[sub_resource type="BoxShape3D" id="BoxShape3D_v0w73"]
+size = Vector3(2.0410156, 1.5178223, 1.9467773)
 
 [node name="Building_2" node_paths=PackedStringArray("meshes") instance=ExtResource("1_xvfix")]
 building_name = "building B"
@@ -56,8 +55,8 @@ mesh = SubResource("ArrayMesh_uy3xk")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07463205, 0.0491333)
-shape = SubResource("CylinderShape3D_v0w73")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07463205, 0.014221191)
+shape = SubResource("BoxShape3D_v0w73")
 
 [node name="BuildingInfluenceArea" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.166834, 0)
