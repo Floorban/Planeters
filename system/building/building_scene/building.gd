@@ -1,4 +1,4 @@
-extends StaticBody3D
+extends CharacterBody3D
 class_name Building
 
 const PLACEMENT_INVALID_MAT = preload("uid://bdusul7a27vv8")
@@ -7,7 +7,7 @@ const PLACEMENT_VALID_MAT = preload("uid://utp7ndcuswgq")
 @export var building_name: String
 
 @export var meshes: Array[MeshInstance3D]
-@onready var overlap_area: Area3D = $OverlapArea
+@onready var ground_checkes: Array[RayCast3D] = [%RayCast3D1, %RayCast3D2, %RayCast3D3, %RayCast3D4]
 @onready var influence_area: BuildingInfluenceArea = $BuildingInfluenceArea
 @onready var building_info: BuildingInfo = %BuildingInfo
 
@@ -71,22 +71,23 @@ func place() -> void:
 	is_placed = true
 	influence_area.mesh.visible = false
 	GameManager.consume_points(data.needed_points)
+	set_collision_layer_value(3, true)
 	for m in meshes:
 		m.material_override = null
 	_play_place_effect()
 
 func check_placement() -> bool:
-	var overlaps = overlap_area.get_overlapping_areas()
-	var building_overlaps = []
-	for area in overlaps:
-		if area.get_parent() and area.get_parent() is Building:
-			building_overlaps.append(area)
+	if not GameManager.can_consume_points(data.needed_points):
+		_placement_invalid()
+		return false
+		
+	for ray in ground_checkes:
+		if not ray.is_colliding():
+			_placement_invalid()
+			return false
 	
-	if building_overlaps.size() <= 0 and GameManager.can_consume_points(data.needed_points):
-		_placement_valid()
-		return true
-	_placement_invalid()
-	return false
+	_placement_valid()
+	return true
 
 func _placement_invalid() -> void:
 	for m in meshes:

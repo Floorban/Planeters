@@ -4,14 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://c6ceimbo0cmpi" path="res://system/building/building_influence_area.tscn" id="2_sw7x1"]
 [ext_resource type="PackedScene" uid="uid://d1vrueo1wvxgo" path="res://system/building/building_info.tscn" id="3_xd8ld"]
 
-[node name="BuildingScene" type="StaticBody3D"]
+[node name="BuildingScene" type="CharacterBody3D"]
 script = ExtResource("1_ilrdr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-
-[node name="OverlapArea" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="OverlapArea"]
 
 [node name="BuildingInfluenceArea" parent="." instance=ExtResource("2_sw7x1")]
 
@@ -20,3 +16,25 @@ script = ExtResource("1_ilrdr")
 [node name="BuildingInfo" parent="CanvasLayer" instance=ExtResource("3_xd8ld")]
 unique_name_in_owner = true
 visible = false
+
+[node name="GroundChecks" type="Node3D" parent="."]
+
+[node name="RayCast3D1" type="RayCast3D" parent="GroundChecks"]
+unique_name_in_owner = true
+target_position = Vector3(0, -0.2, 0)
+collision_mask = 2
+
+[node name="RayCast3D2" type="RayCast3D" parent="GroundChecks"]
+unique_name_in_owner = true
+target_position = Vector3(0, -0.2, 0)
+collision_mask = 2
+
+[node name="RayCast3D3" type="RayCast3D" parent="GroundChecks"]
+unique_name_in_owner = true
+target_position = Vector3(0, -0.2, 0)
+collision_mask = 2
+
+[node name="RayCast3D4" type="RayCast3D" parent="GroundChecks"]
+unique_name_in_owner = true
+target_position = Vector3(0, -0.2, 0)
+collision_mask = 2

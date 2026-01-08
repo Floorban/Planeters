@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 	PlayerInput.clear_mouse_input()
 	
 	var zoom_delta := PlayerInput.get_wheel_delta()
-	if zoom_delta != 0 and not focusing:
+	if zoom_delta != 0 and not focusing and not GameManager.building_manager.placing:
 		_target_zoom += zoom_delta * delta
 	_target_zoom = clamp(_target_zoom, arm_length_min, arm_length_max)
 	spring_arm.spring_length = lerp(spring_arm.spring_length, _target_zoom, delta * zoom_smooth_speed)

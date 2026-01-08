@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://4btxdl7peomx"]
+[gd_scene load_steps=8 format=4 uid="uid://4btxdl7peomx"]
 
 [ext_resource type="PackedScene" uid="uid://c2ntv3rjj6ldp" path="res://system/building/building_scene/building_scene.tscn" id="1_xvfix"]
 [ext_resource type="Resource" uid="uid://ck1jtdv0vhke4" path="res://system/building/building_data/building_2.tres" id="2_3s4mn"]
@@ -41,11 +41,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5p5xt")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_v0w73"]
-size = Vector3(2.3359375, 1.7778931, 2.282837)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_xvfix"]
-size = Vector3(2.2246094, 1.6403809, 2.1582031)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_v0w73"]
+height = 1.4013672
+radius = 1.097168
 
 [node name="Building_2" node_paths=PackedStringArray("meshes") instance=ExtResource("1_xvfix")]
 building_name = "building B"
@@ -53,17 +51,29 @@ meshes = [NodePath("basemodule_E")]
 data = ExtResource("2_3s4mn")
 
 [node name="basemodule_E" type="MeshInstance3D" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.36122394, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.74534476, 0)
 mesh = SubResource("ArrayMesh_uy3xk")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45875287, 0.0491333)
-shape = SubResource("BoxShape3D_v0w73")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07463205, 0.0491333)
+shape = SubResource("CylinderShape3D_v0w73")
 
-[node name="OverlapArea" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.37053227, 0)
+[node name="BuildingInfluenceArea" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.166834, 0)
 
-[node name="CollisionShape3D" parent="OverlapArea" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82673645, 0.045776367)
-shape = SubResource("BoxShape3D_xvfix")
+[node name="RayCast3D1" parent="GroundChecks" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9646621, -0.49459648, 0.9710504)
+target_position = Vector3(0, -0.5, 0)
+
+[node name="RayCast3D2" parent="GroundChecks" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9646621, -0.49459648, 0.9582732)
+target_position = Vector3(0, -0.5, 0)
+
+[node name="RayCast3D3" parent="GroundChecks" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95188475, -0.49459648, -0.95188475)
+target_position = Vector3(0, -0.5, 0)
+
+[node name="RayCast3D4" parent="GroundChecks" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9582732, -0.49459648, -0.95827353)
+target_position = Vector3(0, -0.5, 0)

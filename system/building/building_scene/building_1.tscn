@@ -49,6 +49,7 @@ size = Vector3(2.3417969, 1.1094971, 2.2792053)
 size = Vector3(1.9592285, 1.0170593, 1.9589844)
 
 [node name="Building_1" node_paths=PackedStringArray("meshes") instance=ExtResource("1_n0bbd")]
+motion_mode = 1
 building_name = "building A"
 meshes = [NodePath("basemodule_A")]
 data = ExtResource("2_wont4")

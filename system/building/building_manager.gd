@@ -43,9 +43,13 @@ func _process(_delta: float) -> void:
 		item_list.deselect_all()
 		set_info_panel(false)
 
-func _physics_process(_delta: float) -> void:
+@export var snap_distance: float = 3.0 # tp if mouse gets too far away
+var needs_snap: bool = false
+
+func _physics_process(delta: float) -> void:
 	if not selecting_building or not enabled:
 		return
+
 	var cam := get_viewport().get_camera_3d()
 	var mouse_pos := get_viewport().get_mouse_position()
 	var ray_start : Vector3 = cam.project_ray_origin(mouse_pos)
@@ -54,23 +58,47 @@ func _physics_process(_delta: float) -> void:
 	var space_state = get_world_3d().direct_space_state
 	var p := PhysicsRayQueryParameters3D.create(ray_start, ray_start + dir * MAX_DIST)
 	p.collision_mask = 1 << 1
+	
 	var result := space_state.intersect_ray(p)
+
 	if result:
-			if result.collider is BuildingSnapSpot:
-				var snap_spot: BuildingSnapSpot = result.collider
-				if snap_spot.get_parent() != selecting_building:
-					selecting_building.global_transform = snap_spot.snap_transform.global_transform
+		var target_pos = result.position
+		var surface_normal = result.normal
+		
+		var current_basis = selecting_building.global_transform.basis
+		var current_forward = -current_basis.z 
+		var new_right = current_forward.cross(surface_normal).normalized()
+		
+		if new_right.length() < 0.001:
+			new_right = current_basis.x
+			
+		var new_forward = surface_normal.cross(new_right).normalized()
+		var new_basis = Basis(new_right, surface_normal, -new_forward).orthonormalized()
+		var move_diff = target_pos - selecting_building.global_position
+		
+		if result.collider is Building:
+			needs_snap = true
+		else:
+			if needs_snap and move_diff.length() > snap_distance:
+				selecting_building.global_position = target_pos
+				selecting_building.global_transform.basis = new_basis
+				selecting_building.velocity = Vector3.ZERO 
+				needs_snap = false
 			else:
-				selecting_building.global_position = result.position
+				selecting_building.velocity = move_diff * 10.0
+				selecting_building.move_and_slide()
 				
-				var surface_normal = result.normal
-				var x_axis = surface_normal.cross(Vector3.BACK)
-				if x_axis.length() < 0.01:
-					x_axis = surface_normal.cross(Vector3.UP)
-				x_axis = x_axis.normalized()
-				var z_axis = x_axis.cross(surface_normal).normalized()
-				selecting_building.global_transform.basis = Basis(x_axis, surface_normal, z_axis)
-				can_place = selecting_building.check_placement()
+				selecting_building.global_transform.basis = selecting_building.global_transform.basis.slerp(
+					new_basis, 
+					0.2
+				)
+
+		can_place = selecting_building.check_placement()
+
+	if Input.is_action_just_pressed("wheel_up"):
+		selecting_building.rotate_object_local(Vector3.UP, PI/4)
+	if Input.is_action_just_pressed("wheel_down"):
+		selecting_building.rotate_object_local(Vector3.UP, -PI/4)
 
 func activate_building_manager() -> void:
 	enabled = true
