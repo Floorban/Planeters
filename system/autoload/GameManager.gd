@@ -7,10 +7,10 @@ var skill_tree: SkillTree
 var building_manager: BuildingManager
 
 var current_score: int
-var current_max_score: int = 20
+var current_max_score: int = 2000000
 
 func _ready() -> void:
-	score(5)
+	score(50000)
 
 func score(added_score: int) -> void:
 	current_score += added_score

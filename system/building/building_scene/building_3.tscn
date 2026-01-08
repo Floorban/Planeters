@@ -42,8 +42,8 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6duoe")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_fuq8c"]
-height = 1.1674805
-radius = 1.0732422
+height = 1.1063843
+radius = 0.92285156
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5ngya"]
 size = Vector3(1.7119141, 1.032959, 1.8574219)
@@ -58,8 +58,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3075329, 0)
 mesh = SubResource("ArrayMesh_jjjqy")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20552862, 0)
+[node name="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18881226, 0)
 shape = SubResource("CylinderShape3D_fuq8c")
 
 [node name="OverlapArea" parent="." index="2"]

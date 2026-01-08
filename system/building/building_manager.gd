@@ -56,16 +56,21 @@ func _physics_process(_delta: float) -> void:
 	p.collision_mask = 1 << 1
 	var result := space_state.intersect_ray(p)
 	if result:
-			selecting_building.global_position = result.position
-			
-			var surface_normal = result.normal
-			var x_axis = surface_normal.cross(Vector3.BACK)
-			if x_axis.length() < 0.01:
-				x_axis = surface_normal.cross(Vector3.UP)
-			x_axis = x_axis.normalized()
-			var z_axis = x_axis.cross(surface_normal).normalized()
-			selecting_building.global_transform.basis = Basis(x_axis, surface_normal, z_axis)
-			can_place = selecting_building.check_placement()
+			if result.collider is BuildingSnapSpot:
+				var snap_spot: BuildingSnapSpot = result.collider
+				if snap_spot.get_parent() != selecting_building:
+					selecting_building.global_transform = snap_spot.snap_transform.global_transform
+			else:
+				selecting_building.global_position = result.position
+				
+				var surface_normal = result.normal
+				var x_axis = surface_normal.cross(Vector3.BACK)
+				if x_axis.length() < 0.01:
+					x_axis = surface_normal.cross(Vector3.UP)
+				x_axis = x_axis.normalized()
+				var z_axis = x_axis.cross(surface_normal).normalized()
+				selecting_building.global_transform.basis = Basis(x_axis, surface_normal, z_axis)
+				can_place = selecting_building.check_placement()
 
 func activate_building_manager() -> void:
 	enabled = true
@@ -74,7 +79,7 @@ func deactivate_building_manager() -> void:
 	enabled = false
 	placing = false
 	can_place = false
-	selecting_building.queue_free()
+	if (selecting_building): selecting_building.queue_free()
 	selecting_building = null
 	selecting_building_data = null
 	item_list.deselect_all()

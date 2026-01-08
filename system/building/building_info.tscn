@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d1vrueo1wvxgo"]
 
-[ext_resource type="Script" uid="uid://b8s47trsgwnh3" path="res://building_info.gd" id="1_lajdy"]
+[ext_resource type="Script" uid="uid://b8s47trsgwnh3" path="res://system/building/building_info.gd" id="1_lajdy"]
 
 [node name="BuildingInfo" type="Panel"]
 custom_minimum_size = Vector2(180, 210)

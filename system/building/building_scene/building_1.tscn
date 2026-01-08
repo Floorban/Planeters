@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://b0jq81lyvip6g"]
+[gd_scene load_steps=10 format=4 uid="uid://b0jq81lyvip6g"]
 
 [ext_resource type="PackedScene" uid="uid://c2ntv3rjj6ldp" path="res://system/building/building_scene/building_scene.tscn" id="1_n0bbd"]
 [ext_resource type="Resource" uid="uid://brylsc5j5xl0k" path="res://system/building/building_data/building_1.tres" id="2_wont4"]
 [ext_resource type="Texture2D" uid="uid://wn54nmve6xng" path="res://asset/KayKit_Space_Base_Bits_1.0_FREE/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/spacebits_texture.png" id="3_kuor5"]
+[ext_resource type="PackedScene" uid="uid://cxwcng0g8djk" path="res://system/building/building_snap_spot.tscn" id="4_rg4vt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tunq5"]
 resource_name = "spacebits_texture"
@@ -42,10 +43,10 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_u81ib")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kuor5"]
-size = Vector3(2.3291016, 1.1096191, 2.3183594)
+size = Vector3(2.3417969, 1.1094971, 2.2792053)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n0bbd"]
-size = Vector3(2.2485657, 1.0170593, 2.16951)
+size = Vector3(1.9592285, 1.0170593, 1.9589844)
 
 [node name="Building_1" node_paths=PackedStringArray("meshes") instance=ExtResource("1_n0bbd")]
 building_name = "building A"
@@ -57,9 +58,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.34542722, 0)
 mesh = SubResource("ArrayMesh_fl8jl")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.036514282, 0.15455627, 0.073036194)
+[node name="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03955078, 0.16412354, 0.061538696)
 shape = SubResource("BoxShape3D_kuor5")
+
+[node name="OverlapArea" parent="." index="2"]
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionShape3D" parent="OverlapArea" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.033569336, 0.16246033, 0.060012817)
@@ -67,3 +72,35 @@ shape = SubResource("BoxShape3D_n0bbd")
 
 [node name="BuildingInfluenceArea" parent="." index="3"]
 influence_radius = 3.0
+
+[node name="BuildingSnapSpot" parent="." index="5" instance=ExtResource("4_rg4vt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3305888, 0, 0)
+
+[node name="SnapTransform" parent="BuildingSnapSpot" index="0"]
+transform = Transform3D(0.97851264, 0.20618711, 0, -0.20618711, 0.97851264, 0, 0, 0, 1, 0.4362018, -0.051540375, 0)
+
+[node name="BuildingSnapSpot2" parent="." index="6" instance=ExtResource("4_rg4vt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.020522594, 0, 1.3728721)
+
+[node name="SnapTransform" parent="BuildingSnapSpot2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.98656654, -0.16336042, 0, 0.16336042, 0.98656654, 0, -0.051540375, 0.38122177)
+
+[node name="BuildingSnapSpot3" parent="." index="7" instance=ExtResource("4_rg4vt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3917205, 0, 0.014261365)
+
+[node name="SnapTransform" parent="BuildingSnapSpot3" index="0"]
+transform = Transform3D(0.9911415, -0.13280997, 0, 0.13280997, 0.9911415, 0, 0, 0, 1, -0.4180324, -0.051540375, 0)
+
+[node name="BuildingSnapSpot4" parent="." index="8" instance=ExtResource("4_rg4vt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015130281, 0, -1.2916223)
+
+[node name="SnapTransform" parent="BuildingSnapSpot4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.9553352, 0.29552472, 0, -0.29552472, 0.9553352, 0, -0.051540375, -0.33212698)
+
+[node name="BuildingSnapSpot5" parent="." index="9" instance=ExtResource("4_rg4vt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01586771, 0.99413943, -0.04367602)
+
+[editable path="BuildingSnapSpot"]
+[editable path="BuildingSnapSpot2"]
+[editable path="BuildingSnapSpot3"]
+[editable path="BuildingSnapSpot4"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxwcng0g8djk"]
+
+[ext_resource type="Script" uid="uid://cqjdhbfs2gwi0" path="res://system/building/building_snap_spot.gd" id="1_pyohp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cyi0c"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="BuildingSnapSpot" type="StaticBody3D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_pyohp")
+
+[node name="SnapTransform" type="Marker3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_cyi0c")

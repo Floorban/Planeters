@@ -24,6 +24,7 @@ offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 0
 max_columns = 4
+fixed_icon_size = Vector2i(85, 85)
 
 [node name="InfoPanel" type="Panel" parent="."]
 custom_minimum_size = Vector2(180, 110)

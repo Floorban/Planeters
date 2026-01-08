@@ -30,13 +30,17 @@ func _ready() -> void:
 	mouse_exited.connect(_on_mouse_exited)
 
 func _on_mouse_hovered() -> void:
-	if GameManager.building_manager.placing:
+	if not is_placed or GameManager.building_manager.placing:
 		return
 	building_info.set_building_info(self)
 	building_info.visible = true
+	influence_area.mesh.visible = true
 
 func _on_mouse_exited() -> void:
+	if not is_placed:
+		return
 	building_info.visible = false
+	influence_area.mesh.visible = false
 
 func _process(delta: float) -> void:
 	if not is_placed or GameManager.is_paused:
@@ -65,6 +69,7 @@ func apply_upgrades(skill: SkillData, level: int) -> void:
 
 func place() -> void:
 	is_placed = true
+	influence_area.mesh.visible = false
 	GameManager.consume_points(data.needed_points)
 	for m in meshes:
 		m.material_override = null

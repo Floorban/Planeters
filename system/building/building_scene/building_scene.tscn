@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bccv6upeqtltp" path="res://system/building/building_scene/building.gd" id="1_ilrdr"]
 [ext_resource type="PackedScene" uid="uid://c6ceimbo0cmpi" path="res://system/building/building_influence_area.tscn" id="2_sw7x1"]
-[ext_resource type="PackedScene" uid="uid://d1vrueo1wvxgo" path="res://building_info.tscn" id="3_xd8ld"]
+[ext_resource type="PackedScene" uid="uid://d1vrueo1wvxgo" path="res://system/building/building_info.tscn" id="3_xd8ld"]
 
 [node name="BuildingScene" type="StaticBody3D"]
 script = ExtResource("1_ilrdr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 
 [node name="OverlapArea" type="Area3D" parent="."]
 
