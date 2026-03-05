@@ -15,16 +15,16 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Planters"
-run/main_scene="uid://b6kxswj1nn2ap"
+run/main_scene="uid://1ktvbleh6eme"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://asset/icon.svg"
 
 [autoload]
 
 GameManager="*res://system/autoload/game_manager.tscn"
-PlayerInput="*res://system/input/player_input.gd"
+PlayerInput="*res://system/old/input/player_input.gd"
 Signals="*res://system/autoload/signals.gd"
-Planet="*res://system/planet/planet.tscn"
+Planet="*res://system/old/planet/planet.tscn"
 PopupPrompt="*res://system/autoload/popup_prompt.gd"
 
 [display]

@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://8xbshlfjbg1x" path="res://asset/monitor_1.png" id="2_wecfm"]
 [ext_resource type="Texture2D" uid="uid://cw40lgnnhricu" path="res://asset/monitor_2.png" id="3_coxsy"]
 [ext_resource type="Texture2D" uid="uid://boqsvbvrnid8m" path="res://asset/monitor_3.png" id="4_nce4g"]
-[ext_resource type="Shader" uid="uid://dd64a0lumwldt" path="res://scene/world_screen_effect.gdshader" id="5_coxsy"]
+[ext_resource type="Shader" uid="uid://dd64a0lumwldt" path="res://shader/world_screen_effect.gdshader" id="5_coxsy"]
 [ext_resource type="Texture2D" uid="uid://brqcg0wm5ocuk" path="res://asset/icon.svg" id="6_nce4g"]
-[ext_resource type="PackedScene" uid="uid://1ktvbleh6eme" path="res://game/main_screen.tscn" id="7_nce4g"]
-[ext_resource type="Shader" uid="uid://cbhartniludwa" path="res://game/ctr_effect.gdshader" id="8_2jogj"]
+[ext_resource type="PackedScene" uid="uid://1ktvbleh6eme" path="res://scene/main_screen.tscn" id="7_nce4g"]
+[ext_resource type="Shader" uid="uid://cbhartniludwa" path="res://shader/ctr_effect.gdshader" id="8_2jogj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_coxsy"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

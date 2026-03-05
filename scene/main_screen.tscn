@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://1ktvbleh6eme"]
+
+[node name="MainScreen" type="Control" unique_id=1745498329]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1135349797]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Background" type="TextureRect" parent="MarginContainer" unique_id=1423564982]
+texture_filter = 1
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=2071985704]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "dsadsadasdasdasdasdas"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="MarginContainer" unique_id=1477781006]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1493027421]
+layout_mode = 2
