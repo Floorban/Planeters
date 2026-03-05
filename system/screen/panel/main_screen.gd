@@ -5,7 +5,9 @@ class_name MainScreen extends Control
 @onready var stats_panel: Control = %StatsPanel
 
 var sub_panels : Array[SubPanel]
+
 var tab_btns: Array[TabBtn]
+var tab_group := ButtonGroup.new()
 
 
 func _ready() -> void:
@@ -31,6 +33,7 @@ func _init_tab_btns() -> void:
 	tab_btns.clear()
 	for c in taskbar.get_children():
 		if c is TabBtn:
+			c.button_group = tab_group
 			tab_btns.append(c)
 	
 	if tab_btns.is_empty():
@@ -42,10 +45,10 @@ func _init_tab_btns() -> void:
 
 func _connect_tab_btns_to_sub_panels() -> void:
 	for i in range(sub_panels.size()):
-		tab_btns[i].pressed.connect(sub_panels[i].show_panel)
+		tab_btns[i].toggled.connect(sub_panels[i].toggle_panel)
 	
 	#open first panel by default
-	tab_btns[0].pressed.emit()
+	tab_btns[0].button_pressed = true
 
 
 func _on_panel_opened(active_panel: SubPanel) -> void:

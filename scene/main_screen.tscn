@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b4b8pivkpdt40" path="res://system/screen/panel/radar_panel.tscn" id="4_bor6b"]
 [ext_resource type="PackedScene" uid="uid://chr6sq2bcitbf" path="res://system/screen/panel/overview_panel.tscn" id="5_06ml0"]
 [ext_resource type="PackedScene" uid="uid://b0vsnwsdvdf6f" path="res://system/screen/panel/settings_panel.tscn" id="6_kw7ci"]
+[ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="9_gigxy"]
 
 [node name="MainScreen" type="Control" unique_id=1745498329]
 layout_mode = 3
@@ -125,7 +126,6 @@ theme_override_constants/separation = 36
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar" unique_id=1102063089]
 layout_mode = 2
-theme_override_constants/separation = 24
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer" unique_id=489819472]
 custom_minimum_size = Vector2(50, 50)
@@ -134,119 +134,99 @@ texture = ExtResource("1_r8dvm")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="Control" type="Control" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer" unique_id=376757679]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="Label" type="Label" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer" unique_id=209828314]
-custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 28
-text = "12345498032633"
+theme_override_fonts/font = ExtResource("9_gigxy")
+theme_override_font_sizes/font_size = 42
+text = "12345498"
 vertical_alignment = 1
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar" unique_id=782235360]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar" unique_id=532685876]
 layout_mode = 2
-theme_override_constants/separation = 24
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer2" unique_id=548821441]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer2" unique_id=729812641]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("1_r8dvm")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer2" unique_id=930094975]
-custom_minimum_size = Vector2(220, 0)
+[node name="Control" type="Control" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer2" unique_id=1509896833]
 layout_mode = 2
-theme_override_font_sizes/font_size = 28
-text = "12345498032633"
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer2" unique_id=552382866]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_gigxy")
+theme_override_font_sizes/font_size = 42
+text = "12345498"
 vertical_alignment = 1
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar" unique_id=1220784967]
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar" unique_id=866836522]
 layout_mode = 2
-theme_override_constants/separation = 24
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer3" unique_id=894277805]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer3" unique_id=324559789]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("1_r8dvm")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer3" unique_id=1070054953]
-custom_minimum_size = Vector2(220, 0)
+[node name="Control" type="Control" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer3" unique_id=2065670719]
 layout_mode = 2
-theme_override_font_sizes/font_size = 28
-text = "12345498032633"
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer3" unique_id=1656232555]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_gigxy")
+theme_override_font_sizes/font_size = 42
+text = "1234"
 vertical_alignment = 1
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar" unique_id=774260960]
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar" unique_id=2003027158]
 layout_mode = 2
-theme_override_constants/separation = 24
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer4" unique_id=2020614668]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer4" unique_id=5086597]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("1_r8dvm")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer4" unique_id=101146232]
-custom_minimum_size = Vector2(220, 0)
+[node name="Control" type="Control" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer4" unique_id=1894458186]
 layout_mode = 2
-theme_override_font_sizes/font_size = 28
-text = "12345498032633"
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer4" unique_id=1822760985]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_gigxy")
+theme_override_font_sizes/font_size = 42
+text = "12345498"
 vertical_alignment = 1
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar" unique_id=1778845206]
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar" unique_id=1444294508]
 layout_mode = 2
-theme_override_constants/separation = 24
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer5" unique_id=104151719]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer5" unique_id=2046047186]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("1_r8dvm")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer5" unique_id=149884226]
-custom_minimum_size = Vector2(220, 0)
+[node name="Control" type="Control" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer5" unique_id=324875285]
 layout_mode = 2
-theme_override_font_sizes/font_size = 28
-text = "12345498032633"
-vertical_alignment = 1
+size_flags_horizontal = 3
 
-[node name="HBoxContainer6" type="HBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar" unique_id=530648460]
+[node name="Label" type="Label" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer5" unique_id=1569165519]
 layout_mode = 2
-theme_override_constants/separation = 24
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer6" unique_id=1005498462]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("1_r8dvm")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer6" unique_id=800239942]
-custom_minimum_size = Vector2(220, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 28
-text = "12345498032633"
-vertical_alignment = 1
-
-[node name="HBoxContainer7" type="HBoxContainer" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar" unique_id=1547180354]
-layout_mode = 2
-theme_override_constants/separation = 24
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer7" unique_id=1427665231]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("1_r8dvm")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer/Statsbar/HBoxContainer7" unique_id=573217769]
-custom_minimum_size = Vector2(220, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 28
-text = "12345498032633"
+theme_override_fonts/font = ExtResource("9_gigxy")
+theme_override_font_sizes/font_size = 42
+text = "12345498"
 vertical_alignment = 1
 
 [node name="Button2" type="Button" parent="MarginContainer/Background/StatsPanel/MarginContainer/VBoxContainer" unique_id=1901541875]

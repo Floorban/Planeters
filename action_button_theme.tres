@@ -1,0 +1,19 @@
+[gd_resource type="Theme" format=3 uid="uid://b06wmmglo7w7v"]
+
+[ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="1_wsvie"]
+[ext_resource type="StyleBox" uid="uid://ci2i0cmt201uy" path="res://button_normal.tres" id="2_wx5kd"]
+[ext_resource type="StyleBox" uid="uid://bklaxsbl7axv4" path="res://button_hovered.tres" id="3_b88hp"]
+[ext_resource type="StyleBox" uid="uid://ddg85mpw7121d" path="res://button_pressed.tres" id="4_1ji6b"]
+
+[resource]
+Button/colors/font_color = Color(0.09603269, 0.096032985, 0.09603276, 1)
+Button/colors/font_disabled_color = Color(0.39215687, 0.39215687, 0.39215687, 1)
+Button/colors/font_hover_pressed_color = Color(0.39215687, 0.39215687, 0.39215687, 1)
+Button/colors/font_pressed_color = Color(0.39255488, 0.3925549, 0.3925549, 1)
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_wsvie")
+Button/styles/disabled = ExtResource("4_1ji6b")
+Button/styles/focus = ExtResource("2_wx5kd")
+Button/styles/hover = ExtResource("3_b88hp")
+Button/styles/normal = ExtResource("2_wx5kd")
+Button/styles/pressed = ExtResource("4_1ji6b")

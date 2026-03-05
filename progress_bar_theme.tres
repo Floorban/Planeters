@@ -1,0 +1,32 @@
+[gd_resource type="Theme" format=3 uid="uid://da4he3aydg2fo"]
+
+[ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="1_qru10"]
+[ext_resource type="Texture2D" uid="uid://bpl4saimxwmp6" path="res://asset/ui/windows_xp/Windows_Toggle_Active.png" id="3_bk62w"]
+[ext_resource type="Texture2D" uid="uid://cnkyhlea17vtd" path="res://asset/ui/windows_xp/Windows_Progress_Fill_Gap.png" id="3_hvewa"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bk62w"]
+texture = ExtResource("3_bk62w")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+expand_margin_left = 4.0
+expand_margin_top = 8.0
+expand_margin_right = 4.0
+expand_margin_bottom = 8.0
+draw_center = false
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hvewa"]
+texture = ExtResource("3_hvewa")
+texture_margin_top = 1.0
+texture_margin_bottom = 1.0
+axis_stretch_horizontal = 1
+
+[resource]
+ProgressBar/colors/font_color = Color(0.95, 0.95, 0.95, 1)
+ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
+ProgressBar/constants/outline_size = 0
+ProgressBar/font_sizes/font_size = 32
+ProgressBar/fonts/font = ExtResource("1_qru10")
+ProgressBar/styles/background = SubResource("StyleBoxTexture_bk62w")
+ProgressBar/styles/fill = SubResource("StyleBoxTexture_hvewa")

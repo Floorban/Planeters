@@ -3,20 +3,8 @@
 [ext_resource type="Script" uid="uid://bb356ol5u0cn" path="res://system/screen/panel/dashboard_panel.gd" id="1_thcye"]
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="2_jth0q"]
 [ext_resource type="Texture2D" uid="uid://brqcg0wm5ocuk" path="res://asset/ui/icon.svg" id="2_xtg88"]
-[ext_resource type="StyleBox" uid="uid://ci2i0cmt201uy" path="res://button_normal.tres" id="4_efr13"]
-[ext_resource type="StyleBox" uid="uid://ddg85mpw7121d" path="res://button_pressed.tres" id="5_efr13"]
-[ext_resource type="StyleBox" uid="uid://bklaxsbl7axv4" path="res://button_hovered.tres" id="5_n7h17"]
-
-[sub_resource type="Theme" id="Theme_v1r7b"]
-Button/colors/font_color = Color(0.09603269, 0.096032985, 0.09603276, 1)
-Button/colors/font_hover_pressed_color = Color(0.39215687, 0.39215687, 0.39215687, 1)
-Button/colors/font_pressed_color = Color(0.39255488, 0.3925549, 0.3925549, 1)
-Button/font_sizes/font_size = 32
-Button/fonts/font = ExtResource("2_jth0q")
-Button/styles/focus = ExtResource("4_efr13")
-Button/styles/hover = ExtResource("5_n7h17")
-Button/styles/normal = ExtResource("4_efr13")
-Button/styles/pressed = ExtResource("5_efr13")
+[ext_resource type="Theme" uid="uid://b06wmmglo7w7v" path="res://action_button_theme.tres" id="4_v1r7b"]
+[ext_resource type="PackedScene" uid="uid://k4eyfmopulqj" path="res://system/screen/task/task_progress.tscn" id="5_efr13"]
 
 [node name="DashboardPanel" type="Control" unique_id=952982154]
 custom_minimum_size = Vector2(1300, 820)
@@ -250,31 +238,31 @@ layout_mode = 2
 theme_override_constants/separation = 32
 alignment = 1
 
-[node name="ActionButton1" type="Button" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=240007690]
+[node name="ButtonDrone" type="Button" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=240007690]
+unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
-theme = SubResource("Theme_v1r7b")
+theme = ExtResource("4_v1r7b")
 toggle_mode = true
-action_mode = 0
 text = "Send a drone"
 
-[node name="ActionButton2" type="Button" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2016163044]
+[node name="ButonSell" type="Button" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2016163044]
+unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
-theme = SubResource("Theme_v1r7b")
+theme = ExtResource("4_v1r7b")
 toggle_mode = true
-action_mode = 0
 text = "Sell the inventory"
 
-[node name="ActionButton3" type="Button" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=636695800]
+[node name="ButtonDig" type="Button" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=636695800]
+unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
-theme = SubResource("Theme_v1r7b")
+theme = ExtResource("4_v1r7b")
 toggle_mode = true
-action_mode = 0
 text = "Dig the planet"
 
 [node name="Control" type="Control" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer" unique_id=778152394]
@@ -285,53 +273,14 @@ size_flags_horizontal = 3
 layout_mode = 2
 theme_override_constants/separation = 36
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1609431167]
-layout_mode = 2
-theme_override_constants/separation = 12
-
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer" unique_id=1854447874]
-custom_minimum_size = Vector2(300, 40)
+[node name="ProgressInfo1" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=297168396 instance=ExtResource("5_efr13")]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer" unique_id=1210179094]
-texture_filter = 1
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_jth0q")
-theme_override_font_sizes/font_size = 36
-text = "sending drones to planet XI"
-clip_text = true
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1072327202]
-layout_mode = 2
-theme_override_constants/separation = 12
-
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer2" unique_id=1398526387]
-custom_minimum_size = Vector2(300, 40)
+[node name="ProgressInfo2" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=294242865 instance=ExtResource("5_efr13")]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer2" unique_id=409312787]
-texture_filter = 1
-custom_minimum_size = Vector2(300, 0)
+[node name="ProgressInfo3" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1682648702 instance=ExtResource("5_efr13")]
+unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_jth0q")
-theme_override_font_sizes/font_size = 36
-text = "sending drones to planet XI"
-clip_text = true
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=887209833]
-layout_mode = 2
-theme_override_constants/separation = 12
-
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer3" unique_id=661168991]
-custom_minimum_size = Vector2(300, 40)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/ActionsPanel/MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer3" unique_id=457154310]
-texture_filter = 1
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_jth0q")
-theme_override_font_sizes/font_size = 36
-text = "sending drones to planet XI"
-clip_text = true

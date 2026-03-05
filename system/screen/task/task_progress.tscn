@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://k4eyfmopulqj"]
+
+[ext_resource type="Script" uid="uid://cb522wlapu0i8" path="res://system/screen/task/task_progress.gd" id="1_5iu2d"]
+[ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="1_b0pyi"]
+[ext_resource type="Theme" uid="uid://da4he3aydg2fo" path="res://progress_bar_theme.tres" id="2_k8h5h"]
+
+[node name="TaskProgress" type="VBoxContainer" unique_id=297168396]
+offset_right = 290.0
+offset_bottom = 76.0
+theme_override_constants/separation = 12
+script = ExtResource("1_5iu2d")
+
+[node name="TaskProgressBar" type="ProgressBar" parent="." unique_id=716418045]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme = ExtResource("2_k8h5h")
+max_value = 13.0
+step = 1.0
+show_percentage = false
+
+[node name="TaskLabel" type="Label" parent="." unique_id=628003955]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_b0pyi")
+theme_override_font_sizes/font_size = 36
+text = "sending drone to target . . ."
+
+[node name="Timer" type="Timer" parent="." unique_id=446665283]
+wait_time = 0.5
+autostart = true

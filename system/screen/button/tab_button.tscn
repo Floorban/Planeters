@@ -1,33 +1,14 @@
 [gd_scene format=3 uid="uid://drk220wxciily"]
 
 [ext_resource type="Script" uid="uid://bi7sd0slj7a5n" path="res://system/screen/button/tab_button.gd" id="1_igqt3"]
-[ext_resource type="Texture2D" uid="uid://dni15k53sr82a" path="res://asset/ui/windows_xp/Windows_Button_Pressed.png" id="2_6gny8"]
-[ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="4_6gny8"]
+[ext_resource type="Theme" uid="uid://b06wmmglo7w7v" path="res://action_button_theme.tres" id="1_kmq8c"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kmq8c"]
-load_path = "res://.godot/imported/Windows_Button_Focus.png-f4f1a5a1e46a9fd662e8e95dc511f827.ctex"
-
-[node name="TabButton" type="TextureButton" unique_id=764654423]
+[node name="TabButton" type="Button" unique_id=524473809]
 texture_filter = 1
 custom_minimum_size = Vector2(250, 60)
-offset_right = 200.0
+offset_right = 250.0
 offset_bottom = 60.0
-action_mode = 0
-texture_normal = SubResource("CompressedTexture2D_kmq8c")
-texture_pressed = ExtResource("2_6gny8")
-ignore_texture_size = true
-stretch_mode = 0
+theme = ExtResource("1_kmq8c")
+toggle_mode = true
+autowrap_trim_flags = 192
 script = ExtResource("1_igqt3")
-
-[node name="DisplayedText" type="Label" parent="." unique_id=1633455112]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_6gny8")
-theme_override_font_sizes/font_size = 48
-horizontal_alignment = 1
-vertical_alignment = 1
