@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://ddg85mpw7121d"]
+
+[ext_resource type="Texture2D" uid="uid://dni15k53sr82a" path="res://asset/ui/windows_xp/Windows_Button_Pressed.png" id="1_ykqs2"]
+
+[resource]
+texture = ExtResource("1_ykqs2")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+modulate_color = Color(0.73550177, 0.7355017, 0.7355017, 1)

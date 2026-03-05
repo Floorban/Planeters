@@ -4,20 +4,19 @@
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="2_jth0q"]
 [ext_resource type="Texture2D" uid="uid://brqcg0wm5ocuk" path="res://asset/ui/icon.svg" id="2_xtg88"]
 [ext_resource type="StyleBox" uid="uid://ci2i0cmt201uy" path="res://button_normal.tres" id="4_efr13"]
-[ext_resource type="Texture2D" uid="uid://dni15k53sr82a" path="res://asset/ui/windows_xp/Windows_Button_Pressed.png" id="4_v1r7b"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_efr13"]
-texture = ExtResource("4_v1r7b")
-region_rect = Rect2(2, 2, 11, 11)
+[ext_resource type="StyleBox" uid="uid://ddg85mpw7121d" path="res://button_pressed.tres" id="5_efr13"]
+[ext_resource type="StyleBox" uid="uid://bklaxsbl7axv4" path="res://button_hovered.tres" id="5_n7h17"]
 
 [sub_resource type="Theme" id="Theme_v1r7b"]
 Button/colors/font_color = Color(0.09603269, 0.096032985, 0.09603276, 1)
+Button/colors/font_hover_pressed_color = Color(0.39215687, 0.39215687, 0.39215687, 1)
+Button/colors/font_pressed_color = Color(0.39255488, 0.3925549, 0.3925549, 1)
 Button/font_sizes/font_size = 32
 Button/fonts/font = ExtResource("2_jth0q")
 Button/styles/focus = ExtResource("4_efr13")
-Button/styles/hover = ExtResource("4_efr13")
+Button/styles/hover = ExtResource("5_n7h17")
 Button/styles/normal = ExtResource("4_efr13")
-Button/styles/pressed = SubResource("StyleBoxTexture_efr13")
+Button/styles/pressed = ExtResource("5_efr13")
 
 [node name="DashboardPanel" type="Control" unique_id=952982154]
 custom_minimum_size = Vector2(1300, 820)
@@ -256,6 +255,7 @@ texture_filter = 1
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 theme = SubResource("Theme_v1r7b")
+toggle_mode = true
 action_mode = 0
 text = "Send a drone"
 
@@ -264,6 +264,7 @@ texture_filter = 1
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 theme = SubResource("Theme_v1r7b")
+toggle_mode = true
 action_mode = 0
 text = "Sell the inventory"
 
@@ -272,6 +273,7 @@ texture_filter = 1
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 theme = SubResource("Theme_v1r7b")
+toggle_mode = true
 action_mode = 0
 text = "Dig the planet"
 
