@@ -44,19 +44,15 @@ offset_bottom = 820.0
 
 [node name="DashboardPanel" parent="MarginContainer/Background/PanelContainer" unique_id=952982154 instance=ExtResource("2_jmo0d")]
 layout_mode = 0
-offset_bottom = 1300.0
 
 [node name="UpgradesPanel" parent="MarginContainer/Background/PanelContainer" unique_id=1877020418 instance=ExtResource("2_l8vv1")]
 layout_mode = 0
-offset_bottom = 1300.0
 
 [node name="RadarPanel" parent="MarginContainer/Background/PanelContainer" unique_id=1046601322 instance=ExtResource("4_bor6b")]
 layout_mode = 0
-offset_bottom = 1300.0
 
 [node name="OverviewPanel" parent="MarginContainer/Background/PanelContainer" unique_id=175380593 instance=ExtResource("5_06ml0")]
 layout_mode = 0
-offset_bottom = 1300.0
 
 [node name="SettingsPanel" parent="MarginContainer/Background/PanelContainer" unique_id=1215339446 instance=ExtResource("6_kw7ci")]
 layout_mode = 0

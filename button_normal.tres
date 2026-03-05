@@ -1,0 +1,7 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://ci2i0cmt201uy"]
+
+[ext_resource type="Texture2D" uid="uid://dixpwb3q8tcjn" path="res://asset/ui/windows_xp/Windows_Button.png" id="1_lil8a"]
+
+[resource]
+texture = ExtResource("1_lil8a")
+region_rect = Rect2(1, 1, 12, 12)
