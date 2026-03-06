@@ -5,23 +5,32 @@ signal stat_changed(stat: Stat, value: int)
 
 var stats : Dictionary = {}
 @export var starting_stats : Array[StatChange]
-@export var stat_slots : Array[StatSlot]
+
+var multipliers : Dictionary = {}
+
 
 func _ready() -> void:
 	GameManager.stats_manager = self
 	for s in starting_stats:
-		stats[s.stat] = s.amount
-	
-	for slot in stat_slots:
-		stats[slot.stat] = 0
+		stats[s.stat] = 0
+		add_stat(s.stat, s.amount)
+		multipliers[s.stat] = 1.0
 
 
 func get_stat(stat: Stat) -> int:
 	return stats.get(stat, 0)
 
 
+func get_multiplier(stat: Stat) -> float:
+	return multipliers.get(stat, 1.0)
+
+
 func add_stat(stat: Stat, amount: int) -> void:
-	stats[stat] += amount
+	#stats[stat] += amount
+	# int or float here? check again later
+	var final = int(amount * get_multiplier(stat))
+	stats[stat] += final
+	
 	stat_changed.emit(stat, stats[stat])
 
 

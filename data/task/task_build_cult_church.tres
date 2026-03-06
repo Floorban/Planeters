@@ -5,10 +5,10 @@
 [ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_5mlxy"]
 [ext_resource type="Resource" uid="uid://be706omug5uo3" path="res://data/stat/stat_church.tres" id="3_21sj1"]
 
-[sub_resource type="Resource" id="Resource_udme2"]
+[sub_resource type="Resource" id="Resource_21sj1"]
 script = ExtResource("1_e2h2u")
 stat = ExtResource("2_5mlxy")
-amount = 10
+amount = 100
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [sub_resource type="Resource" id="Resource_5mlxy"]
@@ -22,6 +22,6 @@ script = ExtResource("1_0v258")
 task_name = "build"
 task_description = "Building new church . . ."
 duration = 5.0
-costs = Array[ExtResource("1_e2h2u")]([SubResource("Resource_udme2")])
+costs = Array[ExtResource("1_e2h2u")]([SubResource("Resource_21sj1")])
 rewards = Array[ExtResource("1_e2h2u")]([SubResource("Resource_5mlxy")])
 metadata/_custom_type_script = "uid://d1qbxvn7m407i"

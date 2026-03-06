@@ -38,13 +38,14 @@ func _init_line() -> void:
 
 
 func _on_pressed() -> void:
-	if level == upgrade.max_level or not GameManager.can_consume_points(upgrade.needed_points):
+	if level == upgrade.max_level or not GameManager.stats_manager.can_pay(upgrade.costs):
 		return
 	self_modulate = Color.LIGHT_GREEN
 	upgrade_branch.default_color = Color.GREEN
 	level = min(level + 1, upgrade.max_level)
-	GameManager.consume_points(upgrade.needed_points)
-	GameManager.upgrades.unlock(upgrade)
+	upgrade.apply_upgrade_effect(level)
+	GameManager.stats_manager.pay_costs(upgrade.costs)
+	GameManager.upgrades_manager.unlock(upgrade)
 	_unlock_next_upgrades()
 
 
