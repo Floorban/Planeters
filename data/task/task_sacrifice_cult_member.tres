@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Task" format=3 uid="uid://bk2kqcxwgmm5i"]
+
+[ext_resource type="Script" uid="uid://d1qbxvn7m407i" path="res://system/screen/task/task.gd" id="1_eo33j"]
+
+[resource]
+script = ExtResource("1_eo33j")
+task_name = "Sacrificing for the good . . ."
+duration = 1.0
+metadata/_custom_type_script = "uid://d1qbxvn7m407i"

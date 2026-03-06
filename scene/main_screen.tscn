@@ -11,28 +11,12 @@
 [ext_resource type="Script" uid="uid://bltwvuc0y6lta" path="res://system/screen/panel/dashboard_panel.gd" id="7_6rrgu"]
 [ext_resource type="Script" uid="uid://b4vpwivp8sljd" path="res://system/screen/task/task_manager.gd" id="7_akoy5"]
 [ext_resource type="Theme" uid="uid://b06wmmglo7w7v" path="res://action_button_theme.tres" id="7_vdsnl"]
-[ext_resource type="Script" uid="uid://d1qbxvn7m407i" path="res://system/screen/task/task.gd" id="8_1sshg"]
 [ext_resource type="PackedScene" uid="uid://k4eyfmopulqj" path="res://system/screen/task/task_progress.tscn" id="8_akoy5"]
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="9_gigxy"]
+[ext_resource type="Resource" uid="uid://d1b3tjc0uirwo" path="res://data/task/task_get_cult_member.tres" id="11_n3x1c"]
+[ext_resource type="Resource" uid="uid://bquc4n36cd6g3" path="res://data/task/task_build_cult_church.tres" id="12_ewany"]
 [ext_resource type="Script" uid="uid://ct8speor44bgy" path="res://system/screen/button/task_button.gd" id="12_n3x1c"]
-
-[sub_resource type="Resource" id="Resource_n3x1c"]
-script = ExtResource("8_1sshg")
-task_name = "dsada"
-duration = 3.0
-metadata/_custom_type_script = "uid://d1qbxvn7m407i"
-
-[sub_resource type="Resource" id="Resource_ewany"]
-script = ExtResource("8_1sshg")
-task_name = "11e21ff"
-duration = 2.0
-metadata/_custom_type_script = "uid://d1qbxvn7m407i"
-
-[sub_resource type="Resource" id="Resource_avamn"]
-script = ExtResource("8_1sshg")
-task_name = "hj7"
-duration = 5.0
-metadata/_custom_type_script = "uid://d1qbxvn7m407i"
+[ext_resource type="Resource" uid="uid://bk2kqcxwgmm5i" path="res://data/task/task_sacrifice_cult_member.tres" id="13_ewany"]
 
 [node name="MainScreen" type="Control" unique_id=1745498329]
 layout_mode = 3
@@ -99,7 +83,7 @@ theme_override_constants/margin_right = 60
 theme_override_constants/margin_bottom = 50
 
 [node name="ActionPanel" type="PanelContainer" parent="MarginContainer/Background/PanelContainer/MarginContainer" unique_id=2081309098]
-custom_minimum_size = Vector2(600, 250)
+custom_minimum_size = Vector2(600, 310)
 layout_mode = 2
 
 [node name="TaskManager" type="MarginContainer" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel" unique_id=1305268272 node_paths=PackedStringArray("task_btns", "task_slots")]
@@ -110,8 +94,9 @@ theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 20
 script = ExtResource("7_akoy5")
-task_btns = [NodePath("HBoxContainer/VBoxContainer/ButtonDrone"), NodePath("HBoxContainer/VBoxContainer/ButonSell"), NodePath("HBoxContainer/VBoxContainer/ButtonDig")]
+task_btns = [NodePath("HBoxContainer/VBoxContainer/ButtonGet"), NodePath("HBoxContainer/VBoxContainer/ButonBuild"), NodePath("HBoxContainer/VBoxContainer/ButonSacrifice")]
 task_slots = [NodePath("HBoxContainer/VBoxContainer2/ProgressInfo1"), NodePath("HBoxContainer/VBoxContainer2/ProgressInfo2"), NodePath("HBoxContainer/VBoxContainer2/ProgressInfo3")]
+max_parallel_tasks = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager" unique_id=104567733]
 layout_mode = 2
@@ -121,38 +106,38 @@ layout_mode = 2
 theme_override_constants/separation = 24
 alignment = 1
 
-[node name="ButtonDrone" type="Button" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer/VBoxContainer" unique_id=2027793440]
+[node name="ButtonGet" type="Button" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer/VBoxContainer" unique_id=2027793440]
 unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 theme = ExtResource("7_vdsnl")
 toggle_mode = true
-text = "Send a drone"
+text = "Get Member"
 script = ExtResource("12_n3x1c")
-task = SubResource("Resource_n3x1c")
+task = ExtResource("11_n3x1c")
 
-[node name="ButonSell" type="Button" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer/VBoxContainer" unique_id=1665261153]
+[node name="ButonBuild" type="Button" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer/VBoxContainer" unique_id=1665261153]
 unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 theme = ExtResource("7_vdsnl")
 toggle_mode = true
-text = "Sell the inventory"
+text = "Build Church"
 script = ExtResource("12_n3x1c")
-task = SubResource("Resource_ewany")
+task = ExtResource("12_ewany")
 
-[node name="ButtonDig" type="Button" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer/VBoxContainer" unique_id=380726272]
+[node name="ButonSacrifice" type="Button" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer/VBoxContainer" unique_id=380726272]
 unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 theme = ExtResource("7_vdsnl")
 toggle_mode = true
-text = "Dig the planet"
+text = "Sacrifice"
 script = ExtResource("12_n3x1c")
-task = SubResource("Resource_avamn")
+task = ExtResource("13_ewany")
 
 [node name="Control" type="Control" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer" unique_id=1305802962]
 layout_mode = 2
@@ -160,7 +145,7 @@ size_flags_horizontal = 3
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer" unique_id=888025448]
 layout_mode = 2
-theme_override_constants/separation = 24
+theme_override_constants/separation = 12
 
 [node name="ProgressInfo1" parent="MarginContainer/Background/PanelContainer/MarginContainer/ActionPanel/TaskManager/HBoxContainer/VBoxContainer2" unique_id=297168396 instance=ExtResource("8_akoy5")]
 unique_name_in_owner = true

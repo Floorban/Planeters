@@ -8,11 +8,11 @@
 custom_minimum_size = Vector2(290, 75)
 offset_right = 290.0
 offset_bottom = 76.0
-theme_override_constants/separation = 12
+theme_override_constants/separation = 8
 script = ExtResource("1_5iu2d")
 
 [node name="TaskProgressBar" type="ProgressBar" parent="." unique_id=716418045]
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 theme = ExtResource("2_k8h5h")
 max_value = 13.0

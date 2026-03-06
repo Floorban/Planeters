@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Task" format=3 uid="uid://d1b3tjc0uirwo"]
+
+[ext_resource type="Script" uid="uid://d1qbxvn7m407i" path="res://system/screen/task/task.gd" id="1_87tki"]
+
+[resource]
+script = ExtResource("1_87tki")
+task_name = "Getting new cult member . . ."
+duration = 2.0
+metadata/_custom_type_script = "uid://d1qbxvn7m407i"
