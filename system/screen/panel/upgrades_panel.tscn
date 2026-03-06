@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://beeci88ete627" path="res://system/upgrades/upgrade_button.tscn" id="1_217a5"]
 [ext_resource type="Script" uid="uid://cc47oyb7ydnsv" path="res://system/screen/panel/upgrades_panel.gd" id="1_fmctd"]
-[ext_resource type="Resource" uid="uid://dgrpo1ct5yqe4" path="res://data/upgrade_data/upgrade_data_1.tres" id="3_xuksn"]
+[ext_resource type="Resource" uid="uid://dgrpo1ct5yqe4" path="res://data/upgrade/upgrade_bonus_member.tres" id="3_xuksn"]
 
 [node name="UpgradesPanel" type="Control" unique_id=952982154 node_paths=PackedStringArray("upgrade_btns")]
 custom_minimum_size = Vector2(1300, 820)

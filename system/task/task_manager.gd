@@ -33,6 +33,10 @@ func start_task(task : Task, btn: TaskButton) -> bool:
 
 
 func _on_task_finished(task : Task) -> void:
+	# keep in mind that if upgrades are bought
+	# when action is loading
+	# the rewward would be updated with the new upgrades
+	# even if the action starts before getting the upgrades
 	GameManager.stats_manager.apply_rewards(task.rewards)
 	_refresh_task_buttons()
 

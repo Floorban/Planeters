@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://dgrpo1ct5yqe4"]
+
+[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_b3s61"]
+[ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_tfgn0"]
+[ext_resource type="Script" uid="uid://oiijucci5mx5" path="res://system/upgrades/upgrade_effect.gd" id="3_4ylsh"]
+[ext_resource type="Script" uid="uid://lxfy1g4oypy7" path="res://data/upgrade_effect/bonus_production_effect.gd" id="4_o4n78"]
+[ext_resource type="Resource" uid="uid://dn5di2eias4nk" path="res://data/stat/stat_member.tres" id="5_slbjl"]
+[ext_resource type="Script" uid="uid://emabm8r8bin6" path="res://system/upgrades/upgrade_data.gd" id="6_ua2fi"]
+
+[sub_resource type="Resource" id="Resource_k0qrf"]
+script = ExtResource("1_b3s61")
+stat = ExtResource("2_tfgn0")
+amount = 20
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_emmih"]
+script = ExtResource("1_b3s61")
+stat = ExtResource("5_slbjl")
+amount = 1
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_a7l6t"]
+script = ExtResource("4_o4n78")
+stat_change = SubResource("Resource_emmih")
+
+[resource]
+script = ExtResource("6_ua2fi")
+costs = Array[ExtResource("1_b3s61")]([SubResource("Resource_k0qrf")])
+effects = Array[ExtResource("3_4ylsh")]([SubResource("Resource_a7l6t")])
+metadata/_custom_type_script = "uid://emabm8r8bin6"
