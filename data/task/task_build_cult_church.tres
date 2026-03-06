@@ -1,9 +1,14 @@
 [gd_resource type="Resource" script_class="Task" format=3 uid="uid://bquc4n36cd6g3"]
 
 [ext_resource type="Script" uid="uid://d1qbxvn7m407i" path="res://system/task/task.gd" id="1_0v258"]
+[ext_resource type="Script" uid="uid://5wgoljesjyol" path="res://system/stats/stat_reward.gd" id="1_i5mkq"]
+[ext_resource type="Resource" uid="uid://cd6heqlxa2e63" path="res://data/stat_reward/stat_reward_church.tres" id="2_i5mkq"]
+[ext_resource type="Resource" uid="uid://bkw1c4qy8inoe" path="res://data/stat_reward/stat_reward_loyal.tres" id="3_21sj1"]
 
 [resource]
 script = ExtResource("1_0v258")
+task_name = "1"
 task_description = "Building new church . . ."
 duration = 5.0
+rewards = Array[ExtResource("1_i5mkq")]([ExtResource("2_i5mkq"), ExtResource("3_21sj1")])
 metadata/_custom_type_script = "uid://d1qbxvn7m407i"

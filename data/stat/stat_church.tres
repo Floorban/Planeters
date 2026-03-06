@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Stat" format=3 uid="uid://be706omug5uo3"]
+
+[ext_resource type="Script" uid="uid://df1xrlbakiuj1" path="res://system/stats/stat.gd" id="1_q51xv"]
+[ext_resource type="Texture2D" uid="uid://dovxme5qqv7b3" path="res://asset/GothicFurnitureSprites48x48.png" id="2_2auk4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8iaj1"]
+atlas = ExtResource("2_2auk4")
+region = Rect2(680, 576, 32, 40)
+
+[resource]
+script = ExtResource("1_q51xv")
+stat_name = "Church"
+stat_description = "You need church to contain your culti vois"
+stat_icon = SubResource("AtlasTexture_8iaj1")
+metadata/_custom_type_script = "uid://df1xrlbakiuj1"

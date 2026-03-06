@@ -10,4 +10,8 @@ func _ready() -> void:
 	if stat == null:
 		return
 	stat_icon.texture = stat.stat_icon
-	stat_num_label.text = str(0)
+	set_value(0)
+
+
+func set_value(value:int) -> void:
+	stat_num_label.text = str(value)

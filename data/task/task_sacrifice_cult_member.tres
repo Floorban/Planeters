@@ -1,9 +1,14 @@
 [gd_resource type="Resource" script_class="Task" format=3 uid="uid://bk2kqcxwgmm5i"]
 
 [ext_resource type="Script" uid="uid://d1qbxvn7m407i" path="res://system/task/task.gd" id="1_eo33j"]
+[ext_resource type="Script" uid="uid://5wgoljesjyol" path="res://system/stats/stat_reward.gd" id="1_lr0al"]
+[ext_resource type="Resource" uid="uid://dub0m4qcoo86d" path="res://data/stat_reward/stat_reward_coin.tres" id="2_6jfr4"]
+[ext_resource type="Resource" uid="uid://bd4rb5i4bbgq0" path="res://data/stat_reward/stat_reward_soul.tres" id="3_6jfr4"]
 
 [resource]
 script = ExtResource("1_eo33j")
+task_name = "3"
 task_description = "Sacrifice for good . . ."
 duration = 1.0
+rewards = Array[ExtResource("1_lr0al")]([ExtResource("2_6jfr4"), ExtResource("3_6jfr4")])
 metadata/_custom_type_script = "uid://d1qbxvn7m407i"

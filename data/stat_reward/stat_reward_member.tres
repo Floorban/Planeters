@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="StatReward" format=3 uid="uid://dyphygyqmrkkn"]
+
+[ext_resource type="Script" uid="uid://5wgoljesjyol" path="res://system/stats/stat_reward.gd" id="1_uy4vg"]
+[ext_resource type="Resource" uid="uid://dn5di2eias4nk" path="res://data/stat/stat_member.tres" id="2_ypuhc"]
+
+[resource]
+script = ExtResource("1_uy4vg")
+stat = ExtResource("2_ypuhc")
+metadata/_custom_type_script = "uid://5wgoljesjyol"

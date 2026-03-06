@@ -6,3 +6,4 @@ extends Resource
 @export var duration : float
 
 @export var cost : float
+@export var rewards : Array[StatReward]
