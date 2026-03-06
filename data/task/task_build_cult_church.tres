@@ -1,17 +1,27 @@
 [gd_resource type="Resource" script_class="Task" format=3 uid="uid://bquc4n36cd6g3"]
 
 [ext_resource type="Script" uid="uid://d1qbxvn7m407i" path="res://system/task/task.gd" id="1_0v258"]
-[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_cost.gd" id="1_5mlxy"]
-[ext_resource type="Script" uid="uid://5wgoljesjyol" path="res://system/stats/stat_reward.gd" id="1_i5mkq"]
-[ext_resource type="Resource" uid="uid://ccmxfkx5ebeat" path="res://data/stat_cost/stat_cost_coin.tres" id="2_e2h2u"]
-[ext_resource type="Resource" uid="uid://cd6heqlxa2e63" path="res://data/stat_reward/stat_reward_church.tres" id="2_i5mkq"]
-[ext_resource type="Resource" uid="uid://bkw1c4qy8inoe" path="res://data/stat_reward/stat_reward_loyal.tres" id="3_21sj1"]
+[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_e2h2u"]
+[ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_5mlxy"]
+[ext_resource type="Resource" uid="uid://be706omug5uo3" path="res://data/stat/stat_church.tres" id="3_21sj1"]
+
+[sub_resource type="Resource" id="Resource_udme2"]
+script = ExtResource("1_e2h2u")
+stat = ExtResource("2_5mlxy")
+amount = 100
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_5mlxy"]
+script = ExtResource("1_e2h2u")
+stat = ExtResource("3_21sj1")
+amount = 1
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [resource]
 script = ExtResource("1_0v258")
-task_name = "1"
+task_name = "build"
 task_description = "Building new church . . ."
 duration = 5.0
-costs = Array[ExtResource("1_5mlxy")]([ExtResource("2_e2h2u")])
-rewards = Array[ExtResource("1_i5mkq")]([ExtResource("2_i5mkq"), ExtResource("3_21sj1")])
+costs = Array[ExtResource("1_e2h2u")]([SubResource("Resource_udme2")])
+rewards = Array[ExtResource("1_e2h2u")]([SubResource("Resource_5mlxy")])
 metadata/_custom_type_script = "uid://d1qbxvn7m407i"

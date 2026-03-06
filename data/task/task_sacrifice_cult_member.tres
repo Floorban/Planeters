@@ -1,17 +1,34 @@
 [gd_resource type="Resource" script_class="Task" format=3 uid="uid://bk2kqcxwgmm5i"]
 
-[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_cost.gd" id="1_870to"]
 [ext_resource type="Script" uid="uid://d1qbxvn7m407i" path="res://system/task/task.gd" id="1_eo33j"]
-[ext_resource type="Script" uid="uid://5wgoljesjyol" path="res://system/stats/stat_reward.gd" id="1_lr0al"]
-[ext_resource type="Resource" uid="uid://dub0m4qcoo86d" path="res://data/stat_reward/stat_reward_coin.tres" id="2_6jfr4"]
-[ext_resource type="Resource" uid="uid://dqys046settpn" path="res://data/stat_cost/stat_cost_member.tres" id="2_7cqly"]
-[ext_resource type="Resource" uid="uid://bd4rb5i4bbgq0" path="res://data/stat_reward/stat_reward_soul.tres" id="3_6jfr4"]
+[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_qjw1u"]
+[ext_resource type="Resource" uid="uid://dn5di2eias4nk" path="res://data/stat/stat_member.tres" id="2_6jfr4"]
+[ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="3_7cqly"]
+[ext_resource type="Resource" uid="uid://dlwjnv8ca4sps" path="res://data/stat/stat_soul.tres" id="4_nkb3q"]
+
+[sub_resource type="Resource" id="Resource_qjw1u"]
+script = ExtResource("1_qjw1u")
+stat = ExtResource("2_6jfr4")
+amount = 1
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_870to"]
+script = ExtResource("1_qjw1u")
+stat = ExtResource("3_7cqly")
+amount = 5
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_7cqly"]
+script = ExtResource("1_qjw1u")
+stat = ExtResource("4_nkb3q")
+amount = 1
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [resource]
 script = ExtResource("1_eo33j")
-task_name = "3"
+task_name = "sacrifice"
 task_description = "Sacrifice for good . . ."
-duration = 1.0
-costs = Array[ExtResource("1_870to")]([ExtResource("2_7cqly")])
-rewards = Array[ExtResource("1_lr0al")]([ExtResource("2_6jfr4"), ExtResource("3_6jfr4")])
+duration = 1.5
+costs = Array[ExtResource("1_qjw1u")]([SubResource("Resource_qjw1u")])
+rewards = Array[ExtResource("1_qjw1u")]([SubResource("Resource_870to"), SubResource("Resource_7cqly")])
 metadata/_custom_type_script = "uid://d1qbxvn7m407i"

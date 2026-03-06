@@ -11,7 +11,7 @@ func _ready() -> void:
 		stats[slot.stat] = 0
 
 
-func can_afford(costs: Array[StatCost]) -> bool:
+func can_afford(costs: Array[StatChange]) -> bool:
 	if costs.is_empty():
 		return true
 	for cost in costs:
@@ -20,7 +20,7 @@ func can_afford(costs: Array[StatCost]) -> bool:
 	return true
 
 
-func pay_costs(costs:Array[StatCost]) -> void:
+func pay_costs(costs: Array[StatChange]) -> void:
 	for cost in costs:
 		stats[cost.stat] -= cost.amount
 		_update_stat_ui(cost.stat)

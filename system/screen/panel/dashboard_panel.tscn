@@ -107,7 +107,7 @@ texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jth0q")
 theme_override_font_sizes/font_size = 40
-text = "Cities Visited"
+text = "Souls Saved"
 
 [node name="Control" type="Control" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1746207645]
 layout_mode = 2
@@ -128,7 +128,7 @@ texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jth0q")
 theme_override_font_sizes/font_size = 40
-text = "Session Duration"
+text = "Cities Visited"
 
 [node name="Control" type="Control" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1075917682]
 layout_mode = 2

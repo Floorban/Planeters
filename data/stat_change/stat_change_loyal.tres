@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="StatCost" format=3 uid="uid://dfskkf7xpd01b"]
 
-[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_cost.gd" id="1_o0y7m"]
+[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_o0y7m"]
 [ext_resource type="Resource" uid="uid://t4owggge5keo" path="res://data/stat/stat_loyal.tres" id="2_d5s1k"]
 
 [resource]
