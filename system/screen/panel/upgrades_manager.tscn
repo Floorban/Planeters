@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://kseiabufssdw"]
 
-[ext_resource type="PackedScene" uid="uid://beeci88ete627" path="res://system/upgrades/upgrade_button.tscn" id="1_217a5"]
 [ext_resource type="Script" uid="uid://cc47oyb7ydnsv" path="res://system/screen/panel/upgrades_manager.gd" id="1_fmctd"]
-[ext_resource type="Resource" uid="uid://dgrpo1ct5yqe4" path="res://data/upgrade/upgrade_bonus_member.tres" id="3_xuksn"]
+[ext_resource type="PackedScene" uid="uid://b4wv6aim5tyuu" path="res://system/screen/panel/upgrades_panel.tscn" id="2_sbl4j"]
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="4_w3hvi"]
 
-[node name="UpgradesManager" type="Control" unique_id=952982154 node_paths=PackedStringArray("upgrade_btns")]
+[node name="UpgradesManager" type="Control" unique_id=952982154]
+process_mode = 3
 custom_minimum_size = Vector2(600, 820)
 layout_mode = 3
 anchors_preset = 0
@@ -15,72 +15,10 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 1
 script = ExtResource("1_fmctd")
-upgrade_btns = [NodePath("BG/SkillButton"), NodePath("BG/SkillButton/SkillButton2"), NodePath("BG/SkillButton/SkillButton2/SkillButton4"), NodePath("BG/SkillButton/SkillButton2/SkillButton5"), NodePath("BG/SkillButton/SkillButton3"), NodePath("BG/SkillButton/SkillButton3/SkillButton6"), NodePath("BG/SkillButton/SkillButton3/SkillButton7")]
 
-[node name="BG" type="ColorRect" parent="." unique_id=1390644060]
-clip_contents = true
+[node name="UpgradesPanel" parent="." unique_id=378376900 instance=ExtResource("2_sbl4j")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.5106012, 0.5106013, 0.5106011, 0.64705884)
-
-[node name="SkillButton" parent="BG" unique_id=1521863950 instance=ExtResource("1_217a5")]
-layout_mode = 0
-offset_left = 274.0
-offset_top = 438.0
-offset_right = 374.0
-offset_bottom = 538.0
-disabled = false
-upgrade = ExtResource("3_xuksn")
-
-[node name="SkillButton2" parent="BG/SkillButton" unique_id=779054283 instance=ExtResource("1_217a5")]
-layout_mode = 0
-offset_left = -246.0
-offset_right = -196.0
-offset_bottom = 50.0
-upgrade = ExtResource("3_xuksn")
-
-[node name="SkillButton4" parent="BG/SkillButton/SkillButton2" unique_id=475773940 instance=ExtResource("1_217a5")]
-layout_mode = 0
-offset_left = -263.0
-offset_top = -2.0
-offset_right = -213.0
-offset_bottom = 48.0
-upgrade = ExtResource("3_xuksn")
-
-[node name="SkillButton5" parent="BG/SkillButton/SkillButton2" unique_id=551151924 instance=ExtResource("1_217a5")]
-layout_mode = 0
-offset_left = -3.0
-offset_top = -166.0
-offset_right = 47.0
-offset_bottom = -116.0
-upgrade = ExtResource("3_xuksn")
-
-[node name="SkillButton3" parent="BG/SkillButton" unique_id=685709900 instance=ExtResource("1_217a5")]
-layout_mode = 0
-offset_left = 220.0
-offset_top = -2.0
-offset_right = 270.0
-offset_bottom = 48.0
-upgrade = ExtResource("3_xuksn")
-
-[node name="SkillButton6" parent="BG/SkillButton/SkillButton3" unique_id=1365176302 instance=ExtResource("1_217a5")]
-layout_mode = 0
-offset_left = -1.0
-offset_top = -170.0
-offset_right = 49.0
-offset_bottom = -120.0
-upgrade = ExtResource("3_xuksn")
-
-[node name="SkillButton7" parent="BG/SkillButton/SkillButton3" unique_id=292857974 instance=ExtResource("1_217a5")]
-layout_mode = 0
-offset_left = 209.0
-offset_right = 259.0
-offset_bottom = 50.0
-upgrade = ExtResource("3_xuksn")
+color = Color(0.78636825, 0.7863682, 0.786368, 0.3137255)
 
 [node name="UpgradeInfo" type="PanelContainer" parent="." unique_id=211787367]
 custom_minimum_size = Vector2(600, 175)

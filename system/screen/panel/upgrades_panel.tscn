@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://b4wv6aim5tyuu"]
+
+[ext_resource type="PackedScene" uid="uid://beeci88ete627" path="res://system/upgrades/upgrade_button.tscn" id="1_8ebph"]
+[ext_resource type="Script" uid="uid://njuv0rnvudo4" path="res://system/screen/panel/upgrades_panel.gd" id="1_xuksn"]
+[ext_resource type="Resource" uid="uid://dgrpo1ct5yqe4" path="res://data/upgrade/upgrade_bonus_member.tres" id="2_xuksn"]
+
+[node name="UpgradesPanel" type="ColorRect" unique_id=378376900]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5106012, 0.5106013, 0.5106011, 0.64705884)
+script = ExtResource("1_xuksn")
+
+[node name="UpgradesHolder" type="Control" parent="." unique_id=1495249901]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SkillButton" parent="UpgradesHolder" unique_id=1774295761 instance=ExtResource("1_8ebph")]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 438.0
+offset_right = 374.0
+offset_bottom = 538.0
+disabled = false
+upgrade = ExtResource("2_xuksn")
+
+[node name="SkillButton2" parent="UpgradesHolder/SkillButton" unique_id=658719582 instance=ExtResource("1_8ebph")]
+layout_mode = 0
+offset_left = -246.0
+offset_right = -196.0
+offset_bottom = 50.0
+upgrade = ExtResource("2_xuksn")
+
+[node name="SkillButton4" parent="UpgradesHolder/SkillButton/SkillButton2" unique_id=979967631 instance=ExtResource("1_8ebph")]
+layout_mode = 0
+offset_left = -263.0
+offset_top = -2.0
+offset_right = -213.0
+offset_bottom = 48.0
+upgrade = ExtResource("2_xuksn")
+
+[node name="SkillButton5" parent="UpgradesHolder/SkillButton/SkillButton2" unique_id=736001652 instance=ExtResource("1_8ebph")]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -166.0
+offset_right = 47.0
+offset_bottom = -116.0
+upgrade = ExtResource("2_xuksn")
+
+[node name="SkillButton3" parent="UpgradesHolder/SkillButton" unique_id=2131406018 instance=ExtResource("1_8ebph")]
+layout_mode = 0
+offset_left = 220.0
+offset_top = -2.0
+offset_right = 270.0
+offset_bottom = 48.0
+upgrade = ExtResource("2_xuksn")
+
+[node name="SkillButton6" parent="UpgradesHolder/SkillButton/SkillButton3" unique_id=1446229617 instance=ExtResource("1_8ebph")]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -170.0
+offset_right = 49.0
+offset_bottom = -120.0
+upgrade = ExtResource("2_xuksn")
+
+[node name="SkillButton7" parent="UpgradesHolder/SkillButton/SkillButton3" unique_id=1183068071 instance=ExtResource("1_8ebph")]
+layout_mode = 0
+offset_left = 209.0
+offset_right = 259.0
+offset_bottom = 50.0
+upgrade = ExtResource("2_xuksn")

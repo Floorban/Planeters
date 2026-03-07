@@ -26,22 +26,20 @@ func _ready() -> void:
 
 
 func _init_line() -> void:
-	var p := get_parent()
+	var p = get_parent()
 	if p is not UpgradeButton:
+		upgrade_branch.visible = false
 		return
 		
+	upgrade_branch.visible = true
 	upgrade_branch.clear_points()
-	await get_tree().process_frame
+	var my_center = size / 2
+	var parent_center = -position + (p.size / 2)
 	
-	var my_center = global_position + size / 2
-	upgrade_branch.add_point(upgrade_branch.to_local(my_center))
-	
-	var parent_global_center = p.global_position + (p.size / 2)
-	var parent_local_pos = upgrade_branch.to_local(parent_global_center)
-	upgrade_branch.add_point(parent_local_pos)
-	
-	#skill_branch.add_point(global_position + size / 2)
-	#skill_branch.add_point(p.global_position + p.size / 2)
+	upgrade_branch.add_point(my_center)
+	upgrade_branch.add_point(parent_center)
+	upgrade_branch.show_behind_parent = true
+	upgrade_branch.top_level = false
 
 
 func _on_mouse_enter() -> void:

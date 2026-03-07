@@ -3,6 +3,7 @@ class_name UpgradesManager
 
 signal upgrade_changed(upgrade: UpgradeData, level: int)
 
+@onready var upgrades_panel: UpgradesPanel = $UpgradesPanel
 @export var upgrade_btns: Array[UpgradeButton]
 var upgrades: Array[UpgradeData]
 var upgrade_levels: Dictionary[UpgradeData, int] = {}
@@ -16,6 +17,7 @@ var upgrade_levels: Dictionary[UpgradeData, int] = {}
 func _ready() -> void:
 	GameManager.upgrades_manager = self
 	
+	_get_upgrades_buttons()
 	for upgrade_btn in upgrade_btns:
 		upgrades.append(upgrade_btn.upgrade)
 		upgrade_btn.show_upgrade_info.connect(_show_upgrade_info)
@@ -25,6 +27,14 @@ func _ready() -> void:
 		upgrade_levels[upgrade] = 0
 	
 	disable_upgrade_info(true)
+
+
+func _get_upgrades_buttons() -> Array[UpgradeButton]:
+	for b in get_tree().get_nodes_in_group("upgrades"):
+		if b is UpgradeButton:
+			upgrade_btns.append(b)
+	
+	return upgrade_btns
 
 
 func _show_upgrade_info(upgrade: UpgradeData) -> void:
