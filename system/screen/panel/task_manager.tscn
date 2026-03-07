@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://cntb8wqbeiybl"]
+
+[ext_resource type="Script" uid="uid://b4vpwivp8sljd" path="res://system/task/task_manager.gd" id="1_lmd8u"]
+[ext_resource type="Theme" uid="uid://b06wmmglo7w7v" path="res://asset/themes/action_button_theme.tres" id="2_em4ww"]
+[ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="2_ypjg7"]
+[ext_resource type="Script" uid="uid://ct8speor44bgy" path="res://system/screen/button/task_button.gd" id="3_ypjg7"]
+[ext_resource type="Resource" uid="uid://d1b3tjc0uirwo" path="res://data/task/task_get_cult_member.tres" id="4_5poxo"]
+[ext_resource type="Resource" uid="uid://bk2kqcxwgmm5i" path="res://data/task/task_sacrifice_cult_member.tres" id="5_krdqj"]
+[ext_resource type="Resource" uid="uid://bquc4n36cd6g3" path="res://data/task/task_build_cult_church.tres" id="6_itbx4"]
+[ext_resource type="PackedScene" uid="uid://k4eyfmopulqj" path="res://system/task/task_slot.tscn" id="7_fbshx"]
+
+[node name="TaskManager" type="Control" unique_id=1403057597 node_paths=PackedStringArray("task_btns", "task_slots")]
+custom_minimum_size = Vector2(620, 820)
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -660.0
+offset_top = -410.0
+offset_bottom = 410.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("1_lmd8u")
+task_btns = [NodePath("Background/MarginContainer/HBoxContainer/Control/TaskButtons/ButtonGet"), NodePath("Background/MarginContainer/HBoxContainer/Control/TaskButtons/ButonSacrifice"), NodePath("Background/MarginContainer/HBoxContainer/Control/TaskButtons/ButonBuild")]
+task_slots = [NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot1"), NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot2"), NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot3"), NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot4"), NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot5"), NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot6"), NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot7"), NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot8"), NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot9")]
+
+[node name="Background" type="PanelContainer" parent="." unique_id=18296509]
+custom_minimum_size = Vector2(600, 310)
+layout_mode = 0
+offset_right = 660.0
+offset_bottom = 820.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Background" unique_id=182526162]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 20
+
+[node name="Control" type="Control" parent="Background/MarginContainer" unique_id=963386751]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="BG" type="Panel" parent="Background/MarginContainer/Control" unique_id=1313695790]
+custom_minimum_size = Vector2(200, 250)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 250.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/MarginContainer/Control/BG" unique_id=1614034550]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TaskInfo" type="VBoxContainer" parent="Background/MarginContainer/Control/BG/MarginContainer" unique_id=1719834311]
+clip_contents = true
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TaskCostLabel" type="Label" parent="Background/MarginContainer/Control/BG/MarginContainer/TaskInfo" unique_id=596466840]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8666667, 0.85490197, 0.09411765, 1)
+theme_override_fonts/font = ExtResource("2_ypjg7")
+theme_override_font_sizes/font_size = 36
+text = "Task Cost"
+
+[node name="TaskEffectLabel" type="Label" parent="Background/MarginContainer/Control/BG/MarginContainer/TaskInfo" unique_id=2051762569]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 185)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ypjg7")
+theme_override_font_sizes/font_size = 27
+text = "Task Effect dsadasdasdasdasdasdasdasdasdasdasdasdasdsadasdasdasdsadasdasdasdsadsadasdsadasdsadsadasdsadasdasdasdsa"
+autowrap_mode = 3
+clip_text = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/MarginContainer" unique_id=2129212755]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Background/MarginContainer/HBoxContainer" unique_id=403337573]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TaskButtons" type="VBoxContainer" parent="Background/MarginContainer/HBoxContainer/Control" unique_id=293111277]
+custom_minimum_size = Vector2(0, 490)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -490.0
+offset_right = 200.0
+grow_vertical = 0
+theme_override_constants/separation = 24
+
+[node name="ButtonGet" type="Button" parent="Background/MarginContainer/HBoxContainer/Control/TaskButtons" unique_id=1542157615]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme = ExtResource("2_em4ww")
+toggle_mode = true
+text = "Get Member"
+script = ExtResource("3_ypjg7")
+task = ExtResource("4_5poxo")
+
+[node name="ButonSacrifice" type="Button" parent="Background/MarginContainer/HBoxContainer/Control/TaskButtons" unique_id=279778992]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme = ExtResource("2_em4ww")
+toggle_mode = true
+text = "Sacrifice"
+script = ExtResource("3_ypjg7")
+task = ExtResource("5_krdqj")
+
+[node name="ButonBuild" type="Button" parent="Background/MarginContainer/HBoxContainer/Control/TaskButtons" unique_id=1544701901]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme = ExtResource("2_em4ww")
+toggle_mode = true
+text = "Build Church"
+script = ExtResource("3_ypjg7")
+task = ExtResource("6_itbx4")
+
+[node name="Gap" type="Control" parent="Background/MarginContainer/HBoxContainer" unique_id=743543523]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="TaskSlots" type="VBoxContainer" parent="Background/MarginContainer/HBoxContainer" unique_id=1807612860]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TaskSlot1" parent="Background/MarginContainer/HBoxContainer/TaskSlots" unique_id=297168396 instance=ExtResource("7_fbshx")]
+layout_mode = 2
+
+[node name="TaskSlot2" parent="Background/MarginContainer/HBoxContainer/TaskSlots" unique_id=1123278875 instance=ExtResource("7_fbshx")]
+layout_mode = 2
+
+[node name="TaskSlot3" parent="Background/MarginContainer/HBoxContainer/TaskSlots" unique_id=1278553361 instance=ExtResource("7_fbshx")]
+layout_mode = 2
+
+[node name="TaskSlot4" parent="Background/MarginContainer/HBoxContainer/TaskSlots" unique_id=629676167 instance=ExtResource("7_fbshx")]
+layout_mode = 2
+
+[node name="TaskSlot5" parent="Background/MarginContainer/HBoxContainer/TaskSlots" unique_id=114940830 instance=ExtResource("7_fbshx")]
+layout_mode = 2
+
+[node name="TaskSlot6" parent="Background/MarginContainer/HBoxContainer/TaskSlots" unique_id=1483319379 instance=ExtResource("7_fbshx")]
+layout_mode = 2
+
+[node name="TaskSlot7" parent="Background/MarginContainer/HBoxContainer/TaskSlots" unique_id=652257652 instance=ExtResource("7_fbshx")]
+layout_mode = 2
+
+[node name="TaskSlot8" parent="Background/MarginContainer/HBoxContainer/TaskSlots" unique_id=1609270633 instance=ExtResource("7_fbshx")]
+layout_mode = 2
+
+[node name="TaskSlot9" parent="Background/MarginContainer/HBoxContainer/TaskSlots" unique_id=1687080587 instance=ExtResource("7_fbshx")]
+layout_mode = 2

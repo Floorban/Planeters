@@ -1,13 +1,24 @@
 class_name TaskButton
 extends Button
 
+signal show_task_info(task: Task)
+signal hide_task_info()
 signal start_task_request(task: Task, button: TaskButton)
 
-@export var task : Task
+@export var task: Task
 
 
 func _ready() -> void:
+	mouse_entered.connect(_on_mouse_enter)
+	mouse_exited.connect(_on_mouse_exited)
 	toggled.connect(_on_task_btn_toggled)
+
+
+func _on_mouse_enter() -> void:
+	show_task_info.emit(task)
+
+func _on_mouse_exited() -> void:
+	hide_task_info.emit()
 
 
 func _on_task_btn_toggled(toggled_on : bool) -> void:

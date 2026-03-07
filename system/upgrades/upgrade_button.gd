@@ -1,6 +1,9 @@
 extends TextureButton
 class_name UpgradeButton
 
+signal show_upgrade_info(task: Task)
+signal hide_upgrade_info()
+
 @onready var upgrade_level: Label = $UpgradeLevel 
 @onready var upgrade_branch: Line2D = $UpgradeBranch
 
@@ -42,11 +45,11 @@ func _init_line() -> void:
 
 
 func _on_mouse_enter() -> void:
-	GameManager.upgrades_manager.show_upgrade_info(upgrade)
+	show_upgrade_info.emit(upgrade)
 
 
 func _on_mouse_exited() -> void:
-	GameManager.upgrades_manager.disable_upgrade_info(true)
+	hide_upgrade_info.emit()
 
 
 func _on_pressed() -> void:

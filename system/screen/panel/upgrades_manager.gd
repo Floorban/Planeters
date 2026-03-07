@@ -15,15 +15,19 @@ var upgrade_levels: Dictionary[UpgradeData, int] = {}
 
 func _ready() -> void:
 	GameManager.upgrades_manager = self
+	
 	for upgrade_btn in upgrade_btns:
 		upgrades.append(upgrade_btn.upgrade)
+		upgrade_btn.show_upgrade_info.connect(_show_upgrade_info)
+		upgrade_btn.hide_upgrade_info.connect(func(): disable_upgrade_info(true))
+		
 	for upgrade in upgrades:
 		upgrade_levels[upgrade] = 0
 	
 	disable_upgrade_info(true)
 
 
-func show_upgrade_info(upgrade: UpgradeData) -> void:
+func _show_upgrade_info(upgrade: UpgradeData) -> void:
 	disable_upgrade_info(false)
 	upgrade_name_label.text = upgrade.upgrade_name
 	upgrade_effect_label.text = upgrade.upgrade_description

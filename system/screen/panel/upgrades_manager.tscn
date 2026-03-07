@@ -82,7 +82,7 @@ offset_right = 259.0
 offset_bottom = 50.0
 upgrade = ExtResource("3_xuksn")
 
-[node name="UpgradeInfoSlot" type="PanelContainer" parent="." unique_id=211787367]
+[node name="UpgradeInfo" type="PanelContainer" parent="." unique_id=211787367]
 custom_minimum_size = Vector2(600, 175)
 layout_mode = 1
 anchors_preset = 12
@@ -93,14 +93,14 @@ offset_top = -174.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="UpgradeInfoSlot" unique_id=1321732453]
+[node name="MarginContainer" type="MarginContainer" parent="UpgradeInfo" unique_id=1321732453]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="UpgradeControlLabel" type="Label" parent="UpgradeInfoSlot/MarginContainer" unique_id=1890431986]
+[node name="UpgradeControlLabel" type="Label" parent="UpgradeInfo/MarginContainer" unique_id=1890431986]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.5694292, 0.96778554, 0.5030143, 1)
@@ -110,18 +110,18 @@ text = "Click on upgrades to buy  them"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UpgradeInfoSlot/MarginContainer" unique_id=49700313]
+[node name="VBoxContainer" type="VBoxContainer" parent="UpgradeInfo/MarginContainer" unique_id=49700313]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="UpgradeNameLabel" type="Label" parent="UpgradeInfoSlot/MarginContainer/VBoxContainer" unique_id=1409339004]
+[node name="UpgradeNameLabel" type="Label" parent="UpgradeInfo/MarginContainer/VBoxContainer" unique_id=1409339004]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_w3hvi")
 theme_override_font_sizes/font_size = 38
 text = "Upgrade Name"
 
-[node name="UpgradeCostLabel" type="Label" parent="UpgradeInfoSlot/MarginContainer/VBoxContainer" unique_id=87897429]
+[node name="UpgradeCostLabel" type="Label" parent="UpgradeInfo/MarginContainer/VBoxContainer" unique_id=87897429]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8666667, 0.85490197, 0.09411765, 1)
@@ -129,7 +129,7 @@ theme_override_fonts/font = ExtResource("4_w3hvi")
 theme_override_font_sizes/font_size = 28
 text = "Upgrade Cost"
 
-[node name="UpgradeEffectLabel" type="Label" parent="UpgradeInfoSlot/MarginContainer/VBoxContainer" unique_id=1362085208]
+[node name="UpgradeEffectLabel" type="Label" parent="UpgradeInfo/MarginContainer/VBoxContainer" unique_id=1362085208]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 78)
 layout_mode = 2

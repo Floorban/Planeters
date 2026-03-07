@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cl11d77lbfnnt"]
 
-[ext_resource type="Script" uid="uid://bb356ol5u0cn" path="res://system/screen/panel/action_panel.gd" id="1_thcye"]
+[ext_resource type="Script" uid="uid://bltwvuc0y6lta" path="res://system/screen/panel/dashboard_panel.gd" id="1_jth0q"]
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="2_jth0q"]
 
 [node name="DashboardPanel" type="Control" unique_id=952982154]
@@ -12,7 +12,7 @@ offset_bottom = 820.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 1
-script = ExtResource("1_thcye")
+script = ExtResource("1_jth0q")
 
 [node name="BG" type="ColorRect" parent="." unique_id=1390644060]
 layout_mode = 1
