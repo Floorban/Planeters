@@ -12,4 +12,5 @@ script = ExtResource("1_x7hnj")
 stat_name = "Soul"
 stat_description = "May the lore please you"
 stat_icon = SubResource("AtlasTexture_psaaq")
+stat_color = Color(1, 1, 1, 1)
 metadata/_custom_type_script = "uid://df1xrlbakiuj1"

@@ -25,7 +25,7 @@ func _show_task_info(task: Task) -> void:
 	for c in task.costs:
 		task_cost_label.append_text(c.to_rich_text(true) + "\n")
 	for r in task.rewards:
-		task_effect_label.append_text(r.to_rich_text(true) + "\n")
+		task_effect_label.append_text(r.to_rich_text(false) + "\n")
 
 
 func _hide_task_info() -> void:

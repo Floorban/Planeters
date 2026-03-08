@@ -27,4 +27,4 @@ vertical_alignment = 2
 top_level = true
 z_index = -1
 width = 7.0
-default_color = Color(0.36157545, 0.36157548, 0.36157548, 1)
+default_color = Color(0.8845964, 0.88459635, 0.88459635, 0.5137255)

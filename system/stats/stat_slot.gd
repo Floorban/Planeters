@@ -17,6 +17,7 @@ var punch_tween : Tween
 func _ready() -> void:
 	if stat:
 		stat_icon.texture = stat.stat_icon
+		stat_num_label.modulate = stat.stat_color
 	if stats_manager:
 		stats_manager.stat_changed.connect(_on_stat_changed)
 		stats_manager.stat_cost_failed.connect(_pay_with_stat_failed)
@@ -64,7 +65,7 @@ func _finish_value_animation():
 
 
 func _flash_text_with_color(color: Color):
-	var og_color = Color.WHITE
+	var og_color = stat.stat_color
 	stat_num_label.modulate = og_color
 	if flash_tween:
 		flash_tween.kill()
