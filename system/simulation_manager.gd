@@ -6,78 +6,53 @@ extends Node
 @export var loyalty_stat : Stat
 @export var church_stat : Stat
 
-@export var member_coin_rate := 0.05
-@export var member_recruit_rate := 0.01
+@export var member_coin_gain := 5.0
+@export var member_recruit_gain := 1.0
+
+@export var coin_interval := 2.0
+@export var recruit_interval := 5.0
+
+var coin_timer := 0.0
+var recruit_timer := 0.0
+
 @export var members_per_church := 10
 
-@export var coin_tick := 0.2
-@export var recruit_tick := 0.5
 
-var coin_timer : Timer
-var recruit_timer : Timer
-
-
-func _ready():
-	_setup_timers()
-
-
-func _setup_timers():
-	coin_timer = Timer.new()
-	add_child(coin_timer)
-	coin_timer.wait_time = coin_tick
-	coin_timer.autostart = true
-	coin_timer.start()
-	coin_timer.timeout.connect(_coin_tick)
-
-	recruit_timer = Timer.new()
-	add_child(recruit_timer)
-	recruit_timer.wait_time = recruit_tick
-	recruit_timer.autostart = true
-	recruit_timer.start()
-	recruit_timer.timeout.connect(_recruit_tick)
-
-
-func _coin_tick():
+func _process(delta) -> void:
 	if GameManager.is_paused:
 		return
+	
+	coin_timer = _process_timer(coin_timer, coin_interval, delta, _tick.bind(coin_stat, member_coin_gain))
+	if not _has_church_cap():
+		recruit_timer = _process_timer(recruit_timer, recruit_interval, delta, _tick.bind(member_stat, member_recruit_gain))
 
+
+func _process_timer(timer: float, interval: float, delta: float, tick: Callable) -> float:
+	timer += delta
+	
+	while  timer >= interval:
+		tick.call()
+		timer -= interval
+	
+	return timer
+
+
+func _tick(stat: Stat, per_gain: float) -> void:
 	var members = GameManager.stats_manager.get_stat(member_stat)
-	var loyalty = GameManager.stats_manager.get_stat(loyalty_stat)
-
-	var efficiency = _calculate_loyalty_efficiency(loyalty)
-
-	var gain = members * member_coin_rate * efficiency * coin_tick
-
-	GameManager.stats_manager.add_stat(coin_stat, gain)
-
-
-func _recruit_tick():
-
-	if GameManager.is_paused:
-		return
-
-	var members = GameManager.stats_manager.get_stat(member_stat)
-	var loyalty = GameManager.stats_manager.get_stat(loyalty_stat)
-
-	var efficiency = _calculate_loyalty_efficiency(loyalty)
-
-	var gain = members * member_recruit_rate * efficiency * recruit_tick
-
-	GameManager.stats_manager.add_stat(member_stat, gain)
-
-	_apply_church_cap()
+	GameManager.stats_manager.add_stat(stat, members * per_gain)
 
 
 func _calculate_loyalty_efficiency(loyalty: float) -> float:
 	return 1.0 + loyalty * 0.02
 
 
-func _apply_church_cap():
-
+func _has_church_cap() -> bool:
 	var members = GameManager.stats_manager.get_stat(member_stat)
 	var church = GameManager.stats_manager.get_stat(church_stat)
-
 	var max_members = church * members_per_church
-
 	if members > max_members:
 		GameManager.stats_manager.set_stat(member_stat, max_members)
+		GameManager.stats_manager.stat_cost_failed.emit(church_stat)
+		return true
+	
+	return false

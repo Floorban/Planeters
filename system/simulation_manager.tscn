@@ -12,5 +12,3 @@ member_stat = ExtResource("2_iorua")
 coin_stat = ExtResource("3_4q8av")
 loyalty_stat = ExtResource("4_72h0n")
 church_stat = ExtResource("5_uixfa")
-member_coin_rate = 2.0
-member_recruit_rate = 2.0

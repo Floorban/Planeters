@@ -43,6 +43,7 @@ func add_stat(stat: Stat, amount: float) -> void:
 func set_stat(stat: Stat, value: float) -> void:
 	stats[stat] = value
 	stat_changed.emit(stat, stats[stat])
+	stat_cost_failed.emit(stat)
 
 
 func spend_stat(stat: Stat, amount: float) -> bool:
