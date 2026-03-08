@@ -7,8 +7,8 @@ extends Control
 @onready var stat_icon: TextureRect = $StatIcon
 @onready var stat_num_label: Label = $StatNumLabel
 
-var target_value : float = 0
-var displayed_value : float = 0
+var target_value : float = 0.0
+var displayed_value : float = 0.0
 
 var flash_tween : Tween
 var punch_tween : Tween
@@ -31,13 +31,14 @@ func _process(delta):
 
 	if abs(diff) < 0.5:
 		displayed_value = target_value
-		
+	
+	# UI shows int but system uses float
 	var new_value := int(displayed_value)
 	if stat_num_label.text != str(new_value):
 		stat_num_label.text = str(new_value)
 
 
-func _on_stat_changed(changed_stat: Stat, value: int) -> void:
+func _on_stat_changed(changed_stat: Stat, value: float) -> void:
 	if changed_stat != stat:
 		return
 

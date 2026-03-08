@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://0uiql7ayuch8"]
+
+[ext_resource type="Script" uid="uid://b8yvtewv6lqst" path="res://system/simulation_manager.gd" id="1_wuwed"]
+[ext_resource type="Resource" uid="uid://dn5di2eias4nk" path="res://data/stat/stat_member.tres" id="2_iorua"]
+[ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="3_4q8av"]
+[ext_resource type="Resource" uid="uid://t4owggge5keo" path="res://data/stat/stat_loyal.tres" id="4_72h0n"]
+[ext_resource type="Resource" uid="uid://be706omug5uo3" path="res://data/stat/stat_church.tres" id="5_uixfa"]
+
+[node name="SimulationManager" type="Node" unique_id=276306543]
+script = ExtResource("1_wuwed")
+member_stat = ExtResource("2_iorua")
+coin_stat = ExtResource("3_4q8av")
+loyalty_stat = ExtResource("4_72h0n")
+church_stat = ExtResource("5_uixfa")
+member_coin_rate = 2.0
+member_recruit_rate = 2.0

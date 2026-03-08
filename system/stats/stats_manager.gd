@@ -13,13 +13,13 @@ var multipliers : Dictionary = {}
 func _ready() -> void:
 	GameManager.stats_manager = self
 	for s in starting_stats:
-		stats[s.stat] = 0
+		stats[s.stat] = 0.0
 		add_stat(s.stat, s.amount)
 		multipliers[s.stat] = 1.0
 
 
 func get_stat(stat: Stat) -> int:
-	return stats.get(stat, 0)
+	return stats.get(stat, 0.0)
 
 
 func get_multiplier(stat: Stat) -> float:
@@ -32,16 +32,20 @@ func update_multiplier(stat: Stat, amount : float) -> void:
 	# probably some stuff showing up when hovering the aciton buttons (e.g. how many ppl getting from next cult action )
 
 
-func add_stat(stat: Stat, amount: int) -> void:
-	#stats[stat] += amount
-	# int or float here? check again later
-	var final = int(amount * get_multiplier(stat))
+func add_stat(stat: Stat, amount: float) -> void:
+	# float in the system but ui shows int
+	var final = amount * get_multiplier(stat)
 	stats[stat] += final
-	
 	stat_changed.emit(stat, stats[stat])
 
 
-func spend_stat(stat: Stat, amount: int) -> bool:
+# for capping cult member from church num
+func set_stat(stat: Stat, value: float) -> void:
+	stats[stat] = value
+	stat_changed.emit(stat, stats[stat])
+
+
+func spend_stat(stat: Stat, amount: float) -> bool:
 	if stats[stat] < amount:
 		return false
 	
