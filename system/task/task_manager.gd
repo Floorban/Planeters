@@ -30,6 +30,8 @@ func _show_task_info(task: Task) -> void:
 	_hide_task_info()
 	for c in task.costs:
 		task_cost_label.append_text(c.to_rich_text(get_modified_cost(c), true) + "\n")
+		if (get_modified_cost(c) <= 0.0):
+			push_error("cost is below 0 error")
 	for r in task.rewards:
 		task_effect_label.append_text(r.to_rich_text(get_modified_reward(r), false) + "\n")
 	task_duration_label.append_text("Duration: " + str(task.duration * get_duration_multiplier(task)))
@@ -108,6 +110,7 @@ func modify_duration(task: Task, amount: float):
 	if duration_multipliers[task] <= 0.05:
 		push_error("task duration too short")
 		duration_multipliers[task] = 0.05
+
 
 func add_task_capacity(amount: int) -> void:
 	max_parallel_tasks += amount

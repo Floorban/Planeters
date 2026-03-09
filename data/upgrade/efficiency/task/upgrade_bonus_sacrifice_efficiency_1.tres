@@ -24,7 +24,7 @@ metadata/_custom_type_script = "uid://bbx72fbwp681v"
 [sub_resource type="Resource" id="Resource_pn6cj"]
 script = ExtResource("5_veysn")
 task = ExtResource("6_0heky")
-change_amount = -0.1
+change_amount = -0.15
 metadata/_custom_type_script = "uid://by2eapd0unlmt"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h3cru"]
@@ -36,7 +36,6 @@ script = ExtResource("5_pn6cj")
 upgrade_name = "better at killing I"
 upgrade_description = "make sacrifice someone else as easy as saying f**k you"
 upgrade_icon = SubResource("AtlasTexture_h3cru")
-max_level = 2
 costs = Array[ExtResource("1_7l4cn")]([SubResource("Resource_7l4cn"), SubResource("Resource_veysn")])
 effects = Array[ExtResource("3_veysn")]([SubResource("Resource_pn6cj")])
 metadata/_custom_type_script = "uid://emabm8r8bin6"

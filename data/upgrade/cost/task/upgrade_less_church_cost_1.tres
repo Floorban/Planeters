@@ -20,15 +20,15 @@ stat = ExtResource("3_vo7v5")
 amount = 10.0
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
-[sub_resource type="Resource" id="Resource_w8bsl"]
+[sub_resource type="Resource" id="Resource_w884y"]
 script = ExtResource("1_w884y")
 stat = ExtResource("2_1joj5")
-amount = -0.4
+amount = -0.2
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
-[sub_resource type="Resource" id="Resource_2xmlt"]
+[sub_resource type="Resource" id="Resource_1joj5"]
 script = ExtResource("5_a4uni")
-stat_change = SubResource("Resource_w8bsl")
+stat_change = SubResource("Resource_w884y")
 metadata/_custom_type_script = "uid://dchi345skej2q"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o5qvc"]
@@ -42,5 +42,5 @@ upgrade_description = "Building a new church cost less now"
 upgrade_icon = SubResource("AtlasTexture_o5qvc")
 max_level = 1
 costs = Array[ExtResource("1_w884y")]([SubResource("Resource_075x6"), SubResource("Resource_0xfud")])
-effects = Array[ExtResource("4_ejhdm")]([SubResource("Resource_2xmlt")])
+effects = Array[ExtResource("4_ejhdm")]([SubResource("Resource_1joj5")])
 metadata/_custom_type_script = "uid://emabm8r8bin6"

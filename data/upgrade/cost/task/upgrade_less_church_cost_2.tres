@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_547xa"]
 [ext_resource type="Resource" uid="uid://dlwjnv8ca4sps" path="res://data/stat/stat_soul.tres" id="3_g2eib"]
 [ext_resource type="Script" uid="uid://oiijucci5mx5" path="res://system/upgrades/upgrade_effect.gd" id="4_27ho1"]
-[ext_resource type="Resource" uid="uid://clnldr1m7se12" path="res://data/upgrade_effect/cost/less_cost_church.tres" id="5_ulck6"]
+[ext_resource type="Script" uid="uid://dchi345skej2q" path="res://data/upgrade_effect/cost/less_cost_effect.gd" id="5_82k6d"]
 [ext_resource type="Script" uid="uid://emabm8r8bin6" path="res://system/upgrades/upgrade_data.gd" id="6_h3x7k"]
 [ext_resource type="Texture2D" uid="uid://bijpbkg0mxu3y" path="res://asset/TinyTomes_Atlas_16x16.png" id="7_rgapq"]
 
@@ -20,6 +20,17 @@ stat = ExtResource("3_g2eib")
 amount = 50.0
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
+[sub_resource type="Resource" id="Resource_547xa"]
+script = ExtResource("1_82k6d")
+stat = ExtResource("2_547xa")
+amount = -0.1
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_g2eib"]
+script = ExtResource("5_82k6d")
+stat_change = SubResource("Resource_547xa")
+metadata/_custom_type_script = "uid://dchi345skej2q"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_kpkxp"]
 atlas = ExtResource("7_rgapq")
 region = Rect2(0, 0, 16, 16)
@@ -29,6 +40,7 @@ script = ExtResource("6_h3x7k")
 upgrade_name = "Cheap Church II"
 upgrade_description = "Building a new church cost less now"
 upgrade_icon = SubResource("AtlasTexture_kpkxp")
+max_level = 2
 costs = Array[ExtResource("1_82k6d")]([SubResource("Resource_82k6d"), SubResource("Resource_0xfud")])
-effects = Array[ExtResource("4_27ho1")]([ExtResource("5_ulck6")])
+effects = Array[ExtResource("4_27ho1")]([SubResource("Resource_g2eib")])
 metadata/_custom_type_script = "uid://emabm8r8bin6"
