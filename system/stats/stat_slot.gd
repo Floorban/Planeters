@@ -12,6 +12,9 @@ var flash_tween : Tween
 var punch_tween : Tween
 
 @onready var stat_info: PanelContainer = %StatInfo
+@onready var stat_name: Label = %StatName
+@onready var stat_description: Label = %StatDescription
+@onready var stat_detail: Label = %StatDetail
 
 
 func _ready() -> void:
@@ -24,6 +27,9 @@ func _ready() -> void:
 
 
 func _set_stat_info_panel() -> void:
+	stat_name.text = stat.stat_name
+	stat_description.text = stat.stat_description
+	#stat_detail.text = stat.stat_color
 	if stat_info.visible:
 		stat_info.hide()
 	else:
@@ -49,7 +55,6 @@ func _on_stat_changed(changed_stat: Stat, value: float) -> void:
 	if changed_stat != stat:
 		return
 
-	print("ll")
 	var previous_target = target_value
 	target_value = value
 

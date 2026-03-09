@@ -11,6 +11,7 @@ var multipliers : Dictionary = {}
 
 @export var stat_slots: Array[StatSlot]
 
+
 func _ready() -> void:
 	GameManager.stats_manager = self
 	
@@ -39,8 +40,7 @@ func update_multiplier(stat: Stat, amount : float) -> void:
 
 
 func add_stat(stat: Stat, amount: float) -> void:
-	if amount == 0.0:
-		print("amount is 0")
+	if amount < 1.0:
 		return
 	# float in the system but ui shows int
 	var final = amount * get_multiplier(stat)

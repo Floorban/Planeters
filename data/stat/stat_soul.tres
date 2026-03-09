@@ -10,7 +10,7 @@ region = Rect2(144, 32, 16, 16)
 [resource]
 script = ExtResource("1_oetkd")
 stat_name = "Soul"
-stat_description = "May the lore please you"
+stat_description = "They never die, they are here with you forever"
 stat_icon = SubResource("AtlasTexture_oetkd")
 stat_color = Color(1, 1, 1, 1)
 metadata/_custom_type_script = "uid://df1xrlbakiuj1"

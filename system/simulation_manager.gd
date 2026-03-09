@@ -6,11 +6,11 @@ extends Node
 @export var loyalty_stat : Stat
 @export var church_stat : Stat
 
-@export var member_coin_gain := 5.0
-@export var member_recruit_gain := 1.0
+@export var member_coin_gain := 1.0
+@export var member_recruit_gain := 0.1
 
-@export var coin_interval := 2.0
-@export var recruit_interval := 5.0
+@export var coin_interval := 5.0
+@export var recruit_interval := 10.0
 
 var coin_timer := 0.0
 var recruit_timer := 0.0
