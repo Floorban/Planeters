@@ -31,14 +31,14 @@ func _on_mouse_exited() -> void:
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_RIGHT:
+		if event.button_index == MOUSE_BUTTON_RIGHT or event.button_index == MOUSE_BUTTON_MIDDLE:
 			dragging = event.pressed
 			accept_event() 
 
 
 func _input(event) -> void:
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_RIGHT:
+		if event.button_index == MOUSE_BUTTON_RIGHT or event.button_index == MOUSE_BUTTON_MIDDLE:
 			dragging = event.pressed
 		
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
