@@ -26,6 +26,7 @@ func _ready() -> void:
 		
 	stat_info.hide()
 
+
 func _set_stat_info_panel() -> void:
 	stat_name.text = stat.stat_name
 	stat_description.text = stat.stat_description	
@@ -68,6 +69,7 @@ func _pay_with_stat_failed(changed_stat: Stat) -> void:
 	if changed_stat != stat:
 		return
 	_flash_text_with_color(Color(0.796, 0.0, 0.0, 1.0))
+	_finish_value_animation()
 
 
 func _finish_value_animation():

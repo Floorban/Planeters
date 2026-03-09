@@ -8,9 +8,11 @@ var sub_panels : Array[SubPanel]
 var tab_btns: Array[TabBtn]
 var tab_group := ButtonGroup.new()
 
+@onready var camera: Camera = %Camera
 
 func _ready() -> void:
 	_init_sub_panels()
+	camera.global_position = global_position + size / 2
 
 
 func _init_sub_panels() -> void:

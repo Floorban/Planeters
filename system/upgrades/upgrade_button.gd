@@ -22,8 +22,9 @@ func _ready() -> void:
 	_init_line()
 	if upgrade:
 		texture_normal = upgrade.upgrade_icon
-	if get_parent() is UpgradeButton:
-		hide()
+	if not Engine.is_editor_hint():
+		if get_parent() is UpgradeButton:
+			hide()
 
 
 func _init_line() -> void:

@@ -7,7 +7,7 @@ load_path = "res://.godot/imported/Pouch_011_TravellersPouch_BigWander(16x16).pn
 
 [resource]
 script = ExtResource("1_yh2nm")
-stat_name = "Coins"
+stat_name = "Coin"
 stat_description = "Made of 0.09% real gold"
 stat_icon = SubResource("CompressedTexture2D_yh2nm")
 stat_color = Color(0.8743592, 0.78042495, 0.23073676, 1)

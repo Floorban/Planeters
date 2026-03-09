@@ -9,3 +9,5 @@ var is_paused := false
 
 func check_game_state(paused: bool) -> void:
 	is_paused = paused
+
+var camera : Camera

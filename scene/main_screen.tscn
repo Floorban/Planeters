@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://chr6sq2bcitbf" path="res://system/screen/panel/overview_panel.tscn" id="5_06ml0"]
 [ext_resource type="PackedScene" uid="uid://b0vsnwsdvdf6f" path="res://system/screen/panel/settings_panel.tscn" id="6_kw7ci"]
 [ext_resource type="PackedScene" uid="uid://cntb8wqbeiybl" path="res://system/screen/panel/task_manager.tscn" id="8_1ov7q"]
+[ext_resource type="Script" uid="uid://6bj883f8j7nx" path="res://system/autoload/camera.gd" id="10_1ov7q"]
 [ext_resource type="PackedScene" uid="uid://dpdrr8e6dwttd" path="res://system/stats/stats_manager.tscn" id="16_n3x1c"]
 
 [node name="MainScreen" type="Control" unique_id=1745498329]
@@ -92,3 +93,8 @@ btn_display_name = "Settings"
 [node name="StatsManager" parent="MarginContainer/Background" unique_id=654268750 instance=ExtResource("16_n3x1c")]
 unique_name_in_owner = true
 layout_mode = 1
+
+[node name="Camera" type="Camera2D" parent="." unique_id=971822879]
+unique_name_in_owner = true
+position = Vector2(970, 518)
+script = ExtResource("10_1ov7q")
