@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://beeci88ete627" path="res://system/upgrades/upgrade_button.tscn" id="1_8ebph"]
 [ext_resource type="Script" uid="uid://njuv0rnvudo4" path="res://system/screen/panel/upgrades_panel.gd" id="1_xuksn"]
 [ext_resource type="Resource" uid="uid://dgrpo1ct5yqe4" path="res://data/upgrade/upgrade_bonus_member.tres" id="2_xuksn"]
+[ext_resource type="Resource" uid="uid://bq51vnl7tdg1u" path="res://data/upgrade/upgrade_bonus_task_capacity.tres" id="4_06apo"]
 [ext_resource type="Resource" uid="uid://dcs5y3xc0d0mm" path="res://data/upgrade/upgrade_bonus_sacrifice_reward_coin.tres" id="4_w3hvi"]
 [ext_resource type="Resource" uid="uid://dtg8kdbihtld3" path="res://data/upgrade/upgrade_less_church_cost.tres" id="5_7wgad"]
 
@@ -38,7 +39,7 @@ layout_mode = 0
 offset_left = -246.0
 offset_right = -196.0
 offset_bottom = 50.0
-upgrade = ExtResource("2_xuksn")
+upgrade = ExtResource("4_06apo")
 
 [node name="SkillButton4" parent="UpgradesHolder/SkillButton/SkillButton2" unique_id=979967631 instance=ExtResource("1_8ebph")]
 layout_mode = 0
@@ -46,7 +47,7 @@ offset_left = -263.0
 offset_top = -2.0
 offset_right = -213.0
 offset_bottom = 48.0
-upgrade = ExtResource("2_xuksn")
+upgrade = ExtResource("4_06apo")
 
 [node name="SkillButton5" parent="UpgradesHolder/SkillButton/SkillButton2" unique_id=736001652 instance=ExtResource("1_8ebph")]
 layout_mode = 0
@@ -54,7 +55,7 @@ offset_left = -3.0
 offset_top = -166.0
 offset_right = 47.0
 offset_bottom = -116.0
-upgrade = ExtResource("2_xuksn")
+upgrade = ExtResource("4_06apo")
 
 [node name="SkillButton3" parent="UpgradesHolder/SkillButton" unique_id=2131406018 instance=ExtResource("1_8ebph")]
 layout_mode = 0
@@ -82,9 +83,9 @@ upgrade = ExtResource("4_w3hvi")
 [node name="SkillButton2" parent="UpgradesHolder" unique_id=1732551444 instance=ExtResource("1_8ebph")]
 layout_mode = 0
 offset_left = 311.0
-offset_top = 799.0
+offset_top = 797.0
 offset_right = 411.0
-offset_bottom = 899.0
+offset_bottom = 897.0
 disabled = false
 upgrade = ExtResource("5_7wgad")
 

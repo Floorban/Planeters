@@ -92,6 +92,11 @@ func _refresh_task_buttons() -> void:
 			b.button_pressed = false
 
 
+func add_task_capacity(amount: int) -> void:
+	max_parallel_tasks += amount
+	_refresh_task_buttons()
+
+
 func get_soul_gain_per_sacrifice() -> float:
 	for b in task_btns:
 		if b.task.task_name == "Sacrifice":

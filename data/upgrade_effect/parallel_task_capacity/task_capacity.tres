@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="TaskCapacityEffect" format=3 uid="uid://bvcpkpugejcif"]
+
+[ext_resource type="Script" uid="uid://0k1cbvkcpwm6" path="res://data/upgrade_effect/parallel_task_capacity/task_capacity_effect.gd" id="1_fyvbf"]
+
+[resource]
+script = ExtResource("1_fyvbf")
+metadata/_custom_type_script = "uid://0k1cbvkcpwm6"
