@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://ds2vjvc2lpntf"]
+
+[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_k3afj"]
+[ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_u7k8v"]
+[ext_resource type="Script" uid="uid://oiijucci5mx5" path="res://system/upgrades/upgrade_effect.gd" id="3_r30cu"]
+[ext_resource type="Script" uid="uid://lxfy1g4oypy7" path="res://data/upgrade_effect/production/bonus_production_effect.gd" id="4_ragfu"]
+[ext_resource type="Resource" uid="uid://dn5di2eias4nk" path="res://data/stat/stat_member.tres" id="5_qauj1"]
+[ext_resource type="Script" uid="uid://emabm8r8bin6" path="res://system/upgrades/upgrade_data.gd" id="6_mkc32"]
+[ext_resource type="Texture2D" uid="uid://bijpbkg0mxu3y" path="res://asset/TinyTomes_Atlas_16x16.png" id="7_vv77i"]
+
+[sub_resource type="Resource" id="Resource_k0qrf"]
+script = ExtResource("1_k3afj")
+stat = ExtResource("2_u7k8v")
+amount = 100.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_emmih"]
+script = ExtResource("1_k3afj")
+stat = ExtResource("5_qauj1")
+amount = 1
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_a7l6t"]
+script = ExtResource("4_ragfu")
+stat_change = SubResource("Resource_emmih")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ylsh"]
+atlas = ExtResource("7_vv77i")
+region = Rect2(0, 32, 16, 16)
+
+[resource]
+script = ExtResource("6_mkc32")
+upgrade_name = "Pursuade II"
+upgrade_description = "getting more cult members every cult session"
+upgrade_icon = SubResource("AtlasTexture_4ylsh")
+costs = Array[ExtResource("1_k3afj")]([SubResource("Resource_k0qrf")])
+effects = Array[ExtResource("3_r30cu")]([SubResource("Resource_a7l6t")])
+metadata/_custom_type_script = "uid://emabm8r8bin6"

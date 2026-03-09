@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://dcs5y3xc0d0mm"]
+
+[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_no0cw"]
+[ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_iuufu"]
+[ext_resource type="Script" uid="uid://oiijucci5mx5" path="res://system/upgrades/upgrade_effect.gd" id="3_vfeau"]
+[ext_resource type="Resource" uid="uid://brt8u70lg65k1" path="res://data/upgrade_effect/production/bonus_production_sacrifice_coin.tres" id="4_opqnb"]
+[ext_resource type="Script" uid="uid://emabm8r8bin6" path="res://system/upgrades/upgrade_data.gd" id="5_kw8ka"]
+[ext_resource type="Texture2D" uid="uid://bijpbkg0mxu3y" path="res://asset/TinyTomes_Atlas_16x16.png" id="6_5tiiw"]
+
+[sub_resource type="Resource" id="Resource_075x6"]
+script = ExtResource("1_no0cw")
+stat = ExtResource("2_iuufu")
+amount = 50
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_075x6"]
+atlas = ExtResource("6_5tiiw")
+region = Rect2(0, 16, 16, 16)
+
+[resource]
+script = ExtResource("5_kw8ka")
+upgrade_name = "I want more I"
+upgrade_description = "Get more coins from each sacrificed member"
+upgrade_icon = SubResource("AtlasTexture_075x6")
+costs = Array[ExtResource("1_no0cw")]([SubResource("Resource_075x6")])
+effects = Array[ExtResource("3_vfeau")]([ExtResource("4_opqnb")])
+metadata/_custom_type_script = "uid://emabm8r8bin6"

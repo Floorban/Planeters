@@ -2,12 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://beeci88ete627" path="res://system/upgrades/upgrade_button.tscn" id="1_8ebph"]
 [ext_resource type="Script" uid="uid://njuv0rnvudo4" path="res://system/screen/panel/upgrades_panel.gd" id="1_xuksn"]
-[ext_resource type="Resource" uid="uid://dgrpo1ct5yqe4" path="res://data/upgrade/bonus_production/task/upgrade_bonus_member.tres" id="2_xuksn"]
-[ext_resource type="Resource" uid="uid://bq51vnl7tdg1u" path="res://data/upgrade/bonus_production/task/upgrade_bonus_task_capacity.tres" id="4_06apo"]
+[ext_resource type="Resource" uid="uid://dgrpo1ct5yqe4" path="res://data/upgrade/bonus_production/task/upgrade_bonus_member_1.tres" id="2_xuksn"]
+[ext_resource type="Resource" uid="uid://bq51vnl7tdg1u" path="res://data/upgrade/bonus_production/task/upgrade_bonus_task_capacity_1.tres" id="4_06apo"]
 [ext_resource type="Resource" uid="uid://dtg8kdbihtld3" path="res://data/upgrade/cost/task/upgrade_less_church_cost_1.tres" id="5_7wgad"]
+[ext_resource type="Resource" uid="uid://ds2vjvc2lpntf" path="res://data/upgrade/bonus_production/task/upgrade_bonus_member_2.tres" id="6_aiiej"]
+[ext_resource type="Resource" uid="uid://dcs5y3xc0d0mm" path="res://data/upgrade/bonus_production/task/upgrade_bonus_sacrifice_reward_coin_1.tres" id="6_sl1cx"]
+[ext_resource type="Resource" uid="uid://bkfa7uatxtx3r" path="res://data/upgrade/bonus_production/task/upgrade_bonus_member_3.tres" id="7_8oasj"]
+[ext_resource type="Resource" uid="uid://bmdtkvxqwe1fs" path="res://data/upgrade/bonus_production/task/upgrade_bonus_sacrifice_reward_coin_2.tres" id="7_aaai4"]
 [ext_resource type="Resource" uid="uid://btqpyu3t3n7ru" path="res://data/upgrade/efficiency/task/upgrade_bonus_cult_efficiency_1.tres" id="7_ku35v"]
 [ext_resource type="Resource" uid="uid://prbqvkesnjkj" path="res://data/upgrade/efficiency/task/upgrade_bonus_build_efficiency_2.tres" id="7_q6wcj"]
 [ext_resource type="Resource" uid="uid://cko3b266tvvdv" path="res://data/upgrade/efficiency/task/upgrade_bonus_sacrifice_efficiency_2.tres" id="8_1jwj0"]
+[ext_resource type="Resource" uid="uid://c7ce2nm0swd8a" path="res://data/upgrade/bonus_production/task/upgrade_bonus_sacrifice_reward_coin_3.tres" id="8_83uh7"]
 [ext_resource type="Resource" uid="uid://cuuaogsk3vfhq" path="res://data/upgrade/cost/task/upgrade_less_church_cost_2.tres" id="8_tyxwq"]
 [ext_resource type="Resource" uid="uid://buxer2127sv6n" path="res://data/upgrade/efficiency/task/upgrade_bonus_sacrifice_efficiency_1.tres" id="8_uog2s"]
 [ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="8_ywqx8"]
@@ -18,6 +23,8 @@
 [ext_resource type="Resource" uid="uid://d1b3tjc0uirwo" path="res://data/task/task_get_cult_member.tres" id="12_aaai4"]
 [ext_resource type="Script" uid="uid://emabm8r8bin6" path="res://system/upgrades/upgrade_data.gd" id="13_83uh7"]
 [ext_resource type="Resource" uid="uid://dlwjnv8ca4sps" path="res://data/stat/stat_soul.tres" id="13_wj7va"]
+[ext_resource type="Resource" uid="uid://brj8mr7wssnyd" path="res://data/upgrade/bonus_production/task/upgrade_bonus_task_capacity_2.tres" id="24_otpe7"]
+[ext_resource type="Resource" uid="uid://dyf1hexff0mt6" path="res://data/upgrade_effect/task_efficiency/task_efficiency_cult.tres" id="24_v2ugi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ylsh"]
 atlas = ExtResource("9_kpkxp")
@@ -26,6 +33,26 @@ region = Rect2(0, 32, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_0h4f8"]
 atlas = ExtResource("9_kpkxp")
 region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8oasj"]
+atlas = ExtResource("9_kpkxp")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otpe7"]
+atlas = ExtResource("9_kpkxp")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_075x6"]
+atlas = ExtResource("9_kpkxp")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2ugi"]
+atlas = ExtResource("9_kpkxp")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w57fs"]
+atlas = ExtResource("9_kpkxp")
+region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o5qvc"]
 atlas = ExtResource("9_kpkxp")
@@ -81,6 +108,28 @@ metadata/_custom_type_script = "uid://emabm8r8bin6"
 [sub_resource type="AtlasTexture" id="AtlasTexture_wrdhn"]
 atlas = ExtResource("9_kpkxp")
 region = Rect2(48, 96, 16, 16)
+
+[sub_resource type="Resource" id="Resource_xig6h"]
+script = ExtResource("8_ywqx8")
+stat = ExtResource("9_jg2yw")
+amount = 200.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_7fbxx"]
+script = ExtResource("8_ywqx8")
+stat = ExtResource("13_wj7va")
+amount = 30.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_w57fs"]
+script = ExtResource("13_83uh7")
+upgrade_name = "CULT FASTER I"
+upgrade_description = "cult action duration is shorter"
+upgrade_icon = SubResource("AtlasTexture_ywqx8")
+max_level = 1
+costs = Array[ExtResource("8_ywqx8")]([SubResource("Resource_xig6h"), SubResource("Resource_7fbxx")])
+effects = Array[ExtResource("10_wj7va")]([ExtResource("24_v2ugi")])
+metadata/_custom_type_script = "uid://emabm8r8bin6"
 
 [node name="UpgradesPanel" type="ColorRect" unique_id=378376900]
 anchors_preset = 15
@@ -182,8 +231,8 @@ upgrade = ExtResource("4_06apo")
 layout_mode = 0
 offset_top = -407.0
 offset_bottom = -307.0
-texture_normal = SubResource("AtlasTexture_0h4f8")
-upgrade = ExtResource("4_06apo")
+texture_normal = SubResource("AtlasTexture_4ylsh")
+upgrade = ExtResource("2_xuksn")
 
 [node name="UpgradeButton1" parent="UpgradesHolder/UpgradeButton1/UpgradeButton2/UpgradeButton1" unique_id=851942572 instance=ExtResource("1_8ebph")]
 layout_mode = 0
@@ -191,8 +240,8 @@ offset_left = 238.0
 offset_top = -178.0
 offset_right = 338.0
 offset_bottom = -78.0
-texture_normal = SubResource("AtlasTexture_0h4f8")
-upgrade = ExtResource("4_06apo")
+texture_normal = SubResource("AtlasTexture_8oasj")
+upgrade = ExtResource("6_aiiej")
 
 [node name="UpgradeButton2" parent="UpgradesHolder/UpgradeButton1/UpgradeButton2/UpgradeButton1" unique_id=746472321 instance=ExtResource("1_8ebph")]
 layout_mode = 0
@@ -200,15 +249,15 @@ offset_left = 238.0
 offset_top = 181.0
 offset_right = 338.0
 offset_bottom = 281.0
-texture_normal = SubResource("AtlasTexture_0h4f8")
-upgrade = ExtResource("4_06apo")
+texture_normal = SubResource("AtlasTexture_otpe7")
+upgrade = ExtResource("7_8oasj")
 
 [node name="UpgradeButton2" parent="UpgradesHolder/UpgradeButton1/UpgradeButton2" unique_id=551986603 instance=ExtResource("1_8ebph")]
 layout_mode = 0
 offset_left = 321.0
 offset_right = 421.0
-texture_normal = SubResource("AtlasTexture_0h4f8")
-upgrade = ExtResource("4_06apo")
+texture_normal = SubResource("AtlasTexture_075x6")
+upgrade = ExtResource("6_sl1cx")
 
 [node name="UpgradeButton1" parent="UpgradesHolder/UpgradeButton1/UpgradeButton2/UpgradeButton2" unique_id=1232642099 instance=ExtResource("1_8ebph")]
 layout_mode = 0
@@ -216,8 +265,8 @@ offset_left = 240.0
 offset_top = -180.0
 offset_right = 340.0
 offset_bottom = -80.0
-texture_normal = SubResource("AtlasTexture_0h4f8")
-upgrade = ExtResource("4_06apo")
+texture_normal = SubResource("AtlasTexture_v2ugi")
+upgrade = ExtResource("7_aaai4")
 
 [node name="UpgradeButton2" parent="UpgradesHolder/UpgradeButton1/UpgradeButton2/UpgradeButton2" unique_id=1885752956 instance=ExtResource("1_8ebph")]
 layout_mode = 0
@@ -225,8 +274,8 @@ offset_left = 237.0
 offset_top = 187.0
 offset_right = 337.0
 offset_bottom = 287.0
-texture_normal = SubResource("AtlasTexture_0h4f8")
-upgrade = ExtResource("4_06apo")
+texture_normal = SubResource("AtlasTexture_w57fs")
+upgrade = ExtResource("8_83uh7")
 
 [node name="UpgradeButton3" parent="UpgradesHolder/UpgradeButton1" unique_id=1990525057 instance=ExtResource("1_8ebph")]
 layout_mode = 0
@@ -292,7 +341,7 @@ layout_mode = 0
 offset_top = -407.0
 offset_bottom = -307.0
 texture_normal = SubResource("AtlasTexture_0h4f8")
-upgrade = ExtResource("4_06apo")
+upgrade = SubResource("Resource_w57fs")
 
 [node name="UpgradeButton1" parent="UpgradesHolder/UpgradeButton1/UpgradeButton4" unique_id=953264648 instance=ExtResource("1_8ebph")]
 layout_mode = 0
@@ -301,14 +350,14 @@ offset_top = -382.0
 offset_right = -224.0
 offset_bottom = -282.0
 texture_normal = SubResource("AtlasTexture_0h4f8")
-upgrade = ExtResource("4_06apo")
+upgrade = ExtResource("24_otpe7")
 
 [node name="UpgradeButton2" parent="UpgradesHolder/UpgradeButton1/UpgradeButton4" unique_id=1999453457 instance=ExtResource("1_8ebph")]
 layout_mode = 0
 offset_top = -382.0
 offset_bottom = -282.0
 texture_normal = SubResource("AtlasTexture_0h4f8")
-upgrade = ExtResource("4_06apo")
+upgrade = ExtResource("24_otpe7")
 
 [node name="UpgradeButton3" parent="UpgradesHolder/UpgradeButton1/UpgradeButton4" unique_id=1927284749 instance=ExtResource("1_8ebph")]
 layout_mode = 0
@@ -317,7 +366,7 @@ offset_top = -382.0
 offset_right = 415.0
 offset_bottom = -282.0
 texture_normal = SubResource("AtlasTexture_0h4f8")
-upgrade = ExtResource("4_06apo")
+upgrade = ExtResource("24_otpe7")
 
 [node name="UpgradeButton2" parent="UpgradesHolder" unique_id=1732551444 instance=ExtResource("1_8ebph")]
 visible = false
