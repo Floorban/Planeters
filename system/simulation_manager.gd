@@ -35,7 +35,7 @@ func _process(delta) -> void:
 func _process_timer(timer: float, interval: float, delta: float, tick: Callable) -> float:
 	timer += delta
 	
-	while  timer >= interval:
+	while timer >= interval:
 		tick.call()
 		timer -= interval
 	

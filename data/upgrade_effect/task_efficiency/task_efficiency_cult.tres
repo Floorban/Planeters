@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TaskEfficiencyEffect" format=3 uid="uid://dyf1hexff0mt6"]
+
+[ext_resource type="Script" uid="uid://by2eapd0unlmt" path="res://data/upgrade_effect/task_efficiency/task_efficiency_effect.gd" id="1_ity0r"]
+[ext_resource type="Resource" uid="uid://d1b3tjc0uirwo" path="res://data/task/task_get_cult_member.tres" id="2_ih0mp"]
+
+[resource]
+script = ExtResource("1_ity0r")
+task = ExtResource("2_ih0mp")
+change_amount = -0.2
+metadata/_custom_type_script = "uid://by2eapd0unlmt"

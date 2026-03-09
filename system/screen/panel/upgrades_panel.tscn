@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://bq51vnl7tdg1u" path="res://data/upgrade/upgrade_bonus_task_capacity.tres" id="4_06apo"]
 [ext_resource type="Resource" uid="uid://dcs5y3xc0d0mm" path="res://data/upgrade/upgrade_bonus_sacrifice_reward_coin.tres" id="4_w3hvi"]
 [ext_resource type="Resource" uid="uid://dtg8kdbihtld3" path="res://data/upgrade/upgrade_less_church_cost.tres" id="5_7wgad"]
+[ext_resource type="Resource" uid="uid://btqpyu3t3n7ru" path="res://data/upgrade/upgrade_bonus_cult_efficiency.tres" id="7_ku35v"]
 
 [node name="UpgradesPanel" type="ColorRect" unique_id=378376900]
 anchors_preset = 15
@@ -118,7 +119,7 @@ offset_left = 220.0
 offset_top = -2.0
 offset_right = 270.0
 offset_bottom = 48.0
-upgrade = ExtResource("5_7wgad")
+upgrade = ExtResource("7_ku35v")
 
 [node name="SkillButton6" parent="UpgradesHolder/SkillButton2/SkillButton3" unique_id=1498587752 instance=ExtResource("1_8ebph")]
 layout_mode = 0
@@ -126,11 +127,11 @@ offset_left = -1.0
 offset_top = -170.0
 offset_right = 49.0
 offset_bottom = -120.0
-upgrade = ExtResource("5_7wgad")
+upgrade = ExtResource("7_ku35v")
 
 [node name="SkillButton7" parent="UpgradesHolder/SkillButton2/SkillButton3" unique_id=405027656 instance=ExtResource("1_8ebph")]
 layout_mode = 0
 offset_left = 209.0
 offset_right = 259.0
 offset_bottom = 50.0
-upgrade = ExtResource("5_7wgad")
+upgrade = ExtResource("7_ku35v")

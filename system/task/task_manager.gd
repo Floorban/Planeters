@@ -6,8 +6,12 @@ extends Node
 
 @onready var task_cost_label: RichTextLabel = %TaskCostLabel
 @onready var task_effect_label: RichTextLabel = %TaskEffectLabel
+@onready var task_duration_label: RichTextLabel = %TaskDurationLabel
 
 @export var max_parallel_tasks := 1
+
+var global_duration_multiplier := 1.0
+var duration_multipliers : Dictionary = {} # Task -> float
 
 
 func _ready() -> void:
@@ -16,6 +20,7 @@ func _ready() -> void:
 		b.show_task_info.connect(_show_task_info)
 		b.hide_task_info.connect(_hide_task_info)
 		b.start_task_request.connect(start_task)
+		duration_multipliers[b.task] = 1.0
 	
 	for s in task_slots:
 		s.task_finished.connect(_on_task_finished)
@@ -27,11 +32,13 @@ func _show_task_info(task: Task) -> void:
 		task_cost_label.append_text(c.to_rich_text(get_modified_cost(c), true) + "\n")
 	for r in task.rewards:
 		task_effect_label.append_text(r.to_rich_text(get_modified_reward(r), false) + "\n")
+	task_duration_label.append_text("Duration: " + str(task.duration * get_duration_multiplier(task)))
 
 
 func _hide_task_info() -> void:
 	task_cost_label.clear()
 	task_effect_label.clear()
+	task_duration_label.clear()
 
 
 func start_task(task : Task, btn: TaskButton) -> bool:
@@ -90,6 +97,16 @@ func _refresh_task_buttons() -> void:
 		b.disabled = should_disable
 		if not should_disable:
 			b.button_pressed = false
+
+
+func get_duration_multiplier(task: Task) -> float:
+	return duration_multipliers.get(task, 1.0) * global_duration_multiplier
+
+
+func modify_duration(task: Task, amount: float):
+	duration_multipliers[task] += amount
+	if duration_multipliers[task] <= 0.0:
+		push_error("task duration too short")
 
 
 func add_task_capacity(amount: int) -> void:
