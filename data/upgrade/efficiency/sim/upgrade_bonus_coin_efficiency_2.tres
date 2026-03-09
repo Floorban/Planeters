@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://csu5s6wylo6lx"]
+
+[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_wom4c"]
+[ext_resource type="Script" uid="uid://oiijucci5mx5" path="res://system/upgrades/upgrade_effect.gd" id="2_8ii6f"]
+[ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_ta8t6"]
+[ext_resource type="Script" uid="uid://emabm8r8bin6" path="res://system/upgrades/upgrade_data.gd" id="3_w23ip"]
+[ext_resource type="Script" uid="uid://bii112e3sbm8k" path="res://data/upgrade_effect/sim_efficiency/sim_efficiency_effect.gd" id="5_jyslj"]
+[ext_resource type="Texture2D" uid="uid://bijpbkg0mxu3y" path="res://asset/TinyTomes_Atlas_16x16.png" id="6_4fn2l"]
+
+[sub_resource type="Resource" id="Resource_qxt8w"]
+script = ExtResource("1_wom4c")
+stat = ExtResource("2_ta8t6")
+amount = 50.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_ta8t6"]
+script = ExtResource("5_jyslj")
+modifier_type = 1
+change_amount = -5.0
+metadata/_custom_type_script = "uid://bii112e3sbm8k"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cq08"]
+atlas = ExtResource("6_4fn2l")
+region = Rect2(0, 16, 16, 16)
+
+[resource]
+script = ExtResource("3_w23ip")
+upgrade_name = "GREDDY II"
+upgrade_description = "getting coins from your members more often"
+upgrade_icon = SubResource("AtlasTexture_0cq08")
+costs = Array[ExtResource("1_wom4c")]([SubResource("Resource_qxt8w")])
+effects = Array[ExtResource("2_8ii6f")]([SubResource("Resource_ta8t6")])
+metadata/_custom_type_script = "uid://emabm8r8bin6"

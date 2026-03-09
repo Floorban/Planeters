@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://dh5g3te6m05uq"]
+
+[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_ixmop"]
+[ext_resource type="Script" uid="uid://oiijucci5mx5" path="res://system/upgrades/upgrade_effect.gd" id="2_08f80"]
+[ext_resource type="Resource" uid="uid://dlwjnv8ca4sps" path="res://data/stat/stat_soul.tres" id="2_i24ui"]
+[ext_resource type="Script" uid="uid://emabm8r8bin6" path="res://system/upgrades/upgrade_data.gd" id="3_i24ui"]
+[ext_resource type="Texture2D" uid="uid://bijpbkg0mxu3y" path="res://asset/TinyTomes_Atlas_16x16.png" id="4_08f80"]
+[ext_resource type="Script" uid="uid://bii112e3sbm8k" path="res://data/upgrade_effect/sim_efficiency/sim_efficiency_effect.gd" id="4_equlr"]
+
+[sub_resource type="Resource" id="Resource_equlr"]
+script = ExtResource("1_ixmop")
+stat = ExtResource("2_i24ui")
+amount = 50.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_hkh14"]
+script = ExtResource("4_equlr")
+change_amount = -2.0
+metadata/_custom_type_script = "uid://bii112e3sbm8k"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i24ui"]
+atlas = ExtResource("4_08f80")
+region = Rect2(64, 32, 16, 16)
+
+[resource]
+script = ExtResource("3_i24ui")
+upgrade_name = "Fast talker I"
+upgrade_description = "your members get new memebrs faster for you"
+upgrade_icon = SubResource("AtlasTexture_i24ui")
+costs = Array[ExtResource("1_ixmop")]([SubResource("Resource_equlr")])
+effects = Array[ExtResource("2_08f80")]([SubResource("Resource_hkh14")])
+metadata/_custom_type_script = "uid://emabm8r8bin6"

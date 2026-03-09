@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://dm2bff7rj2q1a"]
+
+[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_ixmop"]
+[ext_resource type="Script" uid="uid://oiijucci5mx5" path="res://system/upgrades/upgrade_effect.gd" id="2_08f80"]
+[ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_37jld"]
+[ext_resource type="Script" uid="uid://emabm8r8bin6" path="res://system/upgrades/upgrade_data.gd" id="3_i24ui"]
+[ext_resource type="Script" uid="uid://dyc81t8gxnius" path="res://data/upgrade_effect/sim_production/sim_production_effect.gd" id="4_37jld"]
+[ext_resource type="Texture2D" uid="uid://bijpbkg0mxu3y" path="res://asset/TinyTomes_Atlas_16x16.png" id="4_g2xnn"]
+
+[sub_resource type="Resource" id="Resource_376my"]
+script = ExtResource("1_ixmop")
+stat = ExtResource("2_37jld")
+amount = 80.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_x4f27"]
+script = ExtResource("4_37jld")
+change_per_level = 2.0
+metadata/_custom_type_script = "uid://dyc81t8gxnius"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyr88"]
+atlas = ExtResource("4_g2xnn")
+region = Rect2(0, 48, 16, 16)
+
+[resource]
+script = ExtResource("3_i24ui")
+upgrade_name = "Pro yappers I"
+upgrade_description = "your members can get more members for you now"
+upgrade_icon = SubResource("AtlasTexture_fyr88")
+costs = Array[ExtResource("1_ixmop")]([SubResource("Resource_376my")])
+effects = Array[ExtResource("2_08f80")]([SubResource("Resource_x4f27")])
+metadata/_custom_type_script = "uid://emabm8r8bin6"

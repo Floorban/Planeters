@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SimEfficiencyEffect" format=3 uid="uid://dawyowwixpgwb"]
+
+[ext_resource type="Script" uid="uid://bii112e3sbm8k" path="res://data/upgrade_effect/sim_efficiency/sim_efficiency_effect.gd" id="1_03al3"]
+
+[resource]
+script = ExtResource("1_03al3")
+modifier_type = 1
+metadata/_custom_type_script = "uid://bii112e3sbm8k"

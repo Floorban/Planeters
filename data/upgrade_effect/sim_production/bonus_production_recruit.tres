@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SimProductionEffect" format=3 uid="uid://bqqwjwpoq7me8"]
+
+[ext_resource type="Script" uid="uid://dyc81t8gxnius" path="res://data/upgrade_effect/sim_production/sim_production_effect.gd" id="1_n0s43"]
+
+[resource]
+script = ExtResource("1_n0s43")
+change_per_level = 10.0
+metadata/_custom_type_script = "uid://dyc81t8gxnius"
