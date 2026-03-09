@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://1ktvbleh6eme"]
+
+[ext_resource type="Script" uid="uid://b1b5kvlcgcely" path="res://system/screen/panel/main_screen.gd" id="2_ckf3p"]
+[ext_resource type="PackedScene" uid="uid://cl11d77lbfnnt" path="res://system/screen/panel/dashboard_panel.tscn" id="2_jmo0d"]
+[ext_resource type="PackedScene" uid="uid://kseiabufssdw" path="res://system/screen/panel/upgrades_manager.tscn" id="2_l8vv1"]
+[ext_resource type="PackedScene" uid="uid://drk220wxciily" path="res://system/screen/button/tab_button.tscn" id="3_n877d"]
+[ext_resource type="PackedScene" uid="uid://b4b8pivkpdt40" path="res://system/screen/panel/world_panel.tscn" id="4_bor6b"]
+[ext_resource type="PackedScene" uid="uid://chr6sq2bcitbf" path="res://system/screen/panel/overview_panel.tscn" id="5_06ml0"]
+[ext_resource type="PackedScene" uid="uid://b0vsnwsdvdf6f" path="res://system/screen/panel/settings_panel.tscn" id="6_kw7ci"]
+[ext_resource type="PackedScene" uid="uid://cntb8wqbeiybl" path="res://system/screen/panel/task_manager.tscn" id="8_1ov7q"]
+[ext_resource type="PackedScene" uid="uid://dpdrr8e6dwttd" path="res://system/stats/stats_manager.tscn" id="16_n3x1c"]
+
+[node name="MainScreen" type="Control" unique_id=1745498329]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_ckf3p")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1135349797]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 80
+
+[node name="Background" type="TextureRect" parent="MarginContainer" unique_id=1423564982]
+texture_filter = 1
+layout_mode = 2
+
+[node name="PanelContainer" type="Control" parent="MarginContainer/Background" unique_id=1029536652]
+unique_name_in_owner = true
+clip_contents = true
+layout_mode = 1
+anchors_preset = 0
+offset_right = 1300.0
+offset_bottom = 820.0
+
+[node name="DashboardPanel" parent="MarginContainer/Background/PanelContainer" unique_id=952982154 instance=ExtResource("2_jmo0d")]
+layout_mode = 0
+
+[node name="UpgradesPanel" parent="MarginContainer/Background/PanelContainer" unique_id=1877020418 instance=ExtResource("2_l8vv1")]
+layout_mode = 0
+
+[node name="WorldPanel" parent="MarginContainer/Background/PanelContainer" unique_id=1046601322 instance=ExtResource("4_bor6b")]
+layout_mode = 0
+
+[node name="OverviewPanel" parent="MarginContainer/Background/PanelContainer" unique_id=175380593 instance=ExtResource("5_06ml0")]
+layout_mode = 0
+
+[node name="SettingsPanel" parent="MarginContainer/Background/PanelContainer" unique_id=1215339446 instance=ExtResource("6_kw7ci")]
+layout_mode = 0
+
+[node name="TaskManager" parent="MarginContainer/Background/PanelContainer" unique_id=2067503845 instance=ExtResource("8_1ov7q")]
+layout_mode = 1
+
+[node name="Taskbar" type="HBoxContainer" parent="MarginContainer/Background" unique_id=233926735]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 860.0
+offset_right = 1314.0
+offset_bottom = 920.0
+theme_override_constants/separation = 13
+
+[node name="TabButton1" parent="MarginContainer/Background/Taskbar" unique_id=817727907 instance=ExtResource("3_n877d")]
+layout_mode = 2
+btn_display_name = "Dashboard"
+
+[node name="TabButton2" parent="MarginContainer/Background/Taskbar" unique_id=829327577 instance=ExtResource("3_n877d")]
+layout_mode = 2
+btn_display_name = "Upgrades"
+
+[node name="TabButton3" parent="MarginContainer/Background/Taskbar" unique_id=708809036 instance=ExtResource("3_n877d")]
+layout_mode = 2
+btn_display_name = "World"
+
+[node name="TabButton4" parent="MarginContainer/Background/Taskbar" unique_id=1206449726 instance=ExtResource("3_n877d")]
+layout_mode = 2
+btn_display_name = "Overview"
+
+[node name="TabButton5" parent="MarginContainer/Background/Taskbar" unique_id=78780616 instance=ExtResource("3_n877d")]
+layout_mode = 2
+btn_display_name = "Settings"
+
+[node name="StatsManager" parent="MarginContainer/Background" unique_id=654268750 instance=ExtResource("16_n3x1c")]
+unique_name_in_owner = true
+layout_mode = 1

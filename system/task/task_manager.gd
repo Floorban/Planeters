@@ -1,5 +1,5 @@
 class_name TaskManager
-extends Node
+extends Control
 
 @export var task_btns: Array[TaskButton]
 @export var task_slots : Array[TaskSlot]

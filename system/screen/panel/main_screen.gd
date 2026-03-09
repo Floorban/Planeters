@@ -12,6 +12,7 @@ var tab_group := ButtonGroup.new()
 
 func _ready() -> void:
 	_init_sub_panels()
+	GameManager.camera = camera
 	camera.global_position = global_position + size / 2
 
 
