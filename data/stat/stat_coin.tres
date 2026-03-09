@@ -1,12 +1,14 @@
 [gd_resource type="Resource" script_class="Stat" format=3 uid="uid://ch8hsblfhl7ak"]
 
 [ext_resource type="Script" uid="uid://df1xrlbakiuj1" path="res://system/stats/stat.gd" id="1_yh2nm"]
-[ext_resource type="Texture2D" uid="uid://dh7mpiq47npbb" path="res://asset/Pouch_011_TravellersPouch_BigWander(16x16).png" id="2_0lp7u"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yh2nm"]
+load_path = "res://.godot/imported/Pouch_011_TravellersPouch_BigWander(16x16).png-e32a9b3155ecf87335589abae2308b73.ctex"
 
 [resource]
 script = ExtResource("1_yh2nm")
 stat_name = "Coins"
 stat_description = "Made of 0.09% real gold"
-stat_icon = ExtResource("2_0lp7u")
-stat_color = Color(0.84318644, 0.7656247, 0.18595196, 1)
+stat_icon = SubResource("CompressedTexture2D_yh2nm")
+stat_color = Color(0.8743592, 0.78042495, 0.23073676, 1)
 metadata/_custom_type_script = "uid://df1xrlbakiuj1"

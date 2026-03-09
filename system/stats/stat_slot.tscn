@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="3_rm8ao"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgkat"]
-bg_color = Color(0.8862745, 0.8862745, 0.8862745, 0.7411765)
+bg_color = Color(0.6011926, 0.6011926, 0.60119253, 1)
 
 [node name="StatSlot" type="HBoxContainer" unique_id=1306294195]
 script = ExtResource("1_rgkat")
@@ -99,7 +99,6 @@ clip_text = true
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = -2
 theme_override_fonts/font = ExtResource("3_rm8ao")
 theme_override_font_sizes/font_size = 28

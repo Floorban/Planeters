@@ -9,7 +9,7 @@ region = Rect2(112, 80, 16, 16)
 
 [resource]
 script = ExtResource("1_x7hnj")
-stat_name = "Faith"
+stat_name = "Loyal"
 stat_description = "May the god please you"
 stat_icon = SubResource("AtlasTexture_psaaq")
 stat_color = Color(1, 1, 1, 1)

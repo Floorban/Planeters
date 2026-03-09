@@ -11,6 +11,7 @@ extends Node
 
 
 func _ready() -> void:
+	GameManager.task_manager = self
 	for b in task_btns:
 		b.show_task_info.connect(_show_task_info)
 		b.hide_task_info.connect(_hide_task_info)

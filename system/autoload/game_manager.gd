@@ -1,5 +1,6 @@
 extends Node
 
+var task_manager: TaskManager
 var stats_manager: StatsManager
 var upgrades_manager: UpgradesManager
 var sim_manager: SimulationManager

@@ -23,13 +23,14 @@ func _ready() -> void:
 	if stat:
 		stat_icon.texture = stat.stat_icon
 		stat_num_label.modulate = stat.stat_color
-	_set_stat_info_panel()
-
+		
+	stat_info.hide()
 
 func _set_stat_info_panel() -> void:
 	stat_name.text = stat.stat_name
-	stat_description.text = stat.stat_description
-	#stat_detail.text = stat.stat_color
+	stat_description.text = stat.stat_description	
+	stat_detail.text = GameManager.sim_manager.get_stat_detail_description(stat)
+	stat_detail.modulate = stat.stat_color
 	if stat_info.visible:
 		stat_info.hide()
 	else:
