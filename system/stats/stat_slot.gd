@@ -1,8 +1,6 @@
 class_name StatSlot
 extends Control
 
-@onready var stats_manager = get_parent() as StatsManager
-
 @export var stat : Stat
 @onready var stat_icon: TextureRect = $StatIcon
 @onready var stat_num_label: Label = $StatNumLabel
@@ -13,14 +11,23 @@ var displayed_value : float = 0.0
 var flash_tween : Tween
 var punch_tween : Tween
 
+@onready var stat_info: PanelContainer = %StatInfo
+
 
 func _ready() -> void:
+	stat_icon.mouse_entered.connect(_set_stat_info_panel)
+	stat_icon.mouse_exited.connect(_set_stat_info_panel)
 	if stat:
 		stat_icon.texture = stat.stat_icon
 		stat_num_label.modulate = stat.stat_color
-	if stats_manager:
-		stats_manager.stat_changed.connect(_on_stat_changed)
-		stats_manager.stat_cost_failed.connect(_pay_with_stat_failed)
+	_set_stat_info_panel()
+
+
+func _set_stat_info_panel() -> void:
+	if stat_info.visible:
+		stat_info.hide()
+	else:
+		stat_info.show()
 
 
 func _process(delta):

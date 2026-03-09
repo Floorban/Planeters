@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://brqcg0wm5ocuk" path="res://asset/ui/icon.svg" id="2_atb2c"]
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="3_rm8ao"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgkat"]
+bg_color = Color(0.8862745, 0.8862745, 0.8862745, 0.7411765)
+
 [node name="StatSlot" type="HBoxContainer" unique_id=1306294195]
 script = ExtResource("1_rgkat")
 
@@ -11,13 +14,15 @@ script = ExtResource("1_rgkat")
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+mouse_filter = 0
 texture = ExtResource("2_atb2c")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Control" type="Control" parent="." unique_id=16626073]
+[node name="ControlGap" type="Control" parent="." unique_id=16626073]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 
 [node name="StatNumLabel" type="Label" parent="." unique_id=552914997]
 texture_filter = 1
@@ -26,3 +31,79 @@ theme_override_fonts/font = ExtResource("3_rm8ao")
 theme_override_font_sizes/font_size = 42
 text = "12345498"
 vertical_alignment = 1
+
+[node name="Control" type="Control" parent="." unique_id=1683066921]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=1924707016]
+custom_minimum_size = Vector2(550, 150)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -550.0
+offset_top = -75.0
+offset_bottom = 75.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_right = 300
+
+[node name="StatInfo" type="PanelContainer" parent="Control/MarginContainer" unique_id=701314724]
+unique_name_in_owner = true
+z_index = 1
+custom_minimum_size = Vector2(250, 150)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rgkat")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/StatInfo" unique_id=1091738984]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/StatInfo/MarginContainer" unique_id=1684292189]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="StatName" type="Label" parent="Control/MarginContainer/StatInfo/MarginContainer/VBoxContainer" unique_id=2146904670]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.67653024, 0.0891883, 0.27300683, 1)
+theme_override_fonts/font = ExtResource("3_rm8ao")
+theme_override_font_sizes/font_size = 36
+text = "Cult Member"
+autowrap_mode = 3
+clip_text = true
+uppercase = true
+
+[node name="StatDescription" type="Label" parent="Control/MarginContainer/StatInfo/MarginContainer/VBoxContainer" unique_id=2070093590]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("3_rm8ao")
+theme_override_font_sizes/font_size = 28
+text = "They give you money, power and everything. . ."
+autowrap_mode = 3
+clip_text = true
+
+[node name="StatDetail" type="Label" parent="Control/MarginContainer/StatInfo/MarginContainer/VBoxContainer" unique_id=930484117]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("3_rm8ao")
+theme_override_font_sizes/font_size = 28
+text = "Rate: 16/s
+Cap: 50"
+autowrap_mode = 3
+clip_text = true

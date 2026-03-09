@@ -9,13 +9,19 @@ var stats : Dictionary = {}
 
 var multipliers : Dictionary = {}
 
+@export var stat_slots: Array[StatSlot]
 
 func _ready() -> void:
 	GameManager.stats_manager = self
+	
 	for s in starting_stats:
 		stats[s.stat] = 0.0
 		add_stat(s.stat, s.amount)
 		multipliers[s.stat] = 1.0
+	
+	for slot in stat_slots:
+		stat_changed.connect(slot._on_stat_changed)
+		stat_cost_failed.connect(slot._pay_with_stat_failed)
 
 
 func get_stat(stat: Stat) -> int:
