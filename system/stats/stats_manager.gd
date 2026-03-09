@@ -14,14 +14,14 @@ var multipliers : Dictionary = {}
 func _ready() -> void:
 	GameManager.stats_manager = self
 	
-	for s in starting_stats:
-		stats[s.stat] = 0.0
-		add_stat(s.stat, s.amount)
-		multipliers[s.stat] = 1.0
-	
 	for slot in stat_slots:
 		stat_changed.connect(slot._on_stat_changed)
 		stat_cost_failed.connect(slot._pay_with_stat_failed)
+		stats[slot.stat] = 0.0
+		multipliers[slot.stat] = 1.0
+
+	for s in starting_stats:
+		add_stat(s.stat, s.amount)
 
 
 func get_stat(stat: Stat) -> int:
@@ -39,6 +39,9 @@ func update_multiplier(stat: Stat, amount : float) -> void:
 
 
 func add_stat(stat: Stat, amount: float) -> void:
+	if amount == 0.0:
+		print("amount is 0")
+		return
 	# float in the system but ui shows int
 	var final = amount * get_multiplier(stat)
 	stats[stat] += final

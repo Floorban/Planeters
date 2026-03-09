@@ -29,7 +29,7 @@ texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_rm8ao")
 theme_override_font_sizes/font_size = 42
-text = "12345498"
+text = "0"
 vertical_alignment = 1
 
 [node name="Control" type="Control" parent="." unique_id=1683066921]

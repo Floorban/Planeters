@@ -36,7 +36,7 @@ func _process(delta):
 
 	displayed_value += diff * delta * speed
 
-	if abs(diff) < 0.5:
+	if abs(diff) < 0.8:
 		displayed_value = target_value
 	
 	# UI shows int but system uses float
@@ -49,6 +49,7 @@ func _on_stat_changed(changed_stat: Stat, value: float) -> void:
 	if changed_stat != stat:
 		return
 
+	print("ll")
 	var previous_target = target_value
 	target_value = value
 
