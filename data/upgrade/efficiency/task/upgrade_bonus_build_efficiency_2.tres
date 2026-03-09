@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://prbqvkesnjkj"]
+
+[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_m7hjx"]
+[ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_wg4hl"]
+[ext_resource type="Resource" uid="uid://dn5di2eias4nk" path="res://data/stat/stat_member.tres" id="3_1obvg"]
+[ext_resource type="Script" uid="uid://oiijucci5mx5" path="res://system/upgrades/upgrade_effect.gd" id="3_o8qdy"]
+[ext_resource type="Script" uid="uid://by2eapd0unlmt" path="res://data/upgrade_effect/task_efficiency/task_efficiency_effect.gd" id="4_wg4hl"]
+[ext_resource type="Resource" uid="uid://bquc4n36cd6g3" path="res://data/task/task_build_cult_church.tres" id="5_wg4hl"]
+[ext_resource type="Script" uid="uid://emabm8r8bin6" path="res://system/upgrades/upgrade_data.gd" id="5_xpn6u"]
+[ext_resource type="Texture2D" uid="uid://bijpbkg0mxu3y" path="res://asset/TinyTomes_Atlas_16x16.png" id="6_8hkbd"]
+
+[sub_resource type="Resource" id="Resource_wg4hl"]
+script = ExtResource("1_m7hjx")
+stat = ExtResource("2_wg4hl")
+amount = 200.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_xpn6u"]
+script = ExtResource("1_m7hjx")
+stat = ExtResource("3_1obvg")
+amount = 200.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_o8qdy"]
+script = ExtResource("4_wg4hl")
+task = ExtResource("5_wg4hl")
+change_amount = -0.1
+metadata/_custom_type_script = "uid://by2eapd0unlmt"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifnkl"]
+atlas = ExtResource("6_8hkbd")
+region = Rect2(16, 96, 16, 16)
+
+[resource]
+script = ExtResource("5_xpn6u")
+upgrade_name = "BUILD FASTER II"
+upgrade_description = "Yea, just build church faster"
+upgrade_icon = SubResource("AtlasTexture_ifnkl")
+costs = Array[ExtResource("1_m7hjx")]([SubResource("Resource_wg4hl"), SubResource("Resource_xpn6u")])
+effects = Array[ExtResource("3_o8qdy")]([SubResource("Resource_o8qdy")])
+metadata/_custom_type_script = "uid://emabm8r8bin6"

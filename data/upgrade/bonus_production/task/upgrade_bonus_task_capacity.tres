@@ -1,28 +1,28 @@
 [gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://bq51vnl7tdg1u"]
 
-[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_q6siw"]
-[ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_0h4f8"]
-[ext_resource type="Script" uid="uid://oiijucci5mx5" path="res://system/upgrades/upgrade_effect.gd" id="2_abs7k"]
-[ext_resource type="Script" uid="uid://emabm8r8bin6" path="res://system/upgrades/upgrade_data.gd" id="3_0h4f8"]
-[ext_resource type="Texture2D" uid="uid://bijpbkg0mxu3y" path="res://asset/TinyTomes_Atlas_16x16.png" id="4_abs7k"]
-[ext_resource type="Resource" uid="uid://bvcpkpugejcif" path="res://data/upgrade_effect/parallel_task_capacity/task_capacity.tres" id="4_ppjn0"]
+[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_othqc"]
+[ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_4hv23"]
+[ext_resource type="Script" uid="uid://oiijucci5mx5" path="res://system/upgrades/upgrade_effect.gd" id="3_5r00a"]
+[ext_resource type="Resource" uid="uid://bvcpkpugejcif" path="res://data/upgrade_effect/parallel_task_capacity/task_capacity.tres" id="4_q1bmm"]
+[ext_resource type="Script" uid="uid://emabm8r8bin6" path="res://system/upgrades/upgrade_data.gd" id="5_qxjxb"]
+[ext_resource type="Texture2D" uid="uid://bijpbkg0mxu3y" path="res://asset/TinyTomes_Atlas_16x16.png" id="6_ia21v"]
 
 [sub_resource type="Resource" id="Resource_ppjn0"]
-script = ExtResource("1_q6siw")
-stat = ExtResource("2_0h4f8")
+script = ExtResource("1_othqc")
+stat = ExtResource("2_4hv23")
 amount = 50.0
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0h4f8"]
-atlas = ExtResource("4_abs7k")
+atlas = ExtResource("6_ia21v")
 region = Rect2(64, 16, 16, 16)
 
 [resource]
-script = ExtResource("3_0h4f8")
-upgrade_name = "More hands"
+script = ExtResource("5_qxjxb")
+upgrade_name = "More hands I"
 upgrade_description = "Let you run more actions at once"
 upgrade_icon = SubResource("AtlasTexture_0h4f8")
 max_level = 1
-costs = Array[ExtResource("1_q6siw")]([SubResource("Resource_ppjn0")])
-effects = Array[ExtResource("2_abs7k")]([ExtResource("4_ppjn0")])
+costs = Array[ExtResource("1_othqc")]([SubResource("Resource_ppjn0")])
+effects = Array[ExtResource("3_5r00a")]([ExtResource("4_q1bmm")])
 metadata/_custom_type_script = "uid://emabm8r8bin6"

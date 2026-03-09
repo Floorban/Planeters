@@ -105,9 +105,9 @@ func get_duration_multiplier(task: Task) -> float:
 
 func modify_duration(task: Task, amount: float):
 	duration_multipliers[task] += amount
-	if duration_multipliers[task] <= 0.0:
+	if duration_multipliers[task] <= 0.05:
 		push_error("task duration too short")
-
+		duration_multipliers[task] = 0.05
 
 func add_task_capacity(amount: int) -> void:
 	max_parallel_tasks += amount
