@@ -43,7 +43,10 @@ func _show_upgrade_info(upgrade: UpgradeData) -> void:
 	upgrade_effect_label.text = upgrade.upgrade_description
 	
 	for c in upgrade.costs:
-		upgrade_cost_label.append_text(c.to_rich_text(true, false) + "    ")
+		# could implement first upgrades affect later upgrades cost
+		# with the current code
+		# to prevent that use c.amount instead of task_manager.get_modified_cost(c)
+		upgrade_cost_label.append_text(c.to_rich_text(GameManager.task_manager.get_modified_cost(c), true, false) + "    ")
 
 
 func disable_upgrade_info(disable: bool) -> void:
