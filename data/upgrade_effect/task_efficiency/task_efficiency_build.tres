@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TaskEfficiencyEffect" format=3 uid="uid://bep1u2h5tl1nx"]
+
+[ext_resource type="Script" uid="uid://by2eapd0unlmt" path="res://data/upgrade_effect/task_efficiency/task_efficiency_effect.gd" id="1_v4s6t"]
+
+[resource]
+script = ExtResource("1_v4s6t")
+change_amount = -0.2
+metadata/_custom_type_script = "uid://by2eapd0unlmt"

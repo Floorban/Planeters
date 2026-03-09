@@ -57,14 +57,15 @@ func _set_zoom(new_scale: Vector2) -> void:
 	upgrades_holder.scale = new_scale
 	_clamp_position()
 
+
 func _clamp_position() -> void:
 	var scaled_size = upgrades_holder.size * upgrades_holder.scale
 	var pivot_correction = (scaled_size - upgrades_holder.size) / 2.0
 	
-	var margin = 100.0 
+	var margin = 50.0 
 	var min_x = -scaled_size.x + margin + pivot_correction.x
 	var max_x = size.x - margin + pivot_correction.x
 	var min_y = -scaled_size.y + margin + pivot_correction.y
-	var max_y = size.y - margin * 2 + pivot_correction.y
+	var max_y = size.y - margin + pivot_correction.y
 	upgrades_holder.position.x = clamp(upgrades_holder.position.x, min_x, max_x)
 	upgrades_holder.position.y = clamp(upgrades_holder.position.y, min_y, max_y)
