@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://bh62c6w1g18je"]
+
+[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_jfri7"]
+[ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_gxnwr"]
+[ext_resource type="Resource" uid="uid://be706omug5uo3" path="res://data/stat/stat_church.tres" id="3_8ko0c"]
+[ext_resource type="Script" uid="uid://oiijucci5mx5" path="res://system/upgrades/upgrade_effect.gd" id="4_1sfat"]
+[ext_resource type="Resource" uid="uid://b5oaekwx6pqyo" path="res://data/upgrade_effect/cost/more_church_capacity.tres" id="5_1tdv0"]
+[ext_resource type="Script" uid="uid://emabm8r8bin6" path="res://system/upgrades/upgrade_data.gd" id="6_6krik"]
+[ext_resource type="Texture2D" uid="uid://bijpbkg0mxu3y" path="res://asset/TinyTomes_Atlas_16x16.png" id="7_j8jaa"]
+
+[sub_resource type="Resource" id="Resource_jfri7"]
+script = ExtResource("1_jfri7")
+stat = ExtResource("2_gxnwr")
+amount = 250.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_gxnwr"]
+script = ExtResource("1_jfri7")
+stat = ExtResource("3_8ko0c")
+amount = 5.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xv0ld"]
+atlas = ExtResource("7_j8jaa")
+region = Rect2(64, 96, 16, 16)
+
+[resource]
+script = ExtResource("6_6krik")
+upgrade_name = "Church Capacity I"
+upgrade_description = "every church can contain more members now"
+upgrade_icon = SubResource("AtlasTexture_xv0ld")
+costs = Array[ExtResource("1_jfri7")]([SubResource("Resource_jfri7"), SubResource("Resource_gxnwr")])
+effects = Array[ExtResource("4_1sfat")]([ExtResource("5_1tdv0")])
+metadata/_custom_type_script = "uid://emabm8r8bin6"

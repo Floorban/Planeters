@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://cobwqli6d1yrf"]
+
+[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_k653n"]
+[ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_xaguq"]
+[ext_resource type="Resource" uid="uid://be706omug5uo3" path="res://data/stat/stat_church.tres" id="3_gqmvh"]
+[ext_resource type="Script" uid="uid://oiijucci5mx5" path="res://system/upgrades/upgrade_effect.gd" id="4_fhaot"]
+[ext_resource type="Resource" uid="uid://dlwjnv8ca4sps" path="res://data/stat/stat_soul.tres" id="4_xaguq"]
+[ext_resource type="Script" uid="uid://coxa8h057n0kj" path="res://data/upgrade_effect/cost/church_capacity_effect.gd" id="5_k653n"]
+[ext_resource type="Script" uid="uid://emabm8r8bin6" path="res://system/upgrades/upgrade_data.gd" id="6_q6ywq"]
+[ext_resource type="Texture2D" uid="uid://bijpbkg0mxu3y" path="res://asset/TinyTomes_Atlas_16x16.png" id="7_weyte"]
+
+[sub_resource type="Resource" id="Resource_lqmyd"]
+script = ExtResource("1_k653n")
+stat = ExtResource("2_xaguq")
+amount = 500.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_k653n"]
+script = ExtResource("1_k653n")
+stat = ExtResource("3_gqmvh")
+amount = 15.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_gqmvh"]
+script = ExtResource("1_k653n")
+stat = ExtResource("4_xaguq")
+amount = 100.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_xaguq"]
+script = ExtResource("5_k653n")
+extra_capacity_per_level = 10
+metadata/_custom_type_script = "uid://coxa8h057n0kj"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xv0ld"]
+atlas = ExtResource("7_weyte")
+region = Rect2(64, 96, 16, 16)
+
+[resource]
+script = ExtResource("6_q6ywq")
+upgrade_name = "Church Capacity II"
+upgrade_description = "every church can contain more members now"
+upgrade_icon = SubResource("AtlasTexture_xv0ld")
+costs = Array[ExtResource("1_k653n")]([SubResource("Resource_lqmyd"), SubResource("Resource_k653n"), SubResource("Resource_gqmvh")])
+effects = Array[ExtResource("4_fhaot")]([SubResource("Resource_xaguq")])
+metadata/_custom_type_script = "uid://emabm8r8bin6"

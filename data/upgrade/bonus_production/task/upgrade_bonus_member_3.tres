@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_ujtp7"]
 [ext_resource type="Script" uid="uid://oiijucci5mx5" path="res://system/upgrades/upgrade_effect.gd" id="3_uhed6"]
 [ext_resource type="Resource" uid="uid://dlwjnv8ca4sps" path="res://data/stat/stat_soul.tres" id="3_ujtp7"]
-[ext_resource type="Script" uid="uid://lxfy1g4oypy7" path="res://data/upgrade_effect/production/bonus_production_effect.gd" id="4_rwgf8"]
+[ext_resource type="Script" uid="uid://lxfy1g4oypy7" path="res://data/upgrade_effect/task_production/bonus_production_effect.gd" id="4_rwgf8"]
 [ext_resource type="Resource" uid="uid://dn5di2eias4nk" path="res://data/stat/stat_member.tres" id="5_no4kc"]
 [ext_resource type="Script" uid="uid://emabm8r8bin6" path="res://system/upgrades/upgrade_data.gd" id="6_dh0en"]
 [ext_resource type="Texture2D" uid="uid://bijpbkg0mxu3y" path="res://asset/TinyTomes_Atlas_16x16.png" id="7_wvwpg"]

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ChurchCapacityEffect" format=3 uid="uid://b5oaekwx6pqyo"]
+
+[ext_resource type="Script" uid="uid://coxa8h057n0kj" path="res://data/upgrade_effect/cost/church_capacity_effect.gd" id="1_lnf68"]
+
+[resource]
+script = ExtResource("1_lnf68")
+metadata/_custom_type_script = "uid://coxa8h057n0kj"

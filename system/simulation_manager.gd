@@ -59,6 +59,27 @@ func _has_church_cap() -> bool:
 	return false
 
 
+func modify_recruit_rate(amount: float):
+	member_recruit_gain += amount
+
+
+func modify_coin_rate(amount: float):
+	member_coin_gain += amount
+
+
+func modify_recruit_interval(amount: float):
+	recruit_interval = max(0.1, recruit_interval + amount)
+
+
+func modify_coin_interval(amount: float):
+	coin_interval = max(0.1, coin_interval + amount)
+
+
+func modify_church_capacity(amount: int):
+	members_per_church += amount
+	_has_church_cap()
+
+
 func get_stat_detail_description(stat: Stat) -> String:
 	match stat:
 		member_stat:
@@ -77,7 +98,12 @@ func get_stat_detail_description(stat: Stat) -> String:
 
 func get_recruit_detail() -> String:
 	var recruit_amount := int(GameManager.stats_manager.get_stat(member_stat) * member_recruit_gain)
-	return "Rate: " + _get_sign(recruit_amount) + str(recruit_amount) + " every " + str(recruit_interval) + " s" + "\n" + "(" + str(member_recruit_gain) + " per person)"
+	return "Rate: %s%.1f every %.1fs\n(%.2f per person)" % [
+		_get_sign(recruit_amount), 
+		recruit_amount, 
+		recruit_interval, 
+		member_recruit_gain
+	]
 
 
 func get_church_detail() -> String:
@@ -87,7 +113,12 @@ func get_church_detail() -> String:
 
 func get_coin_detail() -> String:
 	var coin_amount := int(GameManager.stats_manager.get_stat(member_stat) * member_coin_gain)
-	return "Rate: " + _get_sign(coin_amount) + str(coin_amount) + " every " + str(coin_interval) + " s" + "\n" +  "(" + str(member_coin_gain) + " per person)"
+	return "Rate: %s%.1f every %.1fs\n(%.2f per person)" % [
+		_get_sign(coin_amount), 
+		coin_amount, 
+		coin_interval, 
+		member_coin_gain
+	]
 
 
 func get_soul_detail() -> String:

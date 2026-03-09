@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_ldsxt"]
 [ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_dmwbu"]
 [ext_resource type="Script" uid="uid://oiijucci5mx5" path="res://system/upgrades/upgrade_effect.gd" id="3_agi8t"]
-[ext_resource type="Resource" uid="uid://cwh5aeyocefc5" path="res://data/stat_change/stat_change_church.tres" id="3_dmwbu"]
+[ext_resource type="Resource" uid="uid://dlwjnv8ca4sps" path="res://data/stat/stat_soul.tres" id="3_dmwbu"]
 [ext_resource type="Script" uid="uid://0k1cbvkcpwm6" path="res://data/upgrade_effect/parallel_task_capacity/task_capacity_effect.gd" id="5_dmwbu"]
 [ext_resource type="Script" uid="uid://emabm8r8bin6" path="res://system/upgrades/upgrade_data.gd" id="5_ea7fb"]
 [ext_resource type="Texture2D" uid="uid://bijpbkg0mxu3y" path="res://asset/TinyTomes_Atlas_16x16.png" id="6_d6m8n"]
@@ -12,6 +12,12 @@
 script = ExtResource("1_ldsxt")
 stat = ExtResource("2_dmwbu")
 amount = 500.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_ea7fb"]
+script = ExtResource("1_ldsxt")
+stat = ExtResource("3_dmwbu")
+amount = 100.0
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [sub_resource type="Resource" id="Resource_77pkc"]
@@ -29,6 +35,6 @@ upgrade_name = "More hands II"
 upgrade_description = "Let you run more actions at once"
 upgrade_icon = SubResource("AtlasTexture_0h4f8")
 max_level = 1
-costs = Array[ExtResource("1_ldsxt")]([SubResource("Resource_agi8t"), ExtResource("3_dmwbu")])
+costs = Array[ExtResource("1_ldsxt")]([SubResource("Resource_agi8t"), SubResource("Resource_ea7fb")])
 effects = Array[ExtResource("3_agi8t")]([SubResource("Resource_77pkc")])
 metadata/_custom_type_script = "uid://emabm8r8bin6"
