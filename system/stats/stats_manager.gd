@@ -8,6 +8,8 @@ var stats : Dictionary = {}
 @export var starting_stats : Array[StatChange]
 
 var multipliers : Dictionary = {}
+var reward_multipliers : Dictionary = {}
+var cost_multipliers : Dictionary = {}
 
 @export var stat_slots: Array[StatSlot]
 
@@ -20,6 +22,8 @@ func _ready() -> void:
 		stat_cost_failed.connect(slot._pay_with_stat_failed)
 		stats[slot.stat] = 0.0
 		multipliers[slot.stat] = 1.0
+		reward_multipliers[slot.stat] = 1.0
+		cost_multipliers[slot.stat] = 1.0
 
 	for s in starting_stats:
 		add_stat(s.stat, s.amount)
@@ -33,18 +37,31 @@ func get_multiplier(stat: Stat) -> float:
 	return multipliers.get(stat, 1.0)
 
 
+func get_reward_multiplier(stat: Stat) -> float:
+	return reward_multipliers.get(stat, 1.0)
+
+
+func get_cost_multiplier(stat: Stat) -> float:
+	return cost_multipliers.get(stat, 1.0)
+
+
 func update_multiplier(stat: Stat, amount : float) -> void:
 	multipliers[stat] += amount
-	# update multiplier ui here
-	# probably some stuff showing up when hovering the aciton buttons (e.g. how many ppl getting from next cult action )
+	
+
+func modify_reward(stat: Stat, amount: float):
+	reward_multipliers[stat] += amount
+
+
+func modify_cost(stat: Stat, amount: float):
+	cost_multipliers[stat] += amount
 
 
 func add_stat(stat: Stat, amount: float) -> void:
 	if amount < 1.0:
 		return
 	# float in the system but ui shows int
-	var final = amount * get_multiplier(stat)
-	stats[stat] += final
+	stats[stat] += amount
 	stat_changed.emit(stat, stats[stat])
 
 

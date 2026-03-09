@@ -109,6 +109,7 @@ offset_bottom = 484.0
 stat = ExtResource("5_83inl")
 
 [node name="StatSlotLoyal" parent="." unique_id=1779843535 instance=ExtResource("2_sibpc")]
+visible = false
 layout_mode = 0
 offset_left = 40.0
 offset_top = 520.0

@@ -77,8 +77,7 @@ func get_stat_detail_description(stat: Stat) -> String:
 
 func get_recruit_detail() -> String:
 	var recruit_amount := int(GameManager.stats_manager.get_stat(member_stat) * member_recruit_gain)
-	var _sign := "+" if recruit_amount >= 0 else "-"
-	return "Rate: " + _sign + str(recruit_amount) + " every " + str(recruit_interval) + " s" + "\n" + "(" + str(member_recruit_gain) + " per person)"
+	return "Rate: " + _get_sign(recruit_amount) + str(recruit_amount) + " every " + str(recruit_interval) + " s" + "\n" + "(" + str(member_recruit_gain) + " per person)"
 
 
 func get_church_detail() -> String:
@@ -88,15 +87,18 @@ func get_church_detail() -> String:
 
 func get_coin_detail() -> String:
 	var coin_amount := int(GameManager.stats_manager.get_stat(member_stat) * member_coin_gain)
-	return "Rate: " + str(coin_amount) + " per " + str(coin_interval) + " s" + "\n" +  "(" + str(member_coin_gain) + " per person)"
+	return "Rate: " + _get_sign(coin_amount) + str(coin_amount) + " every " + str(coin_interval) + " s" + "\n" +  "(" + str(member_coin_gain) + " per person)"
 
 
 func get_soul_detail() -> String:
-	#var soul_amonut := int(GameManager.task_manager.
-	return str(0) + " per sacrificed person" + "\n" + "(used for event/upgrade)"
+	var soul_amonut := int(GameManager.task_manager.get_soul_gain_per_sacrifice())
+	return _get_sign(soul_amonut) + str(soul_amonut) + " per sacrificed person" + "\n" + "(used for event/upgrade)"
 
 
 func get_loyal_detail() -> String:
 	var loyalty: float = 1.0 + GameManager.stats_manager.get_stat(loyalty_stat) * 0.02
-	var _sign := "+" if loyalty >= 0.0 else "-"
-	return "Rate: " + _sign + str(loyalty) + "\n" + "(for recruit/coin efficiency)"
+	return "Rate: " + _get_sign(loyalty) + str(loyalty) + "\n" + "(for recruit/coin efficiency)"
+
+
+func _get_sign(num) -> String:
+	return "+" if num >= 0 else "-"

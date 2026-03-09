@@ -24,7 +24,3 @@ texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_b0pyi")
 theme_override_font_sizes/font_size = 36
-
-[node name="Timer" type="Timer" parent="." unique_id=446665283]
-wait_time = 0.5
-autostart = true
