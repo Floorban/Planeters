@@ -47,7 +47,7 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="BG" type="Panel" parent="Background/MarginContainer/Control" unique_id=1313695790]
-custom_minimum_size = Vector2(200, 260)
+custom_minimum_size = Vector2(200, 320)
 layout_mode = 1
 offset_right = 200.0
 offset_bottom = 260.0
@@ -76,12 +76,12 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9372549, 0.93333334, 0, 1)
 theme_override_fonts/font = ExtResource("2_ypjg7")
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 32
 text = "COST"
 
 [node name="TaskCostLabel" type="RichTextLabel" parent="Background/MarginContainer/Control/BG/MarginContainer/TaskInfo/VBoxContainer" unique_id=1768033449]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 85)
+custom_minimum_size = Vector2(0, 110)
 layout_mode = 2
 theme_override_constants/line_separation = 4
 theme_override_fonts/normal_font = ExtResource("2_ypjg7")
@@ -96,12 +96,12 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9372549, 0.93333334, 0, 1)
 theme_override_fonts/font = ExtResource("2_ypjg7")
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 32
 text = "GET"
 
 [node name="TaskEffectLabel" type="RichTextLabel" parent="Background/MarginContainer/Control/BG/MarginContainer/TaskInfo/VBoxContainer2" unique_id=426323755]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 85)
+custom_minimum_size = Vector2(0, 110)
 layout_mode = 2
 theme_override_constants/line_separation = 4
 theme_override_fonts/normal_font = ExtResource("2_ypjg7")
@@ -111,11 +111,11 @@ scroll_active = false
 
 [node name="TaskDurationLabel" type="RichTextLabel" parent="Background/MarginContainer/Control/BG/MarginContainer/TaskInfo" unique_id=283784683]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_override_constants/line_separation = 4
 theme_override_fonts/normal_font = ExtResource("2_ypjg7")
-theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "Duration"
 scroll_active = false
@@ -128,12 +128,12 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="TaskButtons" type="VBoxContainer" parent="Background/MarginContainer/HBoxContainer/Control" unique_id=293111277]
-custom_minimum_size = Vector2(0, 480)
+custom_minimum_size = Vector2(0, 420)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -480.0
+offset_top = -420.0
 offset_right = 200.0
 grow_vertical = 0
 theme_override_constants/separation = 24
