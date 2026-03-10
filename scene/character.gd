@@ -10,14 +10,14 @@ enum CharacterState {
 	DEAD
 }
 
-var move_speed := 300.0
-@export var walk_speed := 300.0
-@export var run_speed := 500.0
+var move_speed := 0.0
+@export var walk_speed := 500.0
+@export var run_speed := 1000.0
 
 var state : CharacterState = CharacterState.IDLE
 var target_position : Vector2
 var stop_distance := 5
-var run_distance := 40
+var run_distance := 80
 
 var wander_timer := 0.0
 
@@ -38,7 +38,7 @@ func _physics_process(delta):
 	match state:
 		CharacterState.BEING_KILLED:
 			character_sprite.play("die")
-			character_sprite.modulate = Color(1.128, 0.0, 0.0, 1.0)
+			character_sprite.modulate = Color(1.825, 0.0, 0.0, 1.0)
 			await character_sprite.animation_finished
 			queue_free()
 		CharacterState.WANDERING:

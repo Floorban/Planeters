@@ -22,6 +22,7 @@ script = ExtResource("5_kw8ka")
 upgrade_name = "I want more I"
 upgrade_description = "Get more coins from each sacrificed member"
 upgrade_icon = SubResource("AtlasTexture_075x6")
+max_level = 2
 costs = Array[ExtResource("1_no0cw")]([SubResource("Resource_075x6")])
 effects = Array[ExtResource("3_vfeau")]([ExtResource("4_opqnb")])
 metadata/_custom_type_script = "uid://emabm8r8bin6"

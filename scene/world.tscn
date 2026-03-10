@@ -1,8 +1,23 @@
 [gd_scene format=3 uid="uid://wsm37tvfwhrk"]
 
-[ext_resource type="Texture2D" uid="uid://brqcg0wm5ocuk" path="res://asset/ui/icon.svg" id="1_pjass"]
 [ext_resource type="Script" uid="uid://ddlighcxd3sq" path="res://scene/world_manager.gd" id="1_w4qq1"]
 [ext_resource type="PackedScene" uid="uid://cjwbyqd6pavch" path="res://scene/character.tscn" id="2_txmk2"]
+[ext_resource type="Texture2D" uid="uid://dw2hb1siqskbk" path="res://asset/church_building.png" id="3_w4qq1"]
+[ext_resource type="Script" uid="uid://drenstg1av1xl" path="res://scene/dead_zone.gd" id="4_m5mgf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4qq1"]
+size = Vector2(474, 64)
+
+[sub_resource type="Gradient" id="Gradient_w4qq1"]
+offsets = PackedFloat32Array(0.158776, 0.7936308)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0.1882353)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_m5mgf"]
+gradient = SubResource("Gradient_w4qq1")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="World" type="Node2D" unique_id=1319151852 node_paths=PackedStringArray("square_center", "exit_point")]
 script = ExtResource("1_w4qq1")
@@ -11,12 +26,70 @@ square_center = NodePath("SqaureCenter")
 exit_point = NodePath("ExitPoint")
 
 [node name="Church" type="Sprite2D" parent="." unique_id=413780122]
-position = Vector2(958, 177)
-scale = Vector2(2, 2)
-texture = ExtResource("1_pjass")
+texture_filter = 1
+position = Vector2(964, 271.99997)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_w4qq1")
+offset = Vector2(0, -120)
 
 [node name="SqaureCenter" type="Marker2D" parent="." unique_id=829838975]
-position = Vector2(962, 363)
+position = Vector2(964, 293)
 
 [node name="ExitPoint" type="Marker2D" parent="." unique_id=1871861004]
 position = Vector2(966, 533)
+
+[node name="DeadZone" type="Area2D" parent="ExitPoint" unique_id=1102521605]
+collision_layer = 0
+script = ExtResource("4_m5mgf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitPoint/DeadZone" unique_id=365235130]
+shape = SubResource("RectangleShape2D_w4qq1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1766226342]
+z_index = -2
+custom_minimum_size = Vector2(5000, 5000)
+offset_left = -525.0
+offset_top = -403.0
+offset_right = 4475.0
+offset_bottom = 4597.0
+color = Color(0.31764707, 0.32156864, 0.4, 1)
+
+[node name="Main" type="PointLight2D" parent="." unique_id=683296594]
+z_index = 1
+position = Vector2(972, 423)
+color = Color(0.028621878, 0.08140466, 0.047209837, 0.5647059)
+energy = 10.0
+blend_mode = 2
+shadow_color = Color(0.27450982, 0.27450982, 0.27450982, 0.9843137)
+shadow_filter = 2
+shadow_filter_smooth = 40.2
+texture = SubResource("GradientTexture2D_m5mgf")
+texture_scale = 5.0
+height = 1.0
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=458645343]
+z_index = 1
+position = Vector2(905, 216)
+color = Color(0.83808523, 0.42469373, 0.42862898, 0.5647059)
+energy = 1.5
+shadow_filter = 2
+texture = SubResource("GradientTexture2D_m5mgf")
+texture_scale = 1.7
+height = 1.0
+
+[node name="PointLight2D3" type="PointLight2D" parent="." unique_id=694389299]
+z_index = 1
+position = Vector2(1028, 216)
+color = Color(0.83808523, 0.42469373, 0.42862898, 0.5647059)
+energy = 1.5
+shadow_filter = 2
+texture = SubResource("GradientTexture2D_m5mgf")
+texture_scale = 1.7
+height = 1.0
+
+[node name="PointLight2D5" type="PointLight2D" parent="." unique_id=956693239]
+position = Vector2(965, 150)
+color = Color(0.8012719, 0.2289229, 0.35079432, 0.5647059)
+energy = 1.5
+shadow_filter = 2
+texture = SubResource("GradientTexture2D_m5mgf")

@@ -6,20 +6,20 @@ extends Node2D
 @export var exit_point : Marker2D
 
 var characters : Array[Character] = []
-var max_visible_cultists := 50
-@export var visible_cultiest_per_church := 50
+@export var max_visible_cultists := 0
 var current_members := 0
 
 func _ready():
 	await get_tree().process_frame
 	GameManager.world_manager = self
 	GameManager.stats_manager.stat_changed.connect(_on_stat_changed)
+	max_visible_cultists = GameManager.sim_manager.members_per_church * GameManager.stats_manager.get_stat(GameManager.sim_manager.church_stat)
 
 
 func _on_stat_changed(stat: Stat, value: float):
 	if stat != GameManager.sim_manager.member_stat:
 		if stat == GameManager.sim_manager.church_stat:
-			max_visible_cultists = visible_cultiest_per_church * GameManager.stats_manager.get_stat(stat)
+			max_visible_cultists = GameManager.sim_manager.members_per_church * GameManager.stats_manager.get_stat(stat)
 		return
 
 	var target := int(value)
@@ -43,7 +43,7 @@ func _spawn_members(amount):
 		var c : Character = character_scene.instantiate()
 		add_child(c)
 
-		c.global_position = exit_point.global_position + Vector2(randf_range(-200, 200), randf_range(-20, 20))
+		c.global_position = exit_point.global_position + Vector2(randf_range(-400, 400), randf_range(-50, 20))
 		c.target_position = get_random_church_position()
 		c.state = Character.CharacterState.WANDERING
 		characters.append(c)
@@ -68,4 +68,4 @@ func sacrifice_member():
 
 
 func get_random_church_position() -> Vector2:
-	return square_center.global_position + Vector2(randf_range(-200, 200),randf_range(-50, 0))
+	return square_center.global_position + Vector2(randf_range(-200, 200),randf_range(-10, 100))

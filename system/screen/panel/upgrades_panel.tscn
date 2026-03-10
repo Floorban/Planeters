@@ -10,7 +10,6 @@
 [ext_resource type="Resource" uid="uid://bh62c6w1g18je" path="res://data/upgrade/cost/sim/upgrade_more_church_capacity_1.tres" id="6_w57fs"]
 [ext_resource type="Resource" uid="uid://00xtnc7252v5" path="res://data/upgrade/bonus_production/sim/upgrade_bonus_coin_production_1.tres" id="7_5yg1h"]
 [ext_resource type="Resource" uid="uid://bkfa7uatxtx3r" path="res://data/upgrade/bonus_production/task/upgrade_bonus_member_3.tres" id="7_8oasj"]
-[ext_resource type="Resource" uid="uid://bmdtkvxqwe1fs" path="res://data/upgrade/bonus_production/task/upgrade_bonus_sacrifice_reward_coin_2.tres" id="7_aaai4"]
 [ext_resource type="Resource" uid="uid://btqpyu3t3n7ru" path="res://data/upgrade/efficiency/task/upgrade_bonus_cult_efficiency_1.tres" id="7_ku35v"]
 [ext_resource type="Resource" uid="uid://prbqvkesnjkj" path="res://data/upgrade/efficiency/task/upgrade_bonus_build_efficiency_2.tres" id="7_q6wcj"]
 [ext_resource type="Resource" uid="uid://cobwqli6d1yrf" path="res://data/upgrade/cost/sim/upgrade_more_church_capacity_2.tres" id="7_uw747"]
@@ -63,10 +62,6 @@ atlas = ExtResource("9_kpkxp")
 region = Rect2(0, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_075x6"]
-atlas = ExtResource("9_kpkxp")
-region = Rect2(0, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v2ugi"]
 atlas = ExtResource("9_kpkxp")
 region = Rect2(0, 16, 16, 16)
 
@@ -286,8 +281,8 @@ offset_left = 240.0
 offset_top = -180.0
 offset_right = 340.0
 offset_bottom = -80.0
-texture_normal = SubResource("AtlasTexture_v2ugi")
-upgrade = ExtResource("7_aaai4")
+texture_normal = SubResource("AtlasTexture_xv0ld")
+upgrade = ExtResource("6_w57fs")
 
 [node name="UpgradeButton2" parent="UpgradesHolder/UpgradeButton1/UpgradeButton2/UpgradeButton2" unique_id=1885752956 instance=ExtResource("1_8ebph")]
 layout_mode = 0
