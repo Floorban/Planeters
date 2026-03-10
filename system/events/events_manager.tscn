@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://rhf5s5wn0yep"]
+
+[ext_resource type="Script" uid="uid://d0yv73wbui2re" path="res://system/events/events_manager.gd" id="1_r4gqh"]
+[ext_resource type="Theme" uid="uid://b06wmmglo7w7v" path="res://asset/themes/action_button_theme.tres" id="1_uduha"]
+[ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="3_ek4in"]
+
+[node name="EventsManager" type="VBoxContainer" unique_id=131518069]
+custom_minimum_size = Vector2(320, 520)
+offset_right = 320.0
+offset_bottom = 520.0
+theme_override_constants/separation = 28
+script = ExtResource("1_r4gqh")
+
+[node name="StartEventButton" type="Button" parent="." unique_id=1124168284]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme = ExtResource("1_uduha")
+theme_override_font_sizes/font_size = 48
+toggle_mode = true
+text = "Start Event"
+
+[node name="EventPanel" type="Panel" parent="." unique_id=13369564]
+custom_minimum_size = Vector2(0, 420)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="EventPanel" unique_id=394734503]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EventPanel/MarginContainer" unique_id=2078414415]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="EventDescriptionLabel" type="Label" parent="EventPanel/MarginContainer/VBoxContainer" unique_id=1860641929]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 230)
+layout_mode = 2
+theme_override_constants/line_spacing = 5
+theme_override_constants/paragraph_spacing = 10
+theme_override_fonts/font = ExtResource("3_ek4in")
+theme_override_font_sizes/font_size = 32
+text = "this is a test description if you can see this there is a bug
+he's asking for a dick dick"
+autowrap_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EventPanel/MarginContainer/VBoxContainer" unique_id=760214325]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Label1" type="Label" parent="EventPanel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=644893783]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9372549, 0.93333334, 0, 1)
+theme_override_constants/line_spacing = 5
+theme_override_constants/paragraph_spacing = 10
+theme_override_fonts/font = ExtResource("3_ek4in")
+theme_override_font_sizes/font_size = 32
+text = "Cost "
+autowrap_mode = 3
+
+[node name="EventCostLabel" type="Label" parent="EventPanel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=66212973]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_constants/line_spacing = 5
+theme_override_constants/paragraph_spacing = 10
+theme_override_fonts/font = ExtResource("3_ek4in")
+theme_override_font_sizes/font_size = 32
+text = "Cost "
+autowrap_mode = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="EventPanel/MarginContainer/VBoxContainer" unique_id=1682840508]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Label2" type="Label" parent="EventPanel/MarginContainer/VBoxContainer/VBoxContainer2" unique_id=2074468813]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9372549, 0.93333334, 0, 1)
+theme_override_constants/line_spacing = 5
+theme_override_constants/paragraph_spacing = 10
+theme_override_fonts/font = ExtResource("3_ek4in")
+theme_override_font_sizes/font_size = 32
+text = "Reward"
+autowrap_mode = 3
+
+[node name="EventRewardLabel" type="Label" parent="EventPanel/MarginContainer/VBoxContainer/VBoxContainer2" unique_id=2040392003]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_constants/line_spacing = 5
+theme_override_constants/paragraph_spacing = 10
+theme_override_fonts/font = ExtResource("3_ek4in")
+theme_override_font_sizes/font_size = 32
+text = "Reward "
+autowrap_mode = 3

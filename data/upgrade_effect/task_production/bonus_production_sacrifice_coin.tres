@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_ckrdy"]
 script = ExtResource("2_pp1s2")
 stat = ExtResource("3_cu224")
-amount = 0.5
+amount = 0.65
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [resource]

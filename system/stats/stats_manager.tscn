@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://be706omug5uo3" path="res://data/stat/stat_church.tres" id="4_neqvg"]
 [ext_resource type="Resource" uid="uid://dlwjnv8ca4sps" path="res://data/stat/stat_soul.tres" id="5_83inl"]
 [ext_resource type="Resource" uid="uid://t4owggge5keo" path="res://data/stat/stat_loyal.tres" id="6_02dsw"]
-[ext_resource type="Theme" uid="uid://b06wmmglo7w7v" path="res://asset/themes/action_button_theme.tres" id="9_8iaj1"]
+[ext_resource type="PackedScene" uid="uid://rhf5s5wn0yep" path="res://system/events/events_manager.tscn" id="9_8iaj1"]
 
 [sub_resource type="Resource" id="Resource_3qpn0"]
 script = ExtResource("2_3qpn0")
@@ -59,7 +59,7 @@ grow_vertical = 2
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 40
+theme_override_constants/margin_bottom = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=463214209]
 layout_mode = 2
@@ -90,10 +90,6 @@ visible = false
 layout_mode = 2
 stat = ExtResource("6_02dsw")
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1033205296]
-custom_minimum_size = Vector2(0, 70)
+[node name="EventsManager" parent="MarginContainer/VBoxContainer" unique_id=131518069 instance=ExtResource("9_8iaj1")]
+custom_minimum_size = Vector2(320, 520)
 layout_mode = 2
-theme = ExtResource("9_8iaj1")
-theme_override_font_sizes/font_size = 48
-toggle_mode = true
-text = "Start Event"

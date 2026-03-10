@@ -16,6 +16,7 @@ metadata/_custom_type_script = "uid://bbx72fbwp681v"
 [sub_resource type="Resource" id="Resource_y5qrw"]
 script = ExtResource("4_08y6m")
 type = 1
+change_per_level = 0.15
 metadata/_custom_type_script = "uid://dyc81t8gxnius"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_udx03"]

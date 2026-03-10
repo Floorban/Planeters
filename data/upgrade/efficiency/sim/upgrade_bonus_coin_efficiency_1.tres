@@ -16,7 +16,7 @@ metadata/_custom_type_script = "uid://bbx72fbwp681v"
 [sub_resource type="Resource" id="Resource_b6nfi"]
 script = ExtResource("4_qxt8w")
 modifier_type = 1
-change_amount = -0.2
+change_amount = -0.4
 metadata/_custom_type_script = "uid://bii112e3sbm8k"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0cq08"]

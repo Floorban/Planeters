@@ -27,7 +27,7 @@ func _on_stat_changed(stat: Stat, value: float):
 	if target > current_members:
 		_spawn_members(target - current_members)
 	elif target < current_members:
-		if randf() > 0.5:
+		if randf() > 0.8:
 			_remove_members(current_members - target)
 		else:
 			sacrifice_member()
@@ -70,4 +70,4 @@ func sacrifice_member():
 
 
 func get_random_church_position() -> Vector2:
-	return square_center.global_position + Vector2(randf_range(-200, 200),randf_range(-10, 100))
+	return square_center.global_position + Vector2(randf_range(-200, 200),randf_range(-10, 220))
