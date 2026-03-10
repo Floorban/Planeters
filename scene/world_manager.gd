@@ -1,0 +1,65 @@
+class_name WorldManager
+extends Node2D
+
+@export var character_scene : PackedScene
+@export var square_center : Marker2D
+@export var exit_point : Marker2D
+
+var characters : Array[Character] = []
+var max_visible_cultists := 50
+var current_members := 0
+
+func _ready():
+	await get_tree().process_frame
+	GameManager.world_manager = self
+	GameManager.stats_manager.stat_changed.connect(_on_stat_changed)
+
+
+func _on_stat_changed(stat: Stat, value: float):
+	if stat != GameManager.sim_manager.member_stat:
+		return
+
+	var target := int(value)
+
+	if target > current_members:
+		_spawn_members(target - current_members)
+	elif target < current_members:
+		_remove_members(current_members - target)
+
+	current_members = target
+
+
+func _spawn_members(amount):
+	if current_members > max_visible_cultists:
+		return
+		
+	for i in amount:
+		var c : Character = character_scene.instantiate()
+		add_child(c)
+
+		c.global_position = exit_point.global_position + Vector2(randf_range(-200, 200), randf_range(-20, 20))
+		c.target_position = get_random_church_position()
+		c.state = Character.CharacterState.WANDERING
+		characters.append(c)
+
+
+func _remove_members(amount):
+	for i in amount:
+		if characters.is_empty():
+			return
+
+		var c : Character = characters.pop_back()
+		c.state = Character.CharacterState.ESCAPING
+		c.target_position = exit_point.global_position
+
+
+func sacrifice_member():
+	if characters.is_empty():
+		return
+
+	var c : Character = characters.pop_back()
+	c.state = Character.CharacterState.BEING_KILLED
+
+
+func get_random_church_position() -> Vector2:
+	return square_center.global_position + Vector2(randf_range(-200, 200),randf_range(-20, 20))
