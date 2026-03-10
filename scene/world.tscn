@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ddlighcxd3sq" path="res://scene/world_manager.gd" id="1_w4qq1"]
 [ext_resource type="PackedScene" uid="uid://cjwbyqd6pavch" path="res://scene/character.tscn" id="2_txmk2"]
 [ext_resource type="Texture2D" uid="uid://dw2hb1siqskbk" path="res://asset/church_building.png" id="3_w4qq1"]
-[ext_resource type="Script" path="res://scene/dead_zone.gd" id="4_m5mgf"]
+[ext_resource type="Script" uid="uid://drenstg1av1xl" path="res://scene/dead_zone.gd" id="4_m5mgf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4qq1"]
 size = Vector2(474, 40)

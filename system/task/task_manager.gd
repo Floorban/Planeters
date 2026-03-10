@@ -4,6 +4,8 @@ extends Control
 @export var task_btns: Array[TaskButton]
 @export var task_slots : Array[TaskSlot]
 
+@export var recruit_task : Task
+
 @onready var task_cost_label: RichTextLabel = %TaskCostLabel
 @onready var task_effect_label: RichTextLabel = %TaskEffectLabel
 @onready var task_duration_label: RichTextLabel = %TaskDurationLabel
@@ -44,6 +46,19 @@ func _hide_task_info() -> void:
 
 
 func start_task(task : Task, btn: TaskButton) -> bool:
+	# block recruit if church is full
+	if task == recruit_task:
+		var members = GameManager.stats_manager.get_stat(GameManager.sim_manager.member_stat)
+		var reward_members = recruit_task.rewards[0].amount
+		var church = GameManager.stats_manager.get_stat(GameManager.sim_manager.church_stat)
+		var max_members = church * GameManager.sim_manager.members_per_church
+
+		if members + reward_members >= max_members:
+			btn.button_press_failed()
+			GameManager.stats_manager.stat_cost_failed.emit(GameManager.sim_manager.member_stat)
+			GameManager.stats_manager.stat_cost_failed.emit(GameManager.sim_manager.church_stat)
+			return false
+		
 	if not _can_pay_modified(task.costs):
 		btn.button_press_failed()
 		return false

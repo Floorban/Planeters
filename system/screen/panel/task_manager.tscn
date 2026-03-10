@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cntb8wqbeiybl"]
 
 [ext_resource type="Script" uid="uid://b4vpwivp8sljd" path="res://system/task/task_manager.gd" id="1_lmd8u"]
+[ext_resource type="Resource" uid="uid://d1b3tjc0uirwo" path="res://data/task/task_get_cult_member.tres" id="2_5poxo"]
 [ext_resource type="Theme" uid="uid://b06wmmglo7w7v" path="res://asset/themes/action_button_theme.tres" id="2_em4ww"]
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="2_ypjg7"]
 [ext_resource type="PackedScene" uid="uid://dkus2ytbao1qb" path="res://system/task/task_button.tscn" id="3_em4ww"]
@@ -25,6 +26,7 @@ grow_vertical = 2
 script = ExtResource("1_lmd8u")
 task_btns = [NodePath("Background/MarginContainer/HBoxContainer/Control/TaskButtons/ButtonGet"), NodePath("Background/MarginContainer/HBoxContainer/Control/TaskButtons/ButonSacrifice"), NodePath("Background/MarginContainer/HBoxContainer/Control/TaskButtons/ButonBuild")]
 task_slots = [NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot1"), NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot2"), NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot3"), NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot4"), NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot5"), NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot6"), NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot7"), NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot8"), NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot9")]
+recruit_task = ExtResource("2_5poxo")
 
 [node name="Background" type="PanelContainer" parent="." unique_id=18296509]
 custom_minimum_size = Vector2(600, 310)

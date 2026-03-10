@@ -9,4 +9,3 @@ func _on_character_entered(body) -> void:
 	if body is Character:
 		if body.state == Character.CharacterState.ESCAPING:
 			body.queue_free()
-			print("free")
