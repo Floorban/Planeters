@@ -18,13 +18,13 @@ metadata/_custom_type_script = "uid://bbx72fbwp681v"
 [sub_resource type="Resource" id="Resource_k653n"]
 script = ExtResource("1_k653n")
 stat = ExtResource("3_gqmvh")
-amount = 15.0
+amount = 5.0
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [sub_resource type="Resource" id="Resource_gqmvh"]
 script = ExtResource("1_k653n")
 stat = ExtResource("4_xaguq")
-amount = 100.0
+amount = 10.0
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [sub_resource type="Resource" id="Resource_xaguq"]
@@ -32,7 +32,7 @@ script = ExtResource("5_k653n")
 extra_capacity_per_level = 10
 metadata/_custom_type_script = "uid://coxa8h057n0kj"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xv0ld"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8o6ja"]
 atlas = ExtResource("7_weyte")
 region = Rect2(64, 96, 16, 16)
 
@@ -40,7 +40,7 @@ region = Rect2(64, 96, 16, 16)
 script = ExtResource("6_q6ywq")
 upgrade_name = "Church Capacity II"
 upgrade_description = "every church can contain more members now"
-upgrade_icon = SubResource("AtlasTexture_xv0ld")
+upgrade_icon = SubResource("AtlasTexture_8o6ja")
 costs = Array[ExtResource("1_k653n")]([SubResource("Resource_lqmyd"), SubResource("Resource_k653n"), SubResource("Resource_gqmvh")])
 effects = Array[ExtResource("4_fhaot")]([SubResource("Resource_xaguq")])
 metadata/_custom_type_script = "uid://emabm8r8bin6"

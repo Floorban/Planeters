@@ -10,13 +10,18 @@ enum CharacterState {
 	DEAD
 }
 
-@export var move_speed := 500.0
+var move_speed := 300.0
+@export var walk_speed := 300.0
+@export var run_speed := 500.0
 
 var state : CharacterState = CharacterState.IDLE
 var target_position : Vector2
 var stop_distance := 5
+var run_distance := 40
 
 var wander_timer := 0.0
+
+@onready var character_sprite: AnimatedSprite2D = $CharacterSprite
 
 func _process(delta):
 	if state == CharacterState.IDLE:
@@ -31,6 +36,11 @@ func _process(delta):
 
 func _physics_process(delta):
 	match state:
+		CharacterState.BEING_KILLED:
+			character_sprite.play("die")
+			character_sprite.modulate = Color(1.128, 0.0, 0.0, 1.0)
+			await character_sprite.animation_finished
+			queue_free()
 		CharacterState.WANDERING:
 			_move_to_target(delta)
 		CharacterState.ESCAPING:
@@ -39,8 +49,18 @@ func _physics_process(delta):
 
 func _move_to_target(delta):
 	var dir = (target_position - global_position).normalized()
+	character_sprite.flip_h = true if dir.x < 0 else false
 	velocity = dir * move_speed * delta
 	move_and_slide()
 
 	if global_position.distance_to(target_position) < stop_distance:
 		state = CharacterState.IDLE
+		character_sprite.play("idle")
+	else:
+		if global_position.distance_to(target_position) > run_distance:
+			move_speed = run_speed
+			character_sprite.play("run")
+		else:
+			move_speed = walk_speed
+			character_sprite.play("walk")
+		

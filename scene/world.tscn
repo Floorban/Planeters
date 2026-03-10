@@ -19,4 +19,4 @@ texture = ExtResource("1_pjass")
 position = Vector2(962, 363)
 
 [node name="ExitPoint" type="Marker2D" parent="." unique_id=1871861004]
-position = Vector2(966, 615)
+position = Vector2(966, 533)

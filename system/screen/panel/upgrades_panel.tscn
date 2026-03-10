@@ -50,15 +50,15 @@ region = Rect2(64, 96, 16, 16)
 atlas = ExtResource("9_kpkxp")
 region = Rect2(0, 80, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5yg1h"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8o6ja"]
 atlas = ExtResource("9_kpkxp")
 region = Rect2(64, 96, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8oasj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty2sm"]
 atlas = ExtResource("9_kpkxp")
 region = Rect2(0, 32, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_otpe7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8t5e1"]
 atlas = ExtResource("9_kpkxp")
 region = Rect2(0, 32, 16, 16)
 
@@ -107,7 +107,7 @@ metadata/_custom_type_script = "uid://bbx72fbwp681v"
 [sub_resource type="Resource" id="Resource_sl1cx"]
 script = ExtResource("8_ywqx8")
 stat = ExtResource("13_wj7va")
-amount = 150.0
+amount = 15.0
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [sub_resource type="Resource" id="Resource_1obvg"]
@@ -129,6 +129,10 @@ metadata/_custom_type_script = "uid://emabm8r8bin6"
 atlas = ExtResource("9_kpkxp")
 region = Rect2(48, 96, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lx0ka"]
+atlas = ExtResource("9_kpkxp")
+region = Rect2(0, 96, 16, 16)
+
 [sub_resource type="Resource" id="Resource_xig6h"]
 script = ExtResource("8_ywqx8")
 stat = ExtResource("9_jg2yw")
@@ -145,17 +149,17 @@ metadata/_custom_type_script = "uid://bbx72fbwp681v"
 script = ExtResource("13_83uh7")
 upgrade_name = "CULT FASTER I"
 upgrade_description = "cult action duration is shorter"
-upgrade_icon = SubResource("AtlasTexture_ywqx8")
+upgrade_icon = SubResource("AtlasTexture_lx0ka")
 max_level = 1
 costs = Array[ExtResource("8_ywqx8")]([SubResource("Resource_xig6h"), SubResource("Resource_7fbxx")])
 effects = Array[ExtResource("10_wj7va")]([ExtResource("24_v2ugi")])
 metadata/_custom_type_script = "uid://emabm8r8bin6"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uw747"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfgb6"]
 atlas = ExtResource("9_kpkxp")
 region = Rect2(64, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_266e3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_udx03"]
 atlas = ExtResource("9_kpkxp")
 region = Rect2(0, 80, 16, 16)
 
@@ -167,7 +171,7 @@ region = Rect2(0, 48, 16, 16)
 atlas = ExtResource("9_kpkxp")
 region = Rect2(0, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8o6ja"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpbkl"]
 atlas = ExtResource("9_kpkxp")
 region = Rect2(0, 48, 16, 16)
 
@@ -234,7 +238,7 @@ offset_left = -246.0
 offset_top = 174.0
 offset_right = -146.0
 offset_bottom = 274.0
-texture_normal = SubResource("AtlasTexture_5yg1h")
+texture_normal = SubResource("AtlasTexture_8o6ja")
 upgrade = ExtResource("7_uw747")
 
 [node name="UpgradeButton2" parent="UpgradesHolder/UpgradeButton1" unique_id=1300230716 instance=ExtResource("1_8ebph")]
@@ -257,7 +261,7 @@ offset_left = 238.0
 offset_top = -178.0
 offset_right = 338.0
 offset_bottom = -78.0
-texture_normal = SubResource("AtlasTexture_8oasj")
+texture_normal = SubResource("AtlasTexture_ty2sm")
 upgrade = ExtResource("6_aiiej")
 
 [node name="UpgradeButton2" parent="UpgradesHolder/UpgradeButton1/UpgradeButton2/UpgradeButton1" unique_id=746472321 instance=ExtResource("1_8ebph")]
@@ -266,7 +270,7 @@ offset_left = 238.0
 offset_top = 181.0
 offset_right = 338.0
 offset_bottom = 281.0
-texture_normal = SubResource("AtlasTexture_otpe7")
+texture_normal = SubResource("AtlasTexture_8t5e1")
 upgrade = ExtResource("7_8oasj")
 
 [node name="UpgradeButton2" parent="UpgradesHolder/UpgradeButton1/UpgradeButton2" unique_id=551986603 instance=ExtResource("1_8ebph")]
@@ -357,7 +361,7 @@ upgrade = ExtResource("8_1jwj0")
 layout_mode = 0
 offset_top = -407.0
 offset_bottom = -307.0
-texture_normal = SubResource("AtlasTexture_ywqx8")
+texture_normal = SubResource("AtlasTexture_lx0ka")
 upgrade = SubResource("Resource_w57fs")
 
 [node name="UpgradeButton1" parent="UpgradesHolder/UpgradeButton1/UpgradeButton4" unique_id=953264648 instance=ExtResource("1_8ebph")]
@@ -366,14 +370,14 @@ offset_left = -324.0
 offset_top = -382.0
 offset_right = -224.0
 offset_bottom = -282.0
-texture_normal = SubResource("AtlasTexture_uw747")
+texture_normal = SubResource("AtlasTexture_dfgb6")
 upgrade = ExtResource("24_otpe7")
 
 [node name="UpgradeButton2" parent="UpgradesHolder/UpgradeButton1/UpgradeButton4" unique_id=1999453457 instance=ExtResource("1_8ebph")]
 layout_mode = 0
 offset_top = -382.0
 offset_bottom = -282.0
-texture_normal = SubResource("AtlasTexture_uw747")
+texture_normal = SubResource("AtlasTexture_dfgb6")
 upgrade = ExtResource("24_otpe7")
 
 [node name="UpgradeButton3" parent="UpgradesHolder/UpgradeButton1/UpgradeButton4" unique_id=1927284749 instance=ExtResource("1_8ebph")]
@@ -382,7 +386,7 @@ offset_left = 315.0
 offset_top = -382.0
 offset_right = 415.0
 offset_bottom = -282.0
-texture_normal = SubResource("AtlasTexture_uw747")
+texture_normal = SubResource("AtlasTexture_dfgb6")
 upgrade = ExtResource("24_otpe7")
 
 [node name="UpgradeButton2" parent="UpgradesHolder" unique_id=1732551444 instance=ExtResource("1_8ebph")]
@@ -392,7 +396,7 @@ offset_top = 1198.0
 offset_right = 380.0
 offset_bottom = 1298.0
 disabled = false
-texture_normal = SubResource("AtlasTexture_266e3")
+texture_normal = SubResource("AtlasTexture_udx03")
 upgrade = ExtResource("7_5yg1h")
 
 [node name="UpgradeButton1" parent="UpgradesHolder/UpgradeButton2" unique_id=179048232 instance=ExtResource("1_8ebph")]
@@ -415,7 +419,7 @@ upgrade = ExtResource("32_0cq08")
 layout_mode = 0
 offset_left = -333.0
 offset_right = -233.0
-texture_normal = SubResource("AtlasTexture_8o6ja")
+texture_normal = SubResource("AtlasTexture_vpbkl")
 upgrade = ExtResource("30_fyr88")
 
 [node name="UpgradeButton2" parent="UpgradesHolder/UpgradeButton2/UpgradeButton1/UpgradeButton1" unique_id=753556148 instance=ExtResource("1_8ebph")]

@@ -10,7 +10,7 @@
 [sub_resource type="Resource" id="Resource_e37r5"]
 script = ExtResource("1_e37r5")
 stat = ExtResource("2_e37r5")
-amount = 80.0
+amount = 150.0
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [sub_resource type="Resource" id="Resource_y5qrw"]
@@ -19,7 +19,7 @@ type = 1
 change_per_level = 2.0
 metadata/_custom_type_script = "uid://dyc81t8gxnius"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dqewj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_udx03"]
 atlas = ExtResource("6_g0wgy")
 region = Rect2(0, 80, 16, 16)
 
@@ -27,7 +27,7 @@ region = Rect2(0, 80, 16, 16)
 script = ExtResource("5_n4eux")
 upgrade_name = "Capitalism I"
 upgrade_description = "All the members become richer and give you more coins  now"
-upgrade_icon = SubResource("AtlasTexture_dqewj")
+upgrade_icon = SubResource("AtlasTexture_udx03")
 costs = Array[ExtResource("1_e37r5")]([SubResource("Resource_e37r5")])
 effects = Array[ExtResource("3_0eqjv")]([SubResource("Resource_y5qrw")])
 metadata/_custom_type_script = "uid://emabm8r8bin6"

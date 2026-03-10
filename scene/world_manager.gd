@@ -7,6 +7,7 @@ extends Node2D
 
 var characters : Array[Character] = []
 var max_visible_cultists := 50
+@export var visible_cultiest_per_church := 50
 var current_members := 0
 
 func _ready():
@@ -17,6 +18,8 @@ func _ready():
 
 func _on_stat_changed(stat: Stat, value: float):
 	if stat != GameManager.sim_manager.member_stat:
+		if stat == GameManager.sim_manager.church_stat:
+			max_visible_cultists = visible_cultiest_per_church * GameManager.stats_manager.get_stat(stat)
 		return
 
 	var target := int(value)
@@ -24,7 +27,10 @@ func _on_stat_changed(stat: Stat, value: float):
 	if target > current_members:
 		_spawn_members(target - current_members)
 	elif target < current_members:
-		_remove_members(current_members - target)
+		if randf() > 0.5:
+			_remove_members(current_members - target)
+		else:
+			sacrifice_member()
 
 	current_members = target
 
@@ -62,4 +68,4 @@ func sacrifice_member():
 
 
 func get_random_church_position() -> Vector2:
-	return square_center.global_position + Vector2(randf_range(-200, 200),randf_range(-20, 20))
+	return square_center.global_position + Vector2(randf_range(-200, 200),randf_range(-50, 0))

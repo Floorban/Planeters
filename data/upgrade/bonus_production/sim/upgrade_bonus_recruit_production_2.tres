@@ -17,7 +17,7 @@ metadata/_custom_type_script = "uid://bbx72fbwp681v"
 [sub_resource type="Resource" id="Resource_u1s0x"]
 script = ExtResource("1_xrk0n")
 stat = ExtResource("3_xd6qh")
-amount = 50.0
+amount = 5.0
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [sub_resource type="Resource" id="Resource_wpvfe"]
@@ -25,7 +25,7 @@ script = ExtResource("4_xrk0n")
 change_per_level = 5.0
 metadata/_custom_type_script = "uid://dyc81t8gxnius"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fyr88"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpbkl"]
 atlas = ExtResource("6_yx3j0")
 region = Rect2(0, 48, 16, 16)
 
@@ -33,7 +33,7 @@ region = Rect2(0, 48, 16, 16)
 script = ExtResource("5_3snpi")
 upgrade_name = "Pro yappers II"
 upgrade_description = "your members can get more members for you now"
-upgrade_icon = SubResource("AtlasTexture_fyr88")
+upgrade_icon = SubResource("AtlasTexture_vpbkl")
 costs = Array[ExtResource("1_xrk0n")]([SubResource("Resource_xd6qh"), SubResource("Resource_u1s0x")])
 effects = Array[ExtResource("3_u1s0x")]([SubResource("Resource_wpvfe")])
 metadata/_custom_type_script = "uid://emabm8r8bin6"
