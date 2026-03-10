@@ -8,4 +8,4 @@ func _ready() -> void:
 func _on_character_entered(body) -> void:
 	if body is Character:
 		if body.state == Character.CharacterState.ESCAPING:
-			body.queue_free()
+			body.state == Character.CharacterState.BEING_KILLED

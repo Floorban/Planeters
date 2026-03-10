@@ -1,6 +1,8 @@
 class_name Character
 extends CharacterBody2D
 
+signal character_die()
+
 enum CharacterState {
 	IDLE,
 	WANDERING,
@@ -39,6 +41,7 @@ func _physics_process(delta):
 		CharacterState.BEING_KILLED:
 			character_sprite.play("die")
 			character_sprite.modulate = Color(1.825, 0.0, 0.0, 1.0)
+			character_die.emit()
 			await character_sprite.animation_finished
 			queue_free()
 		CharacterState.WANDERING:

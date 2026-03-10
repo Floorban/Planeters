@@ -49,6 +49,7 @@ func _spawn_members(amount):
 		c.target_position = get_random_church_position()
 		c.state = Character.CharacterState.WANDERING
 		characters.append(c)
+		c.character_die.connect(func(): characters.erase(c))
 
 
 func _remove_members(amount):
