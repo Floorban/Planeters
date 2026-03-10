@@ -122,7 +122,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 2.0
+"speed": 0.5
 }, {
 "frames": [{
 "duration": 1.0,
@@ -179,23 +179,24 @@ collision_mask = 0
 script = ExtResource("1_k8rrn")
 
 [node name="CharacterSprite" type="AnimatedSprite2D" parent="." unique_id=151410775]
-modulate = Color(0.58168644, 0.58168644, 0.58168644, 1)
+modulate = Color(0, 0, 0, 1)
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_5hcsl")
-animation = &"die"
-frame = 5
-frame_progress = 1.0
+animation = &"idle"
+frame_progress = 0.86421144
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=715435382]
 visible = false
 shape = SubResource("CircleShape2D_k8rrn")
 
-[node name="Main" type="PointLight2D" parent="." unique_id=1944352632]
+[node name="PointLight" type="PointLight2D" parent="." unique_id=1944352632]
 z_index = 1
-position = Vector2(0, -8)
-color = Color(1.3480214, 1.3270828, 1.3375521, 0.8980392)
-energy = 0.6
+position = Vector2(0, -11)
+color = Color(0.5176471, 0.07450981, 0.16470589, 0.9764706)
+energy = 0.8
 shadow_color = Color(0.27450982, 0.27450982, 0.27450982, 0.9843137)
 shadow_filter = 2
 shadow_filter_smooth = 40.2
 texture = SubResource("GradientTexture2D_k8rrn")
+texture_scale = 2.0
 height = 1.0

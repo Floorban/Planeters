@@ -42,6 +42,8 @@ func _spawn_members(amount):
 	for i in amount:
 		var c : Character = character_scene.instantiate()
 		add_child(c)
+		var rand_scale := randf_range(1.3, 1.7)
+		c.scale = Vector2(rand_scale, rand_scale)
 
 		c.global_position = exit_point.global_position + Vector2(randf_range(-400, 400), randf_range(-50, 20))
 		c.target_position = get_random_church_position()

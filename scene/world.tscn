@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://ddlighcxd3sq" path="res://scene/world_manager.gd" id="1_w4qq1"]
 [ext_resource type="PackedScene" uid="uid://cjwbyqd6pavch" path="res://scene/character.tscn" id="2_txmk2"]
 [ext_resource type="Texture2D" uid="uid://dw2hb1siqskbk" path="res://asset/church_building.png" id="3_w4qq1"]
-[ext_resource type="Script" uid="uid://drenstg1av1xl" path="res://scene/dead_zone.gd" id="4_m5mgf"]
+[ext_resource type="Script" path="res://scene/dead_zone.gd" id="4_m5mgf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4qq1"]
-size = Vector2(474, 64)
+size = Vector2(474, 40)
 
 [sub_resource type="Gradient" id="Gradient_w4qq1"]
 offsets = PackedFloat32Array(0.158776, 0.7936308)
@@ -27,16 +27,16 @@ exit_point = NodePath("ExitPoint")
 
 [node name="Church" type="Sprite2D" parent="." unique_id=413780122]
 texture_filter = 1
-position = Vector2(964, 271.99997)
-scale = Vector2(0.7, 0.7)
+position = Vector2(964, 277.00003)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_w4qq1")
 offset = Vector2(0, -120)
 
 [node name="SqaureCenter" type="Marker2D" parent="." unique_id=829838975]
-position = Vector2(964, 293)
+position = Vector2(964, 305)
 
 [node name="ExitPoint" type="Marker2D" parent="." unique_id=1871861004]
-position = Vector2(966, 533)
+position = Vector2(966, 634)
 
 [node name="DeadZone" type="Area2D" parent="ExitPoint" unique_id=1102521605]
 collision_layer = 0
@@ -57,8 +57,8 @@ color = Color(0.31764707, 0.32156864, 0.4, 1)
 [node name="Main" type="PointLight2D" parent="." unique_id=683296594]
 z_index = 1
 position = Vector2(972, 423)
-color = Color(0.028621878, 0.08140466, 0.047209837, 0.5647059)
-energy = 10.0
+color = Color(0.10794056, 0.10010644, 0.08182704, 0.5647059)
+energy = 16.0
 blend_mode = 2
 shadow_color = Color(0.27450982, 0.27450982, 0.27450982, 0.9843137)
 shadow_filter = 2

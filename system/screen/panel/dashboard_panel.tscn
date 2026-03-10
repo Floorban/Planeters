@@ -40,21 +40,21 @@ theme_override_constants/margin_bottom = 50
 layout_mode = 2
 
 [node name="StatsOverview" type="PanelContainer" parent="MarginContainer/PanelContainer" unique_id=565606917]
-custom_minimum_size = Vector2(500, 330)
+custom_minimum_size = Vector2(500, 230)
 layout_mode = 1
 offset_right = 500.0
-offset_bottom = 330.0
+offset_bottom = 200.0
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/StatsOverview" unique_id=446327672]
 layout_mode = 2
 theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 30
+theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 30
-theme_override_constants/margin_bottom = 30
+theme_override_constants/margin_bottom = 15
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer" unique_id=1860778103]
 layout_mode = 2
-theme_override_constants/separation = 26
+theme_override_constants/separation = 16
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer" unique_id=779806342]
@@ -64,7 +64,7 @@ layout_mode = 2
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jth0q")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 32
 text = "Cult Members Total"
 
 [node name="Control" type="Control" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer" unique_id=318928762]
@@ -75,7 +75,7 @@ size_flags_horizontal = 3
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jth0q")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 32
 text = "48"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer" unique_id=946416235]
@@ -85,7 +85,7 @@ layout_mode = 2
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jth0q")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 32
 text = "Revenue Earned"
 
 [node name="Control" type="Control" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1727312734]
@@ -96,7 +96,7 @@ size_flags_horizontal = 3
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jth0q")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 32
 text = "10000"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer" unique_id=237382153]
@@ -106,7 +106,7 @@ layout_mode = 2
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jth0q")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 32
 text = "Souls Saved"
 
 [node name="Control" type="Control" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1746207645]
@@ -117,7 +117,7 @@ size_flags_horizontal = 3
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jth0q")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 32
 text = "3"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer" unique_id=382252815]
@@ -127,7 +127,7 @@ layout_mode = 2
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jth0q")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 32
 text = "Cities Visited"
 
 [node name="Control" type="Control" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1075917682]
@@ -138,7 +138,7 @@ size_flags_horizontal = 3
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jth0q")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 32
 text = "12: 05"
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer" unique_id=469825358]
@@ -148,7 +148,7 @@ layout_mode = 2
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jth0q")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 32
 text = "Cult Lifetime"
 
 [node name="Control" type="Control" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=1027831710]
@@ -159,11 +159,11 @@ size_flags_horizontal = 3
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jth0q")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 32
 text = "26 : 24"
 
 [node name="WorldOverview" type="PanelContainer" parent="MarginContainer/PanelContainer" unique_id=571541127]
-custom_minimum_size = Vector2(500, 350)
+custom_minimum_size = Vector2(500, 450)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -179,8 +179,10 @@ layout_mode = 2
 disable_3d = true
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(500, 350)
+size = Vector2i(500, 450)
+size_2d_override = Vector2i(500, 420)
+size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="World" parent="MarginContainer/PanelContainer/WorldOverview/SubViewportContainer/SubViewport" unique_id=1319151852 instance=ExtResource("4_v1r7b")]
-position = Vector2(-718, -130)
+position = Vector2(-719, -116.44445)

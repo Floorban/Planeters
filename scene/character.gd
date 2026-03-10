@@ -28,7 +28,7 @@ func _process(delta):
 		wander_timer -= delta
 
 		if wander_timer <= 0:
-			wander_timer = randf_range(2,6)
+			wander_timer = randf_range(8,15)
 
 			target_position = GameManager.world_manager.get_random_church_position()
 			state = CharacterState.WANDERING
