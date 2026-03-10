@@ -35,61 +35,89 @@ theme_override_constants/margin_bottom = 80
 texture_filter = 1
 layout_mode = 2
 
-[node name="PanelContainer" type="Control" parent="MarginContainer/Background" unique_id=1029536652]
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/Background" unique_id=1979003701]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 60
+
+[node name="PanelContainer" type="Control" parent="MarginContainer/Background/MarginContainer2" unique_id=1029536652]
 unique_name_in_owner = true
 clip_contents = true
+custom_minimum_size = Vector2(1200, 820)
+layout_mode = 2
+
+[node name="OverviewPanel" parent="MarginContainer/Background/MarginContainer2/PanelContainer" unique_id=175380593 instance=ExtResource("5_06ml0")]
+layout_mode = 0
+
+[node name="UpgradesPanel" parent="MarginContainer/Background/MarginContainer2/PanelContainer" unique_id=1877020418 instance=ExtResource("2_l8vv1")]
+layout_mode = 0
+
+[node name="EventsPanel" parent="MarginContainer/Background/MarginContainer2/PanelContainer" unique_id=1215339446 instance=ExtResource("6_kw7ci")]
+layout_mode = 0
+
+[node name="WorldPanel" parent="MarginContainer/Background/MarginContainer2/PanelContainer" unique_id=1046601322 instance=ExtResource("4_bor6b")]
+layout_mode = 0
+
+[node name="TaskManager" parent="MarginContainer/Background/MarginContainer2/PanelContainer" unique_id=2067503845 instance=ExtResource("8_1ov7q")]
 layout_mode = 1
-anchors_preset = 0
-offset_right = 1300.0
-offset_bottom = 820.0
+offset_left = -580.0
+offset_right = 0.0
 
-[node name="OverviewPanel" parent="MarginContainer/Background/PanelContainer" unique_id=175380593 instance=ExtResource("5_06ml0")]
-layout_mode = 0
-
-[node name="UpgradesPanel" parent="MarginContainer/Background/PanelContainer" unique_id=1877020418 instance=ExtResource("2_l8vv1")]
-layout_mode = 0
-
-[node name="EventsPanel" parent="MarginContainer/Background/PanelContainer" unique_id=1215339446 instance=ExtResource("6_kw7ci")]
-layout_mode = 0
-
-[node name="WorldPanel" parent="MarginContainer/Background/PanelContainer" unique_id=1046601322 instance=ExtResource("4_bor6b")]
-layout_mode = 0
-
-[node name="TaskManager" parent="MarginContainer/Background/PanelContainer" unique_id=2067503845 instance=ExtResource("8_1ov7q")]
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/Background" unique_id=1920717099]
 layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+offset_right = 1196.0
+grow_vertical = 0
+theme_override_constants/margin_left = 60
 
-[node name="Taskbar" type="HBoxContainer" parent="MarginContainer/Background" unique_id=233926735]
+[node name="Taskbar" type="HBoxContainer" parent="MarginContainer/Background/MarginContainer3" unique_id=233926735]
 unique_name_in_owner = true
-layout_mode = 0
-offset_top = 860.0
-offset_right = 1314.0
-offset_bottom = 920.0
-theme_override_constants/separation = 13
+custom_minimum_size = Vector2(1100, 60)
+layout_mode = 2
+theme_override_constants/separation = 24
 
-[node name="TabButton1" parent="MarginContainer/Background/Taskbar" unique_id=817727907 instance=ExtResource("3_n877d")]
+[node name="TabButton1" parent="MarginContainer/Background/MarginContainer3/Taskbar" unique_id=817727907 instance=ExtResource("3_n877d")]
 layout_mode = 2
 btn_display_name = "Overview"
 
-[node name="TabButton2" parent="MarginContainer/Background/Taskbar" unique_id=829327577 instance=ExtResource("3_n877d")]
+[node name="TabButton2" parent="MarginContainer/Background/MarginContainer3/Taskbar" unique_id=829327577 instance=ExtResource("3_n877d")]
 layout_mode = 2
 btn_display_name = "Upgrades"
 
-[node name="TabButton3" parent="MarginContainer/Background/Taskbar" unique_id=708809036 instance=ExtResource("3_n877d")]
+[node name="TabButton3" parent="MarginContainer/Background/MarginContainer3/Taskbar" unique_id=708809036 instance=ExtResource("3_n877d")]
 layout_mode = 2
 btn_display_name = "Events"
 
-[node name="TabButton4" parent="MarginContainer/Background/Taskbar" unique_id=1206449726 instance=ExtResource("3_n877d")]
+[node name="TabButton4" parent="MarginContainer/Background/MarginContainer3/Taskbar" unique_id=1206449726 instance=ExtResource("3_n877d")]
 self_modulate = Color(0.9897384, 0.65560055, 0.6832832, 1)
 layout_mode = 2
 disabled = true
 btn_display_name = "World"
 
-[node name="RestartButton" parent="MarginContainer/Background/Taskbar" unique_id=78780616 instance=ExtResource("3_n877d")]
+[node name="RestartButton" parent="MarginContainer/Background/MarginContainer3/Taskbar" unique_id=78780616 instance=ExtResource("3_n877d")]
 layout_mode = 2
 toggle_mode = false
 text = "Restart"
 script = ExtResource("8_gigxy")
 
-[node name="StatsManager" parent="MarginContainer/Background" unique_id=654268750 instance=ExtResource("16_n3x1c")]
-unique_name_in_owner = true
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Background" unique_id=811016138]
 layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -460.0
+offset_bottom = 460.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_right = 60
+
+[node name="StatsManager" parent="MarginContainer/Background/MarginContainer" unique_id=654268750 instance=ExtResource("16_n3x1c")]
+unique_name_in_owner = true
+layout_mode = 2

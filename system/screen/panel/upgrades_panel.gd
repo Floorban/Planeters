@@ -19,6 +19,7 @@ func _ready() -> void:
 	clip_contents = true
 	upgrades_holder.pivot_offset = upgrades_holder.size / 2
 	upgrades_holder.position = (size / 2) - (upgrades_holder.size / 2)
+	upgrades_holder.scale = Vector2.ONE * 0.4
 
 
 func _on_mouse_entered() -> void:

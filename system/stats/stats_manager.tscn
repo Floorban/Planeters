@@ -32,12 +32,13 @@ stat = ExtResource("5_83inl")
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [node name="StatsManager" type="Panel" unique_id=654268750 node_paths=PackedStringArray("stat_slots")]
+custom_minimum_size = Vector2(380, 920)
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -380.0
+offset_left = -350.0
 offset_top = -460.0
 offset_bottom = 460.0
 grow_horizontal = 0
@@ -45,7 +46,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_q63yl")
 starting_stats = Array[ExtResource("2_3qpn0")]([SubResource("Resource_3qpn0"), SubResource("Resource_8iaj1"), SubResource("Resource_hpl2g"), SubResource("Resource_xheid")])
-stat_slots = [NodePath("StatSlotMember"), NodePath("StatSlotChurch"), NodePath("StatSlotCoin"), NodePath("StatSlotSoul")]
+stat_slots = [NodePath("MarginContainer/VBoxContainer/Statsbar/StatSlotMember"), NodePath("MarginContainer/VBoxContainer/Statsbar/StatSlotChurch"), NodePath("MarginContainer/VBoxContainer/Statsbar/StatSlotCoin"), NodePath("MarginContainer/VBoxContainer/Statsbar/StatSlotSoul")]
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=148964352]
 layout_mode = 1
@@ -71,43 +72,23 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/separation = 36
 
-[node name="StatSlotMember" parent="." unique_id=1306294195 instance=ExtResource("2_sibpc")]
-layout_mode = 0
-offset_left = 40.0
-offset_top = 176.0
-offset_right = 340.0
-offset_bottom = 226.0
+[node name="StatSlotMember" parent="MarginContainer/VBoxContainer/Statsbar" unique_id=1306294195 instance=ExtResource("2_sibpc")]
+layout_mode = 2
 stat = ExtResource("3_6jwxc")
 
-[node name="StatSlotChurch" parent="." unique_id=721405305 instance=ExtResource("2_sibpc")]
-layout_mode = 0
-offset_left = 40.0
-offset_top = 262.0
-offset_right = 340.0
-offset_bottom = 312.0
+[node name="StatSlotChurch" parent="MarginContainer/VBoxContainer/Statsbar" unique_id=721405305 instance=ExtResource("2_sibpc")]
+layout_mode = 2
 stat = ExtResource("4_neqvg")
 
-[node name="StatSlotCoin" parent="." unique_id=335472710 instance=ExtResource("2_sibpc")]
-layout_mode = 0
-offset_left = 40.0
-offset_top = 348.0
-offset_right = 340.0
-offset_bottom = 398.0
+[node name="StatSlotCoin" parent="MarginContainer/VBoxContainer/Statsbar" unique_id=335472710 instance=ExtResource("2_sibpc")]
+layout_mode = 2
 stat = ExtResource("4_lqh3s")
 
-[node name="StatSlotSoul" parent="." unique_id=1823944822 instance=ExtResource("2_sibpc")]
-layout_mode = 0
-offset_left = 40.0
-offset_top = 434.0
-offset_right = 340.0
-offset_bottom = 484.0
+[node name="StatSlotSoul" parent="MarginContainer/VBoxContainer/Statsbar" unique_id=1823944822 instance=ExtResource("2_sibpc")]
+layout_mode = 2
 stat = ExtResource("5_83inl")
 
-[node name="StatSlotLoyal" parent="." unique_id=1779843535 instance=ExtResource("2_sibpc")]
+[node name="StatSlotLoyal" parent="MarginContainer/VBoxContainer/Statsbar" unique_id=1779843535 instance=ExtResource("2_sibpc")]
 visible = false
-layout_mode = 0
-offset_left = 40.0
-offset_top = 520.0
-offset_right = 340.0
-offset_bottom = 570.0
+layout_mode = 2
 stat = ExtResource("6_02dsw")

@@ -5,8 +5,8 @@
 
 [node name="TabButton" type="Button" unique_id=524473809]
 texture_filter = 1
-custom_minimum_size = Vector2(250, 60)
-offset_right = 250.0
+custom_minimum_size = Vector2(220, 60)
+offset_right = 220.0
 offset_bottom = 60.0
 theme = ExtResource("1_kmq8c")
 toggle_mode = true
