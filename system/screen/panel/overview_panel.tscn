@@ -1,6 +1,8 @@
-[gd_scene format=3 uid="uid://chr6sq2bcitbf"]
+[gd_scene format=3 uid="uid://cl11d77lbfnnt"]
 
-[ext_resource type="Script" uid="uid://mkp5vc26q1gv" path="res://system/screen/panel/overview_panel.gd" id="1_0irte"]
+[ext_resource type="Script" uid="uid://bltwvuc0y6lta" path="res://system/screen/panel/overview_panel.gd" id="1_jth0q"]
+[ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="2_jth0q"]
+[ext_resource type="PackedScene" uid="uid://wsm37tvfwhrk" path="res://scene/world.tscn" id="4_v1r7b"]
 
 [node name="OverviewPanel" type="Control" unique_id=952982154]
 custom_minimum_size = Vector2(600, 820)
@@ -11,7 +13,7 @@ offset_bottom = 820.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 1
-script = ExtResource("1_0irte")
+script = ExtResource("1_jth0q")
 
 [node name="BG" type="ColorRect" parent="." unique_id=1390644060]
 layout_mode = 1
@@ -22,9 +24,170 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.5106012, 0.5106013, 0.5106011, 0.64705884)
 
-[node name="Label" type="Label" parent="." unique_id=810207107]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 36
-text = "Overview"
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1201286985]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="PanelContainer" type="Control" parent="MarginContainer" unique_id=1652239257]
+layout_mode = 2
+
+[node name="StatsOverview" type="PanelContainer" parent="MarginContainer/PanelContainer" unique_id=565606917]
+custom_minimum_size = Vector2(500, 230)
+layout_mode = 1
+offset_right = 500.0
+offset_bottom = 200.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/StatsOverview" unique_id=446327672]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer" unique_id=1860778103]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer" unique_id=779806342]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1168383173]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jth0q")
+theme_override_font_sizes/font_size = 32
+text = "Cult Members Total"
+
+[node name="Control" type="Control" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer" unique_id=318928762]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TotalMemberLabel" type="Label" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1124434810]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jth0q")
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer" unique_id=946416235]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1728859411]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jth0q")
+theme_override_font_sizes/font_size = 32
+text = "Revenue Earned"
+
+[node name="Control" type="Control" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1727312734]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TotalRevenueLabel" type="Label" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=558857226]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jth0q")
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer" unique_id=237382153]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=347778462]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jth0q")
+theme_override_font_sizes/font_size = 32
+text = "Souls Saved"
+
+[node name="Control" type="Control" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1746207645]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TotalSoulLabel" type="Label" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1882104476]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jth0q")
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer" unique_id=382252815]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1185714886]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jth0q")
+theme_override_font_sizes/font_size = 32
+text = "Cities Visited"
+
+[node name="Control" type="Control" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1075917682]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TotalCityLabel" type="Label" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=493213555]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jth0q")
+theme_override_font_sizes/font_size = 32
+text = "1"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer" unique_id=469825358]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=984642279]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jth0q")
+theme_override_font_sizes/font_size = 32
+text = "Cult Lifetime"
+
+[node name="Control" type="Control" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=1027831710]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TotalLifetimeLabel" type="Label" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=924979076]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jth0q")
+theme_override_font_sizes/font_size = 32
+text = "26 : 24"
+
+[node name="WorldOverview" type="PanelContainer" parent="MarginContainer/PanelContainer" unique_id=571541127]
+custom_minimum_size = Vector2(500, 450)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -350.0
+offset_right = 500.0
+grow_vertical = 0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="MarginContainer/PanelContainer/WorldOverview" unique_id=961153942]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="MarginContainer/PanelContainer/WorldOverview/SubViewportContainer" unique_id=1735923994]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(500, 450)
+size_2d_override = Vector2i(500, 420)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="World" parent="MarginContainer/PanelContainer/WorldOverview/SubViewportContainer/SubViewport" unique_id=1319151852 instance=ExtResource("4_v1r7b")]
+position = Vector2(-719, -116.44445)

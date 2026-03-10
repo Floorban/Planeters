@@ -27,6 +27,8 @@ func _ready() -> void:
 
 	for s in starting_stats:
 		add_stat(s.stat, s.amount)
+	
+	GameManager.overview.reset_overview_labels()
 
 
 func get_stat(stat: Stat) -> int:
@@ -63,6 +65,12 @@ func add_stat(stat: Stat, amount: float) -> void:
 	# float in the system but ui shows int
 	stats[stat] += amount
 	stat_changed.emit(stat, stats[stat])
+	if stat == GameManager.sim_manager.member_stat:
+		GameManager.overview.set_member_label(int(amount))
+	if stat == GameManager.sim_manager.coin_stat:
+		GameManager.overview.set_revenue_label(int(amount))
+	if stat == GameManager.sim_manager.soul_stat:
+		GameManager.overview.set_soul_label(int(amount))
 
 
 # for capping cult member from church num

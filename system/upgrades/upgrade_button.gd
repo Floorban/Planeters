@@ -14,6 +14,8 @@ var level := 0:
 		level = clampi(value, 0, upgrade.max_level)
 		upgrade_level.text = str(level) + "/" + str(upgrade.max_level)
 
+var pressed_tween : Tween
+
 
 func _ready() -> void:
 	level = 0
@@ -56,6 +58,7 @@ func _on_mouse_exited() -> void:
 func _on_pressed() -> void:
 	if level == upgrade.max_level or not GameManager.stats_manager.can_pay(upgrade.costs):
 		return
+	
 	self_modulate = Color.LIGHT_GREEN
 	upgrade_branch.default_color = Color.GREEN
 	level = min(level + 1, upgrade.max_level)
@@ -71,3 +74,13 @@ func _unlock_next_upgrades() -> void:
 		if u is UpgradeButton and level == upgrade.max_level:
 			u.disabled = false
 			u.show()
+			u.unlock_effect()
+
+
+func unlock_effect() -> void:
+	if pressed_tween:
+		pressed_tween.kill()
+
+	pressed_tween = create_tween().set_ease(Tween.EASE_OUT)
+	pressed_tween.tween_property(self, "scale", Vector2.ONE * 1.25, 0.12)
+	pressed_tween.tween_property(self, "scale", Vector2.ONE , 0.08)

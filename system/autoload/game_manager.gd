@@ -6,9 +6,15 @@ var upgrades_manager: UpgradesManager
 var sim_manager: SimulationManager
 var world_manager: WorldManager
 
+var overview: Overview
+var events: Events
+
+
+func restart_game() -> void:
+	overview.reset_overview_labels()
+
+
 var is_paused := false
 
 func check_game_state(paused: bool) -> void:
 	is_paused = paused
-
-var camera : Camera

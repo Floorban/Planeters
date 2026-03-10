@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b0vsnwsdvdf6f"]
 
-[ext_resource type="Script" uid="uid://blfe8oo1m4y5r" path="res://system/screen/panel/settings_panel.gd" id="1_srv85"]
+[ext_resource type="Script" uid="uid://blfe8oo1m4y5r" path="res://system/screen/panel/events_panel.gd" id="1_srv85"]
 
-[node name="SettingsPanel" type="Control" unique_id=952982154]
+[node name="EventsPanel" type="Control" unique_id=952982154]
 custom_minimum_size = Vector2(600, 820)
 layout_mode = 3
 anchors_preset = 0
@@ -27,4 +27,4 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 36
-text = "Settings"
+text = "Events"

@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://1ktvbleh6eme"]
 
 [ext_resource type="Script" uid="uid://b1b5kvlcgcely" path="res://system/screen/panel/main_screen.gd" id="2_ckf3p"]
-[ext_resource type="PackedScene" uid="uid://cl11d77lbfnnt" path="res://system/screen/panel/dashboard_panel.tscn" id="2_jmo0d"]
 [ext_resource type="PackedScene" uid="uid://kseiabufssdw" path="res://system/screen/panel/upgrades_manager.tscn" id="2_l8vv1"]
 [ext_resource type="PackedScene" uid="uid://drk220wxciily" path="res://system/screen/button/tab_button.tscn" id="3_n877d"]
 [ext_resource type="PackedScene" uid="uid://b4b8pivkpdt40" path="res://system/screen/panel/world_panel.tscn" id="4_bor6b"]
-[ext_resource type="PackedScene" uid="uid://chr6sq2bcitbf" path="res://system/screen/panel/overview_panel.tscn" id="5_06ml0"]
-[ext_resource type="PackedScene" uid="uid://b0vsnwsdvdf6f" path="res://system/screen/panel/settings_panel.tscn" id="6_kw7ci"]
+[ext_resource type="PackedScene" uid="uid://cl11d77lbfnnt" path="res://system/screen/panel/overview_panel.tscn" id="5_06ml0"]
+[ext_resource type="PackedScene" uid="uid://b0vsnwsdvdf6f" path="res://system/screen/panel/events_panel.tscn" id="6_kw7ci"]
 [ext_resource type="PackedScene" uid="uid://cntb8wqbeiybl" path="res://system/screen/panel/task_manager.tscn" id="8_1ov7q"]
+[ext_resource type="Script" uid="uid://bu2lmg055dsyb" path="res://system/screen/button/restart_button.gd" id="8_gigxy"]
 [ext_resource type="PackedScene" uid="uid://dpdrr8e6dwttd" path="res://system/stats/stats_manager.tscn" id="16_n3x1c"]
 
 [node name="MainScreen" type="Control" unique_id=1745498329]
@@ -43,19 +43,16 @@ anchors_preset = 0
 offset_right = 1300.0
 offset_bottom = 820.0
 
-[node name="DashboardPanel" parent="MarginContainer/Background/PanelContainer" unique_id=952982154 instance=ExtResource("2_jmo0d")]
+[node name="OverviewPanel" parent="MarginContainer/Background/PanelContainer" unique_id=175380593 instance=ExtResource("5_06ml0")]
 layout_mode = 0
 
 [node name="UpgradesPanel" parent="MarginContainer/Background/PanelContainer" unique_id=1877020418 instance=ExtResource("2_l8vv1")]
 layout_mode = 0
 
+[node name="EventsPanel" parent="MarginContainer/Background/PanelContainer" unique_id=1215339446 instance=ExtResource("6_kw7ci")]
+layout_mode = 0
+
 [node name="WorldPanel" parent="MarginContainer/Background/PanelContainer" unique_id=1046601322 instance=ExtResource("4_bor6b")]
-layout_mode = 0
-
-[node name="OverviewPanel" parent="MarginContainer/Background/PanelContainer" unique_id=175380593 instance=ExtResource("5_06ml0")]
-layout_mode = 0
-
-[node name="SettingsPanel" parent="MarginContainer/Background/PanelContainer" unique_id=1215339446 instance=ExtResource("6_kw7ci")]
 layout_mode = 0
 
 [node name="TaskManager" parent="MarginContainer/Background/PanelContainer" unique_id=2067503845 instance=ExtResource("8_1ov7q")]
@@ -71,7 +68,7 @@ theme_override_constants/separation = 13
 
 [node name="TabButton1" parent="MarginContainer/Background/Taskbar" unique_id=817727907 instance=ExtResource("3_n877d")]
 layout_mode = 2
-btn_display_name = "Dashboard"
+btn_display_name = "Overview"
 
 [node name="TabButton2" parent="MarginContainer/Background/Taskbar" unique_id=829327577 instance=ExtResource("3_n877d")]
 layout_mode = 2
@@ -79,15 +76,19 @@ btn_display_name = "Upgrades"
 
 [node name="TabButton3" parent="MarginContainer/Background/Taskbar" unique_id=708809036 instance=ExtResource("3_n877d")]
 layout_mode = 2
-btn_display_name = "World"
+btn_display_name = "Events"
 
 [node name="TabButton4" parent="MarginContainer/Background/Taskbar" unique_id=1206449726 instance=ExtResource("3_n877d")]
+self_modulate = Color(0.9897384, 0.65560055, 0.6832832, 1)
 layout_mode = 2
-btn_display_name = "Overview"
+disabled = true
+btn_display_name = "World"
 
-[node name="TabButton5" parent="MarginContainer/Background/Taskbar" unique_id=78780616 instance=ExtResource("3_n877d")]
+[node name="RestartButton" parent="MarginContainer/Background/Taskbar" unique_id=78780616 instance=ExtResource("3_n877d")]
 layout_mode = 2
-btn_display_name = "Settings"
+toggle_mode = false
+text = "Restart"
+script = ExtResource("8_gigxy")
 
 [node name="StatsManager" parent="MarginContainer/Background" unique_id=654268750 instance=ExtResource("16_n3x1c")]
 unique_name_in_owner = true
