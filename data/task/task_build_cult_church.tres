@@ -3,31 +3,18 @@
 [ext_resource type="Script" uid="uid://d1qbxvn7m407i" path="res://system/task/task.gd" id="1_0v258"]
 [ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_e2h2u"]
 [ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_5mlxy"]
+[ext_resource type="Resource" uid="uid://dlwjnv8ca4sps" path="res://data/stat/stat_soul.tres" id="3_5mlxy"]
 [ext_resource type="Resource" uid="uid://be706omug5uo3" path="res://data/stat/stat_church.tres" id="3_21sj1"]
-[ext_resource type="Script" uid="uid://df1xrlbakiuj1" path="res://system/stats/stat.gd" id="3_e2h2u"]
-[ext_resource type="Texture2D" uid="uid://ceeayqiggkaog" path="res://asset/Spritesheet_TheDarkRitual_BigWander.png" id="4_udme2"]
 
 [sub_resource type="Resource" id="Resource_21sj1"]
 script = ExtResource("1_e2h2u")
 stat = ExtResource("2_5mlxy")
-amount = 200.0
+amount = 150.0
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oetkd"]
-atlas = ExtResource("4_udme2")
-region = Rect2(144, 32, 16, 16)
-
-[sub_resource type="Resource" id="Resource_crw1k"]
-script = ExtResource("3_e2h2u")
-stat_name = "Soul"
-stat_description = "They never die, they are here with you forever"
-stat_icon = SubResource("AtlasTexture_oetkd")
-stat_color = Color(1, 1, 1, 1)
-metadata/_custom_type_script = "uid://df1xrlbakiuj1"
-
-[sub_resource type="Resource" id="Resource_ditx1"]
+[sub_resource type="Resource" id="Resource_e2h2u"]
 script = ExtResource("1_e2h2u")
-stat = SubResource("Resource_crw1k")
+stat = ExtResource("3_5mlxy")
 amount = 10.0
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
@@ -42,6 +29,6 @@ script = ExtResource("1_0v258")
 task_name = "Build church"
 task_description = "Building new church . . ."
 duration = 8.0
-costs = Array[ExtResource("1_e2h2u")]([SubResource("Resource_21sj1"), SubResource("Resource_ditx1")])
+costs = Array[ExtResource("1_e2h2u")]([SubResource("Resource_21sj1"), SubResource("Resource_e2h2u")])
 rewards = Array[ExtResource("1_e2h2u")]([SubResource("Resource_5mlxy")])
 metadata/_custom_type_script = "uid://d1qbxvn7m407i"

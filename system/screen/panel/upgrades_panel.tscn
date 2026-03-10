@@ -131,13 +131,13 @@ region = Rect2(0, 96, 16, 16)
 [sub_resource type="Resource" id="Resource_xig6h"]
 script = ExtResource("8_ywqx8")
 stat = ExtResource("9_jg2yw")
-amount = 200.0
+amount = 100.0
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [sub_resource type="Resource" id="Resource_7fbxx"]
 script = ExtResource("8_ywqx8")
 stat = ExtResource("13_wj7va")
-amount = 30.0
+amount = 20.0
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [sub_resource type="Resource" id="Resource_w57fs"]

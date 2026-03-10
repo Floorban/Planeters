@@ -1,22 +1,9 @@
 [gd_resource type="Resource" script_class="StatChange" format=3 uid="uid://bhiwfrne45t3s"]
 
 [ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_ty6sq"]
-[ext_resource type="Script" uid="uid://df1xrlbakiuj1" path="res://system/stats/stat.gd" id="2_6vd4s"]
-[ext_resource type="Texture2D" uid="uid://ceeayqiggkaog" path="res://asset/Spritesheet_TheDarkRitual_BigWander.png" id="3_43fmw"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oetkd"]
-atlas = ExtResource("3_43fmw")
-region = Rect2(144, 32, 16, 16)
-
-[sub_resource type="Resource" id="Resource_crw1k"]
-script = ExtResource("2_6vd4s")
-stat_name = "Soul"
-stat_description = "They never die, they are here with you forever"
-stat_icon = SubResource("AtlasTexture_oetkd")
-stat_color = Color(1, 1, 1, 1)
-metadata/_custom_type_script = "uid://df1xrlbakiuj1"
+[ext_resource type="Resource" uid="uid://dlwjnv8ca4sps" path="res://data/stat/stat_soul.tres" id="2_lpin2"]
 
 [resource]
 script = ExtResource("1_ty6sq")
-stat = SubResource("Resource_crw1k")
+stat = ExtResource("2_lpin2")
 metadata/_custom_type_script = "uid://bbx72fbwp681v"

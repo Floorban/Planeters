@@ -8,7 +8,7 @@ extends Node
 @export var loyalty_stat : Stat
 
 @export var member_recruit_gain := 0.0
-@export var member_coin_gain := 0.2
+@export var member_coin_gain := 0.5
 
 @export var recruit_interval := 10.0
 @export var coin_interval := 10.0
