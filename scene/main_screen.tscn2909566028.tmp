@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b0vsnwsdvdf6f" path="res://system/screen/panel/events_panel.tscn" id="6_kw7ci"]
 [ext_resource type="PackedScene" uid="uid://cntb8wqbeiybl" path="res://system/screen/panel/task_manager.tscn" id="8_1ov7q"]
 [ext_resource type="Script" uid="uid://bu2lmg055dsyb" path="res://system/screen/button/restart_button.gd" id="8_gigxy"]
+[ext_resource type="PackedScene" uid="uid://ck0mkrjunsgjo" path="res://asset/sound/system/audio.tscn" id="10_1ov7q"]
 [ext_resource type="Script" uid="uid://dda2s8deiwwhp" path="res://asset/sound/system/ambient.gd" id="11_vdsnl"]
 [ext_resource type="PackedScene" uid="uid://dpdrr8e6dwttd" path="res://system/stats/stats_manager.tscn" id="16_n3x1c"]
 
@@ -129,5 +130,7 @@ theme_override_constants/margin_right = 60
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Ambient" type="Node" parent="." unique_id=1627094930]
+[node name="AudioManager" parent="." unique_id=2136778046 instance=ExtResource("10_1ov7q")]
+
+[node name="Ambient" type="Node" parent="AudioManager" unique_id=1040758556]
 script = ExtResource("11_vdsnl")

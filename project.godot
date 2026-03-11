@@ -19,11 +19,16 @@ run/main_scene="uid://1ktvbleh6eme"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://asset/ui/icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://1hbinw75eq2q"
+
 [autoload]
 
 Signals="*res://system/autoload/signals.gd"
 GameManager="*res://system/autoload/game_manager.tscn"
 PopupPrompt="*res://system/autoload/popup_prompt.gd"
+Audio="*uid://ck0mkrjunsgjo"
 
 [display]
 
