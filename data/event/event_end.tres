@@ -5,6 +5,9 @@
 [ext_resource type="Resource" uid="uid://dn5di2eias4nk" path="res://data/stat/stat_member.tres" id="3_nen7m"]
 [ext_resource type="Resource" uid="uid://dlwjnv8ca4sps" path="res://data/stat/stat_soul.tres" id="4_v6hg5"]
 [ext_resource type="Script" uid="uid://dra3if1jqk6pp" path="res://system/events/event_data.gd" id="5_h2thp"]
+[ext_resource type="Resource" uid="uid://bvkxku4dyh8gf" path="res://data/stat_change/stat_change_end_1.tres" id="5_v6hg5"]
+[ext_resource type="Resource" uid="uid://8354r5qudufs" path="res://data/stat_change/stat_change_end_2.tres" id="6_h2thp"]
+[ext_resource type="Resource" uid="uid://de7rpjpi1b8r0" path="res://data/stat_change/stat_change_end_3.tres" id="7_wf2x8"]
 
 [sub_resource type="Resource" id="Resource_incbt"]
 script = ExtResource("1_kiet8")
@@ -15,7 +18,7 @@ metadata/_custom_type_script = "uid://bbx72fbwp681v"
 [sub_resource type="Resource" id="Resource_wf2x8"]
 script = ExtResource("1_kiet8")
 stat = ExtResource("3_nen7m")
-amount = 800.0
+amount = 1000.0
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [sub_resource type="Resource" id="Resource_0vhn4"]
@@ -24,17 +27,11 @@ stat = ExtResource("4_v6hg5")
 amount = 500.0
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
-[sub_resource type="Resource" id="Resource_kiet8"]
-script = ExtResource("1_kiet8")
-stat = ExtResource("2_eu4bg")
-amount = 1000000000.0
-metadata/_custom_type_script = "uid://bbx72fbwp681v"
-
 [resource]
 script = ExtResource("5_h2thp")
 event_description = "\"Alignment complete. File 'Existence Termination' forms and submit final tribute.
 Your duties to reality are concluded. Thank you for your compliance.\""
 event_duration = 35.0
 event_requirements = Array[ExtResource("1_kiet8")]([SubResource("Resource_incbt"), SubResource("Resource_wf2x8"), SubResource("Resource_0vhn4")])
-event_rewards = Array[ExtResource("1_kiet8")]([SubResource("Resource_kiet8")])
+event_rewards = Array[ExtResource("1_kiet8")]([ExtResource("5_v6hg5"), ExtResource("6_h2thp"), ExtResource("7_wf2x8")])
 metadata/_custom_type_script = "uid://dra3if1jqk6pp"

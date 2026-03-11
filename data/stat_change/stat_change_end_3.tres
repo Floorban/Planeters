@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StatChange" format=3 uid="uid://de7rpjpi1b8r0"]
+
+[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_haln8"]
+[ext_resource type="Resource" uid="uid://mowcik7lfrkd" path="res://data/stat/stat_end_3.tres" id="2_haln8"]
+
+[resource]
+script = ExtResource("1_haln8")
+stat = ExtResource("2_haln8")
+amount = 1.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Stat" format=3 uid="uid://bvlheji53ugku"]
+
+[ext_resource type="Script" uid="uid://df1xrlbakiuj1" path="res://system/stats/stat.gd" id="1_56jdd"]
+[ext_resource type="Texture2D" uid="uid://cfnnrbh21q6bv" path="res://asset/ArtOfScrolls_BigWander_Spritesheet.png" id="2_56jdd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4b481"]
+atlas = ExtResource("2_56jdd")
+region = Rect2(144, 80, 16, 16)
+
+[resource]
+script = ExtResource("1_56jdd")
+stat_name = "End"
+stat_description = "End"
+stat_icon = SubResource("AtlasTexture_4b481")
+stat_color = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://df1xrlbakiuj1"

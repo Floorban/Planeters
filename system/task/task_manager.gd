@@ -11,8 +11,14 @@ signal update_task()
 @onready var task_cost_label: RichTextLabel = %TaskCostLabel
 @onready var task_effect_label: RichTextLabel = %TaskEffectLabel
 @onready var task_duration_label: RichTextLabel = %TaskDurationLabel
+@onready var max_action_label: Label = %MaxActionLabel
 
-@export var max_parallel_tasks := 1
+@export var max_parallel_tasks := 1:
+	set(value):
+		max_parallel_tasks = value
+		if is_node_ready(): 
+			max_action_label.text = "Max Actions: " + str(max_parallel_tasks)
+			_refresh_task_buttons()
 
 var global_duration_multiplier := 1.0
 var duration_multipliers : Dictionary = {} # Task -> float
