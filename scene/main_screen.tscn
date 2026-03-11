@@ -89,13 +89,11 @@ layout_mode = 2
 btn_display_name = "Upgrades"
 
 [node name="TabButton3" parent="MarginContainer/Background/MarginContainer3/Taskbar" unique_id=708809036 instance=ExtResource("3_n877d")]
-self_modulate = Color(0.9882353, 0.654902, 0.68235296, 1)
 layout_mode = 2
 disabled = true
 btn_display_name = "Bishop"
 
 [node name="TabButton4" parent="MarginContainer/Background/MarginContainer3/Taskbar" unique_id=1206449726 instance=ExtResource("3_n877d")]
-self_modulate = Color(0.9897384, 0.65560055, 0.6832832, 1)
 layout_mode = 2
 disabled = true
 btn_display_name = "World"

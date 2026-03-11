@@ -5,11 +5,13 @@ extends Control
 var current_event : EventData
 @export var current_event_index : int
 
+var event_started := false
 var event_timer : float
-var event_expire_timer : float
-@export var expire_duration : float
-var can_start_event := false
 
+#var event_expire_timer : float
+#@export var expire_duration : float
+
+var can_start_event := false
 var new_event_timer : float
 @export var new_event_gap : float
 @export var new_event_gap_range : float
@@ -19,10 +21,12 @@ var new_event_timer : float
 @onready var event_reward_label: RichTextLabel = %EventRewardLabel
 
 @onready var start_event_button: Button = %StartEventButton
-var button_tween : Tween
+var visual_tween : Tween
+@onready var event_progressbar: TextureProgressBar = %EventProgressbar
 
 
 func _ready() -> void:
+	GameManager.event_manager = self
 	start_event_button.toggled.connect(_on_event_button_toggled)
 	reset_event_manager()
 
@@ -41,41 +45,42 @@ func start_event_failed() -> void:
 	var og_color = Color.WHITE
 	start_event_button.modulate = og_color
 	
-	if button_tween:
-		button_tween.kill()
-	button_tween = create_tween()
-	button_tween.tween_property(start_event_button, "modulate", Color(0.796, 0.0, 0.0, 1.0), 0.08)
-	button_tween.tween_property(start_event_button, "modulate", og_color, 0.1)
-	button_tween.tween_callback(func(): start_event_button.modulate = og_color)
+	if visual_tween:
+		visual_tween.kill()
+	visual_tween = create_tween()
+	visual_tween.tween_property(start_event_button, "modulate", Color(0.796, 0.0, 0.0, 1.0), 0.08)
+	visual_tween.tween_property(start_event_button, "modulate", og_color, 0.1)
+	visual_tween.tween_callback(func(): start_event_button.modulate = og_color)
 
 
 func _process(delta: float) -> void:
 	if GameManager.is_paused: return
 	_run_event_progress(delta)
-	_run_event_cooldown(delta)
 	_run_event_spawn_cooldown(delta)
+	#_run_event_cooldown(delta)
 
 
 func _run_event_progress(delta) -> void:
-	if not current_event or can_start_event:
+	if not current_event or not event_started:
 		return
 	
 	event_timer += delta
+	event_progressbar.value = event_timer * event_progressbar.max_value / current_event.event_duration
 	if event_timer >= current_event.event_duration:
 		_on_event_finished()
 
 
-func _run_event_cooldown(delta) -> void:
-	if not can_start_event:
-		return
-		
-	event_expire_timer += delta
-	if event_expire_timer >= expire_duration:
-		_on_event_expired()
+#func _run_event_cooldown(delta) -> void:
+	#if not can_start_event:
+		#return
+		#
+	#event_expire_timer += delta
+	#if event_expire_timer >= expire_duration:
+		#_on_event_expired()
 
 
 func _run_event_spawn_cooldown(delta) -> void:
-	if can_start_event:
+	if not can_start_event or event_started:
 		return
 		
 	new_event_timer += delta
@@ -94,17 +99,19 @@ func spawn_new_event() -> void:
 	for r in new_event.event_rewards:
 		event_reward_label.append_text(r.to_rich_text(r.amount, false, false) + "  ")
 
-	can_start_event = true
+	can_start_event = false
 	new_event_timer = 0.0
 	current_event = new_event
 	current_event_index += 1
+	start_event_button.disabled = false
 
 
 func clear_current_event() -> void:
-	can_start_event = false
-	event_expire_timer = 0.0
 	event_timer = 0.0
-	current_event = null
+	event_started = false
+	can_start_event = true
+	#event_expire_timer = 0.0
+	# current_event = null 
 	event_description_label.text = "There's no event currently"
 	event_requirement_label.clear()
 	event_reward_label.clear()
@@ -121,14 +128,44 @@ func can_start_new_event() -> bool:
 
 
 func start_event() -> void:
+	event_started = true
 	can_start_event = false
+	start_event_button.disabled = true
 
 
 func _on_event_finished() -> void:
-	for r in current_event.event_rewards:
+	var finished_event = current_event 
+	current_event = null
+	for r in finished_event.event_rewards:
 		GameManager.stats_manager.add_stat(r.stat, r.amount)
-	start_event_button.disabled = false
-	clear_current_event()
+		
+	start_event_button.button_pressed = false
+	event_progressbar.value = 0.0
+	new_event_timer = 0.0
+	event_started = false
+	
+	var og_color = Color.WHITE
+	modulate = og_color
+	scale = Vector2.ONE
+	
+	if visual_tween:
+		visual_tween.kill()
+	visual_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+	visual_tween.tween_property(self, "scale", Vector2.ONE * 1.1, 0.15)
+	visual_tween.tween_property(self, "scale", Vector2.ONE, 0.08)
+	visual_tween.parallel().tween_property(event_description_label, "modulate", Color.GREEN, 0.5)
+	visual_tween.parallel().tween_property(event_requirement_label, "modulate", Color.GREEN, 0.5)
+	visual_tween.parallel().tween_property(event_reward_label, "modulate", Color.GREEN, 0.5)
+	
+	visual_tween.tween_property(event_description_label, "modulate", og_color, 0.8)
+	visual_tween.parallel().tween_property(event_requirement_label, "modulate", og_color, 0.8)
+	visual_tween.parallel().tween_property(event_reward_label, "modulate", og_color, 0.8)
+	
+	visual_tween.tween_callback(func():
+		clear_current_event()
+		modulate = og_color
+		scale = Vector2.ONE
+	)
 
 
 func _on_event_expired() -> void:

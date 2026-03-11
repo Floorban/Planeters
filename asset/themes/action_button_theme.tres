@@ -5,6 +5,17 @@
 [ext_resource type="StyleBox" uid="uid://bklaxsbl7axv4" path="res://asset/themes/button_hovered.tres" id="3_b88hp"]
 [ext_resource type="StyleBox" uid="uid://ddg85mpw7121d" path="res://asset/themes/button_pressed.tres" id="4_1ji6b"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i5p22"]
+load_path = "res://.godot/imported/Windows_Button_Pressed.png-74199fdfef84429f2d54f6aff12fd4a8.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j0uhy"]
+texture = SubResource("CompressedTexture2D_i5p22")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+modulate_color = Color(0.9882353, 0.654902, 0.68235296, 1)
+
 [resource]
 Button/colors/font_color = Color(0.09603269, 0.096032985, 0.09603276, 1)
 Button/colors/font_disabled_color = Color(0.39215687, 0.39215687, 0.39215687, 1)
@@ -12,7 +23,7 @@ Button/colors/font_hover_pressed_color = Color(0.39215687, 0.39215687, 0.3921568
 Button/colors/font_pressed_color = Color(0.39255488, 0.3925549, 0.3925549, 1)
 Button/font_sizes/font_size = 34
 Button/fonts/font = ExtResource("1_wsvie")
-Button/styles/disabled = ExtResource("4_1ji6b")
+Button/styles/disabled = SubResource("StyleBoxTexture_j0uhy")
 Button/styles/focus = ExtResource("2_wx5kd")
 Button/styles/hover = ExtResource("3_b88hp")
 Button/styles/normal = ExtResource("2_wx5kd")

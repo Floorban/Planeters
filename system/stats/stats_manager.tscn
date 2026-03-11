@@ -30,6 +30,7 @@ metadata/_custom_type_script = "uid://bbx72fbwp681v"
 [sub_resource type="Resource" id="Resource_xheid"]
 script = ExtResource("2_3qpn0")
 stat = ExtResource("5_83inl")
+amount = 3.0
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [node name="StatsManager" type="Panel" unique_id=654268750 node_paths=PackedStringArray("stat_slots")]
@@ -91,5 +92,4 @@ layout_mode = 2
 stat = ExtResource("6_02dsw")
 
 [node name="EventsManager" parent="MarginContainer/VBoxContainer" unique_id=131518069 instance=ExtResource("9_8iaj1")]
-custom_minimum_size = Vector2(320, 520)
 layout_mode = 2
