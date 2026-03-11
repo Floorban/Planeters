@@ -24,6 +24,7 @@ script = ExtResource("1_w4qq1")
 character_scene = ExtResource("2_txmk2")
 square_center = NodePath("SqaureCenter")
 exit_point = NodePath("ExitPoint")
+max_max_visible_cultists = 2000
 
 [node name="Church" type="Sprite2D" parent="." unique_id=413780122]
 texture_filter = 1

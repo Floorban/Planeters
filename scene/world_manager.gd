@@ -28,16 +28,16 @@ func _on_stat_changed(stat: Stat, value: float):
 
 	if target > current_members and current_members < max_max_visible_cultists:
 		_spawn_members(target - current_members)
-	elif target < current_members:
+	elif target < max_visible_cultists:
 		if randf() > 0.8:
-			_remove_members(current_members - target)
+			_remove_members(max(1, current_members - target))
 		else:
 			sacrifice_member()
 
 
 
 func _spawn_members(amount):
-	if current_members > max_max_visible_cultists:
+	if current_members + amount > max_max_visible_cultists:
 		return
 	
 	current_members += amount
@@ -55,6 +55,8 @@ func _spawn_members(amount):
 
 
 func _remove_members(amount):
+	if amount < 0:
+		return
 	current_members -= amount
 	
 	for i in amount:
@@ -71,11 +73,11 @@ func sacrifice_member():
 	if characters.is_empty():
 		return
 	
-	var c : Character = characters.pop_back()
+	var c : Character = characters.pick_random()
 	c.state = Character.CharacterState.BEING_KILLED
 	characters.erase(c)
 	current_members -= 1
 
 
 func get_random_church_position() -> Vector2:
-	return square_center.global_position + Vector2(randf_range(-230, 230),randf_range(-40, 160))
+	return square_center.global_position + Vector2(randf_range(-230, 240),randf_range(-40, 150))
