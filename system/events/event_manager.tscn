@@ -4,8 +4,14 @@
 [ext_resource type="Script" uid="uid://dra3if1jqk6pp" path="res://system/events/event_data.gd" id="2_ebw1f"]
 [ext_resource type="Theme" uid="uid://b06wmmglo7w7v" path="res://asset/themes/action_button_theme.tres" id="2_ksyvq"]
 [ext_resource type="Resource" uid="uid://jgmvv7oi6p52" path="res://data/event/event_1.tres" id="3_01t02"]
+[ext_resource type="Resource" uid="uid://p6471t5l6aul" path="res://data/event/event_5.tres" id="3_4k5f0"]
+[ext_resource type="Resource" uid="uid://cqx2vbyo6je5k" path="res://data/event/event_4.tres" id="3_17o8f"]
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="3_ebw1f"]
+[ext_resource type="Resource" uid="uid://codleyaeuh1fk" path="res://data/event/event_2.tres" id="3_p6m0g"]
+[ext_resource type="Resource" uid="uid://csmuib1cuse3m" path="res://data/event/event_6.tres" id="3_yx4ci"]
 [ext_resource type="Texture2D" uid="uid://dixpwb3q8tcjn" path="res://asset/ui/windows_xp/Windows_Button.png" id="5_01t02"]
+[ext_resource type="Resource" uid="uid://irctlkevmlf5" path="res://data/event/event_3.tres" id="5_q7m05"]
+[ext_resource type="Resource" uid="uid://bttf7aswwyje" path="res://data/event/event_end.tres" id="10_0ujcr"]
 
 [node name="EventManager" type="VBoxContainer" unique_id=131518069]
 custom_minimum_size = Vector2(320, 520)
@@ -14,9 +20,9 @@ offset_bottom = 520.0
 pivot_offset = Vector2(160, 260)
 theme_override_constants/separation = 28
 script = ExtResource("1_ebhe1")
-events = Array[ExtResource("2_ebw1f")]([ExtResource("3_01t02"), ExtResource("3_01t02")])
+events = Array[ExtResource("2_ebw1f")]([ExtResource("3_01t02"), ExtResource("3_p6m0g"), ExtResource("5_q7m05"), ExtResource("3_17o8f"), ExtResource("3_4k5f0"), ExtResource("3_yx4ci"), ExtResource("10_0ujcr")])
 new_event_gap = 50.0
-new_event_gap_range = 15.0
+new_event_gap_range = 10.0
 
 [node name="StartEventButton" type="Button" parent="." unique_id=1124168284]
 unique_name_in_owner = true
@@ -68,12 +74,10 @@ theme_override_constants/separation = 12
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 230)
 layout_mode = 2
-theme_override_constants/line_spacing = 5
+theme_override_constants/line_spacing = 6
 theme_override_constants/paragraph_spacing = 10
 theme_override_fonts/font = ExtResource("3_ebw1f")
-theme_override_font_sizes/font_size = 32
-text = "this is a test description if you can see this there is a bug
-he's asking for a dick dick"
+theme_override_font_sizes/font_size = 34
 autowrap_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="EventPanel/MarginContainer/VBoxContainer" unique_id=760214325]

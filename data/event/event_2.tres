@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="EventData" format=3 uid="uid://codleyaeuh1fk"]
+
+[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_cbwlp"]
+[ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_5mg67"]
+[ext_resource type="Resource" uid="uid://be706omug5uo3" path="res://data/stat/stat_church.tres" id="2_whqo6"]
+[ext_resource type="Script" uid="uid://dra3if1jqk6pp" path="res://system/events/event_data.gd" id="5_4i5id"]
+
+[sub_resource type="Resource" id="Resource_whqo6"]
+script = ExtResource("1_cbwlp")
+stat = ExtResource("2_whqo6")
+amount = 3.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_cbwlp"]
+script = ExtResource("1_cbwlp")
+stat = ExtResource("2_5mg67")
+amount = 300.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[resource]
+script = ExtResource("5_4i5id")
+event_description = "\"A new recruit is crying for their family.
+Dedicate enough resources to 're-educate' them before their doubts infect the rest of the flock.\""
+event_duration = 12.0
+event_requirements = Array[ExtResource("1_cbwlp")]([SubResource("Resource_whqo6")])
+event_rewards = Array[ExtResource("1_cbwlp")]([SubResource("Resource_cbwlp")])
+metadata/_custom_type_script = "uid://dra3if1jqk6pp"

@@ -95,7 +95,7 @@ func spawn_new_event() -> void:
 	
 	event_description_label.text = new_event.event_description
 	for c in new_event.event_requirements:
-		event_requirement_label.append_text(c.to_rich_text(c.amount, true, false) + "  ")
+		event_requirement_label.append_text(c.to_rich_text(c.amount, true, false, true) + "  ")
 	for r in new_event.event_rewards:
 		event_reward_label.append_text(r.to_rich_text(r.amount, false, false) + "  ")
 

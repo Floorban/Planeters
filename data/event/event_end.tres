@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="EventData" format=3 uid="uid://bttf7aswwyje"]
+
+[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_kiet8"]
+[ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_eu4bg"]
+[ext_resource type="Resource" uid="uid://dn5di2eias4nk" path="res://data/stat/stat_member.tres" id="3_nen7m"]
+[ext_resource type="Resource" uid="uid://dlwjnv8ca4sps" path="res://data/stat/stat_soul.tres" id="4_v6hg5"]
+[ext_resource type="Script" uid="uid://dra3if1jqk6pp" path="res://system/events/event_data.gd" id="5_h2thp"]
+
+[sub_resource type="Resource" id="Resource_incbt"]
+script = ExtResource("1_kiet8")
+stat = ExtResource("2_eu4bg")
+amount = 5000.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_wf2x8"]
+script = ExtResource("1_kiet8")
+stat = ExtResource("3_nen7m")
+amount = 1000.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_0vhn4"]
+script = ExtResource("1_kiet8")
+stat = ExtResource("4_v6hg5")
+amount = 500.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[resource]
+script = ExtResource("5_h2thp")
+event_description = "\"Alignment complete. File 'Existence Termination' forms and submit final tribute.
+Your duties to reality are concluded. Thank you for your compliance.\""
+event_duration = 35.0
+event_requirements = Array[ExtResource("1_kiet8")]([SubResource("Resource_incbt"), SubResource("Resource_wf2x8"), SubResource("Resource_0vhn4")])
+metadata/_custom_type_script = "uid://dra3if1jqk6pp"

@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="EventData" format=3 uid="uid://cqx2vbyo6je5k"]
+
+[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_gg86u"]
+[ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_kx7op"]
+[ext_resource type="Resource" uid="uid://dlwjnv8ca4sps" path="res://data/stat/stat_soul.tres" id="3_rdgjf"]
+[ext_resource type="Resource" uid="uid://dn5di2eias4nk" path="res://data/stat/stat_member.tres" id="4_yo3tj"]
+[ext_resource type="Script" uid="uid://dra3if1jqk6pp" path="res://system/events/event_data.gd" id="5_vt4lh"]
+
+[sub_resource type="Resource" id="Resource_gbnjg"]
+script = ExtResource("1_gg86u")
+stat = ExtResource("2_kx7op")
+amount = 1000.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_i1xib"]
+script = ExtResource("1_gg86u")
+stat = ExtResource("4_yo3tj")
+amount = 50.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_gg86u"]
+script = ExtResource("1_gg86u")
+stat = ExtResource("3_rdgjf")
+amount = 50.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[resource]
+script = ExtResource("5_vt4lh")
+event_description = "\"The City Council is asking questions about your midnight rituals.
+Provide a 'donation' to their private fund to buy their silence and official immunity.\""
+event_duration = 18.0
+event_requirements = Array[ExtResource("1_gg86u")]([SubResource("Resource_gbnjg")])
+event_rewards = Array[ExtResource("1_gg86u")]([SubResource("Resource_i1xib"), SubResource("Resource_gg86u")])
+metadata/_custom_type_script = "uid://dra3if1jqk6pp"

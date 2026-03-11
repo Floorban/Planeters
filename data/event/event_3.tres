@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="EventData" format=3 uid="uid://irctlkevmlf5"]
+
+[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_1becs"]
+[ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_0vprn"]
+[ext_resource type="Resource" uid="uid://dlwjnv8ca4sps" path="res://data/stat/stat_soul.tres" id="3_yrc50"]
+[ext_resource type="Resource" uid="uid://dn5di2eias4nk" path="res://data/stat/stat_member.tres" id="4_jeplc"]
+[ext_resource type="Script" uid="uid://dra3if1jqk6pp" path="res://system/events/event_data.gd" id="5_2txcr"]
+
+[sub_resource type="Resource" id="Resource_hy3ug"]
+script = ExtResource("1_1becs")
+stat = ExtResource("2_0vprn")
+amount = 500.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_1becs"]
+script = ExtResource("1_1becs")
+stat = ExtResource("3_yrc50")
+amount = 20.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_0vprn"]
+script = ExtResource("1_1becs")
+stat = ExtResource("4_jeplc")
+amount = 30.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[resource]
+script = ExtResource("5_2txcr")
+event_description = "\"A local reporter is sniffing around the compound.
+Distribute 'charity' and provide a staged tour to ensure her story is favorable to the Cause.\""
+event_duration = 15.0
+event_requirements = Array[ExtResource("1_1becs")]([SubResource("Resource_hy3ug"), SubResource("Resource_1becs")])
+event_rewards = Array[ExtResource("1_1becs")]([SubResource("Resource_0vprn")])
+metadata/_custom_type_script = "uid://dra3if1jqk6pp"

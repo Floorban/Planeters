@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="StatChange" format=3 uid="uid://cwh5aeyocefc5"]
 
 [ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_1ngwq"]
-[ext_resource type="Resource" uid="uid://dlwjnv8ca4sps" path="res://data/stat/stat_soul.tres" id="2_1ngwq"]
+[ext_resource type="Resource" uid="uid://be706omug5uo3" path="res://data/stat/stat_church.tres" id="2_1ngwq"]
 
 [resource]
 script = ExtResource("1_1ngwq")
