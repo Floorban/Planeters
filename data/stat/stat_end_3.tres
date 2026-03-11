@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Stat" format=3 uid="uid://mowcik7lfrkd"]
+
+[ext_resource type="Script" uid="uid://df1xrlbakiuj1" path="res://system/stats/stat.gd" id="1_wlai2"]
+[ext_resource type="Texture2D" uid="uid://ceeayqiggkaog" path="res://asset/Spritesheet_TheDarkRitual_BigWander.png" id="2_wlai2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ax4dc"]
+atlas = ExtResource("2_wlai2")
+region = Rect2(64, 112, 16, 16)
+
+[resource]
+script = ExtResource("1_wlai2")
+stat_name = "End"
+stat_description = "End"
+stat_icon = SubResource("AtlasTexture_ax4dc")
+stat_color = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://df1xrlbakiuj1"
