@@ -28,7 +28,6 @@
 [ext_resource type="Script" uid="uid://emabm8r8bin6" path="res://system/upgrades/upgrade_data.gd" id="13_83uh7"]
 [ext_resource type="Resource" uid="uid://dlwjnv8ca4sps" path="res://data/stat/stat_soul.tres" id="13_wj7va"]
 [ext_resource type="Resource" uid="uid://brj8mr7wssnyd" path="res://data/upgrade/bonus_production/task/upgrade_bonus_task_capacity_2.tres" id="24_otpe7"]
-[ext_resource type="Resource" uid="uid://dyf1hexff0mt6" path="res://data/upgrade_effect/task_efficiency/task_efficiency_cult.tres" id="24_v2ugi"]
 [ext_resource type="Resource" uid="uid://dm2bff7rj2q1a" path="res://data/upgrade/bonus_production/sim/upgrade_bonus_recruit_production_1.tres" id="29_o26fj"]
 [ext_resource type="Resource" uid="uid://pvyeflmci5y3" path="res://data/upgrade/bonus_production/sim/upgrade_bonus_recruit_production_2.tres" id="30_fyr88"]
 [ext_resource type="Resource" uid="uid://cp2254u8eytv5" path="res://data/upgrade/efficiency/sim/upgrade_bonus_coin_efficiency_1.tres" id="32_0cq08"]
@@ -128,32 +127,6 @@ metadata/_custom_type_script = "uid://emabm8r8bin6"
 [sub_resource type="AtlasTexture" id="AtlasTexture_wrdhn"]
 atlas = ExtResource("9_kpkxp")
 region = Rect2(48, 96, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lx0ka"]
-atlas = ExtResource("9_kpkxp")
-region = Rect2(0, 96, 16, 16)
-
-[sub_resource type="Resource" id="Resource_xig6h"]
-script = ExtResource("8_ywqx8")
-stat = ExtResource("9_jg2yw")
-amount = 100.0
-metadata/_custom_type_script = "uid://bbx72fbwp681v"
-
-[sub_resource type="Resource" id="Resource_7fbxx"]
-script = ExtResource("8_ywqx8")
-stat = ExtResource("13_wj7va")
-amount = 20.0
-metadata/_custom_type_script = "uid://bbx72fbwp681v"
-
-[sub_resource type="Resource" id="Resource_w57fs"]
-script = ExtResource("13_83uh7")
-upgrade_name = "CULT FASTER I"
-upgrade_description = "cult action duration is shorter"
-upgrade_icon = SubResource("AtlasTexture_lx0ka")
-max_level = 1
-costs = Array[ExtResource("8_ywqx8")]([SubResource("Resource_xig6h"), SubResource("Resource_7fbxx")])
-effects = Array[ExtResource("10_wj7va")]([ExtResource("24_v2ugi")])
-metadata/_custom_type_script = "uid://emabm8r8bin6"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dfgb6"]
 atlas = ExtResource("9_kpkxp")
@@ -361,35 +334,28 @@ offset_bottom = 287.0
 texture_normal = SubResource("AtlasTexture_wrdhn")
 upgrade = ExtResource("8_1jwj0")
 
-[node name="UpgradeButton4" parent="UpgradesHolder/UpgradeButton1" unique_id=1362005223 instance=ExtResource("1_8ebph")]
+[node name="UpgradeButton6" parent="UpgradesHolder/UpgradeButton1" unique_id=1999453457 instance=ExtResource("1_8ebph")]
 layout_mode = 0
-offset_top = -407.0
-offset_bottom = -307.0
-texture_normal = SubResource("AtlasTexture_lx0ka")
-upgrade = SubResource("Resource_w57fs")
+offset_top = -399.0
+offset_bottom = -299.0
+texture_normal = SubResource("AtlasTexture_dfgb6")
+upgrade = ExtResource("24_otpe7")
 
-[node name="UpgradeButton1" parent="UpgradesHolder/UpgradeButton1/UpgradeButton4" unique_id=953264648 instance=ExtResource("1_8ebph")]
+[node name="UpgradeButton5" parent="UpgradesHolder/UpgradeButton1/UpgradeButton6" unique_id=953264648 instance=ExtResource("1_8ebph")]
 layout_mode = 0
 offset_left = -324.0
-offset_top = -382.0
+offset_top = -390.0
 offset_right = -224.0
-offset_bottom = -282.0
+offset_bottom = -290.0
 texture_normal = SubResource("AtlasTexture_dfgb6")
 upgrade = ExtResource("24_otpe7")
 
-[node name="UpgradeButton2" parent="UpgradesHolder/UpgradeButton1/UpgradeButton4" unique_id=1999453457 instance=ExtResource("1_8ebph")]
-layout_mode = 0
-offset_top = -382.0
-offset_bottom = -282.0
-texture_normal = SubResource("AtlasTexture_dfgb6")
-upgrade = ExtResource("24_otpe7")
-
-[node name="UpgradeButton3" parent="UpgradesHolder/UpgradeButton1/UpgradeButton4" unique_id=1927284749 instance=ExtResource("1_8ebph")]
+[node name="UpgradeButton7" parent="UpgradesHolder/UpgradeButton1/UpgradeButton6" unique_id=1927284749 instance=ExtResource("1_8ebph")]
 layout_mode = 0
 offset_left = 315.0
-offset_top = -382.0
+offset_top = -390.0
 offset_right = 415.0
-offset_bottom = -282.0
+offset_bottom = -290.0
 texture_normal = SubResource("AtlasTexture_dfgb6")
 upgrade = ExtResource("24_otpe7")
 
