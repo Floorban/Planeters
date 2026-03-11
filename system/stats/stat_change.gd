@@ -14,6 +14,6 @@ func to_rich_text(value: float, is_cost := false, has_name := true, is_required 
 		color_hex, 
 		_icon, 
 		_sign, 
-		value,
+		int(value),
 		_name
 	]

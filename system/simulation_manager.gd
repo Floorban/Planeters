@@ -98,7 +98,7 @@ func get_stat_detail_description(stat: Stat) -> String:
 
 func get_recruit_detail() -> String:
 	var recruit_amount := int(GameManager.stats_manager.get_stat(member_stat) * member_recruit_gain)
-	return "Rate: %s%.1f every %.1fs\n(%.2f per person)" % [
+	return "Rate: %s%d every %ds\n(%.2f per person)" % [
 		_get_sign(recruit_amount), 
 		recruit_amount, 
 		recruit_interval, 
@@ -113,7 +113,7 @@ func get_church_detail() -> String:
 
 func get_coin_detail() -> String:
 	var coin_amount := int(GameManager.stats_manager.get_stat(member_stat) * member_coin_gain)
-	return "Rate: %s%.1f every %.1fs\n(%.2f per person)" % [
+	return "Rate: %s%d every %ds\n(%.2f per person)" % [
 		_get_sign(coin_amount), 
 		coin_amount, 
 		coin_interval, 
