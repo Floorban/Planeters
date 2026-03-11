@@ -5,13 +5,19 @@
 [ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_fr4x1"]
 [ext_resource type="Script" uid="uid://emabm8r8bin6" path="res://system/upgrades/upgrade_data.gd" id="3_fr4x1"]
 [ext_resource type="Texture2D" uid="uid://bijpbkg0mxu3y" path="res://asset/TinyTomes_Atlas_16x16.png" id="4_340jw"]
-[ext_resource type="Resource" path="res://data/upgrade_effect/cost/sacrifice_more.tres" id="4_aj566"]
+[ext_resource type="Script" uid="uid://ccw2h7mnqdwft" path="res://data/upgrade_effect/cost/sacrifice_more_effect.gd" id="4_xurwx"]
+[ext_resource type="Resource" uid="uid://bk2kqcxwgmm5i" path="res://data/task/task_sacrifice_cult_member.tres" id="5_5ata5"]
 
-[sub_resource type="Resource" id="Resource_aj566"]
+[sub_resource type="Resource" id="Resource_xurwx"]
 script = ExtResource("1_attj6")
 stat = ExtResource("2_fr4x1")
-amount = 500.0
+amount = 300.0
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_borhu"]
+script = ExtResource("4_xurwx")
+task = ExtResource("5_5ata5")
+metadata/_custom_type_script = "uid://ccw2h7mnqdwft"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fr4x1"]
 atlas = ExtResource("4_340jw")
@@ -20,9 +26,9 @@ region = Rect2(48, 48, 16, 16)
 [resource]
 script = ExtResource("3_fr4x1")
 upgrade_name = "Massacre I"
-upgrade_description = "Increase sacrifice amount. Sacrifice more people at once."
+upgrade_description = "Increase sacrifice amount. Sacrifice a bit more people at once."
 upgrade_icon = SubResource("AtlasTexture_fr4x1")
 max_level = 1
-costs = Array[ExtResource("1_attj6")]([SubResource("Resource_aj566")])
-effects = Array[ExtResource("2_340jw")]([ExtResource("4_aj566")])
+costs = Array[ExtResource("1_attj6")]([SubResource("Resource_xurwx")])
+effects = Array[ExtResource("2_340jw")]([SubResource("Resource_borhu")])
 metadata/_custom_type_script = "uid://emabm8r8bin6"

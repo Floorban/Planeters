@@ -20,9 +20,10 @@
 [ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="8_ywqx8"]
 [ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="9_jg2yw"]
 [ext_resource type="Texture2D" uid="uid://bijpbkg0mxu3y" path="res://asset/TinyTomes_Atlas_16x16.png" id="9_kpkxp"]
-[ext_resource type="Resource" uid="uid://cpnfgpvbo6crk" path="res://data/upgrade/cost/task/upgrade_more_sacrifice_cost_1.tres" id="10_0cq08"]
+[ext_resource type="Resource" uid="uid://c30nopmcv3ksu" path="res://data/upgrade/cost/task/upgrade_more_sacrifice_cost_1.tres" id="10_0cq08"]
 [ext_resource type="Script" uid="uid://oiijucci5mx5" path="res://system/upgrades/upgrade_effect.gd" id="10_wj7va"]
 [ext_resource type="Script" uid="uid://by2eapd0unlmt" path="res://data/upgrade_effect/task_efficiency/task_efficiency_effect.gd" id="11_sl1cx"]
+[ext_resource type="Resource" uid="uid://cutop18ww5dj4" path="res://data/upgrade/cost/task/upgrade_more_sacrifice_cost_2.tres" id="12_8o6ja"]
 [ext_resource type="Resource" uid="uid://d1b3tjc0uirwo" path="res://data/task/task_get_cult_member.tres" id="12_aaai4"]
 [ext_resource type="Script" uid="uid://emabm8r8bin6" path="res://system/upgrades/upgrade_data.gd" id="13_83uh7"]
 [ext_resource type="Resource" uid="uid://dlwjnv8ca4sps" path="res://data/stat/stat_soul.tres" id="13_wj7va"]
@@ -64,6 +65,10 @@ region = Rect2(48, 48, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_075x6"]
 atlas = ExtResource("9_kpkxp")
 region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8t5e1"]
+atlas = ExtResource("9_kpkxp")
+region = Rect2(48, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w57fs"]
 atlas = ExtResource("9_kpkxp")
@@ -285,8 +290,8 @@ offset_left = 240.0
 offset_top = -180.0
 offset_right = 340.0
 offset_bottom = -80.0
-texture_normal = SubResource("AtlasTexture_xv0ld")
-upgrade = ExtResource("6_w57fs")
+texture_normal = SubResource("AtlasTexture_8t5e1")
+upgrade = ExtResource("12_8o6ja")
 
 [node name="UpgradeButton2" parent="UpgradesHolder/UpgradeButton1/UpgradeButton2/UpgradeButton2" unique_id=1885752956 instance=ExtResource("1_8ebph")]
 layout_mode = 0

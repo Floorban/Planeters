@@ -33,11 +33,11 @@ func _ready() -> void:
 func _show_task_info(task: Task) -> void:
 	_hide_task_info()
 	for c in task.costs:
-		task_cost_label.append_text(c.to_rich_text(get_modified_cost(c), true) + "\n")
-		if (get_modified_cost(c) <= 0.0):
+		task_cost_label.append_text(c.to_rich_text(get_modified_cost(c, task), true) + "\n")
+		if (get_modified_cost(c, task) <= 0.0):
 			push_error("cost is below 0 error")
 	for r in task.rewards:
-		task_effect_label.append_text(r.to_rich_text(get_modified_reward(r), false) + "\n")
+		task_effect_label.append_text(r.to_rich_text(get_modified_reward(r, task), false) + "\n")
 	task_duration_label.append_text("Duration: " + str(task.duration * get_duration_multiplier(task)))
 
 
@@ -61,11 +61,11 @@ func start_task(task : Task, btn: TaskButton) -> bool:
 			GameManager.stats_manager.stat_cost_failed.emit(GameManager.sim_manager.church_stat)
 			return false
 		
-	if not _can_pay_modified(task.costs):
+	if not _can_pay_modified(task):
 		btn.button_press_failed()
 		return false
 		
-	_pay_modified(task.costs)
+	_pay_modified(task)
 	
 	for slot in task_slots:
 		if not slot.is_running:
@@ -76,18 +76,18 @@ func start_task(task : Task, btn: TaskButton) -> bool:
 	return false
 
 
-func _can_pay_modified(costs: Array[StatChange]) -> bool:
-	for c in costs:
-		if GameManager.stats_manager.get_stat(c.stat) < get_modified_cost(c):
+func _can_pay_modified(task: Task) -> bool:
+	for c in task.costs:
+		if GameManager.stats_manager.get_stat(c.stat) < get_modified_cost(c, task):
 			GameManager.stats_manager.stat_cost_failed.emit(c.stat)
 			return false
 
 	return true
 
 
-func _pay_modified(costs: Array[StatChange]):
-	for c in costs:
-		GameManager.stats_manager.spend_stat(c.stat, get_modified_cost(c))
+func _pay_modified(task: Task):
+	for c in task.costs:
+		GameManager.stats_manager.spend_stat(c.stat, get_modified_cost(c, task))
 
 
 func _on_task_finished(task : Task) -> void:
@@ -102,7 +102,7 @@ func _on_task_finished(task : Task) -> void:
 
 func _apply_task_rewards(task: Task):
 	for r in task.rewards:
-		GameManager.stats_manager.add_stat(r.stat, get_modified_reward(r))
+		GameManager.stats_manager.add_stat(r.stat, get_modified_reward(r, task))
 
 
 func _refresh_task_buttons() -> void:
@@ -143,12 +143,15 @@ func get_soul_gain_per_sacrifice() -> float:
 					return r.amount
 	return 0.0
 
+var task_scale_multipliers : Dictionary = {}
 
-func get_modified_cost(change: StatChange) -> float:
-	var mult = GameManager.stats_manager.get_cost_multiplier(change.stat)
-	return change.amount * mult
+func get_modified_cost(change: StatChange, task: Task) -> float:
+	var stat_mult = GameManager.stats_manager.get_cost_multiplier(change.stat)
+	var task_scale = task_scale_multipliers.get(task, 1.0)
+	return change.amount * stat_mult * task_scale
 
 
-func get_modified_reward(change: StatChange) -> float:
-	var mult = GameManager.stats_manager.get_reward_multiplier(change.stat)
-	return change.amount * mult
+func get_modified_reward(change: StatChange, task: Task) -> float:
+	var stat_mult = GameManager.stats_manager.get_reward_multiplier(change.stat)
+	var task_scale = task_scale_multipliers.get(task, 1.0)
+	return change.amount * stat_mult * task_scale
