@@ -1,7 +1,6 @@
 [gd_resource type="Resource" script_class="EventData" format=3 uid="uid://csmuib1cuse3m"]
 
 [ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_x7i7b"]
-[ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_28g3l"]
 [ext_resource type="Resource" uid="uid://dlwjnv8ca4sps" path="res://data/stat/stat_soul.tres" id="3_ymtqc"]
 [ext_resource type="Resource" uid="uid://dn5di2eias4nk" path="res://data/stat/stat_member.tres" id="4_q3f24"]
 [ext_resource type="Resource" uid="uid://be706omug5uo3" path="res://data/stat/stat_church.tres" id="5_28g3l"]
@@ -10,19 +9,13 @@
 [sub_resource type="Resource" id="Resource_x7i7b"]
 script = ExtResource("1_x7i7b")
 stat = ExtResource("3_ymtqc")
-amount = 250.0
+amount = 200.0
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [sub_resource type="Resource" id="Resource_28g3l"]
 script = ExtResource("1_x7i7b")
 stat = ExtResource("4_q3f24")
 amount = 400.0
-metadata/_custom_type_script = "uid://bbx72fbwp681v"
-
-[sub_resource type="Resource" id="Resource_ymtqc"]
-script = ExtResource("1_x7i7b")
-stat = ExtResource("2_28g3l")
-amount = 2000.0
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [sub_resource type="Resource" id="Resource_q3f24"]
@@ -37,5 +30,5 @@ event_description = "\"The revenue service is questioning your 'Religious Tax Ex
 Prove your devotion with a massive donation to the state to keep your assets hidden.\""
 event_duration = 23.0
 event_requirements = Array[ExtResource("1_x7i7b")]([SubResource("Resource_x7i7b"), SubResource("Resource_28g3l")])
-event_rewards = Array[ExtResource("1_x7i7b")]([SubResource("Resource_ymtqc"), SubResource("Resource_q3f24")])
+event_rewards = Array[ExtResource("1_x7i7b")]([SubResource("Resource_q3f24")])
 metadata/_custom_type_script = "uid://dra3if1jqk6pp"

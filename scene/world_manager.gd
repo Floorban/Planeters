@@ -6,7 +6,8 @@ extends Node2D
 @export var exit_point : Marker2D
 
 var characters : Array[Character] = []
-@export var max_visible_cultists := 0
+@export var max_max_visible_cultists := 500
+var max_visible_cultists := 0
 var current_members := 0
 
 func _ready():
@@ -19,7 +20,7 @@ func _ready():
 func _on_stat_changed(stat: Stat, value: float):
 	if stat != GameManager.sim_manager.member_stat:
 		if stat == GameManager.sim_manager.church_stat:
-			max_visible_cultists = GameManager.sim_manager.members_per_church * GameManager.stats_manager.get_stat(stat)
+			max_visible_cultists = min(GameManager.sim_manager.members_per_church * GameManager.stats_manager.get_stat(stat), max_max_visible_cultists)
 		return
 
 	var target := int(value)
