@@ -1,7 +1,6 @@
 class_name Character
 extends CharacterBody2D
 
-signal character_die()
 
 enum CharacterState {
 	IDLE,
@@ -41,7 +40,6 @@ func _physics_process(delta):
 		CharacterState.BEING_KILLED:
 			character_sprite.play("die")
 			character_sprite.modulate = Color(1.825, 0.0, 0.0, 1.0)
-			character_die.emit()
 			await character_sprite.animation_finished
 			queue_free()
 		CharacterState.WANDERING:
@@ -61,9 +59,9 @@ func _move_to_target(delta):
 		character_sprite.play("idle")
 	else:
 		if global_position.distance_to(target_position) > run_distance:
-			move_speed = run_speed
+			move_speed = run_speed + randf_range(-50, 50)
 			character_sprite.play("run")
 		else:
-			move_speed = walk_speed
+			move_speed = walk_speed + randf_range(-50, 50)
 			character_sprite.play("walk")
 		
