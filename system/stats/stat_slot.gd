@@ -25,12 +25,20 @@ func _ready() -> void:
 		stat_num_label.modulate = stat.stat_color
 		
 	stat_info.hide()
+	
+	await get_tree().process_frame
+	
+	GameManager.task_manager.update_task.connect(_update_description)
 
+
+func _update_description() -> void:
+	stat_detail.text = GameManager.sim_manager.get_stat_detail_description(stat)
+	
 
 func _set_stat_info_panel() -> void:
 	stat_name.text = stat.stat_name
 	stat_description.text = stat.stat_description	
-	stat_detail.text = GameManager.sim_manager.get_stat_detail_description(stat)
+	_update_description()
 	stat_detail.modulate = stat.stat_color
 	if stat_info.visible:
 		stat_info.hide()

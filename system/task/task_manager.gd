@@ -1,6 +1,8 @@
 class_name TaskManager
 extends Control
 
+signal update_task()
+
 @export var task_btns: Array[TaskButton]
 @export var task_slots : Array[TaskSlot]
 
@@ -95,6 +97,7 @@ func _on_task_finished(task : Task) -> void:
 	# even if the action starts before getting the upgrades
 	_apply_task_rewards(task)
 	_refresh_task_buttons()
+	update_task.emit()
 
 
 func _apply_task_rewards(task: Task):
