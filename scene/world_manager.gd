@@ -71,4 +71,4 @@ func sacrifice_member():
 
 
 func get_random_church_position() -> Vector2:
-	return square_center.global_position + Vector2(randf_range(-200, 200),randf_range(-10, 220))
+	return square_center.global_position + Vector2(randf_range(-210, 210),randf_range(-20, 200))

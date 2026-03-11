@@ -68,16 +68,13 @@ theme_override_font_sizes/font_size = 32
 text = "Cost "
 autowrap_mode = 3
 
-[node name="EventCostLabel" type="Label" parent="EventPanel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=66212973]
+[node name="EventRequirementLabel" type="RichTextLabel" parent="EventPanel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=356371646]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-theme_override_constants/line_spacing = 5
-theme_override_constants/paragraph_spacing = 10
-theme_override_fonts/font = ExtResource("3_ek4in")
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/normal_font = ExtResource("3_ek4in")
+theme_override_font_sizes/normal_font_size = 28
 text = "Cost "
-autowrap_mode = 3
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="EventPanel/MarginContainer/VBoxContainer" unique_id=1682840508]
 layout_mode = 2
@@ -95,13 +92,10 @@ theme_override_font_sizes/font_size = 32
 text = "Reward"
 autowrap_mode = 3
 
-[node name="EventRewardLabel" type="Label" parent="EventPanel/MarginContainer/VBoxContainer/VBoxContainer2" unique_id=2040392003]
+[node name="EventRewardLabel" type="RichTextLabel" parent="EventPanel/MarginContainer/VBoxContainer/VBoxContainer2" unique_id=1658395750]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-theme_override_constants/line_spacing = 5
-theme_override_constants/paragraph_spacing = 10
-theme_override_fonts/font = ExtResource("3_ek4in")
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/normal_font = ExtResource("3_ek4in")
+theme_override_font_sizes/normal_font_size = 28
 text = "Reward "
-autowrap_mode = 3
