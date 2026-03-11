@@ -169,7 +169,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ypjg7")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 33
 text = "Max Action: 1"
 
 [node name="Gap" type="Control" parent="Background/MarginContainer/HBoxContainer" unique_id=743543523]
