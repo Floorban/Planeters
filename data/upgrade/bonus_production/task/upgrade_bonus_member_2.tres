@@ -31,7 +31,7 @@ region = Rect2(0, 32, 16, 16)
 [resource]
 script = ExtResource("6_mkc32")
 upgrade_name = "Pursuade II"
-upgrade_description = "getting more cult members every cult session"
+upgrade_description = "Increase culting power. The cult gain much more members everytime you press \"Get Member\""
 upgrade_icon = SubResource("AtlasTexture_ty2sm")
 costs = Array[ExtResource("1_k3afj")]([SubResource("Resource_k0qrf")])
 effects = Array[ExtResource("3_r30cu")]([SubResource("Resource_a7l6t")])

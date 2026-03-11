@@ -24,8 +24,8 @@ region = Rect2(64, 32, 16, 16)
 
 [resource]
 script = ExtResource("3_i24ui")
-upgrade_name = "Fast talker I"
-upgrade_description = "your members get new memebrs faster for you"
+upgrade_name = "Havoc I"
+upgrade_description = "Increase passive member gain speed. The members become faster in inviting more people into the cult."
 upgrade_icon = SubResource("AtlasTexture_i24ui")
 costs = Array[ExtResource("1_ixmop")]([SubResource("Resource_equlr")])
 effects = Array[ExtResource("2_08f80")]([SubResource("Resource_hkh14")])

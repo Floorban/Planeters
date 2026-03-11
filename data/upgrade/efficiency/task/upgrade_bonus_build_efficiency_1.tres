@@ -26,8 +26,8 @@ region = Rect2(16, 96, 16, 16)
 
 [resource]
 script = ExtResource("5_ql32f")
-upgrade_name = "BUILD FASTER I"
-upgrade_description = "Yea, just build church faster"
+upgrade_name = "Fast Labor I"
+upgrade_description = "Increase church building speed. Apparently whipping the laborers make them work faster."
 upgrade_icon = SubResource("AtlasTexture_ifnkl")
 costs = Array[ExtResource("1_80mqf")]([SubResource("Resource_njqo5")])
 effects = Array[ExtResource("3_p1evc")]([SubResource("Resource_w7q42")])

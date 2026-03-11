@@ -45,9 +45,8 @@ theme_override_colors/font_color = Color(0.5694292, 0.96778554, 0.5030143, 1)
 theme_override_constants/line_spacing = 8
 theme_override_fonts/font = ExtResource("4_w3hvi")
 theme_override_font_sizes/font_size = 50
-text = "    Click on upgrades to buy  them
-    Middle scroll to zoom
-    Hold MMB or right button to drag"
+text = "	    Scroll to zoom
+    Hold right click to drag"
 vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UpgradeInfo/MarginContainer" unique_id=49700313]

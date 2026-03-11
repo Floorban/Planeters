@@ -19,8 +19,8 @@ region = Rect2(0, 16, 16, 16)
 
 [resource]
 script = ExtResource("5_gdaua")
-upgrade_name = "I want more II"
-upgrade_description = "Get more coins from each sacrificed member"
+upgrade_name = "Golden Blood II"
+upgrade_description = "Increase sacrificing power. The cult gain much more money through sacrificing."
 upgrade_icon = SubResource("AtlasTexture_v2ugi")
 costs = Array[ExtResource("1_pndjt")]([SubResource("Resource_pndjt")])
 effects = Array[ExtResource("3_e3nf8")]([ExtResource("4_mpmim")])

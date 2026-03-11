@@ -26,8 +26,8 @@ region = Rect2(64, 16, 16, 16)
 
 [resource]
 script = ExtResource("5_qxjxb")
-upgrade_name = "More hands I"
-upgrade_description = "Let you run more actions at once"
+upgrade_name = "Clone I"
+upgrade_description = "Increase action count. Do more actions at once."
 upgrade_icon = SubResource("AtlasTexture_0h4f8")
 max_level = 1
 costs = Array[ExtResource("1_othqc")]([SubResource("Resource_ppjn0"), SubResource("Resource_dadv2")])

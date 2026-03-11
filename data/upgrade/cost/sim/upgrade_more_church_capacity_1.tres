@@ -27,7 +27,7 @@ region = Rect2(64, 96, 16, 16)
 [resource]
 script = ExtResource("6_6krik")
 upgrade_name = "Church Capacity I"
-upgrade_description = "every church can contain more members now"
+upgrade_description = "Increase church efficiency. The church can have more members."
 upgrade_icon = SubResource("AtlasTexture_xv0ld")
 costs = Array[ExtResource("1_jfri7")]([SubResource("Resource_jfri7"), SubResource("Resource_gxnwr")])
 effects = Array[ExtResource("4_1sfat")]([ExtResource("5_1tdv0")])

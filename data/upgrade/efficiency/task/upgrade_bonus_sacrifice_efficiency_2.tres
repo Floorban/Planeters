@@ -40,8 +40,8 @@ region = Rect2(48, 96, 16, 16)
 
 [resource]
 script = ExtResource("5_od120")
-upgrade_name = "better at killing II"
-upgrade_description = "make sacrifice someone else as easy as saying f**k you"
+upgrade_name = "Bloodlust II"
+upgrade_description = "Increase sacrificing speed. The action speed of sacrificing becomes much faster."
 upgrade_icon = SubResource("AtlasTexture_wrdhn")
 max_level = 2
 costs = Array[ExtResource("1_jdr62")]([SubResource("Resource_jdr62"), SubResource("Resource_0nhqs"), SubResource("Resource_dn2t7")])
