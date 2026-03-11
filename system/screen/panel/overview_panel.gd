@@ -23,11 +23,13 @@ var lifetime := 0.0
 func _ready() -> void:
 	GameManager.overview = self
 
+
 func reset_overview_labels() -> void:
 	set_member_label(-member)
 	set_revenue_label(-revenue)
 	set_soul_label(-souls)
 	lifetime = 0.0
+
 
 func _process(delta: float) -> void:
 	if GameManager.is_paused: return

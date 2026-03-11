@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="EventData" format=3 uid="uid://jgmvv7oi6p52"]
+
+[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_coj1j"]
+[ext_resource type="Script" uid="uid://dra3if1jqk6pp" path="res://system/events/event_data.gd" id="2_kddyt"]
+[ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_lalmu"]
+[ext_resource type="Resource" uid="uid://dlwjnv8ca4sps" path="res://data/stat/stat_soul.tres" id="3_sxtck"]
+[ext_resource type="Resource" uid="uid://dn5di2eias4nk" path="res://data/stat/stat_member.tres" id="4_xrrpw"]
+
+[sub_resource type="Resource" id="Resource_hy3ug"]
+script = ExtResource("1_coj1j")
+stat = ExtResource("2_lalmu")
+amount = 50.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_odlow"]
+script = ExtResource("1_coj1j")
+stat = ExtResource("3_sxtck")
+amount = 3.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_741re"]
+script = ExtResource("1_coj1j")
+stat = ExtResource("2_lalmu")
+amount = 100.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_v0je6"]
+script = ExtResource("1_coj1j")
+stat = ExtResource("4_xrrpw")
+amount = 10.0
+metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[resource]
+script = ExtResource("2_kddyt")
+event_description = "Snowwhite is black and Michael Jackson is white"
+event_duration = 5.0
+event_requirements = Array[ExtResource("1_coj1j")]([SubResource("Resource_hy3ug"), SubResource("Resource_odlow")])
+event_rewards = Array[ExtResource("1_coj1j")]([SubResource("Resource_741re"), SubResource("Resource_v0je6")])
+metadata/_custom_type_script = "uid://dra3if1jqk6pp"
