@@ -37,8 +37,8 @@ region = Rect2(0, 0, 16, 16)
 
 [resource]
 script = ExtResource("6_h3x7k")
-upgrade_name = "Slave Labor II"
-upgrade_description = "Decrease church purchase price. The cult finds a legal loophole to get much cheaper labor and resources to build cheaper churches."
+upgrade_name = "KEY_UPGRADE_SLAVE_LABOR _2"
+upgrade_description = "KEY_DESC_SLAVE_LABOR _2"
 upgrade_icon = SubResource("AtlasTexture_kpkxp")
 max_level = 2
 costs = Array[ExtResource("1_82k6d")]([SubResource("Resource_82k6d"), SubResource("Resource_0xfud")])

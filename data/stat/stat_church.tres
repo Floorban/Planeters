@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_q51xv")
-stat_name = "Church"
+stat_name = "KEY_STAT_CHURCH"
 stat_description = "You need church to contain your culti bois"
 stat_icon = ExtResource("2_q51xv")
-stat_color = Color(0.19705188, 0.57673246, 0.6776007, 1)
+stat_color = Color(0.36913884, 0.9397174, 1.101992, 1)
 metadata/_custom_type_script = "uid://df1xrlbakiuj1"

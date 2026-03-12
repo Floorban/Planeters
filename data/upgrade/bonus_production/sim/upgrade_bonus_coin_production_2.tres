@@ -25,8 +25,8 @@ region = Rect2(0, 80, 16, 16)
 
 [resource]
 script = ExtResource("5_70nws")
-upgrade_name = "Capitalism II"
-upgrade_description = "Increase passive income amount. Members get much richer and give the church more offerings"
+upgrade_name = "KEY_UPGRADE_CAPITALISM_2"
+upgrade_description = "KEY_DESC_CAPITALISM_2"
 upgrade_icon = SubResource("AtlasTexture_dqewj")
 max_level = 2
 costs = Array[ExtResource("1_qexqm")]([SubResource("Resource_qexqm")])

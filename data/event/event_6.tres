@@ -26,8 +26,7 @@ metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [resource]
 script = ExtResource("5_vh8wg")
-event_description = "\"The revenue service is questioning your 'Religious Tax Exemption.'
-Prove your devotion with a massive donation to the state to keep your assets hidden.\""
+event_description = "KEY_EVENT_DESC_6"
 event_duration = 23.0
 event_requirements = Array[ExtResource("1_x7i7b")]([SubResource("Resource_x7i7b"), SubResource("Resource_28g3l")])
 event_rewards = Array[ExtResource("1_x7i7b")]([SubResource("Resource_q3f24")])

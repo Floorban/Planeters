@@ -25,8 +25,8 @@ region = Rect2(0, 16, 16, 16)
 
 [resource]
 script = ExtResource("3_dqewj")
-upgrade_name = "PAYDAY I"
-upgrade_description = "Increase passive income speed. The members give money more often, because YOU force them to."
+upgrade_name = "KEY_UPGRADE_PAYDAY_1"
+upgrade_description = "KEY_DESC_PAYDAY_1"
 upgrade_icon = SubResource("AtlasTexture_0cq08")
 costs = Array[ExtResource("1_57x8x")]([SubResource("Resource_qxt8w")])
 effects = Array[ExtResource("2_ammda")]([SubResource("Resource_b6nfi")])

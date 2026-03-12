@@ -26,8 +26,8 @@ region = Rect2(0, 96, 16, 16)
 
 [resource]
 script = ExtResource("5_r7pqk")
-upgrade_name = "Frenzy I"
-upgrade_description = "Increase culting speed. The action speed of getting members becomes faster."
+upgrade_name = "KEY_UPGRADE_FRENZY_1"
+upgrade_description = "KEY_UDESC_FRENZY_1"
 upgrade_icon = SubResource("AtlasTexture_ywqx8")
 costs = Array[ExtResource("1_xig6h")]([SubResource("Resource_xig6h"), SubResource("Resource_esn85")])
 effects = Array[ExtResource("3_7fbxx")]([ExtResource("4_vkxde")])

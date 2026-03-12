@@ -36,7 +36,7 @@ func _update_description() -> void:
 	
 
 func _set_stat_info_panel() -> void:
-	stat_name.text = stat.stat_name
+	stat_name.text = tr(stat.stat_name)
 	stat_description.text = stat.stat_description	
 	_update_description()
 	stat_detail.modulate = stat.stat_color

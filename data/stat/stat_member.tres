@@ -9,7 +9,7 @@ region = Rect2(32, 96, 16, 16)
 
 [resource]
 script = ExtResource("1_iseg2")
-stat_name = "Cult Member"
+stat_name = "KEY_STAT_MEMBER"
 stat_description = "They love you to death"
 stat_icon = SubResource("AtlasTexture_lslg6")
 stat_color = Color(0.68459266, 0.26539063, 0.6184007, 1)

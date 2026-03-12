@@ -29,8 +29,7 @@ metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [resource]
 script = ExtResource("5_h2thp")
-event_description = "\"Alignment complete. File 'Existence Termination' forms and submit final tribute.
-Your duties to reality are concluded. Thank you for your compliance.\""
+event_description = "KEY_EVENT_DESC_END"
 event_duration = 35.0
 event_requirements = Array[ExtResource("1_kiet8")]([SubResource("Resource_incbt"), SubResource("Resource_wf2x8"), SubResource("Resource_0vhn4")])
 event_rewards = Array[ExtResource("1_kiet8")]([ExtResource("5_v6hg5"), ExtResource("6_h2thp"), ExtResource("7_wf2x8")])

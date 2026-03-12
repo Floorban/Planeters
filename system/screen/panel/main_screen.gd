@@ -28,6 +28,10 @@ func _on_japanese_btn_pressed() -> void:
 	TranslationServer.set_locale("ja")
 
 
+func set_ui_font(font: Font):
+	get_tree().root.theme.default_font = font
+
+
 func _ready() -> void:
 	_init_sub_panels()
 	button_eng.pressed.connect(_on_english_btn_pressed)

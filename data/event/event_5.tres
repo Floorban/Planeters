@@ -33,8 +33,7 @@ metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [resource]
 script = ExtResource("5_wv862")
-event_description = "\"A nearby church is stealing your potential converts.
-Donate to the community and pressure the leaders to run the competition out of town.\""
+event_description = "KEY_EVENT_DESC_5"
 event_duration = 20.0
 event_requirements = Array[ExtResource("1_ksy4f")]([SubResource("Resource_ksy4f"), SubResource("Resource_gmuqr"), SubResource("Resource_yqr3j")])
 event_rewards = Array[ExtResource("1_ksy4f")]([SubResource("Resource_ff4m8")])

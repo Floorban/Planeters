@@ -24,8 +24,8 @@ region = Rect2(0, 48, 16, 16)
 
 [resource]
 script = ExtResource("3_i24ui")
-upgrade_name = "Yappology I"
-upgrade_description = "Increase passive member gain amount. The members start inviting others to join the cult."
+upgrade_name = "KEY_UPGRADE_YAPPOLOGY_1"
+upgrade_description = "KEY_DESC_YAPPOLOGY_1"
 upgrade_icon = SubResource("AtlasTexture_fyr88")
 costs = Array[ExtResource("1_ixmop")]([SubResource("Resource_376my")])
 effects = Array[ExtResource("2_08f80")]([SubResource("Resource_x4f27")])

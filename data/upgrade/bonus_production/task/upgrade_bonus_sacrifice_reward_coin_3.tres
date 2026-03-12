@@ -26,8 +26,8 @@ region = Rect2(0, 16, 16, 16)
 
 [resource]
 script = ExtResource("6_lfury")
-upgrade_name = "Golden Blood III"
-upgrade_description = "Increase sacrificing power. The cult gain enormous amount of money through sacrificing."
+upgrade_name = "KEY_UPGRADE_GOLDEN_BLOOD _3"
+upgrade_description = "KEY_DESC_GOLDEN_BLOOD _3"
 upgrade_icon = SubResource("AtlasTexture_w57fs")
 max_level = 1
 costs = Array[ExtResource("1_5tuea")]([SubResource("Resource_pndjt"), SubResource("Resource_fvnnr")])

@@ -9,7 +9,7 @@ func to_rich_text(value: float, is_cost := false, has_name := true, is_required 
 	var _icon = stat.stat_icon.resource_path
 	var _sign = "-" if is_cost else "+"
 	_sign = "" if is_required else _sign
-	var _name = stat.stat_name if has_name else ""
+	var _name = tr(stat.stat_name) if has_name else ""
 	return "[color=#%s][img=32]%s[/img] %s%s %s[/color]" % [
 		color_hex, 
 		_icon, 

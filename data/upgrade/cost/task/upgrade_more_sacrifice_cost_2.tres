@@ -40,8 +40,8 @@ region = Rect2(48, 48, 16, 16)
 
 [resource]
 script = ExtResource("5_jsfuk")
-upgrade_name = "Massacre II"
-upgrade_description = "Increase sacrifice amount. Sacrifice more people at once."
+upgrade_name = "KEY_UPGRADE_MASSACRE_2"
+upgrade_description = "KEY_DESC_MASSACRE_2"
 upgrade_icon = SubResource("AtlasTexture_8t5e1")
 max_level = 1
 costs = Array[ExtResource("1_gpv3j")]([SubResource("Resource_lw7md"), SubResource("Resource_jsfuk"), SubResource("Resource_4a61g")])

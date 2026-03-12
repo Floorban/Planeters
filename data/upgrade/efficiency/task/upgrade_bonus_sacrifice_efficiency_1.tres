@@ -33,8 +33,8 @@ region = Rect2(48, 96, 16, 16)
 
 [resource]
 script = ExtResource("5_pn6cj")
-upgrade_name = "Bloodlust I"
-upgrade_description = "Increase sacrificing speed. The action speed of sacrificing becomes faster."
+upgrade_name = "KEY_UPGRADE_BLOODLUST_1"
+upgrade_description = "KEY_DESC_BLOODLUST_1"
 upgrade_icon = SubResource("AtlasTexture_h3cru")
 costs = Array[ExtResource("1_7l4cn")]([SubResource("Resource_7l4cn"), SubResource("Resource_veysn")])
 effects = Array[ExtResource("3_veysn")]([SubResource("Resource_pn6cj")])

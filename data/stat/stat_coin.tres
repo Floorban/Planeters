@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_yh2nm")
-stat_name = "Coin"
+stat_name = "KEY_STAT_COIN"
 stat_description = "Made of 0.09% real gold"
 stat_icon = ExtResource("2_0lp7u")
-stat_color = Color(0.8743592, 0.78042495, 0.23073676, 1)
+stat_color = Color(1.1857468, 1.0601147, 0.3272615, 1)
 metadata/_custom_type_script = "uid://df1xrlbakiuj1"

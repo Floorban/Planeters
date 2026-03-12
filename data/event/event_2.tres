@@ -19,8 +19,7 @@ metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [resource]
 script = ExtResource("5_4i5id")
-event_description = "\"A new recruit is crying for their family.
-Dedicate enough resources to 're-educate' them before their doubts infect the rest of the flock.\""
+event_description = "KEY_EVENT_DESC_2"
 event_duration = 12.0
 event_requirements = Array[ExtResource("1_cbwlp")]([SubResource("Resource_whqo6")])
 event_rewards = Array[ExtResource("1_cbwlp")]([SubResource("Resource_cbwlp")])

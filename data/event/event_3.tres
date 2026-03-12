@@ -26,8 +26,7 @@ metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [resource]
 script = ExtResource("5_2txcr")
-event_description = "\"A local reporter is sniffing around the compound.
-Distribute 'charity' and provide a staged tour to ensure her story is favorable to the Cause.\""
+event_description = "KEY_EVENT_DESC_3"
 event_duration = 15.0
 event_requirements = Array[ExtResource("1_1becs")]([SubResource("Resource_hy3ug"), SubResource("Resource_1becs")])
 event_rewards = Array[ExtResource("1_1becs")]([SubResource("Resource_0vprn")])

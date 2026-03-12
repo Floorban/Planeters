@@ -26,8 +26,7 @@ metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [resource]
 script = ExtResource("5_vt4lh")
-event_description = "\"The City Council is asking questions about your midnight rituals.
-Provide a 'donation' to their private fund to buy their silence and official immunity.\""
+event_description = "KEY_EVENT_DESC_4"
 event_duration = 18.0
 event_requirements = Array[ExtResource("1_gg86u")]([SubResource("Resource_gbnjg")])
 event_rewards = Array[ExtResource("1_gg86u")]([SubResource("Resource_i1xib"), SubResource("Resource_gg86u")])
