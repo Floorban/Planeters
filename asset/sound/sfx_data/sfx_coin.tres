@@ -8,5 +8,5 @@ script = ExtResource("1_wg3cw")
 type = 3
 sound_effect = ExtResource("2_wg3cw")
 volume = 0.5
-pitch_randomness = 0.3
-pitch_step = 0.1
+pitch_randomness = 0.1
+max_pitch_cap = 1.2

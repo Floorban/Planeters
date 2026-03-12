@@ -10,3 +10,4 @@ type = 6
 sound_effect = ExtResource("2_3pwgp")
 volume = 15.0
 pitch_scale = 1.1
+pitch_randomness = 0.1

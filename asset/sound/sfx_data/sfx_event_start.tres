@@ -9,4 +9,5 @@ limit = 1
 type = 5
 sound_effect = ExtResource("2_mx7mk")
 volume = 5.0
-pitch_scale = 1.1
+pitch_randomness = 0.1
+max_pitch_cap = 1.35

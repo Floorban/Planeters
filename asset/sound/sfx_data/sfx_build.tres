@@ -8,3 +8,5 @@ script = ExtResource("1_o4sol")
 limit = 3
 type = 2
 sound_effect = ExtResource("2_o4sol")
+pitch_randomness = 0.1
+max_pitch_cap = 1.1

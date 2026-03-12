@@ -25,6 +25,7 @@ enum SOUND_EFFECT_TYPE {
 # for incremental pitch
 @export_range(0.0, 0.5) var pitch_step: float = 0.05 
 @export_range(1.0, 5.0) var max_pitch_cap: float = 2.0
+@export var current_pitch_offset : float = 0.0
 
 var audio_count: int = 0
 
@@ -39,3 +40,11 @@ func has_open_limit() -> bool:
 
 func on_audio_finished() -> void:
 	change_audio_count(-1)
+
+
+func add_pitch_step() -> void:
+	current_pitch_offset = min(current_pitch_offset + pitch_step, max_pitch_cap)
+
+
+func reset_extra_pitch_step() -> void:
+	current_pitch_offset = 0

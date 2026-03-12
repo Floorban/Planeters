@@ -7,3 +7,5 @@
 script = ExtResource("1_jvks5")
 type = 1
 sound_effect = ExtResource("2_jvks5")
+pitch_randomness = 0.15
+max_pitch_cap = 1.2

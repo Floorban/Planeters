@@ -9,3 +9,4 @@ limit = 9
 type = 8
 sound_effect = ExtResource("2_w2ndq")
 volume = 0.5
+pitch_randomness = 0.0

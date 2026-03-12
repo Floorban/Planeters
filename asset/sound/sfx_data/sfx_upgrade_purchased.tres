@@ -9,4 +9,5 @@ limit = 3
 type = 10
 sound_effect = ExtResource("2_lne44")
 volume = 8.0
-pitch_scale = 1.1
+pitch_scale = 1.05
+max_pitch_cap = 1.3
