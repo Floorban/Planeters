@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bkbvg88h7x45k"]
+
+[ext_resource type="Script" uid="uid://ckfncwpqrcd86" path="res://asset/sound/system/audio.gd" id="1_1dyhs"]
+[ext_resource type="Script" uid="uid://ds5onhcj5aqd1" path="res://asset/sound/system/sfx_data.gd" id="2_4cuwv"]
+[ext_resource type="Resource" uid="uid://bqtf5ppyj3rhx" path="res://asset/sound/sfx_data/sfx_build.tres" id="3_p7w35"]
+[ext_resource type="Resource" uid="uid://bc0v1p8xv5bvp" path="res://asset/sound/sfx_data/sfx_button_confirmed.tres" id="4_mykbc"]
+[ext_resource type="Resource" uid="uid://c562cdsuyr4cn" path="res://asset/sound/sfx_data/sfx_sacrifice.tres" id="5_j31mf"]
+[ext_resource type="Resource" uid="uid://dpbxwssd160qn" path="res://asset/sound/sfx_data/sfx_upgrade_purchased.tres" id="6_xwcjw"]
+
+[node name="Audio" type="Node2D" unique_id=1980692102]
+script = ExtResource("1_1dyhs")
+sound_effects = Array[ExtResource("2_4cuwv")]([ExtResource("3_p7w35"), ExtResource("4_mykbc"), ExtResource("5_j31mf"), ExtResource("6_xwcjw")])

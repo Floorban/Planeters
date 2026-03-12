@@ -71,6 +71,8 @@ func add_stat(stat: Stat, amount: float) -> void:
 		GameManager.overview.set_revenue_label(int(amount))
 	if stat == GameManager.sim_manager.soul_stat:
 		GameManager.overview.set_soul_label(int(amount))
+	if stat == GameManager.sim_manager.church_stat:
+		Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BUILD)
 
 
 # for capping cult member from church num
