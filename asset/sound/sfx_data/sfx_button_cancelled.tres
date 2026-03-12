@@ -10,3 +10,4 @@ type = 9
 sound_effect = ExtResource("2_msanw")
 volume = -15.0
 pitch_scale = 0.9
+pitch_randomness = 0.0

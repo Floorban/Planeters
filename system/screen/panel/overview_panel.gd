@@ -19,6 +19,8 @@ var lifetime := 0.0
 @export var tween_transition := Tween.TRANS_QUAD
 @export var tween_ease := Tween.EASE_OUT
 
+@onready var world_overview: TextureRect = %WorldOverview
+
 
 func _ready() -> void:
 	GameManager.overview = self

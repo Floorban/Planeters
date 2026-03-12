@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bltwvuc0y6lta" path="res://system/screen/panel/overview_panel.gd" id="1_jth0q"]
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="2_jth0q"]
-[ext_resource type="PackedScene" uid="uid://wsm37tvfwhrk" path="res://scene/world.tscn" id="4_v1r7b"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_rgbx4"]
 
 [node name="OverviewPanel" type="Control" unique_id=952982154]
 custom_minimum_size = Vector2(600, 820)
@@ -168,27 +169,11 @@ theme_override_fonts/font = ExtResource("2_jth0q")
 theme_override_font_sizes/font_size = 32
 text = "26 : 24"
 
-[node name="WorldOverview" type="PanelContainer" parent="MarginContainer/PanelContainer" unique_id=571541127]
-custom_minimum_size = Vector2(500, 450)
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -350.0
+[node name="WorldOverview" type="TextureRect" parent="MarginContainer/PanelContainer" unique_id=1837630139]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 270.0
 offset_right = 500.0
-grow_vertical = 0
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="MarginContainer/PanelContainer/WorldOverview" unique_id=961153942]
-layout_mode = 2
-
-[node name="SubViewport" type="SubViewport" parent="MarginContainer/PanelContainer/WorldOverview/SubViewportContainer" unique_id=1735923994]
-disable_3d = true
-transparent_bg = true
-handle_input_locally = false
-size = Vector2i(500, 450)
-size_2d_override = Vector2i(500, 420)
-size_2d_override_stretch = true
-render_target_update_mode = 4
-
-[node name="World" parent="MarginContainer/PanelContainer/WorldOverview/SubViewportContainer/SubViewport" unique_id=1319151852 instance=ExtResource("4_v1r7b")]
-position = Vector2(-719, -116.44445)
+offset_bottom = 720.0
+texture = SubResource("ViewportTexture_rgbx4")
+expand_mode = 1
