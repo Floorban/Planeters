@@ -26,7 +26,7 @@ grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("1_lmd8u")
 task_btns = [NodePath("Background/MarginContainer/HBoxContainer/Control/TaskButtons/ButtonGet"), NodePath("Background/MarginContainer/HBoxContainer/Control/TaskButtons/ButonSacrifice"), NodePath("Background/MarginContainer/HBoxContainer/Control/TaskButtons/ButonBuild")]
-task_slots = [NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot1"), NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot2"), NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot3"), NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot4"), NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot5"), NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot6"), NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot7"), NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot8"), NodePath("Background/MarginContainer/HBoxContainer/TaskSlots/TaskSlot9")]
+task_slots = [NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot1"), NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot2"), NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot3"), NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot4"), NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot5"), NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot6"), NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot7"), NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot8"), NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot9")]
 recruit_task = ExtResource("2_5poxo")
 
 [node name="Background" type="PanelContainer" parent="." unique_id=18296509]
@@ -178,33 +178,67 @@ layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 
+[node name="TaskSlot1" parent="Background/MarginContainer/HBoxContainer/Gap" unique_id=297168396 instance=ExtResource("7_fbshx")]
+layout_mode = 0
+offset_left = 236.0
+offset_right = 526.0
+
+[node name="TaskSlot2" parent="Background/MarginContainer/HBoxContainer/Gap" unique_id=1123278875 instance=ExtResource("7_fbshx")]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 85.0
+offset_right = 526.0
+offset_bottom = 160.0
+
+[node name="TaskSlot3" parent="Background/MarginContainer/HBoxContainer/Gap" unique_id=1278553361 instance=ExtResource("7_fbshx")]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 170.0
+offset_right = 526.0
+offset_bottom = 245.0
+
+[node name="TaskSlot4" parent="Background/MarginContainer/HBoxContainer/Gap" unique_id=629676167 instance=ExtResource("7_fbshx")]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 255.0
+offset_right = 526.0
+offset_bottom = 330.0
+
+[node name="TaskSlot5" parent="Background/MarginContainer/HBoxContainer/Gap" unique_id=114940830 instance=ExtResource("7_fbshx")]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 340.0
+offset_right = 526.0
+offset_bottom = 415.0
+
+[node name="TaskSlot6" parent="Background/MarginContainer/HBoxContainer/Gap" unique_id=1483319379 instance=ExtResource("7_fbshx")]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 425.0
+offset_right = 526.0
+offset_bottom = 500.0
+
+[node name="TaskSlot7" parent="Background/MarginContainer/HBoxContainer/Gap" unique_id=652257652 instance=ExtResource("7_fbshx")]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 510.0
+offset_right = 526.0
+offset_bottom = 585.0
+
+[node name="TaskSlot8" parent="Background/MarginContainer/HBoxContainer/Gap" unique_id=1609270633 instance=ExtResource("7_fbshx")]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 595.0
+offset_right = 526.0
+offset_bottom = 670.0
+
+[node name="TaskSlot9" parent="Background/MarginContainer/HBoxContainer/Gap" unique_id=1687080587 instance=ExtResource("7_fbshx")]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 680.0
+offset_right = 526.0
+offset_bottom = 755.0
+
 [node name="TaskSlots" type="VBoxContainer" parent="Background/MarginContainer/HBoxContainer" unique_id=1807612860]
 layout_mode = 2
 theme_override_constants/separation = 10
-
-[node name="TaskSlot1" parent="Background/MarginContainer/HBoxContainer/TaskSlots" unique_id=297168396 instance=ExtResource("7_fbshx")]
-layout_mode = 2
-
-[node name="TaskSlot2" parent="Background/MarginContainer/HBoxContainer/TaskSlots" unique_id=1123278875 instance=ExtResource("7_fbshx")]
-layout_mode = 2
-
-[node name="TaskSlot3" parent="Background/MarginContainer/HBoxContainer/TaskSlots" unique_id=1278553361 instance=ExtResource("7_fbshx")]
-layout_mode = 2
-
-[node name="TaskSlot4" parent="Background/MarginContainer/HBoxContainer/TaskSlots" unique_id=629676167 instance=ExtResource("7_fbshx")]
-layout_mode = 2
-
-[node name="TaskSlot5" parent="Background/MarginContainer/HBoxContainer/TaskSlots" unique_id=114940830 instance=ExtResource("7_fbshx")]
-layout_mode = 2
-
-[node name="TaskSlot6" parent="Background/MarginContainer/HBoxContainer/TaskSlots" unique_id=1483319379 instance=ExtResource("7_fbshx")]
-layout_mode = 2
-
-[node name="TaskSlot7" parent="Background/MarginContainer/HBoxContainer/TaskSlots" unique_id=652257652 instance=ExtResource("7_fbshx")]
-layout_mode = 2
-
-[node name="TaskSlot8" parent="Background/MarginContainer/HBoxContainer/TaskSlots" unique_id=1609270633 instance=ExtResource("7_fbshx")]
-layout_mode = 2
-
-[node name="TaskSlot9" parent="Background/MarginContainer/HBoxContainer/TaskSlots" unique_id=1687080587 instance=ExtResource("7_fbshx")]
-layout_mode = 2

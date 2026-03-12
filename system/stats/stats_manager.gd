@@ -86,6 +86,8 @@ func set_stat(stat: Stat, value: float) -> void:
 	stats[stat] = value
 	stat_changed.emit(stat, stats[stat])
 	stat_cost_failed.emit(stat)
+	if value <= 0 and get_stat(GameManager.sim_manager.church_stat) == 0:
+		add_stat(GameManager.sim_manager.coin_stat, 150)
 
 
 func spend_stat(stat: Stat, amount: float) -> bool:
