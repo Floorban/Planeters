@@ -22,6 +22,7 @@ func _ready() -> void:
 func _on_mouse_enter() -> void:
 	show_task_info.emit(task)
 
+
 func _on_mouse_exited() -> void:
 	hide_task_info.emit()
 
@@ -33,6 +34,7 @@ func _on_task_btn_toggled(toggled_on : bool) -> void:
 
 
 func button_press_failed() -> void:
+	Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BTN_FAIL)
 	button_pressed = false
 	var og_color = Color.WHITE
 	modulate = og_color

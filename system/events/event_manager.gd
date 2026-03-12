@@ -42,6 +42,7 @@ func _on_event_button_toggled(toggled_on: bool) -> void:
 
 
 func start_event_failed() -> void:
+	Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BTN_FAIL)
 	start_event_button.button_pressed = false
 	var og_color = Color.WHITE
 	start_event_button.modulate = og_color
@@ -105,6 +106,7 @@ func spawn_new_event() -> void:
 	current_event = new_event
 	current_event_index += 1
 	start_event_button.disabled = false
+	Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.EVENT_STARTED)
 
 
 func clear_current_event() -> void:
@@ -132,7 +134,6 @@ func start_event() -> void:
 	event_started = true
 	can_start_event = false
 	start_event_button.disabled = true
-	Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.EVENT_STARTED)
 
 
 func _on_event_finished() -> void:

@@ -8,3 +8,5 @@ script = ExtResource("1_mx7mk")
 limit = 1
 type = 5
 sound_effect = ExtResource("2_mx7mk")
+volume = 5.0
+pitch_scale = 1.1

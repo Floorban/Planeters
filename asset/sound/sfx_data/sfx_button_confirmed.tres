@@ -8,3 +8,4 @@ script = ExtResource("1_resgl")
 limit = 9
 type = 8
 sound_effect = ExtResource("2_w2ndq")
+volume = 0.5

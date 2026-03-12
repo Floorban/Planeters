@@ -8,3 +8,5 @@ script = ExtResource("1_3pwgp")
 limit = 1
 type = 6
 sound_effect = ExtResource("2_3pwgp")
+volume = 15.0
+pitch_scale = 1.1

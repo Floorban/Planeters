@@ -8,3 +8,5 @@ script = ExtResource("1_sdnwf")
 limit = 3
 type = 9
 sound_effect = ExtResource("2_msanw")
+volume = -15.0
+pitch_scale = 0.9

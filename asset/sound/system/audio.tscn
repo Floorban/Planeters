@@ -3,13 +3,17 @@
 [ext_resource type="Script" uid="uid://ckfncwpqrcd86" path="res://asset/sound/system/audio.gd" id="1_1dyhs"]
 [ext_resource type="Script" uid="uid://ds5onhcj5aqd1" path="res://asset/sound/system/sfx_data.gd" id="2_4cuwv"]
 [ext_resource type="Resource" uid="uid://bqtf5ppyj3rhx" path="res://asset/sound/sfx_data/sfx_build.tres" id="3_p7w35"]
+[ext_resource type="Resource" uid="uid://duim18bfhdhie" path="res://asset/sound/sfx_data/sfx_button_cancelled.tres" id="4_k5g0b"]
 [ext_resource type="Resource" uid="uid://bc0v1p8xv5bvp" path="res://asset/sound/sfx_data/sfx_button_confirmed.tres" id="4_mykbc"]
 [ext_resource type="Resource" uid="uid://c562cdsuyr4cn" path="res://asset/sound/sfx_data/sfx_sacrifice.tres" id="5_j31mf"]
+[ext_resource type="Resource" uid="uid://ndtfjutkfykt" path="res://asset/sound/sfx_data/sfx_button_hovered.tres" id="6_5w5r5"]
 [ext_resource type="Resource" uid="uid://dpbxwssd160qn" path="res://asset/sound/sfx_data/sfx_upgrade_purchased.tres" id="6_xwcjw"]
 [ext_resource type="Resource" uid="uid://cwh7geec6wx61" path="res://asset/sound/sfx_data/sfx_coin.tres" id="7_j31mf"]
 [ext_resource type="Resource" uid="uid://wfw5bsp1x34h" path="res://asset/sound/sfx_data/sfx_event_start.tres" id="8_xwcjw"]
 [ext_resource type="Resource" uid="uid://vxoeen5vw3i1" path="res://asset/sound/sfx_data/sfx_event_finished.tres" id="9_1eub1"]
+[ext_resource type="Resource" uid="uid://dwubtufuom0dp" path="res://asset/sound/sfx_data/sfx_get_member.tres" id="10_ndw1i"]
+[ext_resource type="Resource" uid="uid://doiulnp02uvjc" path="res://asset/sound/sfx_data/sfx_soul.tres" id="12_p0oeq"]
 
 [node name="Audio" type="Node2D" unique_id=1980692102]
 script = ExtResource("1_1dyhs")
-sound_effects = Array[ExtResource("2_4cuwv")]([ExtResource("3_p7w35"), ExtResource("4_mykbc"), ExtResource("5_j31mf"), ExtResource("6_xwcjw"), ExtResource("7_j31mf"), ExtResource("8_xwcjw"), ExtResource("9_1eub1")])
+sound_effects = Array[ExtResource("2_4cuwv")]([ExtResource("3_p7w35"), ExtResource("4_k5g0b"), ExtResource("4_mykbc"), ExtResource("6_5w5r5"), ExtResource("7_j31mf"), ExtResource("9_1eub1"), ExtResource("8_xwcjw"), ExtResource("10_ndw1i"), ExtResource("5_j31mf"), ExtResource("12_p0oeq"), ExtResource("6_xwcjw")])

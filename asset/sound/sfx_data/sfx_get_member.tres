@@ -5,5 +5,6 @@
 
 [resource]
 script = ExtResource("1_n2xl3")
-limit = 3
 sound_effect = ExtResource("2_n2xl3")
+volume = 5.0
+pitch_scale = 1.08
