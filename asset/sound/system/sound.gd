@@ -5,7 +5,6 @@ extends Node
 func ambient(path: String, node: Node = null) -> AudioStreamPlayer2D:
 	var instance: AudioStreamPlayer2D
 	#TODO: Add sound to queue, and max playable instance
-	#TODO: Play based on file path
 	
 	instance = create(path)
 	instance.bus = "Ambient"
@@ -15,14 +14,14 @@ func ambient(path: String, node: Node = null) -> AudioStreamPlayer2D:
 	
 	return instance
 
-func sfx(path: String, node: Node = null) -> AudioStreamPlayer2D:
+func fx(path: String, randomness: float = 1, node: Node = null) -> AudioStreamPlayer2D:
 	var instance: AudioStreamPlayer2D
 	#TODO: Add sound to queue, and max playable instance
-	#TODO: Play based on file path
 	
 	instance = create(path)
 	instance.bus = "SFX"
 	instance.position = Vector2.ZERO if Node != null else node.global_position
+	instance.pitch_scale = randf_range(1 - (10 - randomness), 1 + (10 - randomness))
 	
 	instance.play()
 	

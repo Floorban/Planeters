@@ -28,7 +28,7 @@ buses/default_bus_layout="uid://1hbinw75eq2q"
 Signals="*res://system/autoload/signals.gd"
 GameManager="*res://system/autoload/game_manager.tscn"
 PopupPrompt="*res://system/autoload/popup_prompt.gd"
-Audio="*uid://ck0mkrjunsgjo"
+Sound="*uid://ck0mkrjunsgjo"
 
 [display]
 

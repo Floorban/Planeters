@@ -93,7 +93,7 @@ theme_override_constants/line_spacing = 5
 theme_override_constants/paragraph_spacing = 10
 theme_override_fonts/font = ExtResource("3_ebw1f")
 theme_override_font_sizes/font_size = 32
-text = "Requirement (doesn't cost)"
+text = "Requirement (will not charge)"
 autowrap_mode = 3
 
 [node name="EventRequirementLabel" type="RichTextLabel" parent="EventPanel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=356371646]
