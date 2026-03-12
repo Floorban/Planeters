@@ -13,6 +13,7 @@ enum SOUND_EFFECT_TYPE {
 	BTN_CONFIRM,
 	BTN_FAIL,
 	UPGRADE_PURCHASE,
+	ENDING
 }
 
 @export_range(0, 10) var limit: int = 5

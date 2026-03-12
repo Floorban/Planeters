@@ -62,6 +62,9 @@ func modify_cost(stat: Stat, amount: float):
 func add_stat(stat: Stat, amount: float) -> void:
 	if amount < 1.0:
 		return
+	if not stats.has(stat):
+		GameManager.game_over()
+		return
 	# float in the system but ui shows int
 	stats[stat] += amount
 	stat_changed.emit(stat, stats[stat])

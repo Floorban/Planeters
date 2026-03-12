@@ -9,3 +9,4 @@ type = 4
 sound_effect = ExtResource("2_hlme4")
 volume = -8.0
 pitch_randomness = 0.4
+max_pitch_cap = 1.3

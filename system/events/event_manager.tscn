@@ -21,7 +21,7 @@ pivot_offset = Vector2(160, 260)
 theme_override_constants/separation = 28
 script = ExtResource("1_ebhe1")
 events = Array[ExtResource("2_ebw1f")]([ExtResource("3_01t02"), ExtResource("3_p6m0g"), ExtResource("5_q7m05"), ExtResource("3_17o8f"), ExtResource("3_4k5f0"), ExtResource("3_yx4ci"), ExtResource("10_0ujcr")])
-new_event_gap = 50.0
+new_event_gap = 45.0
 new_event_gap_range = 10.0
 
 [node name="StartEventButton" type="Button" parent="." unique_id=1124168284]

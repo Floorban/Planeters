@@ -13,7 +13,8 @@
 [ext_resource type="Resource" uid="uid://vxoeen5vw3i1" path="res://asset/sound/sfx_data/sfx_event_finished.tres" id="9_1eub1"]
 [ext_resource type="Resource" uid="uid://dwubtufuom0dp" path="res://asset/sound/sfx_data/sfx_get_member.tres" id="10_ndw1i"]
 [ext_resource type="Resource" uid="uid://doiulnp02uvjc" path="res://asset/sound/sfx_data/sfx_soul.tres" id="12_p0oeq"]
+[ext_resource type="Resource" uid="uid://dvi0qwci3iihe" path="res://asset/sound/sfx_data/sfx_ending.tres" id="14_5w5r5"]
 
 [node name="Audio" type="Node2D" unique_id=1980692102]
 script = ExtResource("1_1dyhs")
-sound_effects = Array[ExtResource("2_4cuwv")]([ExtResource("3_p7w35"), ExtResource("4_k5g0b"), ExtResource("4_mykbc"), ExtResource("6_5w5r5"), ExtResource("7_j31mf"), ExtResource("9_1eub1"), ExtResource("8_xwcjw"), ExtResource("10_ndw1i"), ExtResource("5_j31mf"), ExtResource("12_p0oeq"), ExtResource("6_xwcjw")])
+sound_effects = Array[ExtResource("2_4cuwv")]([ExtResource("3_p7w35"), ExtResource("4_k5g0b"), ExtResource("4_mykbc"), ExtResource("6_5w5r5"), ExtResource("7_j31mf"), ExtResource("9_1eub1"), ExtResource("8_xwcjw"), ExtResource("10_ndw1i"), ExtResource("5_j31mf"), ExtResource("12_p0oeq"), ExtResource("6_xwcjw"), ExtResource("14_5w5r5")])

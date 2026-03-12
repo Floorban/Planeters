@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SFXData" format=3 uid="uid://dvi0qwci3iihe"]
+
+[ext_resource type="Script" uid="uid://ds5onhcj5aqd1" path="res://asset/sound/system/sfx_data.gd" id="1_dyw61"]
+[ext_resource type="AudioStream" uid="uid://cjyirc72ql1jp" path="res://asset/sound/fx/f_ending.ogg" id="2_dyw61"]
+
+[resource]
+script = ExtResource("1_dyw61")
+limit = 1
+type = 11
+sound_effect = ExtResource("2_dyw61")
+pitch_scale = 0.95
+pitch_randomness = 0.0
+max_pitch_cap = 1.3

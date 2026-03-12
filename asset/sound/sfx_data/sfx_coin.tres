@@ -9,4 +9,4 @@ type = 3
 sound_effect = ExtResource("2_wg3cw")
 volume = 0.5
 pitch_randomness = 0.1
-max_pitch_cap = 1.2
+max_pitch_cap = 1.15
