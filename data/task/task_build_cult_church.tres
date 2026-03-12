@@ -26,7 +26,7 @@ metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [resource]
 script = ExtResource("1_0v258")
-task_name = "Build church"
+task_name = "KEY_BUILD"
 task_description = "Building new church . . ."
 duration = 8.0
 costs = Array[ExtResource("1_e2h2u")]([SubResource("Resource_21sj1"), SubResource("Resource_e2h2u")])

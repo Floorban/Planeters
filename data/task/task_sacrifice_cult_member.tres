@@ -26,7 +26,7 @@ metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [resource]
 script = ExtResource("1_eo33j")
-task_name = "Sacrifice"
+task_name = "KEY_SACRIFICE"
 task_description = "Sacrifice for good . . ."
 duration = 2.0
 costs = Array[ExtResource("1_qjw1u")]([SubResource("Resource_qjw1u")])

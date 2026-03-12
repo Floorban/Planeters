@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cntb8wqbeiybl" path="res://system/screen/panel/task_manager.tscn" id="8_1ov7q"]
 [ext_resource type="Script" uid="uid://bu2lmg055dsyb" path="res://system/screen/button/restart_button.gd" id="8_gigxy"]
 [ext_resource type="Script" uid="uid://dda2s8deiwwhp" path="res://asset/sound/system/ambient.gd" id="11_vdsnl"]
+[ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="12_akoy5"]
 [ext_resource type="PackedScene" uid="uid://dpdrr8e6dwttd" path="res://system/stats/stats_manager.tscn" id="16_n3x1c"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_1ov7q"]
@@ -173,3 +174,32 @@ theme_override_constants/margin_right = 60
 [node name="StatsManager" parent="MarginContainer/Background/MarginContainer" unique_id=654268750 instance=ExtResource("16_n3x1c")]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=564777553]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ButtonENG" type="Button" parent="HBoxContainer" unique_id=1800963416]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_akoy5")
+theme_override_font_sizes/font_size = 32
+text = "ENG"
+
+[node name="ButtonCN" type="Button" parent="HBoxContainer" unique_id=499015762]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_akoy5")
+theme_override_font_sizes/font_size = 32
+text = "CN"
+
+[node name="ButtonJA" type="Button" parent="HBoxContainer" unique_id=1069351498]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_akoy5")
+theme_override_font_sizes/font_size = 32
+text = "JA"
