@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SFXData" format=3 uid="uid://duim18bfhdhie"]
+
+[ext_resource type="Script" uid="uid://ds5onhcj5aqd1" path="res://asset/sound/system/sfx_data.gd" id="1_sdnwf"]
+[ext_resource type="AudioStream" uid="uid://pqvc17mt4l8u" path="res://asset/sound/fx/f_button_cancelled.ogg" id="2_msanw"]
+
+[resource]
+script = ExtResource("1_sdnwf")
+limit = 3
+type = 9
+sound_effect = ExtResource("2_msanw")

@@ -36,6 +36,7 @@ func _on_event_button_toggled(toggled_on: bool) -> void:
 		if can_start_new_event():
 			start_event()
 			start_event_button.disabled = true
+			Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BTN_CONFIRM)
 		else:
 			start_event_failed()
 
@@ -131,6 +132,7 @@ func start_event() -> void:
 	event_started = true
 	can_start_event = false
 	start_event_button.disabled = true
+	Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.EVENT_STARTED)
 
 
 func _on_event_finished() -> void:
@@ -138,7 +140,7 @@ func _on_event_finished() -> void:
 	current_event = null
 	for r in finished_event.event_rewards:
 		GameManager.stats_manager.add_stat(r.stat, r.amount)
-		
+	
 	start_event_button.button_pressed = false
 	event_progressbar.value = 0.0
 	new_event_timer = 0.0
@@ -165,6 +167,7 @@ func _on_event_finished() -> void:
 		clear_current_event()
 		modulate = og_color
 		scale = Vector2.ONE
+		Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.EVENT_FINISHED)
 	)
 
 

@@ -5,6 +5,5 @@
 
 [resource]
 script = ExtResource("1_jvks5")
-limit = 3
 type = 1
 sound_effect = ExtResource("2_jvks5")
