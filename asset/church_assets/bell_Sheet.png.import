@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp1y2l2mksasw"
-path="res://.godot/imported/church ExtensionEnd.png-fea4cd04b29c7dcfb4bc4757409e7d9d.ctex"
+uid="uid://c2ai2chh7xwyx"
+path="res://.godot/imported/bell_Sheet.png-cadb60bbf088a4a5de66cf1863258a77.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/churchAssets/church ExtensionEnd.png"
-dest_files=["res://.godot/imported/church ExtensionEnd.png-fea4cd04b29c7dcfb4bc4757409e7d9d.ctex"]
+source_file="res://asset/church_assets/bell_Sheet.png"
+dest_files=["res://.godot/imported/bell_Sheet.png-cadb60bbf088a4a5de66cf1863258a77.ctex"]
 
 [params]
 

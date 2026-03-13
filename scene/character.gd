@@ -23,6 +23,22 @@ var run_distance := 80
 var wander_timer := 0.0
 
 @onready var character_sprite: AnimatedSprite2D = $CharacterSprite
+var selection_mat : ShaderMaterial
+
+
+func _ready() -> void:
+	selection_mat = character_sprite.material as ShaderMaterial
+	mouse_entered.connect(_on_character_hovered)
+	mouse_exited.connect(_on_character_unhovred)
+
+
+func _on_character_hovered() -> void:
+	character_sprite.use_parent_material = false
+
+
+func _on_character_unhovred() -> void:
+	character_sprite.use_parent_material = true
+
 
 func _process(delta):
 	if state == CharacterState.IDLE:

@@ -3,8 +3,6 @@
 [ext_resource type="Script" uid="uid://bltwvuc0y6lta" path="res://system/screen/panel/overview_panel.gd" id="1_jth0q"]
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="2_jth0q"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_rgbx4"]
-
 [node name="OverviewPanel" type="Control" unique_id=952982154]
 custom_minimum_size = Vector2(600, 820)
 layout_mode = 3
@@ -13,7 +11,7 @@ offset_right = 600.0
 offset_bottom = 820.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-mouse_filter = 1
+mouse_filter = 2
 script = ExtResource("1_jth0q")
 
 [node name="BG" type="ColorRect" parent="." unique_id=1390644060]
@@ -23,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.5106012, 0.5106013, 0.5106011, 0.64705884)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1201286985]
@@ -32,6 +31,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
@@ -39,15 +39,18 @@ theme_override_constants/margin_bottom = 50
 
 [node name="PanelContainer" type="Control" parent="MarginContainer" unique_id=1652239257]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="StatsOverview" type="PanelContainer" parent="MarginContainer/PanelContainer" unique_id=565606917]
 custom_minimum_size = Vector2(500, 230)
 layout_mode = 1
 offset_right = 500.0
 offset_bottom = 200.0
+mouse_filter = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/StatsOverview" unique_id=446327672]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 30
@@ -60,6 +63,7 @@ alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer" unique_id=779806342]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1168383173]
 texture_filter = 1
@@ -168,12 +172,3 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jth0q")
 theme_override_font_sizes/font_size = 32
 text = "26 : 24"
-
-[node name="WorldOverview" type="TextureRect" parent="MarginContainer/PanelContainer" unique_id=1837630139]
-unique_name_in_owner = true
-layout_mode = 0
-offset_top = 270.0
-offset_right = 500.0
-offset_bottom = 720.0
-texture = SubResource("ViewportTexture_rgbx4")
-expand_mode = 1

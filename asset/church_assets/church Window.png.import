@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgep16e7b8pam"
-path="res://.godot/imported/church Wip.png-7ae2ea62210cfd49ec8fdf5366632357.ctex"
+uid="uid://bll07qbbhhh58"
+path="res://.godot/imported/church Window.png-867fafbea933e47b8c0b3925fa40716d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/churchAssets/church Wip.png"
-dest_files=["res://.godot/imported/church Wip.png-7ae2ea62210cfd49ec8fdf5366632357.ctex"]
+source_file="res://asset/church_assets/church Window.png"
+dest_files=["res://.godot/imported/church Window.png-867fafbea933e47b8c0b3925fa40716d.ctex"]
 
 [params]
 

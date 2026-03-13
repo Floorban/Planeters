@@ -9,7 +9,6 @@ var tab_btns: Array[TabBtn]
 var tab_group := ButtonGroup.new()
 
 #@onready var camera: Camera = %Camera
-@onready var sub_viewport: SubViewport = %SubViewport
 
 @onready var button_eng: Button = %ButtonENG
 @onready var button_cn: Button = %ButtonCN
@@ -48,8 +47,8 @@ func _init_sub_panels() -> void:
 			c.focus_panel.connect(_on_panel_opened)
 			c.hide_panel()
 			sub_panels.append(c)
-			if c is Overview:
-				c.world_overview.texture = sub_viewport.get_texture()
+			#if c is Overview:
+				#c.world_overview.texture = sub_viewport.get_texture()
 			
 	if sub_panels.is_empty():
 		push_error("doesn't have any sub panels")

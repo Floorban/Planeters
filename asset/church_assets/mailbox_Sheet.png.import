@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crqh00mig3dnu"
-path="res://.godot/imported/church ExtensionMid.png-5c00024cfc6c88e46a5432eeba3fede9.ctex"
+uid="uid://r6rc0vx2mem2"
+path="res://.godot/imported/mailbox_Sheet.png-34510ff6921772b470ec1cf47f010177.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/churchAssets/church ExtensionMid.png"
-dest_files=["res://.godot/imported/church ExtensionMid.png-5c00024cfc6c88e46a5432eeba3fede9.ctex"]
+source_file="res://asset/church_assets/mailbox_Sheet.png"
+dest_files=["res://.godot/imported/mailbox_Sheet.png-34510ff6921772b470ec1cf47f010177.ctex"]
 
 [params]
 

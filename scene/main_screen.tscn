@@ -13,9 +13,6 @@
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="12_akoy5"]
 [ext_resource type="PackedScene" uid="uid://dpdrr8e6dwttd" path="res://system/stats/stats_manager.tscn" id="16_n3x1c"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_1ov7q"]
-viewport_path = NodePath("SubViewportContainer/SubViewport")
-
 [node name="MainScreen" type="Control" unique_id=1745498329]
 layout_mode = 3
 anchors_preset = 15
@@ -23,48 +20,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("2_ckf3p")
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1245086005]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -2633.0
-offset_right = -2633.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=256657814]
-unique_name_in_owner = true
-disable_3d = true
-transparent_bg = true
-handle_input_locally = false
-snap_2d_transforms_to_pixel = true
-snap_2d_vertices_to_pixel = true
-size = Vector2i(500, 450)
-size_2d_override = Vector2i(500, 420)
-size_2d_override_stretch = true
-render_target_update_mode = 4
-
-[node name="World" parent="SubViewportContainer/SubViewport" unique_id=1319151852 instance=ExtResource("2_vdsnl")]
-position = Vector2(-719, -116.44445)
 
 [node name="Ambient" type="Node" parent="." unique_id=1627094930]
 script = ExtResource("11_vdsnl")
-
-[node name="WorldBG" type="TextureRect" parent="." unique_id=1103249685]
-unique_name_in_owner = true
-self_modulate = Color(0.5921569, 0.5921569, 0.5921569, 0.7254902)
-z_index = -5
-texture_filter = 1
-custom_minimum_size = Vector2(1920, 1920)
-layout_mode = 0
-offset_top = -818.0
-offset_right = 1920.0
-offset_bottom = 1082.0
-texture = SubResource("ViewportTexture_1ov7q")
-expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1135349797]
 layout_mode = 1
@@ -73,6 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 100
 theme_override_constants/margin_top = 80
 theme_override_constants/margin_right = 100
@@ -81,11 +42,13 @@ theme_override_constants/margin_bottom = 80
 [node name="Background" type="TextureRect" parent="MarginContainer" unique_id=1423564982]
 texture_filter = 1
 layout_mode = 2
+mouse_filter = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/Background" unique_id=1979003701]
 layout_mode = 1
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 theme_override_constants/margin_left = 60
 
 [node name="PanelContainer" type="Control" parent="MarginContainer/Background/MarginContainer2" unique_id=1029536652]
@@ -93,6 +56,7 @@ unique_name_in_owner = true
 clip_contents = true
 custom_minimum_size = Vector2(1200, 820)
 layout_mode = 2
+mouse_filter = 2
 
 [node name="OverviewPanel" parent="MarginContainer/Background/MarginContainer2/PanelContainer" unique_id=175380593 instance=ExtResource("5_06ml0")]
 layout_mode = 0
@@ -119,12 +83,14 @@ anchor_bottom = 1.0
 offset_top = -60.0
 offset_right = 1196.0
 grow_vertical = 0
+mouse_filter = 2
 theme_override_constants/margin_left = 60
 
 [node name="Taskbar" type="HBoxContainer" parent="MarginContainer/Background/MarginContainer3" unique_id=233926735]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(1100, 60)
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 24
 
 [node name="TabButton1" parent="MarginContainer/Background/MarginContainer3/Taskbar" unique_id=817727907 instance=ExtResource("3_n877d")]
@@ -169,6 +135,7 @@ offset_top = -460.0
 offset_bottom = 460.0
 grow_horizontal = 0
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_right = 60
 
 [node name="StatsManager" parent="MarginContainer/Background/MarginContainer" unique_id=654268750 instance=ExtResource("16_n3x1c")]
@@ -179,6 +146,7 @@ layout_mode = 2
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 
 [node name="ButtonENG" type="Button" parent="HBoxContainer" unique_id=1800963416]
 unique_name_in_owner = true
@@ -203,3 +171,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("12_akoy5")
 theme_override_font_sizes/font_size = 32
 text = "JA"
+
+[node name="World" parent="." unique_id=1319151852 instance=ExtResource("2_vdsnl")]
+position = Vector2(-343, 227)

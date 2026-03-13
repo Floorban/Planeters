@@ -1,7 +1,15 @@
 [gd_scene format=3 uid="uid://cjwbyqd6pavch"]
 
 [ext_resource type="Script" uid="uid://bbdbxnmg1tex7" path="res://scene/character.gd" id="1_k8rrn"]
+[ext_resource type="Shader" uid="uid://bfvds3cp7nlmt" path="res://shader/selection_outline.gdshader" id="2_d7vt2"]
 [ext_resource type="Texture2D" uid="uid://b2cpcnb47rfgl" path="res://asset/character_sheet.png" id="2_k8rrn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6k5wm"]
+shader = ExtResource("2_d7vt2")
+shader_parameter/rotation_speed = 0.11200019532000027
+shader_parameter/stripes = 32.0
+shader_parameter/stripe_width = 0.6050000287375
+shader_parameter/outline_color = Color(1, 1, 1, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d7vt2"]
 atlas = ExtResource("2_k8rrn")
@@ -159,44 +167,23 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_k8rrn"]
-radius = 6.0
-
-[sub_resource type="Gradient" id="Gradient_w4qq1"]
-offsets = PackedFloat32Array(0.158776, 0.7936308)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0.1882353)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_k8rrn"]
-gradient = SubResource("Gradient_w4qq1")
-width = 16
-height = 16
-fill = 1
-fill_from = Vector2(0.5, 0.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d7vt2"]
+size = Vector2(10, 29)
 
 [node name="Character" type="CharacterBody2D" unique_id=1617641724]
 texture_filter = 1
-collision_mask = 0
+input_pickable = true
 script = ExtResource("1_k8rrn")
 
 [node name="CharacterSprite" type="AnimatedSprite2D" parent="." unique_id=151410775]
 modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_6k5wm")
+use_parent_material = true
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_5hcsl")
 animation = &"idle"
 frame_progress = 0.86421144
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=715435382]
-visible = false
-shape = SubResource("CircleShape2D_k8rrn")
-
-[node name="PointLight" type="PointLight2D" parent="." unique_id=1944352632]
-z_index = 1
-position = Vector2(0, -11)
-color = Color(0.5176471, 0.07450981, 0.16470589, 0.9764706)
-energy = 0.8
-shadow_color = Color(0.27450982, 0.27450982, 0.27450982, 0.9843137)
-shadow_filter = 2
-shadow_filter_smooth = 40.2
-texture = SubResource("GradientTexture2D_k8rrn")
-texture_scale = 2.0
-height = 1.0
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_d7vt2")

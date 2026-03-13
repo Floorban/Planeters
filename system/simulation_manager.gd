@@ -48,13 +48,13 @@ func _tick(stat: Stat, per_gain: float) -> void:
 
 
 func _has_church_cap() -> bool:
-	var members = GameManager.stats_manager.get_stat(member_stat)
-	var church = GameManager.stats_manager.get_stat(church_stat)
-	var max_members = church * members_per_church
-	if members > max_members:
-		GameManager.stats_manager.set_stat(member_stat, max_members)
-		GameManager.stats_manager.stat_cost_failed.emit(church_stat)
-		return true
+	#var members = GameManager.stats_manager.get_stat(member_stat)
+	#var church = GameManager.stats_manager.get_stat(church_stat)
+	#var max_members = church * members_per_church
+	#if members > max_members:
+		#GameManager.stats_manager.set_stat(member_stat, max_members)
+		#GameManager.stats_manager.stat_cost_failed.emit(church_stat)
+		#return true
 	
 	return false
 

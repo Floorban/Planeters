@@ -14,8 +14,8 @@ var current_members := 0
 func _ready():
 	await get_tree().process_frame
 	GameManager.world_manager = self
-	GameManager.stats_manager.stat_changed.connect(_on_stat_changed)
-	max_visible_cultists = GameManager.sim_manager.members_per_church * GameManager.stats_manager.get_stat(GameManager.sim_manager.church_stat)
+	#GameManager.stats_manager.stat_changed.connect(_on_stat_changed)
+	#max_visible_cultists = GameManager.sim_manager.members_per_church * GameManager.stats_manager.get_stat(GameManager.sim_manager.church_stat)
 
 
 func _on_stat_changed(stat: Stat, value: float):

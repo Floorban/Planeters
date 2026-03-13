@@ -13,7 +13,7 @@ offset_right = 600.0
 offset_bottom = 820.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-mouse_filter = 1
+mouse_filter = 2
 script = ExtResource("1_fmctd")
 
 [node name="UpgradesPanel" parent="." unique_id=378376900 instance=ExtResource("2_sbl4j")]
