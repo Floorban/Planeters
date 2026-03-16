@@ -10,7 +10,7 @@
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="8_hbfx4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7k07d"]
-size = Vector2(696, 1106)
+size = Vector2(739, 1106)
 
 [node name="PanelManager" type="Control" unique_id=1503756686]
 custom_minimum_size = Vector2(600, 0)
@@ -19,6 +19,7 @@ anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 600.0
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_gdews")
 
 [node name="OverviewPanel" parent="." unique_id=952982154 instance=ExtResource("2_ktfpp")]
@@ -81,7 +82,7 @@ layout_mode = 2
 [node name="SelectableComponent" parent="." unique_id=480340802 instance=ExtResource("6_ktfpp")]
 
 [node name="CollisionShape2D" parent="SelectableComponent" index="0" unique_id=1423258604]
-position = Vector2(331, 543)
+position = Vector2(309.5, 543)
 shape = SubResource("RectangleShape2D_7k07d")
 
 [node name="Localization" type="HBoxContainer" parent="." unique_id=396144212]

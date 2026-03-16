@@ -35,6 +35,7 @@ Audio="*uid://bkbvg88h7x45k"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 window/size/resizable=false
 window/size/sharp_corners=true
 window/size/minimize_disabled=true
