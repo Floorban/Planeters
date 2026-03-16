@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d28ro7rbb85ru"]
+
+[ext_resource type="Script" uid="uid://ct1o16yrro1xo" path="res://system/interaction/selectable_component.gd" id="1_adsl7"]
+
+[node name="SelectableComponent" type="Area2D" unique_id=480340802]
+script = ExtResource("1_adsl7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1423258604]

@@ -2,14 +2,12 @@
 
 [ext_resource type="Script" uid="uid://b1b5kvlcgcely" path="res://system/screen/panel/main_screen.gd" id="2_ckf3p"]
 [ext_resource type="PackedScene" uid="uid://kseiabufssdw" path="res://system/screen/panel/upgrades_manager.tscn" id="2_l8vv1"]
-[ext_resource type="PackedScene" uid="uid://wsm37tvfwhrk" path="res://scene/world.tscn" id="2_vdsnl"]
 [ext_resource type="PackedScene" uid="uid://drk220wxciily" path="res://system/screen/button/tab_button.tscn" id="3_n877d"]
 [ext_resource type="PackedScene" uid="uid://b4b8pivkpdt40" path="res://system/screen/panel/world_panel.tscn" id="4_bor6b"]
 [ext_resource type="PackedScene" uid="uid://cl11d77lbfnnt" path="res://system/screen/panel/overview_panel.tscn" id="5_06ml0"]
 [ext_resource type="PackedScene" uid="uid://b0vsnwsdvdf6f" path="res://system/screen/panel/events_panel.tscn" id="6_kw7ci"]
 [ext_resource type="PackedScene" uid="uid://cntb8wqbeiybl" path="res://system/screen/panel/task_manager.tscn" id="8_1ov7q"]
 [ext_resource type="Script" uid="uid://bu2lmg055dsyb" path="res://system/screen/button/restart_button.gd" id="8_gigxy"]
-[ext_resource type="Script" uid="uid://dda2s8deiwwhp" path="res://asset/sound/system/ambient.gd" id="11_vdsnl"]
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="12_akoy5"]
 [ext_resource type="PackedScene" uid="uid://dpdrr8e6dwttd" path="res://system/stats/stats_manager.tscn" id="16_n3x1c"]
 
@@ -22,9 +20,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("2_ckf3p")
-
-[node name="Ambient" type="Node" parent="." unique_id=1627094930]
-script = ExtResource("11_vdsnl")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1135349797]
 layout_mode = 1
@@ -171,6 +166,3 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("12_akoy5")
 theme_override_font_sizes/font_size = 32
 text = "JA"
-
-[node name="World" parent="." unique_id=1319151852 instance=ExtResource("2_vdsnl")]
-position = Vector2(-343, 227)

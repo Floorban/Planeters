@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bgdheooqkqdfk"]
+
+[ext_resource type="PackedScene" uid="uid://d28ro7rbb85ru" path="res://system/interaction/selectable_component.tscn" id="1_2a7t6"]
+[ext_resource type="Script" uid="uid://fcqaf1xfy3hm" path="res://scene/building.gd" id="1_8eyry"]
+
+[node name="Building" type="Node2D" unique_id=1390920429]
+script = ExtResource("1_8eyry")
+
+[node name="BuildingSprite" type="AnimatedSprite2D" parent="." unique_id=909124454]
+
+[node name="SelectableComponent" parent="." unique_id=480340802 instance=ExtResource("1_2a7t6")]
+unique_name_in_owner = true
+
+[editable path="SelectableComponent"]

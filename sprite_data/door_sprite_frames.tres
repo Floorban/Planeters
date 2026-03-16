@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bvuvo0kdeydg"]
+
+[ext_resource type="Texture2D" uid="uid://bghy36snh37ob" path="res://asset/church_assets/door_Sheet.png" id="1_jbx0f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0bac"]
+atlas = ExtResource("1_jbx0f")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmyho"]
+atlas = ExtResource("1_jbx0f")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnm4a"]
+atlas = ExtResource("1_jbx0f")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4vd1"]
+atlas = ExtResource("1_jbx0f")
+region = Rect2(192, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0bac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmyho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnm4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4vd1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

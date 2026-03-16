@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cwoajxv82dpcr"]
+
+[ext_resource type="Texture2D" uid="uid://r6rc0vx2mem2" path="res://asset/church_assets/mailbox_Sheet.png" id="1_3n3rg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqa5m"]
+atlas = ExtResource("1_3n3rg")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1402k"]
+atlas = ExtResource("1_3n3rg")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ol7uo"]
+atlas = ExtResource("1_3n3rg")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7xoa"]
+atlas = ExtResource("1_3n3rg")
+region = Rect2(192, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqa5m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1402k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ol7uo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7xoa")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]

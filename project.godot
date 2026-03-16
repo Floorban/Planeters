@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="BE[a]LIVE"
-run/main_scene="uid://1ktvbleh6eme"
+run/main_scene="uid://wsm37tvfwhrk"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://asset/ui/icon.svg"
 
@@ -40,6 +40,10 @@ window/size/sharp_corners=true
 window/size/minimize_disabled=true
 window/size/maximize_disabled=true
 window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/nhb_functions_on_the_fly/plugin.cfg")
 
 [global_group]
 

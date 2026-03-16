@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://du3gry3k5db3n"]
+
+[ext_resource type="Texture2D" uid="uid://c2ai2chh7xwyx" path="res://asset/church_assets/bell_Sheet.png" id="1_o2bxk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tg4p"]
+atlas = ExtResource("1_o2bxk")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcb8y"]
+atlas = ExtResource("1_o2bxk")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3jn2"]
+atlas = ExtResource("1_o2bxk")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yur6x"]
+atlas = ExtResource("1_o2bxk")
+region = Rect2(192, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tg4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcb8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3jn2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yur6x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

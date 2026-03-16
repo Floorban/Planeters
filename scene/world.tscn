@@ -3,156 +3,11 @@
 [ext_resource type="Script" uid="uid://ddlighcxd3sq" path="res://scene/world_manager.gd" id="1_w4qq1"]
 [ext_resource type="PackedScene" uid="uid://cjwbyqd6pavch" path="res://scene/character.tscn" id="2_txmk2"]
 [ext_resource type="Texture2D" uid="uid://cgep16e7b8pam" path="res://asset/church_assets/church Wip.png" id="3_m5mgf"]
-[ext_resource type="Texture2D" uid="uid://c2ai2chh7xwyx" path="res://asset/church_assets/bell_Sheet.png" id="4_emkrx"]
 [ext_resource type="Script" uid="uid://drenstg1av1xl" path="res://scene/dead_zone.gd" id="4_m5mgf"]
-[ext_resource type="Texture2D" uid="uid://bvxgebat6fmat" path="res://asset/church_assets/altar_Sheet.png" id="5_hcb8y"]
-[ext_resource type="Texture2D" uid="uid://bghy36snh37ob" path="res://asset/church_assets/door_Sheet.png" id="6_y3jn2"]
-[ext_resource type="Texture2D" uid="uid://r6rc0vx2mem2" path="res://asset/church_assets/mailbox_Sheet.png" id="7_y3jn2"]
-[ext_resource type="PackedScene" uid="uid://cxcokhjq0tv2e" path="res://scene/building_slot.tscn" id="8_yur6x"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0tg4p"]
-atlas = ExtResource("4_emkrx")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hcb8y"]
-atlas = ExtResource("4_emkrx")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y3jn2"]
-atlas = ExtResource("4_emkrx")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yur6x"]
-atlas = ExtResource("4_emkrx")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_7ghph"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0tg4p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hcb8y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y3jn2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yur6x")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7ghph"]
-atlas = ExtResource("5_hcb8y")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_na5tu"]
-atlas = ExtResource("5_hcb8y")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jsnws"]
-atlas = ExtResource("5_hcb8y")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f345f"]
-atlas = ExtResource("5_hcb8y")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_bqa5m"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7ghph")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_na5tu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jsnws")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f345f")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a0bac"]
-atlas = ExtResource("6_y3jn2")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tmyho"]
-atlas = ExtResource("6_y3jn2")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hnm4a"]
-atlas = ExtResource("6_y3jn2")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e4vd1"]
-atlas = ExtResource("6_y3jn2")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_1402k"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a0bac")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tmyho")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hnm4a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e4vd1")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bqa5m"]
-atlas = ExtResource("7_y3jn2")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1402k"]
-atlas = ExtResource("7_y3jn2")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ol7uo"]
-atlas = ExtResource("7_y3jn2")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a7xoa"]
-atlas = ExtResource("7_y3jn2")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vme25"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bqa5m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1402k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ol7uo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a7xoa")
-}],
-"loop": false,
-"name": &"default",
-"speed": 10.0
-}]
+[ext_resource type="PackedScene" uid="uid://c315h6aot7k8r" path="res://scene/building_slot.tscn" id="8_yur6x"]
+[ext_resource type="PackedScene" uid="uid://1ktvbleh6eme" path="res://scene/main_screen.tscn" id="10_7ghph"]
+[ext_resource type="Texture2D" uid="uid://dgnhfoel3y28t" path="res://asset/church_assets/CulticFloorTile.png" id="10_jsnws"]
+[ext_resource type="Script" uid="uid://6bj883f8j7nx" path="res://system/autoload/camera.gd" id="11_na5tu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4qq1"]
 size = Vector2(474, 40)
@@ -176,54 +31,33 @@ exit_point = NodePath("ExitPoint")
 max_max_visible_cultists = 1000
 
 [node name="Church" type="Node2D" parent="." unique_id=429305459]
-position = Vector2(-3888, -712.00006)
-scale = Vector2(5, 5)
 
 [node name="ChurchSprite" type="Sprite2D" parent="Church" unique_id=413780122]
+self_modulate = Color(0.66529477, 0.66529435, 0.66529447, 1)
 texture_filter = 1
-position = Vector2(964, 323)
+position = Vector2(-2, 103)
 texture = ExtResource("3_m5mgf")
 offset = Vector2(0, -120)
 
-[node name="BuildingSlot" parent="Church" unique_id=1829646210 instance=ExtResource("8_yur6x")]
-position = Vector2(992, 230)
+[node name="BuildingSlots" type="Node2D" parent="Church" unique_id=623750303]
 
-[node name="BuildingSlot2" parent="Church" unique_id=2052712609 instance=ExtResource("8_yur6x")]
-position = Vector2(1013, 230)
+[node name="BuildingSlot" parent="Church/BuildingSlots" unique_id=1829646210 instance=ExtResource("8_yur6x")]
+position = Vector2(26, 10)
 
-[node name="BuildingSlot3" parent="Church" unique_id=411239240 instance=ExtResource("8_yur6x")]
-position = Vector2(939, 230)
+[node name="BuildingSlot2" parent="Church/BuildingSlots" unique_id=2052712609 instance=ExtResource("8_yur6x")]
+position = Vector2(47, 10)
 
-[node name="BuildingSlot4" parent="Church" unique_id=608513256 instance=ExtResource("8_yur6x")]
-position = Vector2(918, 230)
+[node name="BuildingSlot3" parent="Church/BuildingSlots" unique_id=411239240 instance=ExtResource("8_yur6x")]
+position = Vector2(-27, 10)
 
-[node name="Bell" type="AnimatedSprite2D" parent="Church" unique_id=2031722225]
-position = Vector2(966, 189)
-sprite_frames = SubResource("SpriteFrames_7ghph")
-frame_progress = 0.18161236
-
-[node name="Altar" type="AnimatedSprite2D" parent="Church" unique_id=2038107032]
-position = Vector2(921, 223)
-sprite_frames = SubResource("SpriteFrames_bqa5m")
-frame_progress = 0.49997556
-
-[node name="Door" type="AnimatedSprite2D" parent="Church" unique_id=1275877010]
-position = Vector2(965, 231)
-sprite_frames = SubResource("SpriteFrames_1402k")
-frame = 2
-frame_progress = 0.7355093
-
-[node name="Mailbox" type="AnimatedSprite2D" parent="Church" unique_id=1999207693]
-position = Vector2(994, 231)
-sprite_frames = SubResource("SpriteFrames_vme25")
-frame = 3
-frame_progress = 1.0
+[node name="BuildingSlot4" parent="Church/BuildingSlots" unique_id=608513256 instance=ExtResource("8_yur6x")]
+position = Vector2(-48, 10)
 
 [node name="SqaureCenter" type="Marker2D" parent="." unique_id=829838975]
-position = Vector2(964, 305)
+position = Vector2(-1, 53)
 
 [node name="ExitPoint" type="Marker2D" parent="." unique_id=1871861004]
-position = Vector2(966, 634)
+position = Vector2(1, 382)
 
 [node name="DeadZone" type="Area2D" parent="ExitPoint" unique_id=1102521605]
 collision_layer = 0
@@ -232,19 +66,22 @@ script = ExtResource("4_m5mgf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitPoint/DeadZone" unique_id=365235130]
 shape = SubResource("RectangleShape2D_w4qq1")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1766226342]
-z_index = -2
-custom_minimum_size = Vector2(5000, 5000)
-offset_left = -525.0
-offset_top = -403.0
-offset_right = 4475.0
-offset_bottom = 4597.0
-mouse_filter = 2
-color = Color(0.31764707, 0.32156864, 0.4, 1)
+[node name="Background" type="TextureRect" parent="." unique_id=744030806]
+self_modulate = Color(0.7304475, 0.7304475, 0.7304475, 1)
+z_index = -1
+custom_minimum_size = Vector2(1920, 1920)
+offset_left = -994.0
+offset_top = -716.0
+offset_right = 926.0
+offset_bottom = 1204.0
+rotation = 0.008726646
+texture = ExtResource("10_jsnws")
+expand_mode = 1
+stretch_mode = 1
 
 [node name="Main" type="PointLight2D" parent="." unique_id=683296594]
 z_index = 1
-position = Vector2(972, 423)
+position = Vector2(6, 247)
 color = Color(0.10794056, 0.10010644, 0.08182704, 0.5647059)
 energy = 16.0
 blend_mode = 2
@@ -257,7 +94,7 @@ height = 1.0
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=458645343]
 z_index = 1
-position = Vector2(905, 216)
+position = Vector2(-61, 40)
 color = Color(0.83808523, 0.42469373, 0.42862898, 0.5647059)
 energy = 1.5
 shadow_filter = 2
@@ -267,7 +104,7 @@ height = 1.0
 
 [node name="PointLight2D3" type="PointLight2D" parent="." unique_id=694389299]
 z_index = 1
-position = Vector2(1028, 216)
+position = Vector2(62, 40)
 color = Color(0.83808523, 0.42469373, 0.42862898, 0.5647059)
 energy = 1.5
 shadow_filter = 2
@@ -276,17 +113,19 @@ texture_scale = 1.7
 height = 1.0
 
 [node name="PointLight2D5" type="PointLight2D" parent="." unique_id=956693239]
-position = Vector2(965, 150)
+position = Vector2(-1, -26)
 color = Color(0.8012719, 0.2289229, 0.35079432, 0.5647059)
 energy = 1.5
 shadow_filter = 2
 texture = SubResource("GradientTexture2D_m5mgf")
 
-[node name="Character" parent="." unique_id=1617641724 instance=ExtResource("2_txmk2")]
-position = Vector2(864, 268)
+[node name="Camera" type="Camera2D" parent="." unique_id=1411148121]
+position = Vector2(0, 53)
+zoom = Vector2(5, 5)
+script = ExtResource("11_na5tu")
+metadata/_custom_type_script = "uid://6bj883f8j7nx"
 
-[node name="Character2" parent="." unique_id=606104406 instance=ExtResource("2_txmk2")]
-position = Vector2(946, 286)
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=507732146]
+layer = -1
 
-[node name="Character3" parent="." unique_id=1014320477 instance=ExtResource("2_txmk2")]
-position = Vector2(1030, 276)
+[node name="MainScreen" parent="CanvasLayer" unique_id=1745498329 instance=ExtResource("10_7ghph")]
