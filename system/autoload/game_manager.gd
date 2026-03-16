@@ -8,7 +8,6 @@ var world_manager: WorldManager
 var event_manager: EventManager
 
 var overview: Overview
-var events: Events
 
 
 func restart_game() -> void:

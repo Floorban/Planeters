@@ -2,12 +2,9 @@
 
 [ext_resource type="Script" uid="uid://b1b5kvlcgcely" path="res://system/screen/panel/main_screen.gd" id="2_ckf3p"]
 [ext_resource type="PackedScene" uid="uid://kseiabufssdw" path="res://system/screen/panel/upgrades_manager.tscn" id="2_l8vv1"]
-[ext_resource type="PackedScene" uid="uid://drk220wxciily" path="res://system/screen/button/tab_button.tscn" id="3_n877d"]
-[ext_resource type="PackedScene" uid="uid://b4b8pivkpdt40" path="res://system/screen/panel/world_panel.tscn" id="4_bor6b"]
 [ext_resource type="PackedScene" uid="uid://cl11d77lbfnnt" path="res://system/screen/panel/overview_panel.tscn" id="5_06ml0"]
-[ext_resource type="PackedScene" uid="uid://b0vsnwsdvdf6f" path="res://system/screen/panel/events_panel.tscn" id="6_kw7ci"]
+[ext_resource type="Script" uid="uid://4u6g7k6hfvjf" path="res://scene/localization.gd" id="6_06ml0"]
 [ext_resource type="PackedScene" uid="uid://cntb8wqbeiybl" path="res://system/screen/panel/task_manager.tscn" id="8_1ov7q"]
-[ext_resource type="Script" uid="uid://bu2lmg055dsyb" path="res://system/screen/button/restart_button.gd" id="8_gigxy"]
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="12_akoy5"]
 [ext_resource type="PackedScene" uid="uid://dpdrr8e6dwttd" path="res://system/stats/stats_manager.tscn" id="16_n3x1c"]
 
@@ -19,131 +16,70 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="PanelContainer" type="Control" parent="." unique_id=1029536652]
+unique_name_in_owner = true
+clip_contents = true
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("2_ckf3p")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1135349797]
+[node name="OverviewPanel" parent="PanelContainer" unique_id=175380593 instance=ExtResource("5_06ml0")]
+custom_minimum_size = Vector2(0, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_top = 80
-theme_override_constants/margin_right = 100
-theme_override_constants/margin_bottom = 80
 
-[node name="Background" type="TextureRect" parent="MarginContainer" unique_id=1423564982]
-texture_filter = 1
-layout_mode = 2
-mouse_filter = 2
-
-[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/Background" unique_id=1979003701]
+[node name="UpgradesPanel" parent="PanelContainer" unique_id=1877020418 instance=ExtResource("2_l8vv1")]
+custom_minimum_size = Vector2(0, 0)
 layout_mode = 1
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 2
-theme_override_constants/margin_left = 60
-
-[node name="PanelContainer" type="Control" parent="MarginContainer/Background/MarginContainer2" unique_id=1029536652]
-unique_name_in_owner = true
-clip_contents = true
-custom_minimum_size = Vector2(1200, 820)
-layout_mode = 2
-mouse_filter = 2
-
-[node name="OverviewPanel" parent="MarginContainer/Background/MarginContainer2/PanelContainer" unique_id=175380593 instance=ExtResource("5_06ml0")]
-layout_mode = 0
-
-[node name="UpgradesPanel" parent="MarginContainer/Background/MarginContainer2/PanelContainer" unique_id=1877020418 instance=ExtResource("2_l8vv1")]
-layout_mode = 0
-
-[node name="EventsPanel" parent="MarginContainer/Background/MarginContainer2/PanelContainer" unique_id=1215339446 instance=ExtResource("6_kw7ci")]
-layout_mode = 0
-
-[node name="WorldPanel" parent="MarginContainer/Background/MarginContainer2/PanelContainer" unique_id=1046601322 instance=ExtResource("4_bor6b")]
-layout_mode = 0
-
-[node name="TaskManager" parent="MarginContainer/Background/MarginContainer2/PanelContainer" unique_id=2067503845 instance=ExtResource("8_1ov7q")]
-layout_mode = 1
-offset_left = -580.0
-offset_right = 0.0
-
-[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/Background" unique_id=1920717099]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -60.0
-offset_right = 1196.0
-grow_vertical = 0
-mouse_filter = 2
-theme_override_constants/margin_left = 60
-
-[node name="Taskbar" type="HBoxContainer" parent="MarginContainer/Background/MarginContainer3" unique_id=233926735]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(1100, 60)
-layout_mode = 2
-mouse_filter = 2
-theme_override_constants/separation = 24
-
-[node name="TabButton1" parent="MarginContainer/Background/MarginContainer3/Taskbar" unique_id=817727907 instance=ExtResource("3_n877d")]
-layout_mode = 2
-btn_display_name = "Overview"
-
-[node name="TabButton2" parent="MarginContainer/Background/MarginContainer3/Taskbar" unique_id=829327577 instance=ExtResource("3_n877d")]
-layout_mode = 2
-btn_display_name = "Upgrades"
-
-[node name="TabButton3" parent="MarginContainer/Background/MarginContainer3/Taskbar" unique_id=708809036 instance=ExtResource("3_n877d")]
-layout_mode = 2
-disabled = true
-btn_display_name = "Bishop"
-
-[node name="TabButton4" parent="MarginContainer/Background/MarginContainer3/Taskbar" unique_id=1206449726 instance=ExtResource("3_n877d")]
-layout_mode = 2
-disabled = true
-btn_display_name = "World"
-
-[node name="TabButton5" parent="MarginContainer/Background/MarginContainer3/Taskbar" unique_id=524473809 instance=ExtResource("3_n877d")]
-layout_mode = 2
-disabled = true
-btn_display_name = "Orgy"
-
-[node name="RestartButton" parent="MarginContainer/Background/MarginContainer3/Taskbar" unique_id=78780616 instance=ExtResource("3_n877d")]
-visible = false
-layout_mode = 2
-toggle_mode = false
-text = "Restart"
-script = ExtResource("8_gigxy")
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Background" unique_id=811016138]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -350.0
-offset_top = -460.0
-offset_bottom = 460.0
-grow_horizontal = 0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/margin_right = 60
 
-[node name="StatsManager" parent="MarginContainer/Background/MarginContainer" unique_id=654268750 instance=ExtResource("16_n3x1c")]
+[node name="TaskManager" parent="PanelContainer" unique_id=2067503845 instance=ExtResource("8_1ov7q")]
+layout_mode = 1
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+
+[node name="StatsManager" parent="." unique_id=654268750 instance=ExtResource("16_n3x1c")]
 unique_name_in_owner = true
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 11
+anchor_top = 0.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_bottom = 0.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=564777553]
+[node name="Localization" type="HBoxContainer" parent="." unique_id=564777553]
 layout_mode = 0
-offset_right = 40.0
+offset_right = 188.0
 offset_bottom = 40.0
 mouse_filter = 2
+script = ExtResource("6_06ml0")
 
-[node name="ButtonENG" type="Button" parent="HBoxContainer" unique_id=1800963416]
+[node name="ButtonENG" type="Button" parent="Localization" unique_id=1800963416]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
@@ -151,7 +87,7 @@ theme_override_fonts/font = ExtResource("12_akoy5")
 theme_override_font_sizes/font_size = 32
 text = "ENG"
 
-[node name="ButtonCN" type="Button" parent="HBoxContainer" unique_id=499015762]
+[node name="ButtonCN" type="Button" parent="Localization" unique_id=499015762]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
@@ -159,7 +95,7 @@ theme_override_fonts/font = ExtResource("12_akoy5")
 theme_override_font_sizes/font_size = 32
 text = "CN"
 
-[node name="ButtonJA" type="Button" parent="HBoxContainer" unique_id=1069351498]
+[node name="ButtonJA" type="Button" parent="Localization" unique_id=1069351498]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cepacvaxix1h0"]
+
+[ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="1_k6ony"]
+[ext_resource type="Texture2D" uid="uid://bvxgebat6fmat" path="res://asset/church_assets/altar_Sheet.png" id="1_kycux"]
+[ext_resource type="Texture2D" uid="uid://r6rc0vx2mem2" path="res://asset/church_assets/mailbox_Sheet.png" id="2_k6ony"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkdmv"]
+atlas = ExtResource("1_kycux")
+region = Rect2(16, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddwy4"]
+atlas = ExtResource("2_k6ony")
+region = Rect2(16, 0, 32, 64)
+
+[node name="BuildingSelection" type="ItemList" unique_id=1262413354]
+custom_minimum_size = Vector2(128, 128)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("1_k6ony")
+auto_width = true
+auto_height = true
+item_count = 2
+max_columns = 5
+same_column_width = true
+fixed_column_width = 64
+icon_mode = 0
+item_0/text = "Altar"
+item_0/icon = SubResource("AtlasTexture_rkdmv")
+item_1/text = "Mailbox"
+item_1/icon = SubResource("AtlasTexture_ddwy4")
