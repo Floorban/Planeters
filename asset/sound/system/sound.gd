@@ -13,7 +13,7 @@ func ambient(path: String) -> AudioStreamPlayer2D:
 	
 	return instance
 
-func fx(path: String, pitch: float = 0) -> AudioStreamPlayer2D:
+func fx(path: String, pitch: float = 1) -> AudioStreamPlayer2D:
 	var instance: AudioStreamPlayer2D
 	#TODO: Add sound to queue, and max playable instance
 	
