@@ -60,7 +60,7 @@ func _tick() -> void:
 		current_task = null
 		
 		hide()
-	
+
 
 ## old timer logic
 #var task_timer : Timer

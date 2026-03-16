@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bltwvuc0y6lta" path="res://system/screen/panel/overview_panel.gd" id="1_jth0q"]
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="2_jth0q"]
+[ext_resource type="PackedScene" uid="uid://rhf5s5wn0yep" path="res://system/events/event_manager.tscn" id="3_w5eqy"]
 
 [node name="OverviewPanel" type="Control" unique_id=952982154]
 custom_minimum_size = Vector2(600, 820)
@@ -41,14 +42,22 @@ theme_override_constants/margin_bottom = 50
 layout_mode = 2
 mouse_filter = 2
 
-[node name="StatsOverview" type="PanelContainer" parent="MarginContainer/PanelContainer" unique_id=565606917]
-custom_minimum_size = Vector2(500, 230)
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer" unique_id=1189371350]
 layout_mode = 1
-offset_right = 500.0
-offset_bottom = 200.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="StatsOverview" type="PanelContainer" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=565606917]
+custom_minimum_size = Vector2(500, 230)
+layout_mode = 2
 mouse_filter = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/StatsOverview" unique_id=446327672]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/StatsOverview" unique_id=446327672]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 30
@@ -56,27 +65,27 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 15
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer" unique_id=1860778103]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/StatsOverview/MarginContainer" unique_id=1860778103]
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer" unique_id=779806342]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/StatsOverview/MarginContainer/VBoxContainer" unique_id=779806342]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1168383173]
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1168383173]
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jth0q")
 theme_override_font_sizes/font_size = 32
 text = "Cult Members Total"
 
-[node name="Control" type="Control" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer" unique_id=318928762]
+[node name="Control" type="Control" parent="MarginContainer/PanelContainer/VBoxContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer" unique_id=318928762]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TotalMemberLabel" type="Label" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1124434810]
+[node name="TotalMemberLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1124434810]
 unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 2
@@ -84,21 +93,21 @@ theme_override_fonts/font = ExtResource("2_jth0q")
 theme_override_font_sizes/font_size = 32
 text = "0"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer" unique_id=946416235]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/StatsOverview/MarginContainer/VBoxContainer" unique_id=946416235]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1728859411]
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1728859411]
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jth0q")
 theme_override_font_sizes/font_size = 32
 text = "Revenue Earned"
 
-[node name="Control" type="Control" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1727312734]
+[node name="Control" type="Control" parent="MarginContainer/PanelContainer/VBoxContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1727312734]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TotalRevenueLabel" type="Label" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=558857226]
+[node name="TotalRevenueLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=558857226]
 unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 2
@@ -106,21 +115,21 @@ theme_override_fonts/font = ExtResource("2_jth0q")
 theme_override_font_sizes/font_size = 32
 text = "0"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer" unique_id=237382153]
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/StatsOverview/MarginContainer/VBoxContainer" unique_id=237382153]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=347778462]
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=347778462]
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jth0q")
 theme_override_font_sizes/font_size = 32
 text = "Souls Saved"
 
-[node name="Control" type="Control" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1746207645]
+[node name="Control" type="Control" parent="MarginContainer/PanelContainer/VBoxContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1746207645]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TotalSoulLabel" type="Label" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1882104476]
+[node name="TotalSoulLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1882104476]
 unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 2
@@ -128,21 +137,21 @@ theme_override_fonts/font = ExtResource("2_jth0q")
 theme_override_font_sizes/font_size = 32
 text = "0"
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer" unique_id=382252815]
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/StatsOverview/MarginContainer/VBoxContainer" unique_id=382252815]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1185714886]
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1185714886]
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jth0q")
 theme_override_font_sizes/font_size = 32
 text = "Cities Visited"
 
-[node name="Control" type="Control" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1075917682]
+[node name="Control" type="Control" parent="MarginContainer/PanelContainer/VBoxContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1075917682]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TotalCityLabel" type="Label" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=493213555]
+[node name="TotalCityLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=493213555]
 unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 2
@@ -151,24 +160,28 @@ theme_override_fonts/font = ExtResource("2_jth0q")
 theme_override_font_sizes/font_size = 32
 text = "1"
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer" unique_id=469825358]
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/StatsOverview/MarginContainer/VBoxContainer" unique_id=469825358]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=984642279]
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=984642279]
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jth0q")
 theme_override_font_sizes/font_size = 32
 text = "Cult Lifetime"
 
-[node name="Control" type="Control" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=1027831710]
+[node name="Control" type="Control" parent="MarginContainer/PanelContainer/VBoxContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=1027831710]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TotalLifetimeLabel" type="Label" parent="MarginContainer/PanelContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=924979076]
+[node name="TotalLifetimeLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/StatsOverview/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=924979076]
 unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jth0q")
 theme_override_font_sizes/font_size = 32
 text = "26 : 24"
+
+[node name="EventsManager" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=131518069 instance=ExtResource("3_w5eqy")]
+custom_minimum_size = Vector2(500, 450)
+layout_mode = 2

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cjwbyqd6pavch" path="res://scene/character.tscn" id="2_txmk2"]
 [ext_resource type="Texture2D" uid="uid://cgep16e7b8pam" path="res://asset/church_assets/church Wip.png" id="3_m5mgf"]
 [ext_resource type="Script" uid="uid://drenstg1av1xl" path="res://scene/dead_zone.gd" id="4_m5mgf"]
-[ext_resource type="PackedScene" uid="uid://c315h6aot7k8r" path="res://scene/building_slot.tscn" id="8_yur6x"]
+[ext_resource type="PackedScene" path="res://scene/building_slot.tscn" id="8_yur6x"]
 [ext_resource type="PackedScene" uid="uid://1ktvbleh6eme" path="res://scene/main_screen.tscn" id="10_7ghph"]
 [ext_resource type="Texture2D" uid="uid://dgnhfoel3y28t" path="res://asset/church_assets/CulticFloorTile.png" id="10_jsnws"]
 [ext_resource type="Script" uid="uid://6bj883f8j7nx" path="res://system/autoload/camera.gd" id="11_na5tu"]

@@ -50,7 +50,7 @@ offset_bottom = 75.0
 grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 2
-theme_override_constants/margin_right = 300
+theme_override_constants/margin_right = 280
 
 [node name="StatInfo" type="PanelContainer" parent="Control/MarginContainer" unique_id=701314724]
 unique_name_in_owner = true

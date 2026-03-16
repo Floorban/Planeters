@@ -14,9 +14,9 @@
 [ext_resource type="Resource" uid="uid://bttf7aswwyje" path="res://data/event/event_end.tres" id="10_0ujcr"]
 
 [node name="EventManager" type="VBoxContainer" unique_id=131518069]
-custom_minimum_size = Vector2(320, 520)
-offset_right = 320.0
-offset_bottom = 520.0
+custom_minimum_size = Vector2(550, 450)
+offset_right = 550.0
+offset_bottom = 450.0
 pivot_offset = Vector2(160, 260)
 theme_override_constants/separation = 28
 script = ExtResource("1_ebhe1")
@@ -24,34 +24,8 @@ events = Array[ExtResource("2_ebw1f")]([ExtResource("3_01t02"), ExtResource("3_p
 new_event_gap = 45.0
 new_event_gap_range = 10.0
 
-[node name="StartEventButton" type="Button" parent="." unique_id=1124168284]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
-theme = ExtResource("2_ksyvq")
-theme_override_font_sizes/font_size = 48
-disabled = true
-toggle_mode = true
-text = "Start Event"
-
-[node name="EventProgressbar" type="TextureProgressBar" parent="StartEventButton" unique_id=1883423014]
-unique_name_in_owner = true
-self_modulate = Color(0, 0.8392157, 0.27058825, 0.30588236)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-nine_patch_stretch = true
-stretch_margin_left = 2
-stretch_margin_top = 2
-stretch_margin_right = 2
-stretch_margin_bottom = 2
-texture_progress = ExtResource("5_01t02")
-
 [node name="EventPanel" type="Panel" parent="." unique_id=13369564]
-custom_minimum_size = Vector2(0, 420)
+custom_minimum_size = Vector2(0, 350)
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="EventPanel" unique_id=394734503]
@@ -72,7 +46,7 @@ theme_override_constants/separation = 12
 
 [node name="EventDescriptionLabel" type="Label" parent="EventPanel/MarginContainer/VBoxContainer" unique_id=1860641929]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 230)
+custom_minimum_size = Vector2(0, 160)
 layout_mode = 2
 theme_override_constants/line_spacing = 6
 theme_override_constants/paragraph_spacing = 10
@@ -125,3 +99,29 @@ custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("3_ebw1f")
 theme_override_font_sizes/normal_font_size = 30
+
+[node name="StartEventButton" type="Button" parent="." unique_id=1124168284]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme = ExtResource("2_ksyvq")
+theme_override_font_sizes/font_size = 48
+disabled = true
+toggle_mode = true
+text = "Start Event"
+
+[node name="EventProgressbar" type="TextureProgressBar" parent="StartEventButton" unique_id=1883423014]
+unique_name_in_owner = true
+self_modulate = Color(0, 0.8392157, 0.27058825, 0.30588236)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_progress = ExtResource("5_01t02")

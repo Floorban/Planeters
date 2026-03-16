@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cjwbyqd6pavch"]
 
 [ext_resource type="Script" uid="uid://bbdbxnmg1tex7" path="res://scene/character.gd" id="1_k8rrn"]
-[ext_resource type="Shader" uid="uid://bfvds3cp7nlmt" path="res://shader/selection_outline.gdshader" id="2_d7vt2"]
+[ext_resource type="Shader" path="res://shader/selection_outline.gdshader" id="2_d7vt2"]
 [ext_resource type="Texture2D" uid="uid://b2cpcnb47rfgl" path="res://asset/character_sheet.png" id="2_k8rrn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6k5wm"]
@@ -168,7 +168,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7vt2"]
-size = Vector2(10, 29)
+size = Vector2(8, 21)
 
 [node name="Character" type="CharacterBody2D" unique_id=1617641724]
 texture_filter = 1
@@ -179,7 +179,6 @@ script = ExtResource("1_k8rrn")
 modulate = Color(0, 0, 0, 1)
 material = SubResource("ShaderMaterial_6k5wm")
 use_parent_material = true
-scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_5hcsl")
 animation = &"idle"
 frame_progress = 0.86421144

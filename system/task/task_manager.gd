@@ -1,5 +1,5 @@
 class_name TaskManager
-extends Control
+extends SubPanel
 
 signal update_task()
 

@@ -1,7 +1,6 @@
 class_name Character
 extends CharacterBody2D
 
-
 enum CharacterState {
 	IDLE,
 	WANDERING,
