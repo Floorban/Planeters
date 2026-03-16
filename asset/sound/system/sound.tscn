@@ -1,6 +1,14 @@
 [gd_scene format=3 uid="uid://ck0mkrjunsgjo"]
 
-[ext_resource type="Script" uid="uid://bll82x6co60ha" path="res://asset/sound/system/sound.gd" id="1_gsjmc"]
+[ext_resource type="Script" uid="uid://d3pbw47ce3awl" path="res://asset/sound/system/audio_manager.gd" id="1_ugh30"]
+[ext_resource type="AudioStream" uid="uid://d2ob3hwcc3v38" path="res://asset/sound/fx/f_coin.ogg" id="2_t2i3i"]
+[ext_resource type="Script" uid="uid://bqa0vymytxb5y" path="res://asset/sound/system/sound_event.gd" id="3_nkqdc"]
+
+[sub_resource type="Resource" id="Resource_nkqdc"]
+script = ExtResource("3_nkqdc")
+file = ExtResource("2_t2i3i")
+metadata/_custom_type_script = "uid://bqa0vymytxb5y"
 
 [node name="AudioManager" type="Node" unique_id=2136778046]
-script = ExtResource("1_gsjmc")
+script = ExtResource("1_ugh30")
+fx_test = SubResource("Resource_nkqdc")

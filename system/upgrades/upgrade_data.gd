@@ -15,6 +15,7 @@ func apply_upgrade_effect(current_level: int) -> void:
 		push_error("no upgrade effects in the array")
 		return
 	
-	Sound.fx("res://asset/sound/fx/f_upgrade.ogg")
+	#Sound.fx("res://asset/sound/fx/f_upgrade.ogg")
+	
 	for e in effects:
 		e.apply(clampi(current_level, 1, max_level))

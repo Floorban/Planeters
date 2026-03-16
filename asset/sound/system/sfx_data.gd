@@ -19,6 +19,7 @@ enum SOUND_EFFECT_TYPE {
 @export_range(0, 10) var limit: int = 5
 @export var type: SOUND_EFFECT_TYPE
 @export var sound_effect: AudioStreamOggVorbis
+
 @export_range(-40, 20) var volume: float = 0
 # for random pitch
 @export_range(0.0, 4.0,.01) var pitch_scale: float = 1.0

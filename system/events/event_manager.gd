@@ -36,13 +36,13 @@ func _on_event_button_toggled(toggled_on: bool) -> void:
 		if can_start_new_event():
 			start_event()
 			start_event_button.disabled = true
-			Sound.fx("res://asset/sound/fx/f_confirm.ogg")
+			#Sound.fx("res://asset/sound/fx/f_confirm.ogg")
 		else:
 			start_event_failed()
 
 
 func start_event_failed() -> void:
-	Sound.fx("res://asset/sound/fx/f_locked.ogg")
+	#Sound.fx("res://asset/sound/fx/f_locked.ogg")
 	start_event_button.button_pressed = false
 	var og_color = Color.WHITE
 	start_event_button.modulate = og_color

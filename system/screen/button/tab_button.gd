@@ -6,5 +6,6 @@ func _ready() -> void:
 	text = btn_display_name
 	toggled.connect(func(on):
 		if on:
-			Sound.fx("res://asset/sound/fx/f_confirm.ogg")
+			#Sound.fx("res://asset/sound/fx/f_confirm.ogg")
+			pass
 	)

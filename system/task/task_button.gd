@@ -30,11 +30,11 @@ func _on_mouse_exited() -> void:
 func _on_task_btn_toggled(toggled_on : bool) -> void:
 	if toggled_on:
 		start_task_request.emit(task, self)
-		Sound.fx("res://asset/sound/fx/f_confirm.ogg")
+		#Sound.fx("res://asset/sound/fx/f_confirm.ogg")
 
 
 func button_press_failed() -> void:
-	Sound.fx("res://asset/sound/fx/f_locked.ogg")
+	#Sound.fx("res://asset/sound/fx/f_locked.ogg")
 	button_pressed = false
 	var og_color = Color.WHITE
 	modulate = og_color
