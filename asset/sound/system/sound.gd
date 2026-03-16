@@ -32,7 +32,7 @@ func fx_shuffle(path: String, duration: float = 0.5) -> AudioStreamPlayer2D:
 	instance.bus = "SFX"
 	
 	instance.play(randf_range(0, instance.stream.get_length() - duration))
-	fade_out(instance, "volume_db", 0, -20, duration)
+	fade_out(instance, "volume_db", 10, -10, duration)
 	
 	await get_tree().create_timer(duration).timeout
 	instance.stop()
