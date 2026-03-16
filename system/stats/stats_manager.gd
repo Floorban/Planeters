@@ -70,7 +70,8 @@ func add_stat(stat: Stat, amount: float) -> void:
 	stat_changed.emit(stat, stats[stat])
 	if stat == GameManager.sim_manager.member_stat:
 		GameManager.overview.set_member_label(int(amount))
-		Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.GET_MEMBER)
+		Sound.fx("res://asset/sound/fx/f_entrance.ogg")
+		Sound.fx_random("res://asset/sound/fx/f_echoes.ogg")
 	if stat == GameManager.sim_manager.coin_stat:
 		GameManager.overview.set_revenue_label(int(amount))
 		Sound.fx_shuffle("res://asset/sound/fx/f_coin.ogg")

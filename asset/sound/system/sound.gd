@@ -13,12 +13,25 @@ func ambient(path: String) -> AudioStreamPlayer2D:
 	
 	return instance
 
-func fx(path: String) -> AudioStreamPlayer2D:
+func fx(path: String, pitch: float = 0) -> AudioStreamPlayer2D:
 	var instance: AudioStreamPlayer2D
 	#TODO: Add sound to queue, and max playable instance
 	
 	instance = create(path)
 	instance.bus = "SFX"
+	instance.pitch_scale = pitch
+	
+	instance.play()
+	
+	return instance
+
+func fx_random(path: String, randomness: float = 0.15) -> AudioStreamPlayer2D:
+	var instance: AudioStreamPlayer2D
+	#TODO: Add sound to queue, and max playable instance
+	
+	instance = create(path)
+	instance.bus = "SFX"
+	instance.pitch_scale = randf_range(1 - randomness, 1 + randomness)
 	
 	instance.play()
 	
