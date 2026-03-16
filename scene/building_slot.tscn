@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://c315h6aot7k8r"]
+[gd_scene format=3 uid="uid://bqeou7eolwjqv"]
 
-[ext_resource type="Script" uid="uid://bv3nnvnn85c8v" path="res://scene/building_slot.gd" id="1_lqmyk"]
-[ext_resource type="Shader" uid="uid://bfvds3cp7nlmt" path="res://shader/selection_outline.gdshader" id="2_xfuao"]
+[ext_resource type="Script" path="res://scene/building_slot.gd" id="1_lqmyk"]
+[ext_resource type="Shader" path="res://shader/selection_outline.gdshader" id="2_xfuao"]
 [ext_resource type="Texture2D" uid="uid://bll07qbbhhh58" path="res://asset/church_assets/church Window.png" id="2_ynrma"]
 [ext_resource type="PackedScene" uid="uid://d28ro7rbb85ru" path="res://system/interaction/selectable_component.tscn" id="4_l3vv8"]
 

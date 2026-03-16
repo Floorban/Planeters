@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://b6lpepwhprd43"]
 
-[ext_resource type="Script" uid="uid://b1b5kvlcgcely" path="res://system/screen/panel/panel_manager.gd" id="1_gdews"]
+[ext_resource type="Script" path="res://system/screen/panel/panel_manager.gd" id="1_gdews"]
 [ext_resource type="PackedScene" uid="uid://cl11d77lbfnnt" path="res://system/screen/panel/overview_panel.tscn" id="2_ktfpp"]
 [ext_resource type="PackedScene" uid="uid://kseiabufssdw" path="res://system/screen/panel/upgrades_manager.tscn" id="3_7k07d"]
 [ext_resource type="PackedScene" uid="uid://cntb8wqbeiybl" path="res://system/screen/panel/task_manager.tscn" id="4_ne37k"]
 [ext_resource type="PackedScene" uid="uid://drk220wxciily" path="res://system/screen/button/tab_button.tscn" id="5_hbfx4"]
 [ext_resource type="PackedScene" uid="uid://d28ro7rbb85ru" path="res://system/interaction/selectable_component.tscn" id="6_ktfpp"]
-[ext_resource type="Script" uid="uid://4u6g7k6hfvjf" path="res://scene/localization.gd" id="7_ne37k"]
+[ext_resource type="Script" path="res://scene/localization.gd" id="7_ne37k"]
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="8_hbfx4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7k07d"]
@@ -20,6 +20,7 @@ anchor_bottom = 1.0
 offset_right = 600.0
 grow_vertical = 2
 script = ExtResource("1_gdews")
+panel_folded_pos = Vector2(-480, 0)
 
 [node name="OverviewPanel" parent="." unique_id=952982154 instance=ExtResource("2_ktfpp")]
 custom_minimum_size = Vector2(0, 0)
@@ -32,7 +33,7 @@ offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="UpgradesPanel" parent="." unique_id=351442206 instance=ExtResource("3_7k07d")]
+[node name="UpgradesManager" parent="." unique_id=351442206 instance=ExtResource("3_7k07d")]
 custom_minimum_size = Vector2(0, 0)
 layout_mode = 1
 anchors_preset = 15
