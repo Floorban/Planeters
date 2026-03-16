@@ -95,7 +95,7 @@ func _pay_modified(task: Task):
 	for c in task.costs:
 		GameManager.stats_manager.spend_stat(c.stat, get_modified_cost(c, task))
 		if c.stat == GameManager.sim_manager.member_stat:
-			Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.SACRIFICE)
+			Sound.fx("res://asset/sound/fx/f_sacrifice.ogg")
 
 
 func _on_task_finished(task : Task) -> void:

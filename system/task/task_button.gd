@@ -30,7 +30,7 @@ func _on_mouse_exited() -> void:
 func _on_task_btn_toggled(toggled_on : bool) -> void:
 	if toggled_on:
 		start_task_request.emit(task, self)
-		Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BTN_CONFIRM)
+		Sound.fx("res://asset/sound/fx/f_confirm.ogg")
 
 
 func button_press_failed() -> void:

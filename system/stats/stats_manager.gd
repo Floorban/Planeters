@@ -79,7 +79,7 @@ func add_stat(stat: Stat, amount: float) -> void:
 		GameManager.overview.set_soul_label(int(amount))
 		Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.SOUL)
 	if stat == GameManager.sim_manager.church_stat:
-		Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BUILD)
+		Sound.fx("res://asset/sound/fx/f_build.ogg")
 
 
 # for capping cult member from church num
