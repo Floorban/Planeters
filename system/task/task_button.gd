@@ -34,7 +34,7 @@ func _on_task_btn_toggled(toggled_on : bool) -> void:
 
 
 func button_press_failed() -> void:
-	Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BTN_FAIL)
+	Sound.fx("res://asset/sound/fx/f_locked.ogg")
 	button_pressed = false
 	var og_color = Color.WHITE
 	modulate = og_color

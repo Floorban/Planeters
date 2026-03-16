@@ -57,7 +57,7 @@ func _on_mouse_exited() -> void:
 
 func _on_pressed() -> void:
 	if level == upgrade.max_level or not GameManager.stats_manager.can_pay(upgrade.costs):
-		Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BTN_FAIL)
+		Sound.fx("res://asset/sound/fx/f_locked.ogg")
 		return
 	
 	self_modulate = Color.LIGHT_GREEN
