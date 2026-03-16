@@ -73,7 +73,7 @@ func add_stat(stat: Stat, amount: float) -> void:
 		Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.GET_MEMBER)
 	if stat == GameManager.sim_manager.coin_stat:
 		GameManager.overview.set_revenue_label(int(amount))
-		Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.COIN)
+		Sound.fx_shuffle("res://asset/sound/fx/f_coin.ogg")
 	if stat == GameManager.sim_manager.soul_stat:
 		GameManager.overview.set_soul_label(int(amount))
 		Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.SOUL)
