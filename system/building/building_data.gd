@@ -11,6 +11,7 @@ enum BuildingType {
 @export var building_type : BuildingType
 @export var texture_frames : SpriteFrames
 
+@export var task : Task
 @export var cooldown := 5.0
 
 func can_apply_effect() -> bool:

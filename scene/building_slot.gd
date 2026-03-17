@@ -42,8 +42,7 @@ func _finish_cooldown() -> void:
 	is_on_cooldown = false
 	cooldown_timer = 0.0
 	if my_building:
-		my_building.set_cooldown_visuals(1.0, false)
-	print("Building ready for interaction!")
+		my_building.finish_buildling_cooldown()
 
 
 func _start_interaction() -> void:

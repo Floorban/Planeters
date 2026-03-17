@@ -5,7 +5,8 @@ const CAN_INTERACT_COLOR := Color(0.323, 0.716, 0.189, 1.0)
 const CANNOT_INTERACT_COLOR := Color(0.757, 0.0, 0.0, 1.0)
 const INTERACT_COLOR := Color(1.0, 1.0, 1.0, 1.0)
 
-
+signal start_task_request(task: Task, building: Building)
+signal task_finished(task : Task)
 
 var building_data: BuildingData
 @onready var building_sprite: AnimatedSprite2D = %BuildingSprite
@@ -56,4 +57,24 @@ func place_building() -> void:
 
 func interact_with_building() -> void:
 	print("interacting with "+ name)
+	start_task_request.emit(building_data.task, self)
 	Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.UPGRADE_PURCHASE)
+
+var flash_tween : Tween
+
+func interact_failed() -> void:
+	Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BTN_FAIL)
+	var og_color = Color.WHITE
+	modulate = og_color
+	
+	if flash_tween:
+		flash_tween.kill()
+	flash_tween = create_tween()
+	flash_tween.tween_property(self, "modulate", Color(0.796, 0.0, 0.0, 1.0), 0.08)
+	flash_tween.tween_property(self, "modulate", og_color, 0.1)
+	flash_tween.tween_callback(func(): modulate = og_color)
+
+
+func finish_buildling_cooldown() -> void:
+	set_cooldown_visuals(1.0, false)
+	task_finished.emit(building_data.task)

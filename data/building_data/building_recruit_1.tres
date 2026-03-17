@@ -4,12 +4,14 @@
 [ext_resource type="Script" uid="uid://oiijucci5mx5" path="res://system/upgrades/upgrade_effect.gd" id="2_j7jdg"]
 [ext_resource type="Script" uid="uid://bvtoak0gtag3" path="res://system/building/building_data.gd" id="3_x6eg6"]
 [ext_resource type="SpriteFrames" uid="uid://cwoajxv82dpcr" path="res://data/building_data/sprite_frame/mailbox_sprite_frames.tres" id="4_ws4pk"]
+[ext_resource type="Resource" uid="uid://d1b3tjc0uirwo" path="res://data/task/task_get_cult_member.tres" id="4_x6eg6"]
 [ext_resource type="Texture2D" uid="uid://brqcg0wm5ocuk" path="res://asset/ui/icon.svg" id="5_j7jdg"]
 
 [resource]
 script = ExtResource("3_x6eg6")
 building_type = 1
 texture_frames = ExtResource("4_ws4pk")
+task = ExtResource("4_x6eg6")
 upgrade_name = "buy building"
 upgrade_description = "this lets you place down and start recruting"
 upgrade_icon = ExtResource("5_j7jdg")
