@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://fcqaf1xfy3hm" path="res://scene/building.gd" id="1_8eyry"]
 
 [node name="Building" type="Node2D" unique_id=1390920429]
+z_index = 1
 script = ExtResource("1_8eyry")
 
 [node name="BuildingSprite" type="AnimatedSprite2D" parent="." unique_id=909124454]
