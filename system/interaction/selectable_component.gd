@@ -12,6 +12,7 @@ var margin := 2.0
 
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
+
 func _ready() -> void:
 	mouse_entered.connect(_on_mouse_enter)
 	mouse_exited.connect(_on_mouse_exit)

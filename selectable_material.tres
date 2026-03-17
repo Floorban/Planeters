@@ -3,23 +3,19 @@
 [sub_resource type="Shader" id="Shader_vc4ev"]
 code = "shader_type canvas_item;
 
-// --- SHARED UNIFORMS ---
 uniform bool enable_shadow = false;
 uniform int outline_mode : hint_enum(\"None\", \"Simple\", \"Progress\") = 0;
 
-// --- SHADER 1 & 3: OUTLINE SETTINGS ---
 uniform vec4 outline_color : source_color = vec4(1.0);
 uniform float outline_width : hint_range(0.0, 10.0) = 1.0;
 uniform vec4 texture_region = vec4(0.0); // For Shader 1 region clamping
 
-// --- SHADER 2: SHADOW SETTINGS ---
 uniform int shadow_dist = 2;
 uniform vec4 shadow_color : source_color = vec4(0.0, 0.0, 0.0, 0.5);
 uniform float shadow_angle : hint_range(0.0, 360.0) = 90.0;
 
-// --- SHADER 3: PROGRESS SETTINGS ---
 uniform float progress : hint_range(0.0, 1.0) = 1.0;
-uniform float progress_rotation : hint_range(0.0, 6.28318530718) = 0.0;
+uniform float progress_rotation : hint_range(0.0, 6.0) = 0.0;
 uniform float progress_fade_alpha : hint_range(0.0, 1.0) = 0.5;
 uniform bool draw_border = true;
 uniform int fill_style : hint_enum(\"Clock\", \"Center Fill\", \"Bottom Fill\") = 0;
@@ -28,8 +24,6 @@ varying vec2 main_uv;
 varying vec2 shadow_uv;
 
 void vertex() {
-	// We use the Shadow Shader's vertex expansion logic to make room 
-	// for both the shadow and the outline so they don't get cut off.
 	float expansion = float(shadow_dist * 2) + outline_width;
 	vec2 uv_expansion = TEXTURE_PIXEL_SIZE * expansion;
 	
@@ -47,12 +41,10 @@ void vertex() {
 void fragment() {
 	vec2 p_size = TEXTURE_PIXEL_SIZE;
 	
-	// --- 1. SAMPLE BASE TEXTURE ---
-	// We use main_uv (from vertex) and check bounds to prevent \"stretching\"
 	bool is_main_valid = main_uv.x >= 0.0 && main_uv.x <= 1.0 && main_uv.y >= 0.0 && main_uv.y <= 1.0;
 	vec4 tex_color = is_main_valid ? texture(TEXTURE, main_uv) : vec4(0.0);
 	
-	// --- 2. CALCULATE SHADOW ---
+	// shadow
 	vec4 final_shadow = vec4(0.0);
 	if (enable_shadow) {
 		bool is_shadow_valid = shadow_uv.x >= 0.0 && shadow_uv.x <= 1.0 && shadow_uv.y >= 0.0 && shadow_uv.y <= 1.0;
@@ -60,10 +52,10 @@ void fragment() {
 		final_shadow = shadow_color * shadow_alpha;
 	}
 
-	// --- 3. CALCULATE OUTLINE ---
+	// outline
 	vec4 final_outline = vec4(0.0);
 	
-	if (outline_mode == 1) { // SIMPLE OUTLINE (Shader 1 logic)
+	if (outline_mode == 1) {
 		vec2 outline_offset = vec2(outline_width) * p_size;
 		vec4 uv_region = vec4(texture_region.xy * p_size, texture_region.zw * p_size);
 		uv_region.zw = mix(vec2(1.0), uv_region.zw, ceil(uv_region.zw));
@@ -77,7 +69,7 @@ void fragment() {
 		float outline_mask = max_a - tex_color.a;
 		final_outline = outline_color * clamp(outline_mask, 0.0, 1.0);
 		
-	} else if (outline_mode == 2) { // PROGRESS OUTLINE (Shader 3 logic)
+	} else if (outline_mode == 2) {
 		bool within = texture(TEXTURE, main_uv + p_size * vec2(outline_width, 0.0)).a > 0.0;
 		within = within || texture(TEXTURE, main_uv + p_size * vec2(0.0, -outline_width)).a > 0.0;
 		within = within || texture(TEXTURE, main_uv + p_size * vec2(0.0, outline_width)).a > 0.0;
@@ -88,25 +80,25 @@ void fragment() {
 
 		if (is_outline) {
 			float fill = 0.0;
+			float fill_mask = 0.0;
 			vec2 uv_f = main_uv;
 			switch (fill_style) {
-				case 0: // Clock
+				case 0: 
 					fill = ((atan(floor((uv_f.x - 0.5) / p_size.x) * cos(progress_rotation) + floor((uv_f.y - 0.5) / p_size.y) * sin(progress_rotation),
 						floor((uv_f.y - 0.5) / p_size.y) * cos(progress_rotation) - floor((uv_f.x - 0.5) / p_size.x) * sin(progress_rotation)) - PI) / -TAU <= progress ? 1.0 : 0.0);
 					break;
-				case 1: // Center
-					fill = float(distance(vec2(floor((uv_f.x - 0.5) / p_size.x), floor((uv_f.y - 0.5) / p_size.y)) * p_size, vec2(0.0)) <= progress * 0.707);
+				case 1: 
+					fill = float(distance(vec2(floor((uv_f.x - 0.5) / p_size.x), floor((uv_f.y - 0.5) / p_size.y)) * p_size, vec2(0.0)) <= progress * 0.5);
 					break;
-				case 2: // Bottom
-					fill = float((0.5 - (floor((uv_f.y - 0.5) / p_size.y) * cos(progress_rotation) * p_size.y - floor((uv_f.x - 0.5) / p_size.x) * sin(progress_rotation) * p_size.x)) <= progress);
+				case 2:
+					fill = float(((0.85 - uv_f.y) * 2.0) <= progress);
 					break;
 			}
 			final_outline = outline_color * fill * (progress_fade_alpha + progress * (1.0 - progress_fade_alpha));
 		}
 	}
 
-	// --- 4. FINAL COMPOSITION ---
-	// Layer order: Shadow (bottom) -> Outline -> Base Texture (top)
+	// layer order: shadow (bottom) -> outline -> texture
 	vec4 result = final_shadow;
 	result = mix(result, final_outline, final_outline.a);
 	result = mix(result, tex_color, tex_color.a);
@@ -126,6 +118,6 @@ shader_parameter/shadow_color = Color(0, 0, 0, 0.5)
 shader_parameter/shadow_angle = 90.0
 shader_parameter/progress = 1.0
 shader_parameter/progress_rotation = 0.0
-shader_parameter/progress_fade_alpha = 0.5
+shader_parameter/progress_fade_alpha = 0.6000000285
 shader_parameter/draw_border = false
-shader_parameter/fill_style = 0
+shader_parameter/fill_style = 2
