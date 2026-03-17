@@ -29,3 +29,15 @@ func get_new_building(building_data: BuildingData) -> void:
 	add_child(b)
 	cur_building = b
 	cur_building.init_building(building_data)
+	cur_building.is_being_dragged = true
+	Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BTN_CONFIRM)
+
+
+func place_building() -> void:
+	if not cur_building:
+		return
+	
+	cur_building.place_building()
+	cur_building.is_being_dragged = false
+	cur_building = null
+	Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BUILD)

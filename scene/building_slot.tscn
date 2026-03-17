@@ -1,16 +1,9 @@
 [gd_scene format=3 uid="uid://bqeou7eolwjqv"]
 
 [ext_resource type="Script" uid="uid://bv3nnvnn85c8v" path="res://scene/building_slot.gd" id="1_lqmyk"]
-[ext_resource type="Shader" uid="uid://bfvds3cp7nlmt" path="res://shader/selection_outline.gdshader" id="2_xfuao"]
+[ext_resource type="Material" uid="uid://bphqrqk7823ml" path="res://selectable_material.tres" id="2_l3vv8"]
 [ext_resource type="Texture2D" uid="uid://bll07qbbhhh58" path="res://asset/church_assets/church Window.png" id="2_ynrma"]
 [ext_resource type="PackedScene" uid="uid://d28ro7rbb85ru" path="res://system/interaction/selectable_component.tscn" id="4_l3vv8"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_l3vv8"]
-shader = ExtResource("2_xfuao")
-shader_parameter/rotation_speed = 1.0000002375000001
-shader_parameter/stripes = 3.0
-shader_parameter/stripe_width = 0.75600003591
-shader_parameter/outline_color = Color(1, 1, 1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l3vv8"]
 
@@ -20,7 +13,7 @@ script = ExtResource("1_lqmyk")
 [node name="WindowSprite" type="Sprite2D" parent="." unique_id=1229397144]
 unique_name_in_owner = true
 texture_filter = 1
-material = SubResource("ShaderMaterial_l3vv8")
+material = ExtResource("2_l3vv8")
 use_parent_material = true
 texture = ExtResource("2_ynrma")
 

@@ -23,20 +23,23 @@ func _on_slot_hovered(hovered: bool) -> void:
 
 func _on_slot_selected(_selected: bool) -> void:
 	if building_to_be_placed:
+		# buidling placement here
 		my_building = GameManager.building_manager.cur_building
-		GameManager.building_manager.cur_building = null
+		GameManager.building_manager.place_building()
 		building_to_be_placed = null
-		window_sprite.use_parent_material = true
-		Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BUILD)
 		my_building.global_position = global_position
+		window_sprite.use_parent_material = true
 	elif my_building and GameManager.building_manager.cur_building == null and not building_to_be_placed:
-		Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BTN_CONFIRM)
+		# interact with the building here
+		my_building.interact_with_building()
 
 
 func _on_remove_building() -> void:
 	if my_building and GameManager.building_manager.cur_building == null and not building_to_be_placed:
-		GameManager.building_manager.cur_building = my_building
+		GameManager.building_manager.get_new_building(my_building.building_data)
+		# since on slot hovered is not runned, manually set it here so player can click again to place at the slot again
+		# without moving mouse oout and in
 		building_to_be_placed = my_building
+		my_building.queue_free()
 		my_building = null
 		window_sprite.use_parent_material = false
-		Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BTN_CONFIRM)
