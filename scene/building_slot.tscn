@@ -14,7 +14,6 @@ script = ExtResource("1_lqmyk")
 unique_name_in_owner = true
 texture_filter = 1
 material = ExtResource("2_l3vv8")
-use_parent_material = true
 texture = ExtResource("2_ynrma")
 
 [node name="SelectableComponent" parent="." unique_id=480340802 instance=ExtResource("4_l3vv8")]

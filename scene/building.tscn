@@ -1,11 +1,7 @@
 [gd_scene format=3 uid="uid://cv4kkxyjh8pix"]
 
-[ext_resource type="PackedScene" uid="uid://d28ro7rbb85ru" path="res://system/interaction/selectable_component.tscn" id="1_2a7t6"]
 [ext_resource type="Script" uid="uid://fcqaf1xfy3hm" path="res://scene/building.gd" id="1_8eyry"]
 [ext_resource type="Material" uid="uid://bphqrqk7823ml" path="res://selectable_material.tres" id="2_gl3d0"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gl3d0"]
-size = Vector2(24, 48)
 
 [node name="Building" type="Node2D" unique_id=1390920429]
 z_index = 1
@@ -14,12 +10,3 @@ script = ExtResource("1_8eyry")
 [node name="BuildingSprite" type="AnimatedSprite2D" parent="." unique_id=909124454]
 unique_name_in_owner = true
 material = ExtResource("2_gl3d0")
-use_parent_material = true
-
-[node name="SelectableComponent" parent="." unique_id=480340802 instance=ExtResource("1_2a7t6")]
-unique_name_in_owner = true
-
-[node name="CollisionShape2D" parent="SelectableComponent" index="0" unique_id=1423258604]
-shape = SubResource("RectangleShape2D_gl3d0")
-
-[editable path="SelectableComponent"]

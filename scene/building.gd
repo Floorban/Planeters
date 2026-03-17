@@ -3,32 +3,36 @@ extends Node2D
 
 var building_data: BuildingData
 @onready var building_sprite: AnimatedSprite2D = %BuildingSprite
-@onready var selectable_component: SelectableComponent = %SelectableComponent
+@onready var sprite_material : ShaderMaterial = building_sprite.material
 
 var is_being_dragged := false
 var is_hovered := false
 
 
 func _ready() -> void:
-	selectable_component.hover_change.connect(_on_hovered)
+	if building_sprite and sprite_material:
+		building_sprite.material = sprite_material.duplicate()
+		sprite_material = building_sprite.material
 
 
-func _on_hovered(hovered: bool) -> void:
+func on_hovered(hovered: bool) -> void:
 	if is_being_dragged:
 		return
 	is_hovered = hovered
-	building_sprite.use_parent_material = not is_hovered
+	sprite_material.set_shader_parameter("outline_mode", 1) if hovered else sprite_material.set_shader_parameter("outline_mode", 0)
 
 
 func init_building(data: BuildingData) -> void:
 	building_data = data
 	building_sprite.sprite_frames = data.texture_frames
+	sprite_material.set_shader_parameter("enable_shadow", true)
 
 
 func place_building() -> void:
 	is_being_dragged = false
 	is_hovered = true
-	building_sprite.use_parent_material = not is_hovered
+	sprite_material.set_shader_parameter("outline_mode", 1)
+	sprite_material.set_shader_parameter("enable_shadow", false)
 
 
 func interact_with_building() -> void:
