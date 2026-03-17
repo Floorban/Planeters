@@ -10,7 +10,6 @@
 [ext_resource type="Resource" uid="uid://ds2vjvc2lpntf" path="res://data/upgrade/bonus_production/task/upgrade_bonus_member_2.tres" id="6_aiiej"]
 [ext_resource type="Resource" uid="uid://dcs5y3xc0d0mm" path="res://data/upgrade/bonus_production/task/upgrade_bonus_sacrifice_reward_coin_1.tres" id="6_sl1cx"]
 [ext_resource type="Resource" uid="uid://bh62c6w1g18je" path="res://data/upgrade/cost/sim/upgrade_more_church_capacity_1.tres" id="6_w57fs"]
-[ext_resource type="Resource" uid="uid://00xtnc7252v5" path="res://data/upgrade/bonus_production/sim/upgrade_bonus_coin_production_1.tres" id="7_5yg1h"]
 [ext_resource type="Resource" uid="uid://btqpyu3t3n7ru" path="res://data/upgrade/efficiency/task/upgrade_bonus_cult_efficiency_1.tres" id="7_ku35v"]
 [ext_resource type="Resource" uid="uid://prbqvkesnjkj" path="res://data/upgrade/efficiency/task/upgrade_bonus_build_efficiency_2.tres" id="7_q6wcj"]
 [ext_resource type="Resource" uid="uid://cobwqli6d1yrf" path="res://data/upgrade/cost/sim/upgrade_more_church_capacity_2.tres" id="7_uw747"]
@@ -32,6 +31,7 @@
 [ext_resource type="Resource" uid="uid://brj8mr7wssnyd" path="res://data/upgrade/bonus_production/task/upgrade_bonus_task_capacity_2.tres" id="24_otpe7"]
 [ext_resource type="Resource" uid="uid://dm2bff7rj2q1a" path="res://data/upgrade/bonus_production/sim/upgrade_bonus_recruit_production_1.tres" id="29_o26fj"]
 [ext_resource type="Resource" uid="uid://pvyeflmci5y3" path="res://data/upgrade/bonus_production/sim/upgrade_bonus_recruit_production_2.tres" id="30_fyr88"]
+[ext_resource type="Resource" uid="uid://bw7t67teubqm3" path="res://data/building_data/building_sacrifice_1.tres" id="30_ty2sm"]
 [ext_resource type="Resource" uid="uid://cp2254u8eytv5" path="res://data/upgrade/efficiency/sim/upgrade_bonus_coin_efficiency_1.tres" id="32_0cq08"]
 [ext_resource type="Resource" uid="uid://dh5g3te6m05uq" path="res://data/upgrade/efficiency/sim/upgrade_bonus_recruit_efficiency_1.tres" id="33_8o6ja"]
 
@@ -369,7 +369,7 @@ offset_right = 339.0
 offset_bottom = 655.0
 disabled = false
 texture_normal = SubResource("AtlasTexture_udx03")
-upgrade = ExtResource("7_5yg1h")
+upgrade = ExtResource("30_ty2sm")
 
 [node name="UpgradeButton1" parent="UpgradesHolder/UpgradeButton2" unique_id=179048232 instance=ExtResource("1_8ebph")]
 layout_mode = 0

@@ -111,6 +111,5 @@ func _on_task_finished(task : Task) -> void:
 
 
 func _apply_task_rewards(task: Task):
-	print("oo")
 	for r in task.rewards:
 		GameManager.stats_manager.add_stat(r.stat, get_modified_reward(r, task))

@@ -56,7 +56,6 @@ func place_building() -> void:
 
 
 func interact_with_building() -> void:
-	print("interacting with "+ name)
 	start_task_request.emit(building_data.task, self)
 	Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.UPGRADE_PURCHASE)
 
