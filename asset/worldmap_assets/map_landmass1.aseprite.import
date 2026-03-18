@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dillalgthqxb4"
+path="res://.godot/imported/map_landmass1.aseprite-907d12a67f8ad1f172da0a236a7db0cc.res"
+
+[deps]
+
+source_file="res://asset/worldmap_assets/map_landmass1.aseprite"
+dest_files=["res://.godot/imported/map_landmass1.aseprite-907d12a67f8ad1f172da0a236a7db0cc.res"]
+
+[params]
+
