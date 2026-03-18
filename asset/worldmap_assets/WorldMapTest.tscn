@@ -50,10 +50,8 @@ size_override = Vector2(512, 512)
 [node name="WorldMapTest" type="Node2D" unique_id=613558877]
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1765924263]
-offset_left = 82.0
-offset_top = 2.0
-offset_right = 2003.0
-offset_bottom = 1082.0
+offset_right = 1921.0
+offset_bottom = 1080.0
 texture = ExtResource("1_vaug4")
 region_rect = Rect2(12, 12, 40, 40)
 patch_margin_left = 18
@@ -2937,7 +2935,6 @@ position = Vector2(78, -124)
 texture = ExtResource("5_qcrg5")
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="." unique_id=421116925]
-visible = false
 modulate = Color(1, 1, 1, 0.0627451)
 offset_right = 1921.0
 offset_bottom = 1080.0
