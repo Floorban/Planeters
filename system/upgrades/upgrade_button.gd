@@ -59,8 +59,7 @@ func _on_pressed() -> void:
 	if level == upgrade.max_level or not GameManager.stats_manager.can_pay(upgrade.costs):
 		Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BTN_FAIL)
 		return
-	if not upgrade.can_apply_effect():
-		return
+
 	self_modulate = Color.LIGHT_GREEN
 	upgrade_branch.default_color = Color.GREEN
 	level = min(level + 1, upgrade.max_level)

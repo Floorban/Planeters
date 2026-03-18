@@ -1,5 +1,5 @@
 class_name BuildingData
-extends UpgradeData
+extends Resource
 
 enum BuildingType {
 	None,
@@ -11,6 +11,7 @@ enum BuildingType {
 @export var building_type : BuildingType
 @export var texture_frames : SpriteFrames
 
+@export var costs : Array[StatChange]
 @export var task : Task
 @export var cooldown := 5.0
 

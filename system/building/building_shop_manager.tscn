@@ -2,9 +2,23 @@
 
 [ext_resource type="PackedScene" uid="uid://dbpm1lbps7b07" path="res://system/interaction/fade_in_out_component.tscn" id="1_wh0rx"]
 [ext_resource type="PackedScene" uid="uid://d28ro7rbb85ru" path="res://system/interaction/selectable_component.tscn" id="2_3qf7m"]
+[ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="3_3qf7m"]
+[ext_resource type="PackedScene" uid="uid://bb4oprgq514mv" path="res://system/building/building_purchase_button.tscn" id="4_4sugr"]
+[ext_resource type="Texture2D" uid="uid://r6rc0vx2mem2" path="res://asset/church_assets/mailbox_Sheet.png" id="5_er8p1"]
+[ext_resource type="Texture2D" uid="uid://bvxgebat6fmat" path="res://asset/church_assets/altar_Sheet.png" id="5_t1wvo"]
+[ext_resource type="Resource" uid="uid://blwrvot5njip6" path="res://data/building_data/building_recruit_1.tres" id="5_v83te"]
+[ext_resource type="Resource" uid="uid://bw7t67teubqm3" path="res://data/building_data/building_sacrifice_1.tres" id="6_jivgv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n877d"]
 size = Vector2(911, 337)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqa5m"]
+atlas = ExtResource("5_er8p1")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ghph"]
+atlas = ExtResource("5_t1wvo")
+region = Rect2(0, 0, 64, 64)
 
 [node name="BuildingShopManager" type="Control" unique_id=1190280995]
 custom_minimum_size = Vector2(880, 230)
@@ -46,17 +60,79 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 30
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=167812165]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=669021613]
+[node name="BuildingInfoContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=669021613]
 layout_mode = 2
+theme_override_constants/separation = 48
 
-[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=677949398]
+[node name="VBoxContainer1" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/BuildingInfoContainer" unique_id=1064648403]
+custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
+theme_override_constants/separation = 18
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=1443960490]
+[node name="BuildingNameLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/BuildingInfoContainer/VBoxContainer1" unique_id=677949398]
+unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_3qf7m")
+theme_override_font_sizes/font_size = 36
+text = "BUILDING NAME"
+
+[node name="BuildingCostLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/BuildingInfoContainer/VBoxContainer1" unique_id=1913973878]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_3qf7m")
+theme_override_font_sizes/font_size = 36
+text = "BUILDING COST"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/BuildingInfoContainer" unique_id=1277304163]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="BuildingDescriptionLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/BuildingInfoContainer/VBoxContainer2" unique_id=48679598]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_3qf7m")
+theme_override_font_sizes/font_size = 36
+text = "BUILDING DESCRIPTION"
+
+[node name="BuildingRewardLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/BuildingInfoContainer/VBoxContainer2" unique_id=1660486261]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_3qf7m")
+theme_override_font_sizes/font_size = 36
+text = "BUILDING REWARD"
+
+[node name="Control" type="Control" parent="Panel/MarginContainer/VBoxContainer" unique_id=416996088]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="BuildingPurchaseContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=1443960490]
+layout_mode = 2
+mouse_filter = 0
+theme_override_constants/separation = 6
+
+[node name="BuildingPurchaseButton1" parent="Panel/MarginContainer/VBoxContainer/BuildingPurchaseContainer" unique_id=218322936 instance=ExtResource("4_4sugr")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+disabled = false
+texture_normal = SubResource("AtlasTexture_bqa5m")
+building_data = ExtResource("5_v83te")
+
+[node name="BuildingPurchaseButton2" parent="Panel/MarginContainer/VBoxContainer/BuildingPurchaseContainer" unique_id=519628122 instance=ExtResource("4_4sugr")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+disabled = false
+texture_normal = SubResource("AtlasTexture_7ghph")
+building_data = ExtResource("6_jivgv")
 
 [editable path="SelectableComponent"]

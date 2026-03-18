@@ -45,6 +45,9 @@ func _finish_cooldown() -> void:
 
 
 func _start_interaction() -> void:
+	if not GameManager.stats_manager.can_pay(my_building.building_data.task.costs):
+		Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BTN_FAIL)
+		return
 	my_building.interact_with_building()
 	is_on_cooldown = true
 	cooldown_timer = 0.0
