@@ -21,22 +21,23 @@ var run_distance := 80
 
 var wander_timer := 0.0
 
-@onready var character_sprite: AnimatedSprite2D = $CharacterSprite
-var selection_mat : ShaderMaterial
+@onready var character_sprite: AnimatedSprite2D = %CharacterSprite
+@onready var sprite_material : ShaderMaterial = character_sprite.material
+@onready var selectable_component: SelectableComponent = %SelectableComponent
 
 
 func _ready() -> void:
-	selection_mat = character_sprite.material as ShaderMaterial
-	mouse_entered.connect(_on_character_hovered)
-	mouse_exited.connect(_on_character_unhovred)
+	if character_sprite and sprite_material:
+		character_sprite.material = sprite_material.duplicate()
+		sprite_material = character_sprite.material
+	sprite_material = character_sprite.material as ShaderMaterial
+	selectable_component.hover_change.connect(_on_character_hovered)
 
 
-func _on_character_hovered() -> void:
-	character_sprite.use_parent_material = false
-
-
-func _on_character_unhovred() -> void:
-	character_sprite.use_parent_material = true
+func _on_character_hovered(is_hovered: bool) -> void:
+	var mode = 1 if is_hovered else 0
+	sprite_material.set_shader_parameter("outline_mode", mode)
+	print(mode)
 
 
 func _process(delta):

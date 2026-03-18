@@ -1,18 +1,21 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://bphqrqk7823ml"]
 
-[ext_resource type="Shader" uid="uid://cnpsqvg26jx4j" path="res://selectable_shader.tres" id="1_ymu4r"]
+[ext_resource type="Shader" uid="uid://benyoh88f818t" path="res://shader/selectable_shader.tres" id="1_4p6xd"]
 
 [resource]
-shader = ExtResource("1_ymu4r")
+shader = ExtResource("1_4p6xd")
 shader_parameter/enable_shadow = false
 shader_parameter/outline_mode = 0
 shader_parameter/outline_color = Color(0.5238004, 0.5238004, 0.5238004, 1)
 shader_parameter/outline_width = 1.0
 shader_parameter/shadow_dist = 2.0
 shader_parameter/shadow_color = Color(0, 0, 0, 0.5)
-shader_parameter/shadow_angle = 90.0
+shader_parameter/shadow_angle = 45.0
 shader_parameter/progress = 1.0
 shader_parameter/pending_alpha = 0.70000003325
 shader_parameter/fill_style = 2
 shader_parameter/fill_start = 0.0
 shader_parameter/fill_end = 1.0
+shader_parameter/rotation_speed = 1.55200026372
+shader_parameter/stripes = 22.0
+shader_parameter/stripe_width = 0.5
