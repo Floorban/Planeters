@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://blwrvot5njip6"]
 
+[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_e8bho"]
 [ext_resource type="Script" uid="uid://bvtoak0gtag3" path="res://system/building/building_data.gd" id="3_x6eg6"]
 [ext_resource type="SpriteFrames" uid="uid://cwoajxv82dpcr" path="res://data/building_data/sprite_frame/mailbox_sprite_frames.tres" id="4_ws4pk"]
 [ext_resource type="Resource" uid="uid://d1b3tjc0uirwo" path="res://data/task/task_get_cult_member.tres" id="4_x6eg6"]
