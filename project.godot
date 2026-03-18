@@ -23,8 +23,6 @@ config/icon="res://asset/ui/icon.svg"
 
 animation/layers/only_include_visible_layers_by_default=true
 animation/loop/enabled=false
-import/import_plugin/default_automatic_importer="SpriteFrames (Split By Layer)"
-import/import_plugin/generate_bake_files=true
 
 [audio]
 

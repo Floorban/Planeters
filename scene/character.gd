@@ -46,10 +46,38 @@ func _on_character_hovered(is_hovered: bool) -> void:
 
 func _on_character_selected(is_selected: bool) -> void:
 	state = CharacterState.BEING_DRAGGED
+	character_sprite.play("hang")
+	character_hang()
 
 
 func _on_character_deselected() -> void:
 	state = CharacterState.LANDING
+	character_sprite.play("land")
+	await character_land()
+	state = CharacterState.WANDERING
+
+
+var land_tween : Tween
+
+
+func character_hang() -> void:
+	if land_tween:
+		land_tween.kill()
+	land_tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	var target_pos := position - Vector2(0, 5)
+	land_tween.tween_property(self, "position", target_pos, 0.05)
+	land_tween.parallel().tween_property(sprite_material, "shader_parameter/shadow_dist", 5.0, 0.1)
+
+
+func character_land() -> Signal:
+	if land_tween:
+		land_tween.kill()
+	land_tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	var target_pos := position + Vector2(0, 5)
+	land_tween.tween_property(self, "position", target_pos, 0.2)
+	land_tween.parallel().tween_property(sprite_material, "shader_parameter/shadow_dist", 1.0, 0.15)
+	land_tween.tween_property(self, "position", target_pos - Vector2(0, 2), 0.15)
+	return land_tween.finished
 
 
 func _process(delta):
@@ -61,6 +89,8 @@ func _process(delta):
 
 			target_position = GameManager.world_manager.get_random_church_position()
 			state = CharacterState.WANDERING
+	elif state == CharacterState.BEING_DRAGGED:
+		global_position = get_global_mouse_position() + Vector2.UP
 
 
 func _physics_process(delta):

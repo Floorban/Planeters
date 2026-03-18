@@ -133,3 +133,5 @@ metadata/_custom_type_script = "uid://6bj883f8j7nx"
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=507732146]
 
 [node name="MainScreen" parent="CanvasLayer" unique_id=1745498329 instance=ExtResource("10_7ghph")]
+
+[node name="Character" parent="." unique_id=1617641724 instance=ExtResource("2_txmk2")]
