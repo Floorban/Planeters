@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cv4kkxyjh8pix"]
 
 [ext_resource type="Script" uid="uid://fcqaf1xfy3hm" path="res://scene/building.gd" id="1_8eyry"]
-[ext_resource type="Material" uid="uid://bphqrqk7823ml" path="res://selectable_material.tres" id="2_gl3d0"]
+[ext_resource type="Material" uid="uid://bphqrqk7823ml" path="res://shader/selectable_material.tres" id="2_gl3d0"]
 
 [node name="Building" type="Node2D" unique_id=1390920429]
 z_index = 1

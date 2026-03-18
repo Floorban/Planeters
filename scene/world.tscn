@@ -62,7 +62,7 @@ position = Vector2(-48, 10)
 position = Vector2(-1, 53)
 
 [node name="ExitPoint" type="Marker2D" parent="." unique_id=1871861004]
-position = Vector2(1, 382)
+position = Vector2(1, 233)
 
 [node name="DeadZone" type="Area2D" parent="ExitPoint" unique_id=1102521605]
 collision_layer = 0
