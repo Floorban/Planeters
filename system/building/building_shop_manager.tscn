@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://c1vwhsfjae0kh"]
+
+[ext_resource type="PackedScene" uid="uid://dbpm1lbps7b07" path="res://system/interaction/fade_in_out_component.tscn" id="1_wh0rx"]
+[ext_resource type="PackedScene" uid="uid://d28ro7rbb85ru" path="res://system/interaction/selectable_component.tscn" id="2_3qf7m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n877d"]
+size = Vector2(911, 337)
+
+[node name="BuildingShopManager" type="Control" unique_id=1190280995]
+custom_minimum_size = Vector2(880, 230)
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -310.0
+offset_top = -200.0
+offset_right = 570.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="FadeInOutComponent" parent="." unique_id=124886435 node_paths=PackedStringArray("target") instance=ExtResource("1_wh0rx")]
+target = NodePath("..")
+panel_folded_pos = Vector2(0, 150)
+
+[node name="SelectableComponent" parent="." unique_id=480340802 instance=ExtResource("2_3qf7m")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" parent="SelectableComponent" index="0" unique_id=1423258604]
+position = Vector2(439.5, 76.5)
+shape = SubResource("RectangleShape2D_n877d")
+
+[node name="Panel" type="Panel" parent="." unique_id=1397785897]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1779123234]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=167812165]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=669021613]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=677949398]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=1443960490]
+layout_mode = 2
+
+[editable path="SelectableComponent"]

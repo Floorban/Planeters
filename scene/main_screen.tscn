@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://1ktvbleh6eme"]
 
 [ext_resource type="PackedScene" uid="uid://b6lpepwhprd43" path="res://system/screen/panel_manager.tscn" id="1_n877d"]
+[ext_resource type="PackedScene" uid="uid://c1vwhsfjae0kh" path="res://system/building/building_shop_manager.tscn" id="3_ckf3p"]
+[ext_resource type="Script" uid="uid://bjr4kgfsontho" path="res://system/building/building_shop_manager.gd" id="4_n877d"]
 [ext_resource type="PackedScene" uid="uid://dpdrr8e6dwttd" path="res://system/stats/stats_manager.tscn" id="16_n3x1c"]
 
 [node name="MainScreen" type="Control" unique_id=1745498329]
@@ -25,3 +27,7 @@ anchor_bottom = 1.0
 offset_left = 0.0
 offset_top = 0.0
 offset_bottom = 0.0
+
+[node name="BuildingShopManager" parent="." unique_id=1190280995 instance=ExtResource("3_ckf3p")]
+layout_mode = 1
+script = ExtResource("4_n877d")
