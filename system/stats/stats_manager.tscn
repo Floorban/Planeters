@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://dlwjnv8ca4sps" path="res://data/stat/stat_soul.tres" id="5_83inl"]
 [ext_resource type="Resource" uid="uid://t4owggge5keo" path="res://data/stat/stat_loyal.tres" id="6_02dsw"]
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="7_8iaj1"]
+[ext_resource type="Texture2D" uid="uid://c2p4tb2ytqor2" path="res://asset/ui/uiPanelSprites/uiPanel_Fancy.png" id="7_hpl2g"]
 
 [sub_resource type="Resource" id="Resource_3qpn0"]
 script = ExtResource("2_3qpn0")
@@ -48,6 +49,23 @@ mouse_filter = 2
 script = ExtResource("1_q63yl")
 starting_stats = Array[ExtResource("2_3qpn0")]([SubResource("Resource_3qpn0"), SubResource("Resource_8iaj1"), SubResource("Resource_hpl2g"), SubResource("Resource_xheid")])
 stat_slots = [NodePath("MarginContainer/VBoxContainer/Statsbar/StatSlotMember"), NodePath("MarginContainer/VBoxContainer/Statsbar/StatSlotChurch"), NodePath("MarginContainer/VBoxContainer/Statsbar/StatSlotCoin"), NodePath("MarginContainer/VBoxContainer/Statsbar/StatSlotSoul")]
+
+[node name="TextureRect" type="NinePatchRect" parent="." unique_id=1782263218]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0170001
+anchor_bottom = 1.0
+offset_right = -285.95004
+offset_bottom = -736.0
+grow_vertical = 2
+scale = Vector2(5, 5)
+texture = ExtResource("7_hpl2g")
+region_rect = Rect2(12, 12, 40, 40)
+patch_margin_left = 18
+patch_margin_top = 18
+patch_margin_right = 18
+patch_margin_bottom = 18
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=148964352]
 layout_mode = 1
