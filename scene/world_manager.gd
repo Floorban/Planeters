@@ -10,6 +10,8 @@ var characters : Array[Character] = []
 var max_visible_cultists := 0
 var current_members := 0
 
+var cur_character : Character
+
 
 func _ready():
 	await get_tree().process_frame
@@ -46,12 +48,18 @@ func _spawn_members(amount):
 		add_child(c)
 		var rand_scale := randf_range(1.3, 1.7)
 		c.scale = Vector2(rand_scale, rand_scale)
-
+		c.selected.connect(func():
+			cur_character = c
+		)
+		c.deselected.connect(func():
+			if cur_character and cur_character == c:
+				cur_character = null
+		)
 		c.global_position = exit_point.global_position + Vector2(randf_range(-400, 400), randf_range(-50, 20))
 		c.target_position = get_random_church_position()
 		c.state = Character.CharacterState.WANDERING
 		characters.append(c)
-
+		
 
 func _remove_members(amount):
 	if amount < 0:

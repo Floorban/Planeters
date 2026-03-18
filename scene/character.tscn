@@ -228,6 +228,7 @@ animations = [{
 }]
 
 [node name="Character" type="CharacterBody2D" unique_id=1617641724]
+z_index = 2
 texture_filter = 1
 script = ExtResource("1_k8rrn")
 

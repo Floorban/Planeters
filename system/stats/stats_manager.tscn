@@ -53,11 +53,10 @@ stat_slots = [NodePath("MarginContainer/VBoxContainer/Statsbar/StatSlotMember"),
 [node name="TextureRect" type="NinePatchRect" parent="." unique_id=1782263218]
 texture_filter = 1
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0170001
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -285.95004
-offset_bottom = -736.0
+grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(5, 5)
 texture = ExtResource("7_hpl2g")

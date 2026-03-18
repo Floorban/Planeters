@@ -16,6 +16,7 @@ var slot_efficiency_multiplier := 1.0
 func _ready() -> void:
 	selectable_component.hover_change.connect(_on_slot_hovered)
 	selectable_component.select.connect(_on_slot_selected)
+	selectable_component.deselect.connect(_on_slot_received)
 	selectable_component.right_select.connect(
 	func():
 		_on_remove_building(my_building)
@@ -103,3 +104,16 @@ func _on_slot_selected(_selected: bool) -> void:
 			_start_interaction()
 		else:
 			print("building is still cooling down...")
+
+
+func _on_slot_received() -> void:
+	if not GameManager.world_manager.cur_character:
+		return
+	var held_building = GameManager.building_manager.cur_building
+	if my_building and not held_building:
+		if not is_on_cooldown:
+			_start_interaction()
+		else:
+			print("building is still cooling down...")
+	
+	

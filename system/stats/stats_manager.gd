@@ -29,6 +29,7 @@ func _ready() -> void:
 		add_stat(s.stat, s.amount)
 	
 	GameManager.overview.reset_overview_labels()
+	$TextureRect.size /= $TextureRect.scale
 
 
 func get_stat(stat: Stat) -> int:

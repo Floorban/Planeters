@@ -1,6 +1,9 @@
 class_name Character
 extends CharacterBody2D
 
+signal selected()
+signal deselected()
+
 enum CharacterState {
 	IDLE,
 	WANDERING,
@@ -46,12 +49,14 @@ func _on_character_hovered(is_hovered: bool) -> void:
 
 func _on_character_selected(is_selected: bool) -> void:
 	state = CharacterState.BEING_DRAGGED
+	selected.emit()
 	character_sprite.play("hang")
 	character_hang()
 
 
 func _on_character_deselected() -> void:
 	state = CharacterState.LANDING
+	deselected.emit()
 	character_sprite.play("land")
 	await character_land()
 	state = CharacterState.WANDERING
