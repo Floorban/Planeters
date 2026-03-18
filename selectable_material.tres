@@ -1,123 +1,18 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://bphqrqk7823ml"]
 
-[sub_resource type="Shader" id="Shader_vc4ev"]
-code = "shader_type canvas_item;
-
-// --- TOGGLES ---
-uniform bool enable_shadow = false;
-uniform int outline_mode : hint_enum(\"None\", \"Simple\", \"Progress\") = 0;
-
-// --- ANTI-JITTER ---
-// If your animation frames are different sizes, set this to your average 
-// sprite size (e.g. 64.0) to stop the vibrating. Leave at 0.0 to auto-detect.
-uniform float fixed_pixel_size = 0.0;
-
-// --- SETTINGS ---
-uniform vec4 outline_color : source_color = vec4(1.0);
-uniform float outline_width : hint_range(0.0, 10.0) = 1.0;
-uniform int shadow_dist = 2;
-uniform vec4 shadow_color : source_color = vec4(0.0, 0.0, 0.0, 0.5);
-uniform float shadow_angle : hint_range(0.0, 360.0) = 90.0;
-
-// --- PROGRESS ---
-uniform float progress : hint_range(0.0, 1.0) = 1.0;
-uniform float pending_alpha : hint_range(0.0, 1.0) = 0.3;
-uniform int fill_style : hint_enum(\"Clock\", \"Center Fill\", \"Bottom Fill\") = 0;
-
-varying vec2 main_uv;
-varying vec2 shadow_uv;
-varying float v_expansion;
-
-void vertex() {
-	// 1. Determine if we actually need to expand the vertex
-	v_expansion = 0.0;
-	if (enable_shadow || outline_mode > 0) {
-		v_expansion = float(shadow_dist * 2) + outline_width;
-	}
-
-	// 2. Use fixed pixel size if provided to stop animation jitter
-	vec2 p_size = TEXTURE_PIXEL_SIZE;
-	if (fixed_pixel_size > 0.0) {
-		p_size = vec2(1.0 / fixed_pixel_size);
-	}
-
-	if (v_expansion > 0.0) {
-		vec2 uv_expansion = p_size * v_expansion;
-		vec2 uv_dist = uv_expansion + 1.0;
-		vec2 uv_half = uv_expansion * 0.5;
-		
-		vec2 shadow_direction = (vec4(cos(radians(shadow_angle)), sin(radians(shadow_angle)), 0.0, 1.0) * MODEL_MATRIX).xy;
-		
-		VERTEX *= uv_dist;
-		main_uv = UV * uv_dist - uv_half;
-		shadow_uv = main_uv - shadow_direction * uv_half;
-	} else {
-		// No expansion needed, use standard UVs
-		main_uv = UV;
-		shadow_uv = UV;
-	}
-}
-
-void fragment() {
-	// Sample texture
-	// If expanded, check bounds. If not expanded, always valid.
-	bool is_main_valid = true;
-	if (v_expansion > 0.0) {
-		is_main_valid = main_uv.x >= 0.0 && main_uv.x <= 1.0 && main_uv.y >= 0.0 && main_uv.y <= 1.0;
-	}
-	
-	vec4 tex_color = is_main_valid ? texture(TEXTURE, main_uv) : vec4(0.0);
-	
-	// Progress Fill Logic
-	float fill = 1.0;
-	if (outline_mode == 2) {
-		switch (fill_style) {
-			case 0: fill = step((atan(main_uv.x - 0.5, main_uv.y - 0.5) + PI) / 6.283185, progress); break;
-			case 1: fill = step(distance(main_uv, vec2(0.5)), progress * 0.5); break;
-			case 2: fill = step((0.85 - main_uv.y) * 2.0, progress); break;
-		}
-		tex_color.a *= mix(pending_alpha, 1.0, fill);
-	}
-
-	// Shadow logic
-	vec4 final_shadow = vec4(0.0);
-	if (enable_shadow) {
-		bool is_shadow_valid = true;
-		if (v_expansion > 0.0) {
-			is_shadow_valid = shadow_uv.x >= 0.0 && shadow_uv.x <= 1.0 && shadow_uv.y >= 0.0 && shadow_uv.y <= 1.0;
-		}
-		float shadow_alpha = is_shadow_valid ? texture(TEXTURE, shadow_uv).a : 0.0;
-		if (outline_mode == 2) shadow_alpha *= mix(pending_alpha, 1.0, fill);
-		final_shadow = shadow_color * shadow_alpha;
-	}
-
-	// Outline logic
-	vec4 final_outline = vec4(0.0);
-	if (outline_mode == 1) {
-		vec2 outline_offset = vec2(outline_width) * TEXTURE_PIXEL_SIZE;
-		float max_a = 0.0;
-		max_a = max(max_a, texture(TEXTURE, main_uv + vec2(0.0, -outline_offset.y)).a);
-		max_a = max(max_a, texture(TEXTURE, main_uv + vec2(0.0, outline_offset.y)).a);
-		max_a = max(max_a, texture(TEXTURE, main_uv + vec2(-outline_offset.x, 0.0)).a);
-		max_a = max(max_a, texture(TEXTURE, main_uv + vec2(outline_offset.x, 0.0)).a);
-		final_outline = outline_color * clamp(max_a - tex_color.a, 0.0, 1.0);
-	}
-
-	vec4 result = mix(final_shadow, final_outline, final_outline.a);
-	result = mix(result, tex_color, tex_color.a);
-	COLOR = result;
-}"
+[ext_resource type="Shader" uid="uid://cnpsqvg26jx4j" path="res://selectable_shader.tres" id="1_ymu4r"]
 
 [resource]
-shader = SubResource("Shader_vc4ev")
+shader = ExtResource("1_ymu4r")
 shader_parameter/enable_shadow = false
 shader_parameter/outline_mode = 0
-shader_parameter/fixed_pixel_size = 2000000.0
 shader_parameter/outline_color = Color(0.5238004, 0.5238004, 0.5238004, 1)
 shader_parameter/outline_width = 1.0
-shader_parameter/shadow_dist = 3
+shader_parameter/shadow_dist = 2.0
 shader_parameter/shadow_color = Color(0, 0, 0, 0.5)
 shader_parameter/shadow_angle = 90.0
 shader_parameter/progress = 1.0
 shader_parameter/pending_alpha = 0.70000003325
 shader_parameter/fill_style = 2
+shader_parameter/fill_start = 0.0
+shader_parameter/fill_end = 1.0

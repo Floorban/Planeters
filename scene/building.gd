@@ -45,6 +45,8 @@ func set_cooldown_visuals(progress_value: float, on_cooldown: bool) -> void:
 func init_building(data: BuildingData) -> void:
 	building_data = data
 	building_sprite.sprite_frames = data.texture_frames
+	sprite_material.set_shader_parameter("fill_start", data.fill_start)
+	sprite_material.set_shader_parameter("fill_end", data.fill_end)
 	sprite_material.set_shader_parameter("enable_shadow", true)
 
 

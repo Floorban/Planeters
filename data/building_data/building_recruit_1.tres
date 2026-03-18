@@ -9,5 +9,7 @@
 script = ExtResource("3_x6eg6")
 building_type = 1
 texture_frames = ExtResource("4_ws4pk")
+fill_start = 0.15
+fill_end = 0.59
 task = ExtResource("4_x6eg6")
 metadata/_custom_type_script = "uid://bvtoak0gtag3"

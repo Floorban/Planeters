@@ -9,6 +9,7 @@
 script = ExtResource("3_gcoja")
 building_type = 2
 texture_frames = ExtResource("5_crru7")
+fill_end = 0.95
 task = ExtResource("4_y2f0d")
 cooldown = 3.0
 metadata/_custom_type_script = "uid://bvtoak0gtag3"

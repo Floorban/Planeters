@@ -1,0 +1,82 @@
+[gd_resource type="Shader" format=3 uid="uid://cnpsqvg26jx4j"]
+
+[resource]
+code = "shader_type canvas_item;
+
+// --- TOGGLES ---
+uniform bool enable_shadow = false;
+uniform int outline_mode : hint_enum(\"None\", \"Simple\", \"Progress\") = 0;
+
+// --- SETTINGS ---
+uniform vec4 outline_color : source_color = vec4(1.0);
+uniform float outline_width : hint_range(0.0, 10.0) = 1.0;
+uniform float shadow_dist = 2.0;
+uniform vec4 shadow_color : source_color = vec4(0.0, 0.0, 0.0, 0.5);
+uniform float shadow_angle : hint_range(0.0, 360.0) = 45.0;
+
+// --- PROGRESS & GHOSTING ---
+uniform float progress : hint_range(0.0, 1.0) = 1.0;
+uniform float pending_alpha : hint_range(0.0, 1.0) = 0.3;
+uniform int fill_style : hint_enum(\"Clock\", \"Center Fill\", \"Bottom Fill\") = 2;
+
+// --- NEW CALIBRATION SYSTEM ---
+// 0.0 is bottom of frame, 1.0 is top of frame
+uniform float fill_start : hint_range(-10.0, 10.0) = 0.0; 
+uniform float fill_end : hint_range(-10.0, 10.0) = 1.0;
+
+varying vec2 local_uv;
+
+void vertex() {
+	local_uv = sign(VERTEX) * 0.5 + 0.5;
+}
+
+void fragment() {
+	vec4 tex_color = texture(TEXTURE, UV);
+	vec2 p_size = TEXTURE_PIXEL_SIZE;
+	
+	// 1. Calculate Fill Mask
+	float fill = 1.0;
+	if (outline_mode == 2) {
+		switch (fill_style) {
+			case 0: // Clock
+				float angle = atan(local_uv.x - 0.5, local_uv.y - 0.5) + PI;
+				fill = step(angle / 6.283185, progress);
+				break;
+			case 1: // Center
+				fill = step(distance(local_uv, vec2(0.5)), progress * 0.5);
+				break;
+			case 2: // Bottom Fill (CALIBRATED)
+				// height goes 0.0 (bottom) to 1.0 (top)
+				float height = 1.0 - local_uv.y;
+				// This moves the 'target' line based on your calibration
+				float current_fill_level = mix(fill_start, fill_end, progress);
+				fill = step(height, current_fill_level);
+				break;
+		}
+		tex_color.a *= mix(pending_alpha, 1.0, fill);
+	}
+
+	// 2. Simple Outline
+	vec4 final_outline = vec4(0.0);
+	if (outline_mode == 1) {
+		vec2 size = p_size * outline_width;
+		float a = texture(TEXTURE, UV + vec2(0.0, -size.y)).a;
+		a = max(a, texture(TEXTURE, UV + vec2(0.0, size.y)).a);
+		a = max(a, texture(TEXTURE, UV + vec2(-size.x, 0.0)).a);
+		a = max(a, texture(TEXTURE, UV + vec2(size.x, 0.0)).a);
+		final_outline = outline_color * clamp(a - texture(TEXTURE, UV).a, 0.0, 1.0);
+	}
+
+	// 3. Drop Shadow
+	vec4 final_shadow = vec4(0.0);
+	if (enable_shadow) {
+		float rad = radians(shadow_angle);
+		vec2 shadow_offset = vec2(cos(rad), sin(rad)) * p_size * shadow_dist;
+		float shadow_alpha = texture(TEXTURE, UV - shadow_offset).a;
+		if (outline_mode == 2) shadow_alpha *= mix(pending_alpha, 1.0, fill);
+		final_shadow = shadow_color * shadow_alpha;
+	}
+
+	vec4 result = mix(final_shadow, final_outline, final_outline.a);
+	COLOR = mix(result, tex_color, tex_color.a);
+}"

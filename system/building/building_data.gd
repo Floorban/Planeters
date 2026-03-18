@@ -10,6 +10,8 @@ enum BuildingType {
 
 @export var building_type : BuildingType
 @export var texture_frames : SpriteFrames
+@export var fill_start : float = 0.0
+@export var fill_end : float = 1.0
 
 @export var costs : Array[StatChange]
 @export var task : Task
