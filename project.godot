@@ -19,6 +19,13 @@ run/main_scene="uid://wsm37tvfwhrk"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://asset/ui/icon.svg"
 
+[aseprite]
+
+animation/layers/only_include_visible_layers_by_default=true
+animation/loop/enabled=false
+import/import_plugin/default_automatic_importer="SpriteFrames (Split By Layer)"
+import/import_plugin/generate_bake_files=true
+
 [audio]
 
 buses/default_bus_layout="uid://1hbinw75eq2q"

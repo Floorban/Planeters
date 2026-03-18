@@ -87,7 +87,8 @@ func _on_slot_hovered(hovered: bool) -> void:
 		return
 	if not GameManager.building_manager.cur_building:
 		return
-	sprite_material.set_shader_parameter("outline_mode", 1) if hovered else sprite_material.set_shader_parameter("outline_mode", 0)
+	var mode := 1 if hovered else 0
+	sprite_material.set_shader_parameter("outline_mode", mode)
 
 
 func _on_slot_selected(_selected: bool) -> void:

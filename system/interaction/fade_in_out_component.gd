@@ -17,7 +17,8 @@ func _ready() -> void:
 
 
 func _on_panel_toggle(toggled_on: bool) -> void:
-	_open_panel() if toggled_on else _close_panel()
+	if toggled_on: _open_panel()
+	else: _close_panel()
 	is_hovering = toggled_on
 
 

@@ -13,7 +13,7 @@ func _ready() -> void:
 	mouse_exited.connect(_on_mouse_exited)
 	pressed.connect(_on_pressed)
 	if building_data:
-		texture_normal = building_data.texture_frames.get_frame_texture("default", 0)
+		texture_normal = building_data.texture_frames.get_frame_texture("interact", 0)
 
 
 func _on_mouse_enter() -> void:
