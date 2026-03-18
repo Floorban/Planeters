@@ -23,9 +23,9 @@ func ghost_building_follow_mouse() -> void:
 
 
 func get_new_building(building_data: BuildingData) -> void:
-	if cur_building:
-		push_error("already have a building in hand")
-		return
+	#if cur_building:
+		#push_error("already have a building in hand")
+		#return
 	
 	var b := building_scene.instantiate() as Building
 	add_child(b)

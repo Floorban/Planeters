@@ -16,7 +16,11 @@ var slot_efficiency_multiplier := 1.0
 func _ready() -> void:
 	selectable_component.hover_change.connect(_on_slot_hovered)
 	selectable_component.select.connect(_on_slot_selected)
-	selectable_component.right_select.connect(_on_remove_building)
+	selectable_component.right_select.connect(
+	func():
+		_on_remove_building(my_building)
+		my_building = null
+	)
 	if window_sprite and sprite_material:
 		window_sprite.material = sprite_material.duplicate()
 		sprite_material = window_sprite.material
@@ -25,15 +29,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if is_on_cooldown and my_building:
 		cooldown_timer += delta
-		
-		# Calculate progress (0.0 to 1.0)
-		# Note: We divide by efficiency. Higher efficiency = faster progress.
+		# divide by efficiency
 		var total_time_needed = cooldown_duration / slot_efficiency_multiplier
 		var progress_percent = clamp(cooldown_timer / total_time_needed, 0.0, 1.0)
-		
-		# Tell building to update its shader
 		my_building.set_cooldown_visuals(progress_percent, true)
-		
 		if cooldown_timer >= total_time_needed:
 			_finish_cooldown()
 
@@ -64,13 +63,18 @@ func _place_new_building(held_building: Building) -> void:
 	cooldown_timer = 0.0
 
 
-func _on_remove_building() -> void:
-	if my_building and GameManager.building_manager.cur_building == null:
-		GameManager.building_manager.get_new_building(my_building.building_data)
-		my_building.queue_free()
-		my_building = null
-		is_on_cooldown = false
-		sprite_material.set_shader_parameter("outline_mode", 1)
+func _on_remove_building(building_to_remove: Building) -> void:
+	if not building_to_remove:
+		return
+	GameManager.building_manager.get_new_building(building_to_remove.building_data)
+	building_to_remove.queue_free()
+	is_on_cooldown = false
+	sprite_material.set_shader_parameter("outline_mode", 1)
+
+
+func _switch_building(current_building: Building, held_building: Building):
+	_place_new_building(held_building)
+	_on_remove_building(current_building)
 
 
 func _on_slot_hovered(hovered: bool) -> void:
@@ -86,14 +90,12 @@ func _on_slot_hovered(hovered: bool) -> void:
 func _on_slot_selected(_selected: bool) -> void:
 	var held_building = GameManager.building_manager.cur_building
 	if selectable_component.is_hovered and held_building:
-		# buidling placement here
-		my_building = held_building
-		GameManager.building_manager.place_building()
-		my_building.global_position = global_position
-		sprite_material.set_shader_parameter("outline_mode", 0)
+		if my_building:
+			_switch_building(my_building, held_building)
+		else:
+			_place_new_building(held_building)
 	elif my_building  and not held_building:
 		if not is_on_cooldown:
 			_start_interaction()
 		else:
 			print("building is still cooling down...")
-		
