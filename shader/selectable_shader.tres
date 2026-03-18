@@ -3,30 +3,31 @@
 [resource]
 code = "shader_type canvas_item;
 
-// --- TINT & VISIBILITY ---
-// Use this to change the sprite color/alpha via code or inspector
-uniform vec4 main_color : source_color = vec4(1.0);
-
 // --- TOGGLES ---
 uniform bool enable_shadow = false;
-// 0: None, 1: Simple, 2: Progress (Ghosting + Fill Outline)
-uniform int outline_mode : hint_enum(\"None\", \"Simple\", \"Progress\") = 0;
+// 0: None, 1: Simple, 2: Progress (Ghosting + Border), 3: Dots
+uniform int outline_mode : hint_enum(\"None\", \"Simple\", \"Progress\", \"Dots\") = 0;
 
-// --- SETTINGS ---
+// --- BASIC SETTINGS ---
 uniform vec4 outline_color : source_color = vec4(1.0);
 uniform float outline_width : hint_range(0.0, 10.0) = 1.0;
+
+// --- SHADOW SETTINGS ---
 uniform float shadow_dist = 2.0;
 uniform vec4 shadow_color : source_color = vec4(0.0, 0.0, 0.0, 0.5);
-uniform float shadow_angle : hint_range(0.0, 360.0) = 45.0;
+uniform float shadow_angle : hint_range(0.0, 450.0) = 45.0;
 
-// --- PROGRESS & GHOSTING ---
+// --- PROGRESS SETTINGS ---
 uniform float progress : hint_range(0.0, 1.0) = 1.0;
 uniform float pending_alpha : hint_range(0.0, 1.0) = 0.3;
 uniform int fill_style : hint_enum(\"Clock\", \"Center Fill\", \"Bottom Fill\") = 2;
+uniform float fill_start : hint_range(0.0, 1.0) = 0.0; 
+uniform float fill_end : hint_range(0.0, 1.0) = 1.0;
 
-// --- CALIBRATION ---
-uniform float fill_start : hint_range(-10.0, 10.0) = 0.0; 
-uniform float fill_end : hint_range(-10.0, 10.0) = 1.0;
+// --- DOTS SETTINGS (Mode 3) ---
+uniform float rotation_speed : hint_range(-4.0, 4.0) = 0.3;
+uniform float stripes : hint_range(1.0, 32.0, 1.0) = 16.0;
+uniform float stripe_width : hint_range(0.0, 1.0) = 0.5;
 
 varying vec2 local_uv;
 
@@ -36,69 +37,74 @@ void vertex() {
 }
 
 void fragment() {
-	// Sample texture
+	// Save the modulate (Visibility) color from the inspector
+	vec4 modulate_input = COLOR; 
+	
 	vec4 tex_color = texture(TEXTURE, UV);
 	vec2 p_size = TEXTURE_PIXEL_SIZE;
 	
 	// 1. Calculate Fill Mask
+	// This determines what is \"finished\" vs \"pending\"
 	float fill = 1.0;
-	// Always calculate fill logic so shadow and outline can use it
 	switch (fill_style) {
 		case 0: fill = step((atan(local_uv.x - 0.5, local_uv.y - 0.5) + PI) / 6.283185, progress); break;
 		case 1: fill = step(distance(local_uv, vec2(0.5)), progress * 0.5); break;
 		case 2: fill = step(1.0 - local_uv.y, mix(fill_start, fill_end, progress)); break;
 	}
 
-	// 2. Apply Ghosting to Texture (Only in mode 2)
-	if (outline_mode == 2) {
-		tex_color.a *= mix(pending_alpha, 1.0, fill);
-	}
-
-	// 3. Outline Logic
+	// 2. Outline Logic
 	vec4 final_outline = vec4(0.0);
 	if (outline_mode != 0) {
+		// Edge Detection
 		vec2 size = p_size * outline_width;
-		// Check neighbors
 		float a = texture(TEXTURE, UV + vec2(0.0, -size.y)).a;
 		a = max(a, texture(TEXTURE, UV + vec2(0.0, size.y)).a);
 		a = max(a, texture(TEXTURE, UV + vec2(-size.x, 0.0)).a);
 		a = max(a, texture(TEXTURE, UV + vec2(size.x, 0.0)).a);
-		
 		float outline_mask = clamp(a - texture(TEXTURE, UV).a, 0.0, 1.0);
 		
-		if (outline_mode == 1) { // Simple
-			final_outline = vec4(outline_color.rgb, outline_mask * outline_color.a);
-		} else if (outline_mode == 2) { // Progress (Outline grows with fill)
-			final_outline = vec4(outline_color.rgb, outline_mask * outline_color.a * fill);
+		if (outline_mode == 1) { // Simple Solid Outline
+			final_outline = outline_color * outline_mask;
+		} 
+		else if (outline_mode == 2) { // Progress Outline (The border fills with the building)
+			final_outline = outline_color * outline_mask * fill;
+		}
+		else if (outline_mode == 3) { // Rotating Dots
+			float rotation = TIME * rotation_speed;
+			float angle = atan(local_uv.x - 0.5, local_uv.y - 0.5) - rotation;
+			float pattern = step(mod(angle / 6.283185, 1.0 / stripes), stripe_width / stripes);
+			final_outline = outline_color * outline_mask * pattern;
 		}
 	}
 
-	// 4. Drop Shadow Logic
+	// 3. Drop Shadow
 	vec4 final_shadow = vec4(0.0);
 	if (enable_shadow) {
 		float rad = radians(shadow_angle);
 		vec2 shadow_offset = vec2(cos(rad), sin(rad)) * p_size * shadow_dist;
 		float shadow_alpha = texture(TEXTURE, UV - shadow_offset).a;
-		// Shadow respects progress ghosting
+		
+		// If in progress mode, shadow only shows for finished parts (or ghosted)
 		if (outline_mode == 2) {
 			shadow_alpha *= mix(pending_alpha, 1.0, fill);
 		}
-		final_shadow = vec4(shadow_color.rgb, shadow_alpha * shadow_color.a);
+		final_shadow = shadow_color * shadow_alpha;
 	}
 
-	// 5. Final Layering (Manual Alpha Blending)
-	// Start with empty canvas
-	vec4 combined = vec4(0.0);
-	// Place Shadow
-	combined = mix(combined, final_shadow, final_shadow.a);
-	// Place Outline
-	combined = mix(combined, final_outline, final_outline.a);
-	// Place Sprite
-	combined = mix(combined, tex_color, tex_color.a);
+	// 4. Progress \"Ghosting\" on the main texture
+	if (outline_mode == 2) {
+		tex_color.a *= mix(pending_alpha, 1.0, fill);
+	}
+
+	// 5. Final Composition
+	// We mix the colors based on their own alpha to prevent \"Darkening\"
+	vec4 result = final_shadow;
+	// Place outline over shadow
+	result = mix(result, final_outline, final_outline.a);
+	// Place texture over outline
+	result = mix(result, tex_color, tex_color.a);
 	
-	// 6. APPLY COLORS
-	// combined: The pixels we calculated
-	// main_color: Your custom uniform color picker
-	// COLOR: Built-in modulate (for inspector alpha/visibility)
-	COLOR = combined * main_color * COLOR;
+	// Apply modulate at the very end. 
+	// To prevent double-darkening, we only multiply the RGB and the Alpha once.
+	COLOR = result * modulate_input;
 }"

@@ -177,6 +177,7 @@ shape = SubResource("RectangleShape2D_7v2w7")
 
 [node name="CharacterSprite" type="AnimatedSprite2D" parent="." unique_id=151410775]
 unique_name_in_owner = true
+modulate = Color(0.025562067, 0.025562061, 0.025562065, 1)
 material = ExtResource("3_6k5wm")
 sprite_frames = SubResource("SpriteFrames_5hcsl")
 animation = &"idle"
