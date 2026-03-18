@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bltwvuc0y6lta" path="res://system/screen/panel/overview_panel.gd" id="1_jth0q"]
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="2_jth0q"]
 [ext_resource type="PackedScene" uid="uid://rhf5s5wn0yep" path="res://system/events/event_manager.tscn" id="3_w5eqy"]
+[ext_resource type="Texture2D" uid="uid://bql8d8kyeo8q2" path="res://asset/ui/uiPanelSprites/uiPanel_plain.png" id="4_i7qh1"]
 
 [node name="OverviewPanel" type="Control" unique_id=952982154]
 custom_minimum_size = Vector2(600, 820)
@@ -14,16 +15,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 script = ExtResource("1_jth0q")
-
-[node name="BG" type="ColorRect" parent="." unique_id=1390644060]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.5106012, 0.5106013, 0.5106011, 0.64705884)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1201286985]
 layout_mode = 1
@@ -185,3 +176,18 @@ text = "26 : 24"
 [node name="EventsManager" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=131518069 instance=ExtResource("3_w5eqy")]
 custom_minimum_size = Vector2(500, 450)
 layout_mode = 2
+
+[node name="TextureRect" type="NinePatchRect" parent="." unique_id=1406020384]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_i7qh1")
+region_rect = Rect2(12, 12, 40, 40)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
