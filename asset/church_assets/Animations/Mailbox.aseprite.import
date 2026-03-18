@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cnv536vcfhql5"
+path="res://.godot/imported/Mailbox.aseprite-7037f47080ad6a9f2dbf5a914cf51fc5.res"
+
+[deps]
+
+source_file="res://asset/church_assets/Animations/Mailbox.aseprite"
+dest_files=["res://.godot/imported/Mailbox.aseprite-7037f47080ad6a9f2dbf5a914cf51fc5.res"]
+
+[params]
+
