@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dhvajpb0pj04c"
+path="res://.godot/imported/Altar.aseprite-01c829cb0aff0615eaaa258fbcd35405.res"
+
+[deps]
+
+source_file="res://asset/church_assets/Animations/Altar.aseprite"
+dest_files=["res://.godot/imported/Altar.aseprite-01c829cb0aff0615eaaa258fbcd35405.res"]
+
+[params]
+
