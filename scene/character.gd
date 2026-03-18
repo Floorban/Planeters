@@ -37,7 +37,6 @@ func _ready() -> void:
 func _on_character_hovered(is_hovered: bool) -> void:
 	var mode = 1 if is_hovered else 0
 	sprite_material.set_shader_parameter("outline_mode", mode)
-	print(mode)
 
 
 func _process(delta):

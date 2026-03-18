@@ -34,7 +34,7 @@ func _ready() -> void:
 	
 	for s in task_slots:
 		s.task_finished.connect(_on_task_finished)
-
+	$TextureRect.size /= $TextureRect.scale
 
 func _show_task_info(task: Task) -> void:
 	_hide_task_info()

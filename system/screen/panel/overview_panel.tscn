@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://rhf5s5wn0yep" path="res://system/events/event_manager.tscn" id="3_w5eqy"]
 
 [node name="OverviewPanel" type="Control" unique_id=952982154]
-custom_minimum_size = Vector2(600, 820)
+custom_minimum_size = Vector2(600, 1080)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 600.0
@@ -22,8 +22,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -480.0
-offset_bottom = -656.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(5, 5)
