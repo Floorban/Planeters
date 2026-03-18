@@ -3,10 +3,25 @@
 [ext_resource type="Script" uid="uid://bbdbxnmg1tex7" path="res://scene/character.gd" id="1_k8rrn"]
 [ext_resource type="PackedScene" uid="uid://d28ro7rbb85ru" path="res://system/interaction/selectable_component.tscn" id="2_6k5wm"]
 [ext_resource type="Texture2D" uid="uid://b2cpcnb47rfgl" path="res://asset/character_sheet.png" id="2_k8rrn"]
-[ext_resource type="Material" uid="uid://bphqrqk7823ml" path="res://shader/selectable_material.tres" id="3_6k5wm"]
+[ext_resource type="Shader" uid="uid://benyoh88f818t" path="res://shader/selectable_shader.tres" id="3_6k5wm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7v2w7"]
 size = Vector2(8, 21)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7v2w7"]
+shader = ExtResource("3_6k5wm")
+shader_parameter/enable_shadow = true
+shader_parameter/outline_mode = 0
+shader_parameter/outline_color = Color(0.5238004, 0.5238004, 0.5238004, 1)
+shader_parameter/outline_width = 1.0
+shader_parameter/shadow_dist = 1.0
+shader_parameter/shadow_color = Color(0, 0, 0, 0.5)
+shader_parameter/shadow_angle = 90.9750043213125
+shader_parameter/progress = 0.190000009025
+shader_parameter/pending_alpha = 0.70000003325
+shader_parameter/fill_style = 2
+shader_parameter/fill_start = 0.0
+shader_parameter/fill_end = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d7vt2"]
 atlas = ExtResource("2_k8rrn")
@@ -177,7 +192,8 @@ shape = SubResource("RectangleShape2D_7v2w7")
 
 [node name="CharacterSprite" type="AnimatedSprite2D" parent="." unique_id=151410775]
 unique_name_in_owner = true
-material = ExtResource("3_6k5wm")
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_7v2w7")
 sprite_frames = SubResource("SpriteFrames_5hcsl")
 animation = &"idle"
 frame_progress = 0.86421144

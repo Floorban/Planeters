@@ -3,6 +3,7 @@ extends Area2D
 
 signal hover_change(hovered: bool)
 signal select(selected: bool)
+signal deselect()
 signal right_select()
 
 var is_hovered := false
@@ -64,5 +65,7 @@ func _on_select(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("left_click"):
 		is_selected = not is_selected
 		select.emit(is_selected)
+	elif event.is_action_released("left_click"):
+		deselect.emit()
 	elif event.is_action_pressed("right_click"):
 		right_select.emit()

@@ -9,4 +9,5 @@ script = ExtResource("1_8eyry")
 
 [node name="BuildingSprite" type="AnimatedSprite2D" parent="." unique_id=909124454]
 unique_name_in_owner = true
+modulate = Color(4.415934, 4.415934, 4.415934, 1)
 material = ExtResource("2_gl3d0")

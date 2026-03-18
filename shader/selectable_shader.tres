@@ -68,7 +68,13 @@ if (enable_shadow) {
 	if (outline_mode == 2) shadow_alpha *= mix(pending_alpha, 1.0, fill);
 	final_shadow = shadow_color * shadow_alpha;
 }
+vec4 modulate_input = COLOR;
+vec4 result = vec4(0.0);
+result = mix(result, final_shadow, final_shadow.a);
+result = mix(result, final_outline, final_outline.a);
 
-vec4 result = mix(final_shadow, final_outline, final_outline.a);
-COLOR = mix(result, tex_color, tex_color.a);
+vec4 modulated_sprite = tex_color * modulate_input;
+result = mix(result, modulated_sprite, modulated_sprite.a);
+
+COLOR = result;
 }"

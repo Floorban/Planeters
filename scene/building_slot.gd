@@ -48,7 +48,7 @@ func _start_interaction() -> void:
 	if not GameManager.stats_manager.can_pay(my_building.building_data.task.costs):
 		Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BTN_FAIL)
 		return
-	my_building.interact_with_building()
+	await my_building.interact_with_building()
 	is_on_cooldown = true
 	cooldown_timer = 0.0
 	if my_building.building_data:

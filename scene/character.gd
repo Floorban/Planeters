@@ -7,7 +7,10 @@ enum CharacterState {
 	ESCAPING,
 	KILLING,
 	BEING_KILLED,
-	DEAD
+	DEAD,
+	BEING_DRAGGED,
+	LANDING,
+	JUST_LANDED
 }
 
 var move_speed := 0.0
@@ -32,11 +35,21 @@ func _ready() -> void:
 		sprite_material = character_sprite.material
 	sprite_material = character_sprite.material as ShaderMaterial
 	selectable_component.hover_change.connect(_on_character_hovered)
+	selectable_component.select.connect(_on_character_selected)
+	selectable_component.deselect.connect(_on_character_deselected)
 
 
 func _on_character_hovered(is_hovered: bool) -> void:
 	var mode = 1 if is_hovered else 0
 	sprite_material.set_shader_parameter("outline_mode", mode)
+
+
+func _on_character_selected(is_selected: bool) -> void:
+	state = CharacterState.BEING_DRAGGED
+
+
+func _on_character_deselected() -> void:
+	state = CharacterState.LANDING
 
 
 func _process(delta):
@@ -79,4 +92,3 @@ func _move_to_target(delta):
 		else:
 			move_speed = walk_speed + randf_range(-50, 50)
 			character_sprite.play("walk")
-		

@@ -12,6 +12,7 @@ script = ExtResource("1_lqmyk")
 
 [node name="WindowSprite" type="Sprite2D" parent="." unique_id=1229397144]
 unique_name_in_owner = true
+modulate = Color(4.415934, 4.415934, 4.415934, 1)
 texture_filter = 1
 material = ExtResource("2_l3vv8")
 texture = ExtResource("2_ynrma")

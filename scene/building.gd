@@ -61,7 +61,8 @@ func interact_with_building() -> void:
 	start_task_request.emit(building_data.task, self)
 	Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.UPGRADE_PURCHASE)
 	building_sprite.play("interact")
-	
+	await building_sprite.animation_finished
+
 
 var flash_tween : Tween
 
