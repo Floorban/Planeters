@@ -4,6 +4,7 @@ extends CharacterBody2D
 signal hover_state_changed(character: Character, hovered: bool)
 signal selected()
 signal deselected()
+signal right_selected()
 
 enum CharacterState {
 	IDLE,
@@ -13,6 +14,8 @@ enum CharacterState {
 	BEING_KILLED,
 	DEAD,
 	BEING_DRAGGED,
+	AUTO_MOVING,
+	WAITING_IN_QUEUE,
 	LANDING,
 	JUST_LANDED
 }
@@ -43,6 +46,7 @@ func _ready() -> void:
 	selectable_component.hover_change.connect(_on_character_hovered)
 	selectable_component.select.connect(_on_character_selected)
 	selectable_component.deselect.connect(_on_character_deselected)
+	selectable_component.right_select.connect(_on_character_right_selected)
 	if GameManager.world_manager:
 		set_speed_multiplier(GameManager.world_manager.character_speed_multiplier)
 
@@ -66,11 +70,20 @@ func _on_character_deselected() -> void:
 	_handle_deselected()
 
 
+func _on_character_right_selected() -> void:
+	right_selected.emit()
+	_handle_right_selected()
+
+
 func _handle_selected(_is_selected: bool) -> void:
 	pass
 
 
 func _handle_deselected() -> void:
+	pass
+
+
+func _handle_right_selected() -> void:
 	pass
 
 
@@ -127,6 +140,8 @@ func _physics_process(delta):
 		CharacterState.WANDERING:
 			_move_to_target(delta)
 		CharacterState.ESCAPING:
+			_move_to_target(delta)
+		CharacterState.AUTO_MOVING:
 			_move_to_target(delta)
 
 

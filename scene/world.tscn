@@ -51,28 +51,28 @@ offset = Vector2(0, -120)
 [node name="BuildingSlots" type="Node2D" parent="Church" unique_id=623750303]
 
 [node name="BuildingSlot" parent="Church/BuildingSlots" unique_id=1829646210 instance=ExtResource("8_yur6x")]
-position = Vector2(26, 10)
+position = Vector2(25, 10)
 
 [node name="BuildingSlot2" parent="Church/BuildingSlots" unique_id=2052712609 instance=ExtResource("8_yur6x")]
-position = Vector2(47, 10)
+position = Vector2(48, 10)
 
 [node name="BuildingSlot3" parent="Church/BuildingSlots" unique_id=411239240 instance=ExtResource("8_yur6x")]
-position = Vector2(-27, 10)
+position = Vector2(-26, 10)
 
 [node name="BuildingSlot4" parent="Church/BuildingSlots" unique_id=608513256 instance=ExtResource("8_yur6x")]
-position = Vector2(-48, 10)
+position = Vector2(-49, 10)
 
 [node name="BuildingSlot5" parent="Church/BuildingSlots" unique_id=872134112 instance=ExtResource("8_yur6x")]
-position = Vector2(80, 10)
+position = Vector2(71, 10)
 
 [node name="BuildingSlot6" parent="Church/BuildingSlots" unique_id=1261087743 instance=ExtResource("8_yur6x")]
-position = Vector2(-80, 10)
+position = Vector2(-72, 10)
 
 [node name="BuildingSlot7" parent="Church/BuildingSlots" unique_id=1731865182 instance=ExtResource("8_yur6x")]
-position = Vector2(110, 10)
+position = Vector2(94, 10)
 
 [node name="BuildingSlot8" parent="Church/BuildingSlots" unique_id=1258922241 instance=ExtResource("8_yur6x")]
-position = Vector2(-110, 10)
+position = Vector2(-95, 10)
 
 [node name="SqaureCenter" type="Marker2D" parent="." unique_id=829838975]
 position = Vector2(-1, 53)

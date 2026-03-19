@@ -10,7 +10,7 @@
 [sub_resource type="Resource" id="Resource_cdedb"]
 script = ExtResource("1_qp2wv")
 stat = ExtResource("2_gefnx")
-amount = 50.0
+amount = 5.0
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [resource]
@@ -18,7 +18,6 @@ script = ExtResource("3_gefnx")
 upgrade_name = "Building Slot"
 upgrade_description = "Get an extra building slot to place your building"
 upgrade_icon = ExtResource("4_vi4v6")
-max_level = 1
 costs = Array[ExtResource("1_qp2wv")]([SubResource("Resource_cdedb")])
 effects = Array[ExtResource("2_qllv1")]([ExtResource("4_whhad")])
 metadata/_custom_type_script = "uid://emabm8r8bin6"

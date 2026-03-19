@@ -117,7 +117,7 @@ func consume_selected_character_for_sacrifice(character: Character) -> bool:
 	return consume_characters_for_sacrifice(character, 1)
 
 
-func consume_characters_for_sacrifice(character: Character, amount: int) -> bool:
+func consume_characters_for_sacrifice(character: Character, amount: int, preferred_victims: Array[Character] = []) -> bool:
 	if amount <= 0:
 		return false
 	if not character or not is_instance_valid(character):
@@ -126,7 +126,9 @@ func consume_characters_for_sacrifice(character: Character, amount: int) -> bool
 		return false
 	if cultists.size() < amount:
 		return false
-	var victims := _get_dragged_cultists_for_sacrifice(amount)
+	var victims := _get_preferred_cultists_for_sacrifice(preferred_victims, amount)
+	if victims.is_empty():
+		victims = _get_dragged_cultists_for_sacrifice(amount)
 	if victims.is_empty():
 		victims.append(character)
 	elif not victims.has(character) and victims.size() < amount:
@@ -139,6 +141,8 @@ func consume_characters_for_sacrifice(character: Character, amount: int) -> bool
 	for victim in victims:
 		cultists.erase(victim)
 		_remove_dragged_character(victim)
+		if victim is Cultist:
+			victim.clear_auto_sacrifice_assignment()
 		victim.start_being_killed()
 	current_members = max(0, current_members - victims.size())
 	GameManager.stats_manager.spend_stat(GameManager.sim_manager.member_stat, victims.size())
@@ -292,6 +296,34 @@ func modify_character_move_speed(amount: float) -> void:
 		outsider.set_speed_multiplier(character_speed_multiplier)
 
 
+func assign_cultist_to_sacrifice_queue(cultist: Cultist) -> bool:
+	if not cultist or not is_instance_valid(cultist):
+		return false
+	var slot := get_best_sacrifice_slot(cultist.global_position)
+	if slot == null:
+		return false
+	cultist.assign_auto_sacrifice(slot)
+	return true
+
+
+func get_best_sacrifice_slot(origin: Vector2) -> BuildingSlot:
+	var best_slot: BuildingSlot
+	for slot in building_slots:
+		if slot == null or not is_instance_valid(slot) or not slot.can_accept_auto_sacrifice():
+			continue
+		if best_slot == null:
+			best_slot = slot
+			continue
+		var slot_load := slot.get_auto_sacrifice_load()
+		var best_load := best_slot.get_auto_sacrifice_load()
+		if slot_load < best_load:
+			best_slot = slot
+			continue
+		if slot_load == best_load and origin.distance_squared_to(slot.global_position) < origin.distance_squared_to(best_slot.global_position):
+			best_slot = slot
+	return best_slot
+
+
 func _get_dragged_cultists_for_sacrifice(amount: int) -> Array[Character]:
 	var victims: Array[Character] = []
 	for character in get_dragged_characters_for_drop():
@@ -300,6 +332,23 @@ func _get_dragged_cultists_for_sacrifice(amount: int) -> Array[Character]:
 		if not (character is Cultist):
 			continue
 		if not cultists.has(character):
+			continue
+		victims.append(character)
+	return victims
+
+
+func _get_preferred_cultists_for_sacrifice(preferred_victims: Array[Character], amount: int) -> Array[Character]:
+	var victims: Array[Character] = []
+	for character in preferred_victims:
+		if victims.size() >= amount:
+			break
+		if not character or not is_instance_valid(character):
+			continue
+		if not (character is Cultist):
+			continue
+		if not cultists.has(character):
+			continue
+		if victims.has(character):
 			continue
 		victims.append(character)
 	return victims

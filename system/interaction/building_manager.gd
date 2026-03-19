@@ -64,17 +64,19 @@ var cooldown_efficiency_by_type := {
 }
 
 
-func start_task(task : Task, building: Building) -> bool:
+func start_task(task : Task, building: Building, sacrifice_character: Character = null, preferred_sacrifice_victims: Array[Character] = []) -> bool:
 	if not building or not building.building_data:
 		return false
 	if building.building_data.building_type == BuildingData.BuildingType.Sacrifice:
 		var dragged_characters = GameManager.world_manager.get_dragged_characters_for_drop()
-		if dragged_characters.is_empty():
+		var dropped_character := sacrifice_character
+		if dropped_character == null and not dragged_characters.is_empty():
+			dropped_character = dragged_characters[0]
+		if dropped_character == null:
 			building.interact_failed()
 			return false
-		var dropped_character : Character = dragged_characters[0]
 		var sacrifice_amount := _get_sacrifice_member_cost(task)
-		if not GameManager.world_manager.consume_characters_for_sacrifice(dropped_character, sacrifice_amount):
+		if not GameManager.world_manager.consume_characters_for_sacrifice(dropped_character, sacrifice_amount, preferred_sacrifice_victims):
 			building.interact_failed()
 			return false
 		_pay_modified(task, GameManager.sim_manager.member_stat)
@@ -124,6 +126,10 @@ func _get_sacrifice_member_cost(task: Task) -> int:
 		if c.stat == GameManager.sim_manager.member_stat:
 			return max(1, int(round(get_modified_cost(c, task))))
 	return 1
+
+
+func get_sacrifice_member_cost(task: Task) -> int:
+	return _get_sacrifice_member_cost(task)
 
 
 func get_modified_cost(change: StatChange, task: Task) -> float:

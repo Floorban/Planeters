@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bv3nnvnn85c8v" path="res://scene/building_slot.gd" id="1_lqmyk"]
 [ext_resource type="Material" uid="uid://bphqrqk7823ml" path="res://shader/selectable_material.tres" id="2_l3vv8"]
-[ext_resource type="Texture2D" uid="uid://bll07qbbhhh58" path="res://asset/church_assets/church Window.png" id="2_ynrma"]
+[ext_resource type="Texture2D" uid="uid://crqh00mig3dnu" path="res://asset/church_assets/church ExtensionMid.png" id="3_l3vv8"]
 [ext_resource type="PackedScene" uid="uid://d28ro7rbb85ru" path="res://system/interaction/selectable_component.tscn" id="4_l3vv8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l3vv8"]
@@ -10,12 +10,13 @@
 [node name="BuildingSlot" type="Node2D" unique_id=881597922]
 script = ExtResource("1_lqmyk")
 
-[node name="WindowSprite" type="Sprite2D" parent="." unique_id=1229397144]
+[node name="SlotSprite" type="Sprite2D" parent="." unique_id=1229397144]
 unique_name_in_owner = true
-modulate = Color(4.415934, 4.415934, 4.415934, 1)
+modulate = Color(2.454227, 2.454227, 2.454227, 1)
 texture_filter = 1
 material = ExtResource("2_l3vv8")
-texture = ExtResource("2_ynrma")
+position = Vector2(0, -24)
+texture = ExtResource("3_l3vv8")
 
 [node name="SelectableComponent" parent="." unique_id=480340802 instance=ExtResource("4_l3vv8")]
 unique_name_in_owner = true

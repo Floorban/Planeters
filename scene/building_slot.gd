@@ -1,8 +1,8 @@
 class_name BuildingSlot
 extends Node2D
 
-@onready var window_sprite: Sprite2D = %WindowSprite
-@onready var sprite_material : ShaderMaterial = window_sprite.material
+@onready var slot_sprite: Sprite2D = %SlotSprite
+@onready var sprite_material : ShaderMaterial = slot_sprite.material
 @onready var selectable_component: SelectableComponent = %SelectableComponent
 
 @export var my_building : Building
@@ -10,8 +10,10 @@ extends Node2D
 var cooldown_timer := 0.0
 var cooldown_duration := 5.0
 var is_on_cooldown := false
+var is_processing_auto_sacrifice := false
 var slot_efficiency_multiplier := 1.0 
 var is_locked := false
+var auto_sacrifice_queue: Array[Cultist] = []
 
 
 func _ready() -> void:
@@ -23,12 +25,13 @@ func _ready() -> void:
 		_on_remove_building(my_building)
 		my_building = null
 	)
-	if window_sprite and sprite_material:
-		window_sprite.material = sprite_material.duplicate()
-		sprite_material = window_sprite.material
+	if slot_sprite and sprite_material:
+		slot_sprite.material = sprite_material.duplicate()
+		sprite_material = slot_sprite.material
 
 
 func _process(delta: float) -> void:
+	_cleanup_auto_sacrifice_queue()
 	if is_on_cooldown and my_building:
 		cooldown_timer += delta
 		var total_time_needed = cooldown_duration / get_cooldown_speed_multiplier()
@@ -36,6 +39,8 @@ func _process(delta: float) -> void:
 		my_building.set_cooldown_visuals(progress_percent, true)
 		if cooldown_timer >= total_time_needed:
 			_finish_cooldown()
+	elif _can_process_auto_sacrifice():
+		_start_auto_sacrifice_from_queue()
 
 
 func _finish_cooldown() -> void:
@@ -72,6 +77,7 @@ func _place_new_building(held_building: Building) -> void:
 func _on_remove_building(building_to_remove: Building) -> void:
 	if not building_to_remove:
 		return
+	_clear_auto_sacrifice_queue()
 	GameManager.building_manager.get_new_building(building_to_remove.building_data)
 	building_to_remove.queue_free()
 	is_on_cooldown = false
@@ -141,5 +147,86 @@ func get_cooldown_speed_multiplier() -> float:
 	if my_building and my_building.building_data:
 		speed_multiplier *= GameManager.building_manager.get_building_cooldown_efficiency(my_building.building_data.building_type)
 	return max(0.05, speed_multiplier)
+
+
+func can_accept_auto_sacrifice() -> bool:
+	return not is_locked and my_building != null and my_building.building_data != null and my_building.building_data.building_type == BuildingData.BuildingType.Sacrifice
+
+
+func get_auto_sacrifice_load() -> int:
+	return auto_sacrifice_queue.size() + (1 if is_on_cooldown else 0)
+
+
+func get_queue_world_position(cultist: Cultist = null) -> Vector2:
+	var index := auto_sacrifice_queue.find(cultist)
+	if index < 0:
+		index = auto_sacrifice_queue.size()
+	return global_position + Vector2(0, 18 + (index * 14))
+
+
+func enqueue_auto_sacrifice_cultist(cultist: Cultist) -> void:
+	if not can_accept_auto_sacrifice():
+		return
+	if not auto_sacrifice_queue.has(cultist):
+		auto_sacrifice_queue.append(cultist)
+	cultist.auto_sacrifice_slot = self
+	cultist.is_queued_for_sacrifice = true
+	cultist.state = Character.CharacterState.WAITING_IN_QUEUE
+
+
+func remove_queued_cultist(cultist: Cultist) -> void:
+	auto_sacrifice_queue.erase(cultist)
+
+
+func get_queued_cultists_for_sacrifice(amount: int) -> Array[Character]:
+	var victims: Array[Character] = []
+	for cultist in auto_sacrifice_queue:
+		if victims.size() >= amount:
+			break
+		if cultist and is_instance_valid(cultist):
+			victims.append(cultist)
+	return victims
+
+
+func _can_process_auto_sacrifice() -> bool:
+	return can_accept_auto_sacrifice() and not auto_sacrifice_queue.is_empty() and GameManager.building_manager.cur_building == null and not is_processing_auto_sacrifice
+
+
+func _start_auto_sacrifice_from_queue() -> void:
+	var victims := get_queued_cultists_for_sacrifice(GameManager.building_manager.get_sacrifice_member_cost(my_building.building_data.task))
+	if victims.is_empty():
+		return
+	is_processing_auto_sacrifice = true
+	var lead_cultist := victims[0] as Character
+	var did_start : bool = GameManager.building_manager.start_task(my_building.building_data.task, my_building, lead_cultist, victims)
+	if not did_start:
+		is_processing_auto_sacrifice = false
+		return
+	for victim in victims:
+		if victim is Cultist:
+			remove_queued_cultist(victim)
+			victim.clear_auto_sacrifice_assignment(false)
+	await my_building.interact_with_building(get_cooldown_speed_multiplier())
+	is_on_cooldown = true
+	cooldown_timer = 0.0
+	if my_building.building_data:
+		cooldown_duration = my_building.building_data.cooldown
+	my_building.set_cooldown_visuals(0.0, true)
+	is_processing_auto_sacrifice = false
+
+
+func _cleanup_auto_sacrifice_queue() -> void:
+	var valid_queue: Array[Cultist] = []
+	for cultist in auto_sacrifice_queue:
+		if cultist and is_instance_valid(cultist) and cultist.auto_sacrifice_slot == self:
+			valid_queue.append(cultist)
+	auto_sacrifice_queue = valid_queue
+
+
+func _clear_auto_sacrifice_queue() -> void:
+	for cultist in auto_sacrifice_queue:
+		if cultist and is_instance_valid(cultist):
+			cultist.clear_auto_sacrifice_assignment(false)
+	auto_sacrifice_queue.clear()
 	
 	
