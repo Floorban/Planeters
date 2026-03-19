@@ -56,6 +56,7 @@ func set_speed_multiplier(value: float) -> void:
 
 
 func _on_character_hovered(is_hovered: bool) -> void:
+	z_index = 3 if is_hovered else 2
 	var mode = 1 if is_hovered else 0
 	sprite_material.set_shader_parameter("outline_mode", mode)
 	is_hover_paused = is_hovered

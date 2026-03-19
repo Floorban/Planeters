@@ -12,6 +12,9 @@ var outsider_pool := 0
 @export var max_visible_outsiders := 40
 @export var outsider_trust_click_power := 1.0
 var character_speed_multiplier := 1.0
+var auto_persuade_capacity := 0
+var auto_persuade_trust_power := 1.0
+var allow_shared_auto_persuasion := false
 @export var max_max_visible_cultists := 500
 var max_visible_cultists := 0
 var current_members := 0
@@ -97,9 +100,9 @@ func sacrifice_member():
 
 
 func get_random_church_position() -> Vector2:
-	return square_center.global_position + Vector2(randf_range(-230, 240),randf_range(-40, 150))
+	return square_center.global_position + Vector2(randf_range(-200, 200),randf_range(-40, 100))
 
-
+	
 func get_dragged_characters_for_drop() -> Array[Character]:
 	var dragged: Array[Character] = []
 	for character in cur_characters:
@@ -271,6 +274,8 @@ func _transform_outsider_to_cultists(outsider: Outsider, amount: int) -> void:
 		cultist.state = Character.CharacterState.WANDERING
 		cultist.character_sprite.modulate = Color.BLACK
 		cultist._handle_deselected()
+		cultist.walk_speed += 50
+		cultist.run_speed += 50
 		cultists.append(cultist)
 	current_members += amount
 
@@ -294,6 +299,32 @@ func modify_character_move_speed(amount: float) -> void:
 		cultist.set_speed_multiplier(character_speed_multiplier)
 	for outsider in outsiders:
 		outsider.set_speed_multiplier(character_speed_multiplier)
+
+
+func add_auto_persuade_capacity(amount: int) -> void:
+	auto_persuade_capacity = max(0, auto_persuade_capacity + amount)
+	for cultist in cultists:
+		if cultist and is_instance_valid(cultist) and not cultist.auto_sacrifice_slot:
+			cultist.auto_behaviour_disabled = false
+
+
+func get_auto_persuade_target(cultist: Cultist) -> Outsider:
+	if auto_persuade_capacity <= 0:
+		return null
+	var already_active := cultist.has_auto_persuade_behavior()
+	if not already_active and get_active_auto_persuader_count() >= auto_persuade_capacity:
+		return null
+	var best_target: Outsider
+	for outsider in outsiders:
+		if outsider == null or not is_instance_valid(outsider):
+			continue
+		if outsider.state == Character.CharacterState.BEING_KILLED or outsider.state == Character.CharacterState.DEAD or outsider.state == Character.CharacterState.ESCAPING:
+			continue
+		if not allow_shared_auto_persuasion and _is_outsider_targeted_by_other_cultist(outsider, cultist):
+			continue
+		if best_target == null or cultist.global_position.distance_squared_to(outsider.global_position) < cultist.global_position.distance_squared_to(best_target.global_position):
+			best_target = outsider
+	return best_target
 
 
 func assign_cultist_to_sacrifice_queue(cultist: Cultist) -> bool:
@@ -357,3 +388,20 @@ func _get_preferred_cultists_for_sacrifice(preferred_victims: Array[Character], 
 func _remove_dragged_character(character: Character) -> void:
 	cur_characters.erase(character)
 	last_released_characters.erase(character)
+
+
+func get_active_auto_persuader_count() -> int:
+	var count := 0
+	for cultist in cultists:
+		if cultist and is_instance_valid(cultist) and cultist.has_auto_persuade_behavior():
+			count += 1
+	return count
+
+
+func _is_outsider_targeted_by_other_cultist(outsider: Outsider, current_cultist: Cultist) -> bool:
+	for cultist in cultists:
+		if cultist == null or not is_instance_valid(cultist) or cultist == current_cultist:
+			continue
+		if cultist.auto_persuade_target == outsider:
+			return true
+	return false

@@ -69,6 +69,8 @@ KEY_UPGRADE_SOFT_WORDS_1,Soft Words I,巧言 I,
 KEY_UPGRADE_SOFT_WORDS_2,Soft Words II,巧言 II,
 KEY_DESC_SOFT_WORDS_1,Increase trust gained per click. Outsiders are easier to sway with each interaction.,提升每次点击获得的信任值。每次接触都更容易动摇局外人。,
 KEY_DESC_SOFT_WORDS_2,Increase trust gained per click even more. A few words now do the work of a sermon.,进一步提升每次点击获得的信任值。几句低语就能顶上一整场布道。,
+KEY_UPGRADE_AUTO_PERSUADE_1,Auto Persuade I,自动感召 I,
+KEY_DESC_AUTO_PERSUADE_1,Unlock one cultist that automatically approaches outsiders and builds trust for you.,解锁一名会自动接近局外人并为你提升信任的教徒。,
 KEY_EVENT_DESC_1,"A patrol car has been idling outside your gates for nights.
 Provide a gift to the station to keep them moving.",一辆警车已经在正门外徘徊了数个夜晚。向警局提供一笔“治安捐款”以确保他们尽职地离开。,
 KEY_EVENT_DESC_2,"A new recruit is crying for their family.

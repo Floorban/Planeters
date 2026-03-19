@@ -14,6 +14,7 @@ signal trust_clicked(outsider: Outsider)
 
 var trust := 0.0
 var patience := 45.0
+var persuasion_pause_sources := 0
 
 
 func _ready() -> void:
@@ -24,7 +25,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	super._process(delta)
-	if is_hover_paused:
+	if is_temporarily_paused():
+		velocity = Vector2.ZERO
 		return
 	if state == CharacterState.BEING_KILLED or state == CharacterState.DEAD or state == CharacterState.ESCAPING:
 		return
@@ -34,6 +36,12 @@ func _process(delta: float) -> void:
 		state = CharacterState.ESCAPING
 		target_position = GameManager.world_manager.exit_point.global_position
 
+
+func _physics_process(delta):
+	if is_temporarily_paused():
+		velocity = Vector2.ZERO
+		return
+	super._physics_process(delta)
 
 func _handle_selected(_is_selected: bool) -> void:
 	apply_trust_click()
@@ -45,6 +53,17 @@ func apply_trust_click(amount: float = trust_per_click) -> void:
 	trust_changed.emit(self, trust, max_trust)
 	if trust >= max_trust:
 		converted.emit(self)
+
+
+func set_persuasion_paused(paused: bool) -> void:
+	if paused:
+		persuasion_pause_sources += 1
+	else:
+		persuasion_pause_sources = max(0, persuasion_pause_sources - 1)
+
+
+func is_temporarily_paused() -> bool:
+	return is_hover_paused or persuasion_pause_sources > 0
 
 
 func get_hover_title() -> String:
