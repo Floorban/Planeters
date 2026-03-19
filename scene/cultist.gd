@@ -12,6 +12,9 @@ func _handle_selected(is_selected: bool) -> void:
 
 
 func _handle_deselected() -> void:
+	if state == CharacterState.BEING_KILLED:
+		print("being killed")
+		return
 	is_hover_paused = false
 	state = CharacterState.LANDING
 	deselected.emit()

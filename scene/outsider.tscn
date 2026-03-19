@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dvceomfk1n7l3"]
 
-[ext_resource type="Script" path="res://scene/outsider.gd" id="1_k8rrn"]
+[ext_resource type="Script" uid="uid://b6wmfhgonecl1" path="res://scene/outsider.gd" id="1_k8rrn"]
 [ext_resource type="PackedScene" uid="uid://d28ro7rbb85ru" path="res://system/interaction/selectable_component.tscn" id="2_6k5wm"]
 [ext_resource type="Shader" uid="uid://benyoh88f818t" path="res://shader/selectable_shader.tres" id="3_6k5wm"]
 

@@ -7,18 +7,6 @@
 [ext_resource type="Resource" uid="uid://blwrvot5njip6" path="res://data/building_data/building_recruit_1.tres" id="5_v83te"]
 [ext_resource type="Resource" uid="uid://bw7t67teubqm3" path="res://data/building_data/building_sacrifice_1.tres" id="6_jivgv"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trash"]
-bg_color = Color(0.24705882, 0.1764706, 0.1764706, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.6313726, 0.2784314, 0.2784314, 1)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n877d"]
 size = Vector2(911, 289)
 
@@ -37,6 +25,18 @@ size_override = Vector2(320, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_jivgv"]
 atlas = SubResource("PortableCompressedTexture2D_v83te")
 region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trash"]
+bg_color = Color(0.24705882, 0.1764706, 0.1764706, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6313726, 0.2784314, 0.2784314, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="BuildingShopManager" type="Control" unique_id=1190280995]
 clip_contents = true
@@ -167,7 +167,7 @@ disabled = false
 texture_normal = SubResource("AtlasTexture_jivgv")
 building_data = ExtResource("6_jivgv")
 
-[node name="DiscardButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/BuildingPurchaseContainer"]
+[node name="DiscardButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/BuildingPurchaseContainer" unique_id=287528213]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(210, 100)
 layout_mode = 2
@@ -175,8 +175,8 @@ theme_override_colors/font_color = Color(1, 0.9019608, 0.9019608, 1)
 theme_override_fonts/font = ExtResource("3_3qf7m")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_trash")
-theme_override_styles/hover = SubResource("StyleBoxFlat_trash")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_trash")
+theme_override_styles/hover = SubResource("StyleBoxFlat_trash")
 text = "No Building In Hand"
 
 [editable path="SelectableComponent"]

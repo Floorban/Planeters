@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="BuildSlotEffect" format=3 uid="uid://ba1qxl1difmlw"]
+
+[ext_resource type="Script" uid="uid://xdab6h5e02qq" path="res://data/upgrade_effect/building_slot_capacity/build_slot_effect.gd" id="1_7r6ke"]
+
+[resource]
+script = ExtResource("1_7r6ke")
+metadata/_custom_type_script = "uid://xdab6h5e02qq"
