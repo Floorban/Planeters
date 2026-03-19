@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://c1vwhsfjae0kh"]
 
+[ext_resource type="Script" uid="uid://bjr4kgfsontho" path="res://system/building/building_shop_manager.gd" id="1_jivgv"]
 [ext_resource type="PackedScene" uid="uid://dbpm1lbps7b07" path="res://system/interaction/fade_in_out_component.tscn" id="1_wh0rx"]
 [ext_resource type="PackedScene" uid="uid://d28ro7rbb85ru" path="res://system/interaction/selectable_component.tscn" id="2_3qf7m"]
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="3_3qf7m"]
@@ -52,6 +53,7 @@ offset_top = -200.0
 offset_right = 570.0
 grow_horizontal = 2
 grow_vertical = 0
+script = ExtResource("1_jivgv")
 
 [node name="FadeInOutComponent" parent="." unique_id=124886435 node_paths=PackedStringArray("target") instance=ExtResource("1_wh0rx")]
 target = NodePath("..")

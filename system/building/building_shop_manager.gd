@@ -14,9 +14,11 @@ const DEFAULT_REWARD := "Recruiters bring outsiders, altars consume cultists, an
 
 var building_buttons: Array[BuildingButton] = []
 var focused_building_data: BuildingData
+@onready var fade_in_out_component: FadeInOutComponent = $FadeInOutComponent
 
 
 func _ready() -> void:
+	fade_in_out_component.can_close_callable = (func(): return not GameManager.building_manager.cur_building)
 	await get_tree().process_frame
 	if GameManager.stats_manager:
 		GameManager.stats_manager.stat_changed.connect(_on_stats_changed)

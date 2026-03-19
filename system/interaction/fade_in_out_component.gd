@@ -10,6 +10,7 @@ var panel_og_pos : Vector2
 @export var panel_unfolded_pos : Vector2
 var panel_tween: Tween
 
+var can_close_callable : Callable
 
 func _ready() -> void:
 	selectable_component.hover_change.connect(_on_panel_toggle)
@@ -33,6 +34,9 @@ func _open_panel() -> void:
 func _close_panel() -> void:
 	if not is_hovering:
 		return
+	if can_close_callable and not can_close_callable.call():
+		return
+
 	if panel_tween: panel_tween.kill()
 	panel_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
 	panel_tween.tween_property(target, "global_position", panel_og_pos +panel_folded_pos, 0.2)
