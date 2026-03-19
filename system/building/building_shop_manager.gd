@@ -18,6 +18,7 @@ var focused_building_data: BuildingData
 
 
 func _ready() -> void:
+	GameManager.building_shop = self
 	fade_in_out_component.can_close_callable = (func(): return not GameManager.building_manager.cur_building)
 	await get_tree().process_frame
 	if GameManager.stats_manager:

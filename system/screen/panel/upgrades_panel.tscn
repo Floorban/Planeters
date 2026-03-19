@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dd1fhbxpnmfs" path="res://asset/church.png" id="3_ty2sm"]
 [ext_resource type="Resource" uid="uid://bq51vnl7tdg1u" path="res://data/upgrade/bonus_production/task/upgrade_bonus_task_capacity_1.tres" id="4_06apo"]
 [ext_resource type="Resource" uid="uid://dvycc88ogb3i8" path="res://data/upgrade/building_slot/upgrade_build_slot.tres" id="4_8o6ja"]
-[ext_resource type="Resource" uid="uid://dtg8kdbihtld3" path="res://data/upgrade/cost/task/upgrade_less_church_cost_1.tres" id="5_7wgad"]
 [ext_resource type="Resource" uid="uid://ds2vjvc2lpntf" path="res://data/upgrade/bonus_production/task/upgrade_bonus_member_2.tres" id="6_aiiej"]
 [ext_resource type="Resource" uid="uid://dcs5y3xc0d0mm" path="res://data/upgrade/bonus_production/task/upgrade_bonus_sacrifice_reward_coin_1.tres" id="6_sl1cx"]
 [ext_resource type="Resource" uid="uid://bh62c6w1g18je" path="res://data/upgrade/cost/sim/upgrade_more_church_capacity_1.tres" id="6_w57fs"]
@@ -23,17 +22,19 @@
 [ext_resource type="Texture2D" uid="uid://bijpbkg0mxu3y" path="res://asset/TinyTomes_Atlas_16x16.png" id="9_kpkxp"]
 [ext_resource type="Resource" uid="uid://c30nopmcv3ksu" path="res://data/upgrade/cost/task/upgrade_more_sacrifice_cost_1.tres" id="10_0cq08"]
 [ext_resource type="Script" uid="uid://oiijucci5mx5" path="res://system/upgrades/upgrade_effect.gd" id="10_wj7va"]
-[ext_resource type="Script" uid="uid://by2eapd0unlmt" path="res://data/upgrade_effect/task_efficiency/task_efficiency_effect.gd" id="11_sl1cx"]
+[ext_resource type="Script" uid="uid://bpr8pmbpupgcn" path="res://data/upgrade_effect/building_efficiency/building_efficiency_effect.gd" id="11_build"]
 [ext_resource type="Resource" uid="uid://cutop18ww5dj4" path="res://data/upgrade/cost/task/upgrade_more_sacrifice_cost_2.tres" id="12_8o6ja"]
-[ext_resource type="Resource" uid="uid://d1b3tjc0uirwo" path="res://data/task/task_get_cult_member.tres" id="12_aaai4"]
 [ext_resource type="Script" uid="uid://emabm8r8bin6" path="res://system/upgrades/upgrade_data.gd" id="13_83uh7"]
 [ext_resource type="Resource" uid="uid://dlwjnv8ca4sps" path="res://data/stat/stat_soul.tres" id="13_wj7va"]
-[ext_resource type="Resource" uid="uid://brj8mr7wssnyd" path="res://data/upgrade/bonus_production/task/upgrade_bonus_task_capacity_2.tres" id="24_otpe7"]
 [ext_resource type="Resource" uid="uid://dm2bff7rj2q1a" path="res://data/upgrade/bonus_production/sim/upgrade_bonus_recruit_production_1.tres" id="29_o26fj"]
 [ext_resource type="Resource" uid="uid://00xtnc7252v5" path="res://data/upgrade/bonus_production/sim/upgrade_bonus_coin_production_1.tres" id="30_8o6ja"]
 [ext_resource type="Resource" uid="uid://pvyeflmci5y3" path="res://data/upgrade/bonus_production/sim/upgrade_bonus_recruit_production_2.tres" id="30_fyr88"]
 [ext_resource type="Resource" uid="uid://cp2254u8eytv5" path="res://data/upgrade/efficiency/sim/upgrade_bonus_coin_efficiency_1.tres" id="32_0cq08"]
 [ext_resource type="Resource" uid="uid://dh5g3te6m05uq" path="res://data/upgrade/efficiency/sim/upgrade_bonus_recruit_efficiency_1.tres" id="33_8o6ja"]
+[ext_resource type="Resource" uid="uid://d0ld7e8mhdjej" path="res://data/upgrade/world/upgrade_bonus_move_speed_1.tres" id="34_move1"]
+[ext_resource type="Resource" uid="uid://bvoeq75kehxrj" path="res://data/upgrade/world/upgrade_bonus_move_speed_2.tres" id="35_move2"]
+[ext_resource type="Resource" uid="uid://du2dktj2fof3a" path="res://data/upgrade/world/upgrade_bonus_trust_click_1.tres" id="36_trust1"]
+[ext_resource type="Resource" uid="uid://dhxt3d18f84j3" path="res://data/upgrade/world/upgrade_bonus_trust_click_2.tres" id="37_trust2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0h4f8"]
 atlas = ExtResource("9_kpkxp")
@@ -112,9 +113,9 @@ amount = 15.0
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [sub_resource type="Resource" id="Resource_1obvg"]
-script = ExtResource("11_sl1cx")
-task = ExtResource("12_aaai4")
-change_amount = -0.2
+script = ExtResource("11_build")
+building_type = 1
+change_amount = 0.35
 metadata/_custom_type_script = "uid://by2eapd0unlmt"
 
 [sub_resource type="Resource" id="Resource_aiiej"]
@@ -130,9 +131,21 @@ metadata/_custom_type_script = "uid://emabm8r8bin6"
 atlas = ExtResource("9_kpkxp")
 region = Rect2(48, 96, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_icon"]
+atlas = ExtResource("9_kpkxp")
+region = Rect2(32, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lx0ka"]
+atlas = ExtResource("9_kpkxp")
+region = Rect2(32, 80, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_dfgb6"]
 atlas = ExtResource("9_kpkxp")
-region = Rect2(64, 16, 16, 16)
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ls6o1"]
+atlas = ExtResource("9_kpkxp")
+region = Rect2(32, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_udx03"]
 atlas = ExtResource("9_kpkxp")
@@ -282,7 +295,7 @@ layout_mode = 0
 offset_top = 394.0
 offset_bottom = 494.0
 texture_normal = SubResource("AtlasTexture_o5qvc")
-upgrade = ExtResource("5_7wgad")
+upgrade = ExtResource("36_trust1")
 
 [node name="UpgradeButton1" parent="UpgradesHolder/UpgradeButton1/UpgradeButton3" unique_id=1471622816 instance=ExtResource("1_8ebph")]
 layout_mode = 0
@@ -340,8 +353,8 @@ upgrade = ExtResource("8_1jwj0")
 layout_mode = 0
 offset_top = -399.0
 offset_bottom = -299.0
-texture_normal = SubResource("AtlasTexture_dfgb6")
-upgrade = ExtResource("24_otpe7")
+texture_normal = SubResource("AtlasTexture_icon")
+upgrade = ExtResource("34_move1")
 
 [node name="UpgradeButton5" parent="UpgradesHolder/UpgradeButton1/UpgradeButton6" unique_id=953264648 instance=ExtResource("1_8ebph")]
 layout_mode = 0
@@ -349,8 +362,8 @@ offset_left = -324.0
 offset_top = -390.0
 offset_right = -224.0
 offset_bottom = -290.0
-texture_normal = SubResource("AtlasTexture_dfgb6")
-upgrade = ExtResource("24_otpe7")
+texture_normal = SubResource("AtlasTexture_lx0ka")
+upgrade = ExtResource("35_move2")
 
 [node name="UpgradeButton7" parent="UpgradesHolder/UpgradeButton1/UpgradeButton6" unique_id=1927284749 instance=ExtResource("1_8ebph")]
 layout_mode = 0
@@ -359,7 +372,16 @@ offset_top = -390.0
 offset_right = 415.0
 offset_bottom = -290.0
 texture_normal = SubResource("AtlasTexture_dfgb6")
-upgrade = ExtResource("24_otpe7")
+upgrade = ExtResource("36_trust1")
+
+[node name="UpgradeButton1" parent="UpgradesHolder/UpgradeButton1/UpgradeButton6/UpgradeButton7" unique_id=104000001 instance=ExtResource("1_8ebph")]
+layout_mode = 0
+offset_left = 316.0
+offset_top = -103.0
+offset_right = 416.0
+offset_bottom = -3.0
+texture_normal = SubResource("AtlasTexture_ls6o1")
+upgrade = ExtResource("37_trust2")
 
 [node name="UpgradeButton2" parent="UpgradesHolder" unique_id=1732551444 instance=ExtResource("1_8ebph")]
 layout_mode = 0

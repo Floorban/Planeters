@@ -38,11 +38,11 @@ func get_new_building(building_data: BuildingData) -> void:
 func place_building() -> void:
 	if not cur_building:
 		return
-	
 	cur_building.place_building()
 	cur_building.task_finished.connect(_on_task_finished)
 	cur_building.is_being_dragged = false
 	cur_building = null
+	GameManager.building_shop.fade_in_out_component._close_panel()
 	Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BUILD)
 
 
@@ -57,6 +57,11 @@ func discard_current_building() -> bool:
 
 @export var recruit_task : Task
 var task_scale_multipliers : Dictionary = {}
+var cooldown_efficiency_by_type := {
+	BuildingData.BuildingType.Recruit: 1.0,
+	BuildingData.BuildingType.Sacrifice: 1.0,
+	BuildingData.BuildingType.Build: 1.0,
+}
 
 
 func start_task(task : Task, building: Building) -> bool:
@@ -67,7 +72,8 @@ func start_task(task : Task, building: Building) -> bool:
 		if not dropped_character:
 			building.interact_failed()
 			return false
-		if not GameManager.world_manager.consume_selected_character_for_sacrifice(dropped_character):
+		var sacrifice_amount := _get_sacrifice_member_cost(task)
+		if not GameManager.world_manager.consume_characters_for_sacrifice(dropped_character, sacrifice_amount):
 			building.interact_failed()
 			return false
 		_pay_modified(task, GameManager.sim_manager.member_stat)
@@ -112,6 +118,13 @@ func _pay_modified(task: Task, ignored_stat: Stat = null):
 			Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.SACRIFICE)
 
 
+func _get_sacrifice_member_cost(task: Task) -> int:
+	for c in task.costs:
+		if c.stat == GameManager.sim_manager.member_stat:
+			return max(1, int(round(get_modified_cost(c, task))))
+	return 1
+
+
 func get_modified_cost(change: StatChange, task: Task) -> float:
 	var stat_mult = GameManager.stats_manager.get_cost_multiplier(change.stat)
 	var task_scale = task_scale_multipliers.get(task, 1.0)
@@ -122,6 +135,14 @@ func get_modified_reward(change: StatChange, task: Task) -> float:
 	var stat_mult = GameManager.stats_manager.get_reward_multiplier(change.stat)
 	var task_scale = task_scale_multipliers.get(task, 1.0)
 	return change.amount * stat_mult * task_scale
+
+
+func modify_building_cooldown_efficiency(building_type: BuildingData.BuildingType, amount: float) -> void:
+	cooldown_efficiency_by_type[building_type] = max(0.1, get_building_cooldown_efficiency(building_type) + amount)
+
+
+func get_building_cooldown_efficiency(building_type: BuildingData.BuildingType) -> float:
+	return cooldown_efficiency_by_type.get(building_type, 1.0)
 
 
 func _on_task_finished(task : Task) -> void:

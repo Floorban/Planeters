@@ -31,8 +31,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if is_on_cooldown and my_building:
 		cooldown_timer += delta
-		# divide by efficiency
-		var total_time_needed = cooldown_duration / slot_efficiency_multiplier
+		var total_time_needed = cooldown_duration / get_cooldown_speed_multiplier()
 		var progress_percent = clamp(cooldown_timer / total_time_needed, 0.0, 1.0)
 		my_building.set_cooldown_visuals(progress_percent, true)
 		if cooldown_timer >= total_time_needed:
@@ -52,7 +51,7 @@ func _start_interaction() -> void:
 	var did_start : bool = GameManager.building_manager.start_task(my_building.building_data.task, my_building)
 	if not did_start:
 		return
-	await my_building.interact_with_building()
+	await my_building.interact_with_building(get_cooldown_speed_multiplier())
 	is_on_cooldown = true
 	cooldown_timer = 0.0
 	if my_building.building_data:
@@ -89,7 +88,7 @@ func _on_slot_hovered(hovered: bool) -> void:
 		return
 	if my_building:
 		my_building.on_hovered(hovered)
-		my_building.set_cooldown_visuals(cooldown_timer / (cooldown_duration / slot_efficiency_multiplier), is_on_cooldown)
+		my_building.set_cooldown_visuals(cooldown_timer / (cooldown_duration / get_cooldown_speed_multiplier()), is_on_cooldown)
 		return
 	if not GameManager.building_manager.cur_building:
 		return
@@ -135,5 +134,12 @@ func set_locked(locked: bool) -> void:
 	if selectable_component:
 		selectable_component.monitoring = not locked
 		selectable_component.input_pickable = not locked
+
+
+func get_cooldown_speed_multiplier() -> float:
+	var speed_multiplier := slot_efficiency_multiplier
+	if my_building and my_building.building_data:
+		speed_multiplier *= GameManager.building_manager.get_building_cooldown_efficiency(my_building.building_data.building_type)
+	return max(0.05, speed_multiplier)
 	
 	

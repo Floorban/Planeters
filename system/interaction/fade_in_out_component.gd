@@ -32,8 +32,8 @@ func _open_panel() -> void:
 
 
 func _close_panel() -> void:
-	if not is_hovering:
-		return
+	#if not is_hovering:
+		#return
 	if can_close_callable and not can_close_callable.call():
 		return
 

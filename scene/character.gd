@@ -20,6 +20,7 @@ enum CharacterState {
 var move_speed := 0.0
 @export var walk_speed := 500.0
 @export var run_speed := 1000.0
+var speed_multiplier := 1.0
 
 var state : CharacterState = CharacterState.IDLE
 var target_position : Vector2
@@ -42,6 +43,12 @@ func _ready() -> void:
 	selectable_component.hover_change.connect(_on_character_hovered)
 	selectable_component.select.connect(_on_character_selected)
 	selectable_component.deselect.connect(_on_character_deselected)
+	if GameManager.world_manager:
+		set_speed_multiplier(GameManager.world_manager.character_speed_multiplier)
+
+
+func set_speed_multiplier(value: float) -> void:
+	speed_multiplier = max(0.1, value)
 
 
 func _on_character_hovered(is_hovered: bool) -> void:
@@ -146,8 +153,8 @@ func _move_to_target(delta):
 		character_sprite.play("idle")
 	else:
 		if global_position.distance_to(target_position) > run_distance:
-			move_speed = run_speed + randf_range(-50, 50)
+			move_speed = (run_speed * speed_multiplier) + randf_range(-50, 50)
 			character_sprite.play("run")
 		else:
-			move_speed = walk_speed + randf_range(-50, 50)
+			move_speed = (walk_speed * speed_multiplier) + randf_range(-50, 50)
 			character_sprite.play("walk")

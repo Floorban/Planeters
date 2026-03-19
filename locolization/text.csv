@@ -61,6 +61,14 @@ KEY_UDESC_FRENZY_1,Increase culting speed. The action speed of getting members b
 KEY_DESC_FRENZY_2,Increase culting speed. The action speed of getting members becomes much faster.,提升很多招募效率。招募信徒的准备时间大大大大的缩短。,
 KEY_DESC_BLOODLUST_1,Increase sacrificing speed. The action speed of sacrificing becomes faster.,加快献祭速度，不管白猫黑猫只要献祭了都是好猫,
 KEY_DESC_BLOODLUST_2,Increase sacrificing speed. The action speed of sacrificing becomes a lot faster.,献祭过程更加简化，打倒一切反对组织接近信仰的敌人,
+KEY_UPGRADE_FLEET_FOOTED_1,Fleet Footed I,疾步 I,
+KEY_UPGRADE_FLEET_FOOTED_2,Fleet Footed II,疾步 II,
+KEY_DESC_FLEET_FOOTED_1,Increase character move speed. Your cultists and visitors cross the church faster.,提升角色移动速度。教徒和访客会更快地穿过教堂。,
+KEY_DESC_FLEET_FOOTED_2,Increase character move speed even more. Nobody lingers when the cult has work to do.,进一步提升角色移动速度。教团一声令下，没人会再慢吞吞地走路。,
+KEY_UPGRADE_SOFT_WORDS_1,Soft Words I,巧言 I,
+KEY_UPGRADE_SOFT_WORDS_2,Soft Words II,巧言 II,
+KEY_DESC_SOFT_WORDS_1,Increase trust gained per click. Outsiders are easier to sway with each interaction.,提升每次点击获得的信任值。每次接触都更容易动摇局外人。,
+KEY_DESC_SOFT_WORDS_2,Increase trust gained per click even more. A few words now do the work of a sermon.,进一步提升每次点击获得的信任值。几句低语就能顶上一整场布道。,
 KEY_EVENT_DESC_1,"A patrol car has been idling outside your gates for nights.
 Provide a gift to the station to keep them moving.",一辆警车已经在正门外徘徊了数个夜晚。向警局提供一笔“治安捐款”以确保他们尽职地离开。,
 KEY_EVENT_DESC_2,"A new recruit is crying for their family.

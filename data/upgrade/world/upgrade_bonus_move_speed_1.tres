@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://d0ld7e8mhdjej"]
+
+[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_stat"]
+[ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_coin"]
+[ext_resource type="Script" uid="uid://oiijucci5mx5" path="res://system/upgrades/upgrade_effect.gd" id="3_effect"]
+[ext_resource type="Script" uid="uid://cyuuri65i4j7o" path="res://data/upgrade_effect/world/character_move_speed_effect.gd" id="4_world"]
+[ext_resource type="Script" uid="uid://emabm8r8bin6" path="res://system/upgrades/upgrade_data.gd" id="5_upgrade"]
+[ext_resource type="Texture2D" uid="uid://bijpbkg0mxu3y" path="res://asset/TinyTomes_Atlas_16x16.png" id="6_icon"]
+
+[sub_resource type="Resource" id="Resource_cost"]
+script = ExtResource("1_stat")
+stat = ExtResource("2_coin")
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_effect"]
+script = ExtResource("4_world")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icon"]
+atlas = ExtResource("6_icon")
+region = Rect2(32, 80, 16, 16)
+
+[resource]
+script = ExtResource("5_upgrade")
+upgrade_name = "KEY_UPGRADE_FLEET_FOOTED_1"
+upgrade_description = "KEY_DESC_FLEET_FOOTED_1"
+upgrade_icon = SubResource("AtlasTexture_icon")
+max_level = 1
+costs = Array[ExtResource("1_stat")]([SubResource("Resource_cost")])
+effects = Array[ExtResource("3_effect")]([SubResource("Resource_effect")])

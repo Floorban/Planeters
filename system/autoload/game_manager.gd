@@ -7,7 +7,9 @@ var sim_manager: SimulationManager
 var world_manager: WorldManager
 var event_manager: EventManager
 var building_manager: BuildingManager
+var building_shop: BuildingShopManager
 var overview: Overview
+
 
 func restart_game() -> void:
 	overview.reset_overview_labels()
