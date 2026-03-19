@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_gpv3j"]
 [ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_lw7md"]
-[ext_resource type="Resource" uid="uid://be706omug5uo3" path="res://data/stat/stat_church.tres" id="3_5dbxi"]
 [ext_resource type="Script" uid="uid://oiijucci5mx5" path="res://system/upgrades/upgrade_effect.gd" id="3_vgm5i"]
-[ext_resource type="Resource" uid="uid://dlwjnv8ca4sps" path="res://data/stat/stat_soul.tres" id="4_5dbxi"]
 [ext_resource type="Script" uid="uid://ccw2h7mnqdwft" path="res://data/upgrade_effect/cost/sacrifice_more_effect.gd" id="4_lw7md"]
 [ext_resource type="Script" uid="uid://emabm8r8bin6" path="res://system/upgrades/upgrade_data.gd" id="5_jsfuk"]
 [ext_resource type="Resource" uid="uid://bk2kqcxwgmm5i" path="res://data/task/task_sacrifice_cult_member.tres" id="5_vgm5i"]
@@ -13,19 +11,7 @@
 [sub_resource type="Resource" id="Resource_lw7md"]
 script = ExtResource("1_gpv3j")
 stat = ExtResource("2_lw7md")
-amount = 500.0
-metadata/_custom_type_script = "uid://bbx72fbwp681v"
-
-[sub_resource type="Resource" id="Resource_jsfuk"]
-script = ExtResource("1_gpv3j")
-stat = ExtResource("3_5dbxi")
-amount = 1.0
-metadata/_custom_type_script = "uid://bbx72fbwp681v"
-
-[sub_resource type="Resource" id="Resource_4a61g"]
-script = ExtResource("1_gpv3j")
-stat = ExtResource("4_5dbxi")
-amount = 50.0
+amount = 5.0
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [sub_resource type="Resource" id="Resource_vgm5i"]
@@ -44,6 +30,6 @@ upgrade_name = "KEY_UPGRADE_MASSACRE_2"
 upgrade_description = "KEY_DESC_MASSACRE_2"
 upgrade_icon = SubResource("AtlasTexture_8t5e1")
 max_level = 1
-costs = Array[ExtResource("1_gpv3j")]([SubResource("Resource_lw7md"), SubResource("Resource_jsfuk"), SubResource("Resource_4a61g")])
+costs = Array[ExtResource("1_gpv3j")]([SubResource("Resource_lw7md")])
 effects = Array[ExtResource("3_vgm5i")]([SubResource("Resource_vgm5i")])
 metadata/_custom_type_script = "uid://emabm8r8bin6"

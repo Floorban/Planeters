@@ -68,10 +68,11 @@ func start_task(task : Task, building: Building) -> bool:
 	if not building or not building.building_data:
 		return false
 	if building.building_data.building_type == BuildingData.BuildingType.Sacrifice:
-		var dropped_character = GameManager.world_manager.get_dragged_character_for_drop()
-		if not dropped_character:
+		var dragged_characters = GameManager.world_manager.get_dragged_characters_for_drop()
+		if dragged_characters.is_empty():
 			building.interact_failed()
 			return false
+		var dropped_character : Character = dragged_characters[0]
 		var sacrifice_amount := _get_sacrifice_member_cost(task)
 		if not GameManager.world_manager.consume_characters_for_sacrifice(dropped_character, sacrifice_amount):
 			building.interact_failed()

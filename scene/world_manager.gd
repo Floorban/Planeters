@@ -16,8 +16,8 @@ var character_speed_multiplier := 1.0
 var max_visible_cultists := 0
 var current_members := 0
 
-var cur_character : Character
-var last_released_character : Character
+var cur_characters: Array[Character] = []
+var last_released_characters: Array[Character] = []
 var building_slots: Array[BuildingSlot] = []
 @onready var hover_panel: CharacterHoverPanel = $CanvasLayer/CharacterHoverPanel
 
@@ -100,10 +100,17 @@ func get_random_church_position() -> Vector2:
 	return square_center.global_position + Vector2(randf_range(-230, 240),randf_range(-40, 150))
 
 
-func get_dragged_character_for_drop() -> Character:
-	if cur_character:
-		return cur_character
-	return last_released_character
+func get_dragged_characters_for_drop() -> Array[Character]:
+	var dragged: Array[Character] = []
+	for character in cur_characters:
+		if character and is_instance_valid(character):
+			dragged.append(character)
+	if not dragged.is_empty():
+		return dragged
+	for character in last_released_characters:
+		if character and is_instance_valid(character):
+			dragged.append(character)
+	return dragged
 
 
 func consume_selected_character_for_sacrifice(character: Character) -> bool:
@@ -119,7 +126,11 @@ func consume_characters_for_sacrifice(character: Character, amount: int) -> bool
 		return false
 	if cultists.size() < amount:
 		return false
-	var victims: Array[Character] = [character]
+	var victims := _get_dragged_cultists_for_sacrifice(amount)
+	if victims.is_empty():
+		victims.append(character)
+	elif not victims.has(character) and victims.size() < amount:
+		victims.append(character)
 	while victims.size() < amount:
 		var candidate : Cultist = cultists.pick_random()
 		if victims.has(candidate):
@@ -127,10 +138,7 @@ func consume_characters_for_sacrifice(character: Character, amount: int) -> bool
 		victims.append(candidate)
 	for victim in victims:
 		cultists.erase(victim)
-		if cur_character == victim:
-			cur_character = null
-		if last_released_character == victim:
-			last_released_character = null
+		_remove_dragged_character(victim)
 		victim.start_being_killed()
 	current_members = max(0, current_members - victims.size())
 	GameManager.stats_manager.spend_stat(GameManager.sim_manager.member_stat, victims.size())
@@ -157,8 +165,9 @@ func _refresh_building_slots() -> void:
 
 
 func _clear_released_character(character: Character) -> void:
-	if last_released_character == character and character.state != Character.CharacterState.BEING_KILLED:
-		last_released_character = null
+	if character.state == Character.CharacterState.BEING_KILLED:
+		return
+	last_released_characters.erase(character)
 
 
 func has_locked_building_slot() -> bool:
@@ -202,12 +211,14 @@ func _spawn_outsider() -> void:
 
 func _connect_cultist_signals(cultist: Cultist) -> void:
 	cultist.selected.connect(func():
-		cur_character = cultist
+		if not cur_characters.has(cultist):
+			cur_characters.append(cultist)
+		last_released_characters.erase(cultist)
 	)
 	cultist.deselected.connect(func():
-		if cur_character and cur_character == cultist:
-			cur_character = null
-		last_released_character = cultist
+		cur_characters.erase(cultist)
+		if not last_released_characters.has(cultist):
+			last_released_characters.append(cultist)
 		call_deferred("_clear_released_character", cultist)
 	)
 	cultist.hover_state_changed.connect(_on_character_hover_changed)
@@ -279,3 +290,21 @@ func modify_character_move_speed(amount: float) -> void:
 		cultist.set_speed_multiplier(character_speed_multiplier)
 	for outsider in outsiders:
 		outsider.set_speed_multiplier(character_speed_multiplier)
+
+
+func _get_dragged_cultists_for_sacrifice(amount: int) -> Array[Character]:
+	var victims: Array[Character] = []
+	for character in get_dragged_characters_for_drop():
+		if victims.size() >= amount:
+			break
+		if not (character is Cultist):
+			continue
+		if not cultists.has(character):
+			continue
+		victims.append(character)
+	return victims
+
+
+func _remove_dragged_character(character: Character) -> void:
+	cur_characters.erase(character)
+	last_released_characters.erase(character)

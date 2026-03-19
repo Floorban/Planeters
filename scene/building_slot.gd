@@ -117,8 +117,8 @@ func _on_slot_received() -> void:
 		return
 	if not my_building or my_building.building_data.building_type != BuildingData.BuildingType.Sacrifice:
 		return
-	var dropped_character = GameManager.world_manager.get_dragged_character_for_drop()
-	if not dropped_character:
+	var dropped_characters = GameManager.world_manager.get_dragged_characters_for_drop()
+	if dropped_characters.is_empty():
 		return
 	var held_building = GameManager.building_manager.cur_building
 	if my_building and not held_building:
