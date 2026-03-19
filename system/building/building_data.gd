@@ -18,8 +18,12 @@ enum BuildingType {
 @export var cooldown := 5.0
 
 func can_apply_effect() -> bool:
+	if building_type == BuildingType.Build:
+		return GameManager.world_manager != null and GameManager.world_manager.has_locked_building_slot()
 	return GameManager.building_manager.cur_building == null
 
 func apply_upgrade_effect(_current_level: int) -> void:
-	#Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.UPGRADE_PURCHASE)
+	if building_type == BuildingType.Build:
+		GameManager.world_manager.unlock_next_building_slot()
+		return
 	GameManager.building_manager.get_new_building(self)

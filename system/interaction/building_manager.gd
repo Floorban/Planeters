@@ -40,11 +40,19 @@ func place_building() -> void:
 		return
 	
 	cur_building.place_building()
-	cur_building.start_task_request.connect(start_task)
 	cur_building.task_finished.connect(_on_task_finished)
 	cur_building.is_being_dragged = false
 	cur_building = null
 	Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BUILD)
+
+
+func discard_current_building() -> bool:
+	if not cur_building:
+		return false
+	cur_building.queue_free()
+	cur_building = null
+	Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BTN_FAIL)
+	return true
 
 
 @export var recruit_task : Task
@@ -52,6 +60,18 @@ var task_scale_multipliers : Dictionary = {}
 
 
 func start_task(task : Task, building: Building) -> bool:
+	if not building or not building.building_data:
+		return false
+	if building.building_data.building_type == BuildingData.BuildingType.Sacrifice:
+		var dropped_character = GameManager.world_manager.get_dragged_character_for_drop()
+		if not dropped_character:
+			building.interact_failed()
+			return false
+		if not GameManager.world_manager.consume_selected_character_for_sacrifice(dropped_character):
+			building.interact_failed()
+			return false
+		_pay_modified(task, GameManager.sim_manager.member_stat)
+		return true
 	# block recruit if church is full
 	if task == recruit_task:
 		var members = GameManager.stats_manager.get_stat(GameManager.sim_manager.member_stat)
@@ -71,7 +91,7 @@ func start_task(task : Task, building: Building) -> bool:
 		
 	_pay_modified(task)
 	
-	return false
+	return true
 
 
 func _can_pay_modified(task: Task) -> bool:
@@ -83,8 +103,10 @@ func _can_pay_modified(task: Task) -> bool:
 	return true
 
 
-func _pay_modified(task: Task):
+func _pay_modified(task: Task, ignored_stat: Stat = null):
 	for c in task.costs:
+		if ignored_stat != null and c.stat == ignored_stat:
+			continue
 		GameManager.stats_manager.spend_stat(c.stat, get_modified_cost(c, task))
 		if c.stat == GameManager.sim_manager.member_stat:
 			Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.SACRIFICE)
@@ -107,6 +129,14 @@ func _on_task_finished(task : Task) -> void:
 	# when action is loading
 	# the rewward would be updated with the new upgrades
 	# even if the action starts before getting the upgrades
+	if task == recruit_task:
+		var outsider_amount := 1
+		for reward in task.rewards:
+			if reward.stat == GameManager.sim_manager.member_stat:
+				outsider_amount = max(1, int(round(get_modified_reward(reward, task))))
+				break
+		GameManager.world_manager.spawn_outsider_wave(outsider_amount)
+		return
 	_apply_task_rewards(task)
 
 

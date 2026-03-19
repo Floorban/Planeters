@@ -11,6 +11,7 @@ var cooldown_timer := 0.0
 var cooldown_duration := 5.0
 var is_on_cooldown := false
 var slot_efficiency_multiplier := 1.0 
+var is_locked := false
 
 
 func _ready() -> void:
@@ -46,8 +47,10 @@ func _finish_cooldown() -> void:
 
 
 func _start_interaction() -> void:
-	if not GameManager.stats_manager.can_pay(my_building.building_data.task.costs):
-		Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BTN_FAIL)
+	if not my_building:
+		return
+	var did_start : bool = GameManager.building_manager.start_task(my_building.building_data.task, my_building)
+	if not did_start:
 		return
 	await my_building.interact_with_building()
 	is_on_cooldown = true
@@ -82,6 +85,8 @@ func _switch_building(current_building: Building, held_building: Building):
 
 
 func _on_slot_hovered(hovered: bool) -> void:
+	if is_locked:
+		return
 	if my_building:
 		my_building.on_hovered(hovered)
 		my_building.set_cooldown_visuals(cooldown_timer / (cooldown_duration / slot_efficiency_multiplier), is_on_cooldown)
@@ -93,6 +98,8 @@ func _on_slot_hovered(hovered: bool) -> void:
 
 
 func _on_slot_selected(_selected: bool) -> void:
+	if is_locked:
+		return
 	var held_building = GameManager.building_manager.cur_building
 	if selectable_component.is_hovered and held_building:
 		if my_building:
@@ -107,7 +114,12 @@ func _on_slot_selected(_selected: bool) -> void:
 
 
 func _on_slot_received() -> void:
-	if not GameManager.world_manager.cur_character:
+	if is_locked:
+		return
+	if not my_building or my_building.building_data.building_type != BuildingData.BuildingType.Sacrifice:
+		return
+	var dropped_character = GameManager.world_manager.get_dragged_character_for_drop()
+	if not dropped_character:
 		return
 	var held_building = GameManager.building_manager.cur_building
 	if my_building and not held_building:
@@ -115,5 +127,13 @@ func _on_slot_received() -> void:
 			_start_interaction()
 		else:
 			print("building is still cooling down...")
+
+
+func set_locked(locked: bool) -> void:
+	is_locked = locked
+	visible = not locked
+	if selectable_component:
+		selectable_component.monitoring = not locked
+		selectable_component.input_pickable = not locked
 	
 	

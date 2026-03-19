@@ -4,6 +4,7 @@ extends TextureButton
 
 signal show_building_info(building_data: BuildingData)
 signal hide_building_info()
+signal purchase_requested(building_data: BuildingData)
 
 @export var building_data: BuildingData
 
@@ -25,10 +26,24 @@ func _on_mouse_exited() -> void:
 
 
 func _on_pressed() -> void:
-	if not GameManager.stats_manager.can_pay(building_data.costs):
-		Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BTN_FAIL)
-		return
+	purchase_requested.emit(building_data)
 
-	self_modulate = Color.LIGHT_GREEN
-	building_data.apply_upgrade_effect(0)
-	GameManager.stats_manager.pay_costs(building_data.costs)
+
+func refresh_visual_state(can_afford: bool, can_buy: bool, is_selected: bool) -> void:
+	disabled = false
+	if is_selected:
+		self_modulate = Color(0.93, 0.86, 0.42, 1.0)
+		mouse_default_cursor_shape = Control.CURSOR_ARROW
+		tooltip_text = "Currently placing this building"
+	elif can_buy and can_afford:
+		self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+		mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+		tooltip_text = "Buy and place this building"
+	elif not can_afford:
+		self_modulate = Color(0.65, 0.42, 0.42, 1.0)
+		mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN
+		tooltip_text = "You cannot afford this building yet"
+	else:
+		self_modulate = Color(0.55, 0.55, 0.55, 1.0)
+		mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN
+		tooltip_text = "Finish placing the current building first"

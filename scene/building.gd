@@ -5,7 +5,6 @@ const CAN_INTERACT_COLOR := Color(0.323, 0.716, 0.189, 1.0)
 const CANNOT_INTERACT_COLOR := Color(0.757, 0.0, 0.0, 1.0)
 const INTERACT_COLOR := Color(1.0, 1.0, 1.0, 1.0)
 
-signal start_task_request(task: Task, building: Building)
 signal task_finished(task : Task)
 
 var building_data: BuildingData
@@ -58,7 +57,6 @@ func place_building() -> void:
 
 
 func interact_with_building() -> void:
-	start_task_request.emit(building_data.task, self)
 	Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.UPGRADE_PURCHASE)
 	building_sprite.play("interact")
 	await building_sprite.animation_finished

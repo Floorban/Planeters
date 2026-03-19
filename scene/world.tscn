@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ddlighcxd3sq" path="res://scene/world_manager.gd" id="1_w4qq1"]
 [ext_resource type="PackedScene" uid="uid://cjwbyqd6pavch" path="res://scene/character.tscn" id="2_txmk2"]
+[ext_resource type="PackedScene" uid="uid://dvceomfk1n7l3" path="res://scene/outsider.tscn" id="3_82u7m"]
 [ext_resource type="Texture2D" uid="uid://cgep16e7b8pam" path="res://asset/church_assets/church Wip.png" id="3_m5mgf"]
 [ext_resource type="Resource" uid="uid://d1b3tjc0uirwo" path="res://data/task/task_get_cult_member.tres" id="4_7ghph"]
 [ext_resource type="Script" uid="uid://drenstg1av1xl" path="res://scene/dead_zone.gd" id="4_m5mgf"]
@@ -10,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://1ktvbleh6eme" path="res://scene/main_screen.tscn" id="10_7ghph"]
 [ext_resource type="Texture2D" uid="uid://dgnhfoel3y28t" path="res://asset/church_assets/CulticFloorTile.png" id="10_jsnws"]
 [ext_resource type="Script" uid="uid://6bj883f8j7nx" path="res://system/autoload/camera.gd" id="11_na5tu"]
+[ext_resource type="PackedScene" path="res://scene/character_hover_panel.tscn" id="12_hovr0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4qq1"]
 size = Vector2(474, 40)
@@ -27,9 +29,11 @@ fill_from = Vector2(0.5, 0.5)
 
 [node name="World" type="Node2D" unique_id=1319151852 node_paths=PackedStringArray("square_center", "exit_point")]
 script = ExtResource("1_w4qq1")
-character_scene = ExtResource("2_txmk2")
+cultist_scene = ExtResource("2_txmk2")
+outsider_scene = ExtResource("3_82u7m")
 square_center = NodePath("SqaureCenter")
 exit_point = NodePath("ExitPoint")
+max_visible_outsiders = 30
 max_max_visible_cultists = 1000
 
 [node name="BuildingManager" parent="." unique_id=1647197743 instance=ExtResource("9_yur6x")]
@@ -57,6 +61,18 @@ position = Vector2(-27, 10)
 
 [node name="BuildingSlot4" parent="Church/BuildingSlots" unique_id=608513256 instance=ExtResource("8_yur6x")]
 position = Vector2(-48, 10)
+
+[node name="BuildingSlot5" parent="Church/BuildingSlots" unique_id=872134112 instance=ExtResource("8_yur6x")]
+position = Vector2(80, 10)
+
+[node name="BuildingSlot6" parent="Church/BuildingSlots" unique_id=1261087743 instance=ExtResource("8_yur6x")]
+position = Vector2(-80, 10)
+
+[node name="BuildingSlot7" parent="Church/BuildingSlots" unique_id=1731865182 instance=ExtResource("8_yur6x")]
+position = Vector2(110, 10)
+
+[node name="BuildingSlot8" parent="Church/BuildingSlots" unique_id=1258922241 instance=ExtResource("8_yur6x")]
+position = Vector2(-110, 10)
 
 [node name="SqaureCenter" type="Marker2D" parent="." unique_id=829838975]
 position = Vector2(-1, 53)
@@ -131,5 +147,7 @@ script = ExtResource("11_na5tu")
 metadata/_custom_type_script = "uid://6bj883f8j7nx"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=507732146]
+
+[node name="CharacterHoverPanel" parent="CanvasLayer" unique_id=2143309417 instance=ExtResource("12_hovr0")]
 
 [node name="MainScreen" parent="CanvasLayer" unique_id=1745498329 instance=ExtResource("10_7ghph")]

@@ -1,6 +1,7 @@
 class_name Character
 extends CharacterBody2D
 
+signal hover_state_changed(character: Character, hovered: bool)
 signal selected()
 signal deselected()
 
@@ -24,6 +25,7 @@ var state : CharacterState = CharacterState.IDLE
 var target_position : Vector2
 var stop_distance := 5
 var run_distance := 80
+var is_hover_paused := false
 
 var wander_timer := 0.0
 
@@ -45,21 +47,24 @@ func _ready() -> void:
 func _on_character_hovered(is_hovered: bool) -> void:
 	var mode = 1 if is_hovered else 0
 	sprite_material.set_shader_parameter("outline_mode", mode)
+	is_hover_paused = is_hovered
+	hover_state_changed.emit(self, is_hovered)
 
 
 func _on_character_selected(is_selected: bool) -> void:
-	state = CharacterState.BEING_DRAGGED
-	selected.emit()
-	character_sprite.play("hang")
-	character_hang()
+	_handle_selected(is_selected)
 
 
 func _on_character_deselected() -> void:
-	state = CharacterState.LANDING
-	deselected.emit()
-	character_sprite.play("land")
-	await character_land()
-	state = CharacterState.WANDERING
+	_handle_deselected()
+
+
+func _handle_selected(_is_selected: bool) -> void:
+	pass
+
+
+func _handle_deselected() -> void:
+	pass
 
 
 var land_tween : Tween
@@ -86,6 +91,10 @@ func character_land() -> Signal:
 
 
 func _process(delta):
+	if is_hover_paused and state != CharacterState.BEING_DRAGGED and state != CharacterState.BEING_KILLED and state != CharacterState.DEAD:
+		if state != CharacterState.BEING_KILLED and state != CharacterState.DEAD:
+			character_sprite.play("idle")
+		return
 	if state == CharacterState.IDLE:
 		wander_timer -= delta
 
@@ -99,6 +108,9 @@ func _process(delta):
 
 
 func _physics_process(delta):
+	if is_hover_paused and state != CharacterState.BEING_DRAGGED and state != CharacterState.BEING_KILLED and state != CharacterState.DEAD:
+		velocity = Vector2.ZERO
+		return
 	match state:
 		CharacterState.BEING_KILLED:
 			character_sprite.play("die")
@@ -109,6 +121,18 @@ func _physics_process(delta):
 			_move_to_target(delta)
 		CharacterState.ESCAPING:
 			_move_to_target(delta)
+
+
+func start_being_killed() -> void:
+	state = CharacterState.BEING_KILLED
+
+
+func get_hover_title() -> String:
+	return "Character"
+
+
+func get_hover_lines() -> Array[String]:
+	return []
 
 
 func _move_to_target(delta):

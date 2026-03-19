@@ -1,6 +1,6 @@
-[gd_scene format=4 uid="uid://cjwbyqd6pavch"]
+[gd_scene format=4 uid="uid://dvceomfk1n7l3"]
 
-[ext_resource type="Script" uid="uid://xujnhpf3yuac" path="res://scene/cultist.gd" id="1_k8rrn"]
+[ext_resource type="Script" path="res://scene/outsider.gd" id="1_k8rrn"]
 [ext_resource type="PackedScene" uid="uid://d28ro7rbb85ru" path="res://system/interaction/selectable_component.tscn" id="2_6k5wm"]
 [ext_resource type="Shader" uid="uid://benyoh88f818t" path="res://shader/selectable_shader.tres" id="3_6k5wm"]
 
@@ -227,7 +227,7 @@ animations = [{
 "speed": 4.0
 }]
 
-[node name="Character" type="CharacterBody2D" unique_id=1617641724]
+[node name="Outsider" type="CharacterBody2D" unique_id=1617641724]
 z_index = 2
 texture_filter = 1
 script = ExtResource("1_k8rrn")
@@ -241,13 +241,11 @@ shape = SubResource("RectangleShape2D_7v2w7")
 
 [node name="CharacterSprite" type="AnimatedSprite2D" parent="." unique_id=151410775]
 unique_name_in_owner = true
-modulate = Color(0, 0, 0, 1)
+modulate = Color(0.78, 0.74, 0.7, 1)
 texture_filter = 1
 material = SubResource("ShaderMaterial_7v2w7")
 sprite_frames = SubResource("SpriteFrames_ckk4y")
 animation = &"land"
-frame = 3
-frame_progress = 1.0
 metadata/_aseprite_wizard_interface_config_ = {
 "animation_section": false,
 "layer_section": false,
