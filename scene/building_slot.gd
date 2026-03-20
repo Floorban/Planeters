@@ -15,6 +15,7 @@ var slot_efficiency_multiplier := 1.0
 var is_locked := false
 var auto_sacrifice_queue: Array[Cultist] = []
 
+@export var is_static := false
 
 func _ready() -> void:
 	selectable_component.hover_change.connect(_on_slot_hovered)
@@ -22,6 +23,8 @@ func _ready() -> void:
 	selectable_component.deselect.connect(_on_slot_received)
 	selectable_component.right_select.connect(
 	func():
+		if is_static:
+			return
 		_on_remove_building(my_building)
 		my_building = null
 	)
@@ -85,6 +88,8 @@ func _on_remove_building(building_to_remove: Building) -> void:
 
 
 func _switch_building(current_building: Building, held_building: Building):
+	if is_static:
+		return
 	_place_new_building(held_building)
 	_on_remove_building(current_building)
 
@@ -115,7 +120,7 @@ func _on_slot_selected(_selected: bool) -> void:
 		if not is_on_cooldown:
 			_start_interaction()
 		else:
-			print("building is still cooling down...")
+			my_building.interact_failed()
 
 
 func _on_slot_received() -> void:
@@ -131,7 +136,7 @@ func _on_slot_received() -> void:
 		if not is_on_cooldown:
 			_start_interaction()
 		else:
-			print("building is still cooling down...")
+			my_building.interact_failed()
 
 
 func set_locked(locked: bool) -> void:

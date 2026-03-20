@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d28ro7rbb85ru" path="res://system/interaction/selectable_component.tscn" id="4_l3vv8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l3vv8"]
+size = Vector2(18, 24)
 
 [node name="BuildingSlot" type="Node2D" unique_id=881597922]
 script = ExtResource("1_lqmyk")

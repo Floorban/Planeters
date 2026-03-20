@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://bkfq0h2xv63x8"]
+
+[ext_resource type="Script" uid="uid://bbx72fbwp681v" path="res://system/stats/stat_change.gd" id="1_hdwr0"]
+[ext_resource type="Script" uid="uid://bvtoak0gtag3" path="res://system/building/building_data.gd" id="2_c01ge"]
+[ext_resource type="Resource" uid="uid://d1b3tjc0uirwo" path="res://data/task/task_get_cult_member.tres" id="3_ha5ag"]
+[ext_resource type="SpriteFrames" uid="uid://bvuvo0kdeydg" path="res://data/building_data/sprite_frame/door_sprite_frames.tres" id="4_hdwr0"]
+
+[resource]
+script = ExtResource("2_c01ge")
+building_type = 5
+texture_frames = ExtResource("4_hdwr0")
+fill_start = 0.25
+fill_end = 0.62
+task = ExtResource("3_ha5ag")
+metadata/_custom_type_script = "uid://bvtoak0gtag3"

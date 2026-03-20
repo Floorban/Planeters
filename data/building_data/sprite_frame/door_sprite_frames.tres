@@ -1,39 +1,48 @@
-[gd_resource type="SpriteFrames" format=3 uid="uid://bvuvo0kdeydg"]
+[gd_resource type="SpriteFrames" format=4 uid="uid://bvuvo0kdeydg"]
 
-[ext_resource type="Texture2D" uid="uid://bghy36snh37ob" path="res://asset/church_assets/door_Sheet.png" id="1_jbx0f"]
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_8eyry"]
+_data = PackedByteArray("AAADAAUAAAABAAAAQAEAAEAAAAC4BAAAUklGRrAEAABXRUJQVlA4TKQEAAAvP8EPEIUs27bbtvE8UkiKJOoj0VgsqtfU+c8HWvi7UHqBbNt22iZLiZXnR3qWDDEFyszM7Szt//9NBxIkyW0jiQAa3QDX3P+f6U+WnH9HbttIEnuWq22kP/EyGX74nv/++78lirflaTn/7szNzM2tLzVRQVISFURP3Hs4AJ61FuSZe1cipdSS+jvr1QI15QK1Ii6IKxUQgzAML4r3hyQ3CnMTc/PjyaT3k+5eIlUkK9WV9KKp4WSUDb4veh20jrUMtDKAsEpTFQzi6el4+T5GaW7QN5FLb/zuGA1SiVznytP3dp+Xz7/9Buvq45s4vzddGdYKECGBVb4c2vvNz+eHZ5TmBv4zN+fS+yl3XzE1RILYKhvE+OZN68wle/XEsWVcGZVxQhjKMLX+fnpe9v/XOEbA3MxNqWx6P+PuNdOKmTG7hJdDG9+8cDAOg7VN1Amr1Ms410UDIDM2uddq39dHDf7z1zEC5hZemJsT2fTG745QEzWiUjVeTnzzxjGOjRWVtqatMA+VSQGYYSCzPLBC3P89m5ojZO5UNr3xuyN0c6iRyWy8nGX///PlcanPulhX5hv1MovdLBMlAE/mPNl54NP2bSU+IHOnsumN3x2hn9nzZJeIPLBC1OA1jkpqG+eljHPlvfqOolFGxO6aKIvdxDEUK9ccIXOnsumN3x1Bp9w1cbn0X1/30/a9/3t+/joOP/dPP/cvH+fL43O9H4eOjSoitpz6ufVjvc5HZ7aIETJ3Kpve+N0RWI5y6ju18XKsxKbm155ZEXWFMnmV2y7zdZ4Rsa1Fd+rn7vr14sz7GiFzp7Lpjd8dYf5/WosjrvFyQrGK+Wc73g189fTd0I9WP9pQe1FE7NCttzv1/ToNo8IeIXOnsumN3x3Ble/QrfFwxqPzfHTmmsPR1YSvU/fZ7cx2/GrqzzZEROzDzugQG81+Pz4gc6ey6Y3fHWFc2cPOGA/nfrV+vTizRfz48q/r/P1yPb2t6+Pdd9YFj4hNKZPpvsPNkeV1jZC5U9n0xu+OoPxIKTvERrMfeBpG3tfzz99L75uGKWRpypNyZURsz2xVpxY3Z7tMNULmTmXTG787Aql6ZjLdd+j3o19eFfZljT1Uh+yYrTFZtoyI2NqjU103cTldN9FHyNypbHrjd0cgzNqjVZ1a3BzZ3d5VWN8c20m7Ee2FiTMxBsqI2GGOzuq2iesq9i5HyNypbHrjd0fokcMcneq6iZuz/bh/5XU93r5l6MaqEe4RiXBgRsQegjplYV1D3G33CJk7lU1v/O4IneoQNB7Ocroedp4y1cvNteXuRL2wkUySR1ZEbAu7gJmyun8Ztd8jZO5UNr3xuyN0YC3sTllYX1dxE33V1esGq4Ah7yavSpSMDWVEbIE9LDRsmGB/7I7MncqmN353BE4qsAuYKasaYu8y57mtushVZ56cJRclIOeMiD0Ya58VRObmB2TuVDa98bsjEONgHA9n/zLutvvp5326PS9H1rZoy9yl3sXeY0bE5pzT3b8ZufG7IwhGzln7rCAS7NrvikfNmetH8l5Po5pFPYsqiwAiJ+bm1Dcjdwa7//A9//33C9vLZAA=")
+size_override = Vector2(320, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a0bac"]
-atlas = ExtResource("1_jbx0f")
+[sub_resource type="AtlasTexture" id="AtlasTexture_gl3d0"]
+atlas = SubResource("PortableCompressedTexture2D_8eyry")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tmyho"]
-atlas = ExtResource("1_jbx0f")
+[sub_resource type="AtlasTexture" id="AtlasTexture_miva3"]
+atlas = SubResource("PortableCompressedTexture2D_8eyry")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hnm4a"]
-atlas = ExtResource("1_jbx0f")
+[sub_resource type="AtlasTexture" id="AtlasTexture_vob50"]
+atlas = SubResource("PortableCompressedTexture2D_8eyry")
 region = Rect2(128, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e4vd1"]
-atlas = ExtResource("1_jbx0f")
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8111"]
+atlas = SubResource("PortableCompressedTexture2D_8eyry")
 region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_840tp"]
+atlas = SubResource("PortableCompressedTexture2D_8eyry")
+region = Rect2(256, 0, 64, 64)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_a0bac")
+"texture": SubResource("AtlasTexture_gl3d0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tmyho")
+"texture": SubResource("AtlasTexture_miva3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hnm4a")
+"texture": SubResource("AtlasTexture_vob50")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_e4vd1")
+"texture": SubResource("AtlasTexture_i8111")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_840tp")
 }],
-"loop": true,
-"name": &"default",
-"speed": 5.0
+"loop": false,
+"name": &"interact",
+"speed": 10.0
 }]

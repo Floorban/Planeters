@@ -276,6 +276,7 @@ func _transform_outsider_to_cultists(outsider: Outsider, amount: int) -> void:
 		cultist._handle_deselected()
 		cultist.walk_speed += 50
 		cultist.run_speed += 50
+		cultist.z_index += 1
 		cultists.append(cultist)
 	current_members += amount
 

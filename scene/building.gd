@@ -1,3 +1,4 @@
+@tool
 class_name Building
 extends Node2D
 
@@ -7,7 +8,7 @@ const INTERACT_COLOR := Color(1.0, 1.0, 1.0, 1.0)
 
 signal task_finished(task : Task)
 
-var building_data: BuildingData
+@export var building_data: BuildingData
 @onready var building_sprite: AnimatedSprite2D = %BuildingSprite
 @onready var sprite_material : ShaderMaterial = building_sprite.material
 
@@ -16,6 +17,8 @@ var is_hovered := false
 
 
 func _ready() -> void:
+	if building_data:
+		init_building(building_data)
 	if building_sprite and sprite_material:
 		building_sprite.material = sprite_material.duplicate()
 		sprite_material = building_sprite.material
@@ -57,7 +60,7 @@ func place_building() -> void:
 
 
 func interact_with_building(speed_scale: float = 1.0) -> void:
-	Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.UPGRADE_PURCHASE)
+	Audio.create_audio(building_data.interaction_sfx)
 	building_sprite.speed_scale = max(0.1, speed_scale)
 	building_sprite.play("interact")
 	await building_sprite.animation_finished
