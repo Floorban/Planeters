@@ -40,6 +40,7 @@ func _process(delta: float) -> void:
 func _physics_process(delta):
 	if is_temporarily_paused():
 		velocity = Vector2.ZERO
+		character_sprite.play("idle")
 		return
 	super._physics_process(delta)
 

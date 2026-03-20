@@ -27,8 +27,8 @@ var speed_multiplier := 1.0
 
 var state : CharacterState = CharacterState.IDLE
 var target_position : Vector2
-var stop_distance := 5
-var run_distance := 80
+var stop_distance := 10
+var run_distance := 30
 var is_hover_paused := false
 
 var wander_timer := 0.0
@@ -97,7 +97,7 @@ func character_hang() -> void:
 	land_tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	var target_pos := position - Vector2(0, 5)
 	land_tween.tween_property(self, "position", target_pos, 0.05)
-	land_tween.parallel().tween_property(sprite_material, "shader_parameter/shadow_dist", 5.0, 0.1)
+	land_tween.parallel().tween_property(sprite_material, "shader_parameter/shadow_dist", 10.0, 0.1)
 
 
 func character_land() -> Signal:

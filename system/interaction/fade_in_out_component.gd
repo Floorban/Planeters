@@ -2,7 +2,6 @@ class_name FadeInOutComponent
 extends Node
 
 @export var target : Node
-@onready var selectable_component: SelectableComponent = %SelectableComponent
 
 var is_hovering := false
 var panel_og_pos : Vector2
@@ -13,7 +12,6 @@ var panel_tween: Tween
 var can_close_callable : Callable
 
 func _ready() -> void:
-	selectable_component.hover_change.connect(_on_panel_toggle)
 	panel_og_pos = target.global_position
 
 

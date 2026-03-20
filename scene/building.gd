@@ -60,7 +60,7 @@ func place_building() -> void:
 
 
 func interact_with_building(speed_scale: float = 1.0) -> void:
-	Audio.create_audio(building_data.interaction_sfx)
+	building_data.apply_effects()
 	building_sprite.speed_scale = max(0.1, speed_scale)
 	building_sprite.play("interact")
 	await building_sprite.animation_finished

@@ -8,11 +8,16 @@ var world_manager: WorldManager
 var event_manager: EventManager
 var building_manager: BuildingManager
 var building_shop: BuildingShopManager
-var overview: Overview
+var panel_manager: PanelManager
+
+
+func toggle_upgrades_panel() -> void:
+	check_game_state(not is_paused)
+	panel_manager.fade_in_out_component._on_panel_toggle(is_paused)
 
 
 func restart_game() -> void:
-	overview.reset_overview_labels()
+	panel_manager.overview_panel.reset_overview_labels()
 	event_manager.reset_event_manager()
 
 

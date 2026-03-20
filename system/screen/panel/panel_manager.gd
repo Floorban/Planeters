@@ -7,9 +7,16 @@ var sub_panels : Array[SubPanel]
 var tab_btns: Array[TabBtn]
 var tab_group := ButtonGroup.new()
 
+@onready var fade_in_out_component: FadeInOutComponent = %FadeInOutComponent
+
+@onready var overview_panel: Overview = $OverviewPanel
+@onready var upgrades_panel: UpgradesManager = $UpgradesManager
+
 
 func _ready() -> void:
+	GameManager.panel_manager = self
 	_init_sub_panels()
+	fade_in_out_component._on_panel_toggle(false)
 
 
 func _init_sub_panels() -> void:

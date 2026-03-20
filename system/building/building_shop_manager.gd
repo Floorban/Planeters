@@ -14,10 +14,13 @@ const DEFAULT_REWARD := "Recruiters bring outsiders, altars consume cultists, an
 
 var building_buttons: Array[BuildingButton] = []
 var focused_building_data: BuildingData
-@onready var fade_in_out_component: FadeInOutComponent = $FadeInOutComponent
 
+@onready var fade_in_out_component: FadeInOutComponent = $FadeInOutComponent
+@onready var selectable_component: SelectableComponent = %SelectableComponent
 
 func _ready() -> void:
+	selectable_component.hover_change.connect(fade_in_out_component._on_panel_toggle)
+
 	GameManager.building_shop = self
 	fade_in_out_component.can_close_callable = (func(): return not GameManager.building_manager.cur_building)
 	await get_tree().process_frame
@@ -77,7 +80,8 @@ func _on_purchase_requested(building_data: BuildingData) -> void:
 		_refresh_buttons()
 		return
 
-	building_data.apply_upgrade_effect(0)
+	#building_data.apply_upgrade_effect(0)
+	GameManager.building_manager.get_new_building(building_data)
 	GameManager.stats_manager.pay_costs(building_data.costs)
 	focused_building_data = building_data
 	_apply_building_info(building_data, "Building purchased. Place it on an open slot.")

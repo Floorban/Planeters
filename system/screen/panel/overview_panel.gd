@@ -21,7 +21,6 @@ var lifetime := 0.0
 
 
 func _ready() -> void:
-	GameManager.overview = self
 	$TextureRect.size /= $TextureRect.scale
 
 
