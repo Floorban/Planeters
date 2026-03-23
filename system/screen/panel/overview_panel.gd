@@ -20,10 +20,6 @@ var lifetime := 0.0
 @export var tween_ease := Tween.EASE_OUT
 
 
-func _ready() -> void:
-	$TextureRect.size /= $TextureRect.scale
-
-
 func reset_overview_labels() -> void:
 	set_member_label(-member)
 	set_revenue_label(-revenue)

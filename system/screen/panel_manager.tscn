@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b1b5kvlcgcely" path="res://system/screen/panel/panel_manager.gd" id="1_gdews"]
 [ext_resource type="PackedScene" uid="uid://cl11d77lbfnnt" path="res://system/screen/panel/overview_panel.tscn" id="2_ktfpp"]
+[ext_resource type="Texture2D" uid="uid://c2p4tb2ytqor2" path="res://asset/ui/uiPanelSprites/uiPanel_Fancy.png" id="2_qnfao"]
 [ext_resource type="PackedScene" uid="uid://kseiabufssdw" path="res://system/screen/panel/upgrades_manager.tscn" id="3_7k07d"]
 [ext_resource type="PackedScene" uid="uid://cntb8wqbeiybl" path="res://system/screen/panel/task_manager.tscn" id="4_ne37k"]
 [ext_resource type="PackedScene" uid="uid://drk220wxciily" path="res://system/screen/button/tab_button.tscn" id="5_hbfx4"]
@@ -14,7 +15,7 @@
 size = Vector2(706, 1106)
 
 [node name="PanelManager" type="Control" unique_id=1503756686]
-custom_minimum_size = Vector2(600, 0)
+custom_minimum_size = Vector2(650, 0)
 layout_mode = 3
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -22,10 +23,29 @@ offset_right = 600.0
 grow_vertical = 2
 script = ExtResource("1_gdews")
 
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1760854933]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_right = 40
+
+[node name="TextureRect" type="NinePatchRect" parent="MarginContainer" unique_id=1078694236]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_qnfao")
+region_rect = Rect2(12, 12, 40, 40)
+patch_margin_left = 18
+patch_margin_top = 18
+patch_margin_right = 18
+patch_margin_bottom = 18
+
 [node name="FadeInOutComponent" parent="." unique_id=124886435 node_paths=PackedStringArray("target") instance=ExtResource("9_hbfx4")]
 unique_name_in_owner = true
 target = NodePath("..")
-panel_folded_pos = Vector2(-600, 0)
+panel_folded_pos = Vector2(-660, 0)
 
 [node name="SelectableComponent" parent="." unique_id=480340802 instance=ExtResource("6_ktfpp")]
 unique_name_in_owner = true
@@ -73,8 +93,8 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -30.0
-offset_right = 5.0
+offset_left = -40.0
+offset_right = -5.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_constants/separation = 16

@@ -55,7 +55,7 @@ region = Rect2(64, 96, 16, 16)
 atlas = ExtResource("9_kpkxp")
 region = Rect2(48, 48, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ylsh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_er2xe"]
 atlas = ExtResource("9_kpkxp")
 region = Rect2(0, 32, 16, 16)
 
@@ -138,10 +138,6 @@ region = Rect2(32, 80, 16, 16)
 atlas = ExtResource("9_kpkxp")
 region = Rect2(32, 32, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_er2xe"]
-atlas = ExtResource("9_kpkxp")
-region = Rect2(0, 32, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_udx03"]
 atlas = ExtResource("9_kpkxp")
 region = Rect2(0, 80, 16, 16)
@@ -162,13 +158,13 @@ region = Rect2(0, 48, 16, 16)
 atlas = ExtResource("9_kpkxp")
 region = Rect2(64, 32, 16, 16)
 
-[node name="UpgradesPanel" type="ColorRect" unique_id=378376900]
+[node name="UpgradesPanel" type="Control" unique_id=1516293402]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.5106012, 0.5106013, 0.5106011, 0.64705884)
 script = ExtResource("1_xuksn")
 
 [node name="UpgradesHolder" type="Control" parent="." unique_id=1495249901]
@@ -239,7 +235,7 @@ upgrade = ExtResource("12_8o6ja")
 layout_mode = 0
 offset_top = -407.0
 offset_bottom = -307.0
-texture_normal = SubResource("AtlasTexture_4ylsh")
+texture_normal = SubResource("AtlasTexture_er2xe")
 upgrade = ExtResource("38_auto")
 
 [node name="UpgradeButton1" parent="UpgradesHolder/UpgradeButton1/UpgradeButton2/UpgradeButton1" unique_id=851942572 instance=ExtResource("1_8ebph")]
