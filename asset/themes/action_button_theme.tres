@@ -5,8 +5,8 @@
 [ext_resource type="StyleBox" uid="uid://ci2i0cmt201uy" path="res://asset/themes/button_normal.tres" id="2_wx5kd"]
 [ext_resource type="StyleBox" uid="uid://bklaxsbl7axv4" path="res://asset/themes/button_hovered.tres" id="3_b88hp"]
 [ext_resource type="StyleBox" uid="uid://ddg85mpw7121d" path="res://asset/themes/button_pressed.tres" id="4_1ji6b"]
-[ext_resource type="StyleBox" uid="uid://co5hdq4dkb3t5" path="res://asset/ui/uiPanelSprites/panel_main.tres" id="6_mebhk"]
-[ext_resource type="StyleBox" uid="uid://hvw5l8462wdc" path="res://asset/ui/uiPanelSprites/panel_sub.tres" id="7_wuuwc"]
+[ext_resource type="StyleBox" path="res://asset/ui/uiPanelSprites/panel_main.tres" id="6_mebhk"]
+[ext_resource type="StyleBox" path="res://asset/ui/uiPanelSprites/panel_sub.tres" id="7_wuuwc"]
 
 [resource]
 Button/colors/font_color = Color(0.62319297, 0.5457716, 0.45431912, 1)
