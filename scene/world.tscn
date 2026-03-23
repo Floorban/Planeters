@@ -187,8 +187,8 @@ shadow_filter = 2
 texture = SubResource("GradientTexture2D_m5mgf")
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1411148121]
-position = Vector2(0, 53)
-zoom = Vector2(5, 5)
+position = Vector2(0, 73)
+zoom = Vector2(4, 4)
 script = ExtResource("11_na5tu")
 metadata/_custom_type_script = "uid://6bj883f8j7nx"
 

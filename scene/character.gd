@@ -27,7 +27,7 @@ var speed_multiplier := 1.0
 
 var state : CharacterState = CharacterState.IDLE
 var target_position : Vector2
-var stop_distance := 10
+var stop_distance := 5
 var run_distance := 30
 var is_hover_paused := false
 

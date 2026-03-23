@@ -4,6 +4,7 @@ extends Node
 @export var target : Node
 
 var is_hovering := false
+var is_opened := false
 var panel_og_pos : Vector2
 @export var panel_folded_pos : Vector2
 @export var panel_unfolded_pos : Vector2
@@ -27,6 +28,7 @@ func _open_panel() -> void:
 	if panel_tween: panel_tween.kill()
 	panel_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
 	panel_tween.tween_property(target, "global_position", panel_og_pos + panel_unfolded_pos, 0.3)
+	is_opened = true
 
 
 func _close_panel() -> void:
@@ -40,3 +42,4 @@ func _close_panel() -> void:
 	panel_tween.tween_property(target, "global_position", panel_og_pos +panel_folded_pos, 0.2)
 	
 	panel_tween.tween_callback(func(): target.global_position = panel_og_pos + panel_folded_pos)
+	is_opened = false

@@ -19,6 +19,13 @@ func _ready() -> void:
 	fade_in_out_component._on_panel_toggle(false)
 
 
+func _input(event: InputEvent) -> void:
+	if fade_in_out_component.is_opened and event.is_action_pressed("left_click"):
+		var panel_rect = get_global_rect()
+		if not panel_rect.has_point(get_global_mouse_position()):
+			GameManager.toggle_upgrades_panel()
+
+
 func _init_sub_panels() -> void:
 	sub_panels.clear()
 	for c in get_children():

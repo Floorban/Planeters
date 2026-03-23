@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://xujnhpf3yuac" path="res://scene/cultist.gd" id="1_k8rrn"]
 [ext_resource type="PackedScene" uid="uid://d28ro7rbb85ru" path="res://system/interaction/selectable_component.tscn" id="2_6k5wm"]
-[ext_resource type="Shader" uid="uid://benyoh88f818t" path="res://shader/selectable_shader.tres" id="3_6k5wm"]
+[ext_resource type="Shader" uid="uid://benyoh88f818t" path="res://asset/material/selectable_shader.tres" id="3_6k5wm"]
 [ext_resource type="SpriteFrames" uid="uid://cse143l70pej3" path="res://asset/character_assets/character_sprite_frames.tres" id="4_6k5wm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7v2w7"]

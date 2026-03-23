@@ -105,7 +105,7 @@ space={
 [internationalization]
 
 locale/translation_remaps={}
-locale/translations=PackedStringArray("res://locolization/text.en.translation", "res://locolization/text.zh_CN.translation", "res://locolization/text.ja.translation")
+locale/translations=PackedStringArray("res://data/locolization/text.en.translation", "res://data/locolization/text.zh_CN.translation", "res://data/locolization/text.ja.translation")
 
 [layer_names]
 
