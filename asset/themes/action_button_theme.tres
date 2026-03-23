@@ -1,30 +1,25 @@
 [gd_resource type="Theme" format=3 uid="uid://b06wmmglo7w7v"]
 
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="1_wsvie"]
+[ext_resource type="StyleBox" uid="uid://csbnmdkacub6t" path="res://asset/ui/uiPanelSprites/buttonfiles/button_disabled.tres" id="2_j0uhy"]
 [ext_resource type="StyleBox" uid="uid://ci2i0cmt201uy" path="res://asset/themes/button_normal.tres" id="2_wx5kd"]
 [ext_resource type="StyleBox" uid="uid://bklaxsbl7axv4" path="res://asset/themes/button_hovered.tres" id="3_b88hp"]
 [ext_resource type="StyleBox" uid="uid://ddg85mpw7121d" path="res://asset/themes/button_pressed.tres" id="4_1ji6b"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i5p22"]
-load_path = "res://.godot/imported/Windows_Button_Pressed.png-74199fdfef84429f2d54f6aff12fd4a8.ctex"
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j0uhy"]
-texture = SubResource("CompressedTexture2D_i5p22")
-texture_margin_left = 2.0
-texture_margin_top = 2.0
-texture_margin_right = 2.0
-texture_margin_bottom = 2.0
-modulate_color = Color(0.9882353, 0.654902, 0.68235296, 1)
+[ext_resource type="StyleBox" uid="uid://co5hdq4dkb3t5" path="res://asset/ui/uiPanelSprites/panel_main.tres" id="6_mebhk"]
+[ext_resource type="StyleBox" uid="uid://hvw5l8462wdc" path="res://asset/ui/uiPanelSprites/panel_sub.tres" id="7_wuuwc"]
 
 [resource]
-Button/colors/font_color = Color(0.09603269, 0.096032985, 0.09603276, 1)
-Button/colors/font_disabled_color = Color(0.39215687, 0.39215687, 0.39215687, 1)
+Button/colors/font_color = Color(0.62319297, 0.5457716, 0.45431912, 1)
+Button/colors/font_disabled_color = Color(0.30549142, 0.28749883, 0.26549855, 1)
+Button/colors/font_hover_color = Color(0.5647059, 0.44705883, 0.20784314, 1)
 Button/colors/font_hover_pressed_color = Color(0.39215687, 0.39215687, 0.39215687, 1)
-Button/colors/font_pressed_color = Color(0.39255488, 0.3925549, 0.3925549, 1)
+Button/colors/font_pressed_color = Color(0.5657337, 0.44773662, 0.20800558, 1)
 Button/font_sizes/font_size = 34
 Button/fonts/font = ExtResource("1_wsvie")
-Button/styles/disabled = SubResource("StyleBoxTexture_j0uhy")
+Button/styles/disabled = ExtResource("2_j0uhy")
 Button/styles/focus = ExtResource("2_wx5kd")
 Button/styles/hover = ExtResource("3_b88hp")
 Button/styles/normal = ExtResource("2_wx5kd")
 Button/styles/pressed = ExtResource("4_1ji6b")
+Panel/styles/PanelContainer = ExtResource("6_mebhk")
+Panel/styles/panel = ExtResource("7_wuuwc")

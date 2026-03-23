@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://co5hdq4dkb3t5"]
+
+[ext_resource type="Texture2D" uid="uid://bmidkoip8xh2e" path="res://asset/ui/uiPanelSprites/uiPanel_Fancy-export.png" id="1_0e2ej"]
+
+[resource]
+texture = ExtResource("1_0e2ej")
+texture_margin_left = 85.0
+texture_margin_top = 86.0
+texture_margin_right = 85.0
+texture_margin_bottom = 86.0
+region_rect = Rect2(60, 59, 200, 201)

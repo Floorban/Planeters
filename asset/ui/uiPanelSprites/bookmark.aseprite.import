@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cuwcgddkuogji"
+path="res://.godot/imported/bookmark.aseprite-657ae1ac072b0a1fb62a11b8f7fcfc1c.res"
+
+[deps]
+
+source_file="res://asset/ui/uiPanelSprites/bookmark.aseprite"
+dest_files=["res://.godot/imported/bookmark.aseprite-657ae1ac072b0a1fb62a11b8f7fcfc1c.res"]
+
+[params]
+

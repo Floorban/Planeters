@@ -1,0 +1,12 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://hvw5l8462wdc"]
+
+[ext_resource type="Texture2D" uid="uid://v85arvdtwsnp" path="res://asset/ui/uiPanelSprites/uiPanel_plain-export.png" id="1_b130r"]
+
+[resource]
+texture = ExtResource("1_b130r")
+texture_margin_left = 50.0
+texture_margin_top = 50.0
+texture_margin_right = 50.0
+texture_margin_bottom = 50.0
+region_rect = Rect2(60, 60, 200, 200)
+modulate_color = Color(0.7888132, 0.7888133, 0.7888133, 0.8745098)

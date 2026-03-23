@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dmc3y4nxe4574"
+path="res://.godot/imported/MenuButtons.aseprite-c4b57bcf8363624e5f22685471542e0a.res"
+
+[deps]
+
+source_file="res://asset/ui/uiPanelSprites/MenuButtons.aseprite"
+dest_files=["res://.godot/imported/MenuButtons.aseprite-c4b57bcf8363624e5f22685471542e0a.res"]
+
+[params]
+
