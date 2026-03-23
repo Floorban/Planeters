@@ -71,15 +71,15 @@ func add_stat(stat: Stat, amount: float) -> void:
 	stat_changed.emit(stat, stats[stat])
 	if stat == GameManager.sim_manager.member_stat:
 		GameManager.panel_manager.overview_panel.set_member_label(int(amount))
-		Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.GET_MEMBER)
+		Audio.play(SoundEvent.Name.SFX_GAIN_MEMBER)
 	if stat == GameManager.sim_manager.coin_stat:
 		GameManager.panel_manager.overview_panel.set_revenue_label(int(amount))
-		Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.COIN)
+		Audio.play(SoundEvent.Name.SFX_GAIN_COIN)
 	if stat == GameManager.sim_manager.soul_stat:
 		GameManager.panel_manager.overview_panel.set_soul_label(int(amount))
-		Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.SOUL)
+		Audio.play(SoundEvent.Name.SFX_GAIN_SOUL)
 	if stat == GameManager.sim_manager.church_stat:
-		Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BUILD)
+		Audio.play(SoundEvent.Name.SFX_BUILD_CHURCH)
 
 
 # for capping cult member from church num

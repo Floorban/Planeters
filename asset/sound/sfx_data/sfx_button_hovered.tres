@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="SFXData" format=3 uid="uid://ndtfjutkfykt"]
-
-[ext_resource type="Script" uid="uid://ds5onhcj5aqd1" path="res://asset/sound/system/sfx_data.gd" id="1_58rou"]
-[ext_resource type="AudioStream" uid="uid://dg4oh8q3t5rjj" path="res://asset/sound/fx/f_button_hovered.ogg" id="2_58rou"]
-
-[resource]
-script = ExtResource("1_58rou")
-type = 7
-sound_effect = ExtResource("2_58rou")

@@ -70,7 +70,7 @@ func interact_with_building(speed_scale: float = 1.0) -> void:
 var flash_tween : Tween
 
 func interact_failed() -> void:
-	Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BTN_FAIL)
+	Audio.play(SoundEvent.Name.SFX_BTN_LOCKED)
 	var og_color = Color.WHITE
 	modulate = og_color
 	

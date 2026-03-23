@@ -34,7 +34,6 @@ Signals="*res://system/autoload/signals.gd"
 GameManager="*res://system/autoload/game_manager.tscn"
 PopupPrompt="*res://system/autoload/popup_prompt.gd"
 Audio="*uid://bkbvg88h7x45k"
-AudioManager="*uid://d3pbw47ce3awl"
 
 [display]
 

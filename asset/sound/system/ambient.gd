@@ -1,7 +1,7 @@
 extends Node
 
 func _ready() -> void:
-	#AudioManager.play(SoundEvent.Event.PLACEHOLDER)
+	Audio.play(SoundEvent.Name.AFX_ATMOSPHERE)
 	#var i_ambient: AudioStreamPlayer2D
 	#i_ambient = Sound.ambient("res://asset/sound/ambient/a_unholy.ogg")
 	#Sound.lfo_filter(i_ambient, 1300, 1500, 15)

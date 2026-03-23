@@ -32,7 +32,7 @@ func get_new_building(building_data: BuildingData) -> void:
 	cur_building = b
 	cur_building.init_building(building_data)
 	cur_building.is_being_dragged = true
-	Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BTN_CONFIRM)
+	Audio.play(SoundEvent.Name.SFX_BTN_CONFIRM)
 
 
 func place_building() -> void:
@@ -43,7 +43,7 @@ func place_building() -> void:
 	cur_building.is_being_dragged = false
 	cur_building = null
 	GameManager.building_shop.fade_in_out_component._close_panel()
-	Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BUILD)
+	Audio.play(SoundEvent.Name.SFX_BUILD_CHURCH)
 
 
 func discard_current_building() -> bool:
@@ -51,7 +51,7 @@ func discard_current_building() -> bool:
 		return false
 	cur_building.queue_free()
 	cur_building = null
-	Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BTN_FAIL)
+	Audio.play(SoundEvent.Name.SFX_BTN_CONFIRM)
 	return true
 
 
@@ -118,7 +118,7 @@ func _pay_modified(task: Task, ignored_stat: Stat = null):
 			continue
 		GameManager.stats_manager.spend_stat(c.stat, get_modified_cost(c, task))
 		if c.stat == GameManager.sim_manager.member_stat:
-			Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.SACRIFICE)
+			Audio.play(SoundEvent.Name.SFX_BTN_LOCKED)
 
 
 func _get_sacrifice_member_cost(task: Task) -> int:

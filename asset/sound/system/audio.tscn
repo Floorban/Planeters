@@ -1,24 +1,103 @@
 [gd_scene format=3 uid="uid://bkbvg88h7x45k"]
 
 [ext_resource type="Script" uid="uid://ckfncwpqrcd86" path="res://asset/sound/system/audio.gd" id="1_1dyhs"]
-[ext_resource type="Script" uid="uid://ds5onhcj5aqd1" path="res://asset/sound/system/sfx_data.gd" id="2_4cuwv"]
-[ext_resource type="Resource" uid="uid://bqtf5ppyj3rhx" path="res://asset/sound/sfx_data/sfx_build.tres" id="3_p7w35"]
-[ext_resource type="Resource" uid="uid://duim18bfhdhie" path="res://asset/sound/sfx_data/sfx_button_cancelled.tres" id="4_k5g0b"]
-[ext_resource type="Resource" uid="uid://bc0v1p8xv5bvp" path="res://asset/sound/sfx_data/sfx_button_confirmed.tres" id="4_mykbc"]
-[ext_resource type="Resource" uid="uid://c562cdsuyr4cn" path="res://asset/sound/sfx_data/sfx_sacrifice.tres" id="5_j31mf"]
-[ext_resource type="Resource" uid="uid://ndtfjutkfykt" path="res://asset/sound/sfx_data/sfx_button_hovered.tres" id="6_5w5r5"]
-[ext_resource type="Resource" uid="uid://dpbxwssd160qn" path="res://asset/sound/sfx_data/sfx_upgrade_purchased.tres" id="6_xwcjw"]
-[ext_resource type="Resource" uid="uid://cwh7geec6wx61" path="res://asset/sound/sfx_data/sfx_coin.tres" id="7_j31mf"]
-[ext_resource type="Resource" uid="uid://wfw5bsp1x34h" path="res://asset/sound/sfx_data/sfx_event_start.tres" id="8_xwcjw"]
-[ext_resource type="Resource" uid="uid://vxoeen5vw3i1" path="res://asset/sound/sfx_data/sfx_event_finished.tres" id="9_1eub1"]
-[ext_resource type="Resource" uid="uid://dwubtufuom0dp" path="res://asset/sound/sfx_data/sfx_get_member.tres" id="10_ndw1i"]
-[ext_resource type="Resource" uid="uid://doiulnp02uvjc" path="res://asset/sound/sfx_data/sfx_soul.tres" id="12_p0oeq"]
-[ext_resource type="Resource" uid="uid://dvi0qwci3iihe" path="res://asset/sound/sfx_data/sfx_ending.tres" id="14_5w5r5"]
+[ext_resource type="Script" uid="uid://bqa0vymytxb5y" path="res://asset/sound/system/sound_event.gd" id="2_xwcjw"]
+[ext_resource type="AudioStream" uid="uid://gwa42bipf2ln" path="res://asset/sound/ambient/a_unholy.ogg" id="3_1eub1"]
+[ext_resource type="AudioStream" uid="uid://ce5xwvx75jmpa" path="res://asset/sound/fx/f_entrance.ogg" id="4_bly0d"]
+[ext_resource type="AudioStream" uid="uid://bknvjdax8j1e" path="res://asset/sound/fx/f_sacrifice.ogg" id="5_k5g0b"]
+[ext_resource type="AudioStream" uid="uid://1qugkdteeaxp" path="res://asset/sound/fx/f_build.ogg" id="6_5w5r5"]
+[ext_resource type="AudioStream" uid="uid://ditmu6cixoysg" path="res://asset/sound/PLACEHOLDER.ogg" id="7_ndw1i"]
+[ext_resource type="AudioStream" uid="uid://d2ob3hwcc3v38" path="res://asset/sound/fx/f_coin.ogg" id="8_p0oeq"]
+[ext_resource type="AudioStream" uid="uid://d2xh1jtf5jot" path="res://asset/sound/fx/f_upgrade.ogg" id="9_jba0h"]
+[ext_resource type="AudioStream" uid="uid://c27w6k7k3ijnr" path="res://asset/sound/fx/f_confirm.ogg" id="10_jb85a"]
 [ext_resource type="Script" uid="uid://dda2s8deiwwhp" path="res://asset/sound/system/ambient.gd" id="15_ndw1i"]
+
+[sub_resource type="Resource" id="Resource_51fy7"]
+script = ExtResource("2_xwcjw")
+name = 1
+file = ExtResource("3_1eub1")
+metadata/_custom_type_script = "uid://bqa0vymytxb5y"
+
+[sub_resource type="Resource" id="Resource_l8s42"]
+script = ExtResource("2_xwcjw")
+name = 2
+file = ExtResource("4_bly0d")
+metadata/_custom_type_script = "uid://bqa0vymytxb5y"
+
+[sub_resource type="Resource" id="Resource_yqcdq"]
+script = ExtResource("2_xwcjw")
+name = 3
+file = ExtResource("5_k5g0b")
+metadata/_custom_type_script = "uid://bqa0vymytxb5y"
+
+[sub_resource type="Resource" id="Resource_wob8a"]
+script = ExtResource("2_xwcjw")
+name = 4
+file = ExtResource("6_5w5r5")
+metadata/_custom_type_script = "uid://bqa0vymytxb5y"
+
+[sub_resource type="Resource" id="Resource_7arf4"]
+script = ExtResource("2_xwcjw")
+name = 5
+file = ExtResource("7_ndw1i")
+metadata/_custom_type_script = "uid://bqa0vymytxb5y"
+
+[sub_resource type="Resource" id="Resource_cpbic"]
+script = ExtResource("2_xwcjw")
+name = 6
+file = ExtResource("7_ndw1i")
+metadata/_custom_type_script = "uid://bqa0vymytxb5y"
+
+[sub_resource type="Resource" id="Resource_os52s"]
+script = ExtResource("2_xwcjw")
+name = 7
+file = ExtResource("8_p0oeq")
+metadata/_custom_type_script = "uid://bqa0vymytxb5y"
+
+[sub_resource type="Resource" id="Resource_tyf6s"]
+script = ExtResource("2_xwcjw")
+name = 8
+file = ExtResource("7_ndw1i")
+metadata/_custom_type_script = "uid://bqa0vymytxb5y"
+
+[sub_resource type="Resource" id="Resource_1pfsy"]
+script = ExtResource("2_xwcjw")
+name = 9
+file = ExtResource("9_jba0h")
+metadata/_custom_type_script = "uid://bqa0vymytxb5y"
+
+[sub_resource type="Resource" id="Resource_tqr37"]
+script = ExtResource("2_xwcjw")
+name = 10
+file = ExtResource("7_ndw1i")
+metadata/_custom_type_script = "uid://bqa0vymytxb5y"
+
+[sub_resource type="Resource" id="Resource_r5vsa"]
+script = ExtResource("2_xwcjw")
+name = 11
+file = ExtResource("7_ndw1i")
+metadata/_custom_type_script = "uid://bqa0vymytxb5y"
+
+[sub_resource type="Resource" id="Resource_wtltd"]
+script = ExtResource("2_xwcjw")
+name = 12
+file = ExtResource("7_ndw1i")
+metadata/_custom_type_script = "uid://bqa0vymytxb5y"
+
+[sub_resource type="Resource" id="Resource_crd1q"]
+script = ExtResource("2_xwcjw")
+name = 13
+file = ExtResource("10_jb85a")
+metadata/_custom_type_script = "uid://bqa0vymytxb5y"
+
+[sub_resource type="Resource" id="Resource_vf4lb"]
+script = ExtResource("2_xwcjw")
+name = 14
+metadata/_custom_type_script = "uid://bqa0vymytxb5y"
 
 [node name="Audio" type="Node2D" unique_id=1980692102]
 script = ExtResource("1_1dyhs")
-sound_effects = Array[ExtResource("2_4cuwv")]([ExtResource("3_p7w35"), ExtResource("4_k5g0b"), ExtResource("4_mykbc"), ExtResource("6_5w5r5"), ExtResource("7_j31mf"), ExtResource("9_1eub1"), ExtResource("8_xwcjw"), ExtResource("10_ndw1i"), ExtResource("5_j31mf"), ExtResource("12_p0oeq"), ExtResource("6_xwcjw"), ExtResource("14_5w5r5")])
+library = Array[ExtResource("2_xwcjw")]([SubResource("Resource_51fy7"), SubResource("Resource_l8s42"), SubResource("Resource_yqcdq"), SubResource("Resource_wob8a"), SubResource("Resource_7arf4"), SubResource("Resource_cpbic"), SubResource("Resource_os52s"), SubResource("Resource_tyf6s"), SubResource("Resource_1pfsy"), SubResource("Resource_tqr37"), SubResource("Resource_r5vsa"), SubResource("Resource_wtltd"), SubResource("Resource_crd1q"), SubResource("Resource_vf4lb")])
 
-[node name="Ambient" type="Node" parent="." unique_id=845271791]
+[node name="Ambient" type="Node" parent="." unique_id=684248249]
 script = ExtResource("15_ndw1i")

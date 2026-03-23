@@ -29,4 +29,4 @@ func check_game_state(paused: bool) -> void:
 
 func game_over() -> void:
 	is_paused = true
-	Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.ENDING)
+	#Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.ENDING)

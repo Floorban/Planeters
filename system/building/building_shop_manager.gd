@@ -68,13 +68,13 @@ func _on_purchase_requested(building_data: BuildingData) -> void:
 	var can_afford := _can_afford_costs(building_data.costs)
 	var can_apply := building_data.can_apply_effect()
 	if has_building_in_hand or not can_apply:
-		Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BTN_FAIL)
+		Audio.play(SoundEvent.Name.SFX_BTN_LOCKED)
 		focused_building_data = building_data
 		_apply_building_info(building_data, "Place the building you are already holding first.")
 		_refresh_buttons()
 		return
 	if not can_afford:
-		Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.BTN_FAIL)
+		Audio.play(SoundEvent.Name.SFX_BTN_LOCKED)
 		focused_building_data = building_data
 		_apply_building_info(building_data, "Not enough resources to buy this building.")
 		_refresh_buttons()

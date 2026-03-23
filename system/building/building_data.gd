@@ -20,7 +20,7 @@ enum BuildingType {
 @export var building_effects : Array[BuildingEffect]
 @export var cooldown := 5.0
 
-@export var interaction_sfx : SFXData.SOUND_EFFECT_TYPE
+@export var sfx_interaction : SoundEvent
 
 
 func can_apply_effect() -> bool:
@@ -30,7 +30,7 @@ func can_apply_effect() -> bool:
 
 
 func apply_effects() -> void:
-	if interaction_sfx: Audio.create_audio(interaction_sfx)
+	if sfx_interaction: Audio.play(sfx_interaction.name)
 	if building_effects.is_empty():
 		return
 	for e in building_effects:

@@ -106,10 +106,10 @@ func spawn_new_event() -> void:
 	current_event = new_event
 	current_event_index += 1
 	start_event_button.disabled = false
-	Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.EVENT_STARTED)
-	if Audio.sound_effect_dict.has(SFXData.SOUND_EFFECT_TYPE.EVENT_STARTED):
-		var data: SFXData = Audio.sound_effect_dict[SFXData.SOUND_EFFECT_TYPE.EVENT_STARTED]
-		data.add_pitch_step()
+	Audio.play(SoundEvent.Name.SFX_EVENT_START)
+	#if Audio.sound_effect_dict.has(SFXData.SOUND_EFFECT_TYPE.EVENT_STARTED):
+		#var data: SFXData = Audio.sound_effect_dict[SFXData.SOUND_EFFECT_TYPE.EVENT_STARTED]
+		#data.add_pitch_step()
 
 
 func clear_current_event() -> void:
@@ -171,7 +171,7 @@ func _on_event_finished() -> void:
 		clear_current_event()
 		modulate = og_color
 		scale = Vector2.ONE
-		Audio.create_audio(SFXData.SOUND_EFFECT_TYPE.EVENT_FINISHED)
+		Audio.play(SoundEvent.Name.SFX_EVENT_END)
 	)
 
 
