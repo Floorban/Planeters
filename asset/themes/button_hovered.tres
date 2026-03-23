@@ -1,14 +1,15 @@
 [gd_resource type="StyleBoxTexture" format=3 uid="uid://bklaxsbl7axv4"]
 
-[ext_resource type="Texture2D" uid="uid://uoes0ed3ubq0" path="res://asset/ui/windows_xp/Windows_Inner_Frame_Inverted.png" id="1_7fn6v"]
+[ext_resource type="Texture2D" uid="uid://upje0grai2o6" path="res://asset/ui/uiPanelSprites/buttonfiles/TextButton.png" id="1_kmapq"]
 
 [resource]
-texture = ExtResource("1_7fn6v")
-texture_margin_left = 2.0
-texture_margin_top = 2.0
-texture_margin_right = 2.0
-texture_margin_bottom = 2.0
+texture = ExtResource("1_kmapq")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
 expand_margin_left = 2.0
 expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
+region_rect = Rect2(5, 5, 70, 70)

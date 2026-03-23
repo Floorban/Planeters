@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cntb8wqbeiybl"]
+[gd_scene format=4 uid="uid://cntb8wqbeiybl"]
 
 [ext_resource type="Script" uid="uid://b4vpwivp8sljd" path="res://system/task/task_manager.gd" id="1_lmd8u"]
 [ext_resource type="Resource" uid="uid://d1b3tjc0uirwo" path="res://data/task/task_get_cult_member.tres" id="2_5poxo"]
@@ -11,6 +11,10 @@
 [ext_resource type="Resource" uid="uid://bquc4n36cd6g3" path="res://data/task/task_build_cult_church.tres" id="6_itbx4"]
 [ext_resource type="PackedScene" uid="uid://k4eyfmopulqj" path="res://system/task/task_slot.tscn" id="7_fbshx"]
 
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_krdqj"]
+_data = PackedByteArray("AAADAAUAAAABAAAArQIAAOoBAAD2AAAAUklGRu4AAABXRUJQVlA4TOIAAAAvrEJ6EDegNAASNkeEhFu1bduwQY+GR6dHbds2bMyTPZWU+Q8A7jdJ2fb/JLENDiJJcpuXGJwQqI6CbBPwGUA6AXDizyHnvDUR/Z+Agv/xP/7H//gf/+N//I//8T/+x//4H//jf/yP//E//sf/+F9c+plrdbLcHu5zv0bJU5WJX6MYad23R/d5ZvdakXTnlyWj7rJz/PfDlzmkMGYV/vtPMI6AKJl5gdgVJeeNI8VIKcX3N3bJ8pb9b6VbzaZ54iTCrFIpcaQ8cW9sv+/afnGC//E//sf/+B//43/8j//x/y0C")
+size_override = Vector2(685, 490)
+
 [node name="TaskManager" type="Control" unique_id=1403057597 node_paths=PackedStringArray("task_btns", "task_slots")]
 custom_minimum_size = Vector2(580, 1080)
 layout_mode = 3
@@ -18,12 +22,14 @@ anchors_preset = 0
 offset_right = 580.0
 offset_bottom = 820.0
 mouse_filter = 2
+theme = ExtResource("2_em4ww")
 script = ExtResource("1_lmd8u")
 task_btns = [NodePath("MarginContainer/HBoxContainer/Control/TaskButtons/ButtonGet"), NodePath("MarginContainer/HBoxContainer/Control/TaskButtons/ButonSacrifice"), NodePath("MarginContainer/HBoxContainer/Control/TaskButtons/ButonBuild")]
 task_slots = [NodePath("MarginContainer/HBoxContainer/Gap/TaskSlot1"), NodePath("MarginContainer/HBoxContainer/Gap/TaskSlot2"), NodePath("MarginContainer/HBoxContainer/Gap/TaskSlot3"), NodePath("MarginContainer/HBoxContainer/Gap/TaskSlot4"), NodePath("MarginContainer/HBoxContainer/Gap/TaskSlot5"), NodePath("MarginContainer/HBoxContainer/Gap/TaskSlot6"), NodePath("MarginContainer/HBoxContainer/Gap/TaskSlot7"), NodePath("MarginContainer/HBoxContainer/Gap/TaskSlot8"), NodePath("MarginContainer/HBoxContainer/Gap/TaskSlot9")]
 recruit_task = ExtResource("2_5poxo")
 
 [node name="TextureRect" type="NinePatchRect" parent="." unique_id=404265336]
+visible = false
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -148,6 +154,37 @@ theme_override_constants/separation = 24
 [node name="ButtonGet" parent="MarginContainer/HBoxContainer/Control/TaskButtons" unique_id=1426943850 instance=ExtResource("3_em4ww")]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/HBoxContainer/Control/TaskButtons/ButtonGet" unique_id=1317086516]
+visible = false
+texture_filter = 1
+position = Vector2(-132, -80)
+texture = SubResource("PortableCompressedTexture2D_krdqj")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"output_section": true,
+"pending_changes": {},
+"slice_section": true
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["button_events"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "",
+"scale": "5.0",
+"slice": "",
+"source": "res://asset/ui/uiPanelSprites/MenuButtons.aseprite",
+"source_uid": 8007401409406137117
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4563516cc393d2352c6a0e3f2973b347"
 
 [node name="ButonSacrifice" type="Button" parent="MarginContainer/HBoxContainer/Control/TaskButtons" unique_id=279778992]
 unique_name_in_owner = true
