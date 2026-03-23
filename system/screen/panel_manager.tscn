@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://kseiabufssdw" path="res://system/screen/panel/upgrades_manager.tscn" id="3_7k07d"]
 [ext_resource type="PackedScene" uid="uid://cntb8wqbeiybl" path="res://system/screen/panel/task_manager.tscn" id="4_ne37k"]
 [ext_resource type="PackedScene" uid="uid://drk220wxciily" path="res://system/screen/button/tab_button.tscn" id="5_hbfx4"]
-[ext_resource type="Script" uid="uid://4u6g7k6hfvjf" path="res://scene/localization.gd" id="7_ne37k"]
+[ext_resource type="Script" uid="uid://4u6g7k6hfvjf" path="res://system/autoload/localization.gd" id="7_ne37k"]
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="8_hbfx4"]
 [ext_resource type="PackedScene" uid="uid://dbpm1lbps7b07" path="res://system/interaction/fade_in_out_component.tscn" id="9_hbfx4"]
 

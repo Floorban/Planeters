@@ -1,6 +1,6 @@
 [gd_scene format=3]
 
-[ext_resource type="Script" path="res://scene/character_hover_panel.gd" id="1_panel"]
+[ext_resource type="Script" uid="uid://c2vncglv8vv33" path="res://scene/character/character_hover_panel.gd" id="1_panel"]
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="2_font"]
 
 [node name="CharacterHoverPanel" type="PanelContainer"]
