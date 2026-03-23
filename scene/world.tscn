@@ -2,8 +2,25 @@
 
 [ext_resource type="Script" uid="uid://ddlighcxd3sq" path="res://scene/world_manager.gd" id="1_w4qq1"]
 [ext_resource type="PackedScene" uid="uid://cjwbyqd6pavch" path="res://scene/character.tscn" id="2_txmk2"]
-[ext_resource type="Texture2D" uid="uid://dw2hb1siqskbk" path="res://asset/church_building.png" id="3_w4qq1"]
+[ext_resource type="PackedScene" uid="uid://dvceomfk1n7l3" path="res://scene/outsider.tscn" id="3_82u7m"]
+[ext_resource type="Texture2D" uid="uid://cgep16e7b8pam" path="res://asset/church_assets/church Wip.png" id="3_m5mgf"]
+[ext_resource type="Resource" uid="uid://d1b3tjc0uirwo" path="res://data/task/task_get_cult_member.tres" id="4_7ghph"]
 [ext_resource type="Script" uid="uid://drenstg1av1xl" path="res://scene/dead_zone.gd" id="4_m5mgf"]
+[ext_resource type="PackedScene" uid="uid://cv4kkxyjh8pix" path="res://scene/building.tscn" id="8_f345f"]
+[ext_resource type="PackedScene" uid="uid://bqeou7eolwjqv" path="res://scene/building_slot.tscn" id="8_yur6x"]
+[ext_resource type="Resource" uid="uid://phccq7pv6wu3" path="res://data/building_data/building_bell_1.tres" id="9_bqa5m"]
+[ext_resource type="PackedScene" uid="uid://beryd784carvp" path="res://system/interaction/building_manager.tscn" id="9_yur6x"]
+[ext_resource type="PackedScene" uid="uid://1ktvbleh6eme" path="res://scene/main_screen.tscn" id="10_7ghph"]
+[ext_resource type="Resource" uid="uid://bkfq0h2xv63x8" path="res://data/building_data/building_door_1.tres" id="10_a0bac"]
+[ext_resource type="Texture2D" uid="uid://dgnhfoel3y28t" path="res://asset/church_assets/CulticFloorTile.png" id="10_jsnws"]
+[ext_resource type="Script" uid="uid://6bj883f8j7nx" path="res://system/autoload/camera.gd" id="11_na5tu"]
+[ext_resource type="PackedScene" path="res://scene/character_hover_panel.tscn" id="12_hovr0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsnws"]
+size = Vector2(18, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0bac"]
+size = Vector2(18, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4qq1"]
 size = Vector2(474, 40)
@@ -21,23 +38,93 @@ fill_from = Vector2(0.5, 0.5)
 
 [node name="World" type="Node2D" unique_id=1319151852 node_paths=PackedStringArray("square_center", "exit_point")]
 script = ExtResource("1_w4qq1")
-character_scene = ExtResource("2_txmk2")
+cultist_scene = ExtResource("2_txmk2")
+outsider_scene = ExtResource("3_82u7m")
 square_center = NodePath("SqaureCenter")
 exit_point = NodePath("ExitPoint")
+max_visible_outsiders = 30
 max_max_visible_cultists = 1000
 
-[node name="Church" type="Sprite2D" parent="." unique_id=413780122]
+[node name="BuildingManager" parent="." unique_id=1647197743 instance=ExtResource("9_yur6x")]
+recruit_task = ExtResource("4_7ghph")
+
+[node name="Church" type="Node2D" parent="." unique_id=429305459]
+
+[node name="ChurchSprite" type="Sprite2D" parent="Church" unique_id=413780122]
+self_modulate = Color(0.66529477, 0.66529435, 0.66529447, 1)
 texture_filter = 1
-position = Vector2(964, 277.00003)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("3_w4qq1")
+position = Vector2(-2, 103)
+texture = ExtResource("3_m5mgf")
 offset = Vector2(0, -120)
 
+[node name="BuildingSlots" type="Node2D" parent="Church" unique_id=623750303]
+
+[node name="BuildingSlot9" parent="Church/BuildingSlots" unique_id=881597922 node_paths=PackedStringArray("my_building") instance=ExtResource("8_yur6x")]
+position = Vector2(-1, -28)
+my_building = NodePath("../../Bell")
+is_static = true
+
+[node name="SlotSprite" parent="Church/BuildingSlots/BuildingSlot9" index="0" unique_id=1229397144]
+visible = false
+
+[node name="SelectableComponent" parent="Church/BuildingSlots/BuildingSlot9" index="1" unique_id=480340802]
+position = Vector2(0, -11)
+
+[node name="CollisionShape2D" parent="Church/BuildingSlots/BuildingSlot9/SelectableComponent" index="0" unique_id=1423258604]
+shape = SubResource("RectangleShape2D_jsnws")
+
+[node name="BuildingSlot10" parent="Church/BuildingSlots" unique_id=1900820359 node_paths=PackedStringArray("my_building") instance=ExtResource("8_yur6x")]
+position = Vector2(-1, 12)
+my_building = NodePath("../../Door")
+is_static = true
+
+[node name="SlotSprite" parent="Church/BuildingSlots/BuildingSlot10" index="0" unique_id=1229397144]
+visible = false
+
+[node name="SelectableComponent" parent="Church/BuildingSlots/BuildingSlot10" index="1" unique_id=480340802]
+position = Vector2(0, 5)
+
+[node name="CollisionShape2D" parent="Church/BuildingSlots/BuildingSlot10/SelectableComponent" index="0" unique_id=1423258604]
+shape = SubResource("RectangleShape2D_a0bac")
+
+[node name="BuildingSlot" parent="Church/BuildingSlots" unique_id=1829646210 instance=ExtResource("8_yur6x")]
+position = Vector2(25, 10)
+
+[node name="BuildingSlot3" parent="Church/BuildingSlots" unique_id=411239240 instance=ExtResource("8_yur6x")]
+position = Vector2(-26, 10)
+
+[node name="BuildingSlot2" parent="Church/BuildingSlots" unique_id=2052712609 instance=ExtResource("8_yur6x")]
+position = Vector2(48, 10)
+
+[node name="BuildingSlot4" parent="Church/BuildingSlots" unique_id=608513256 instance=ExtResource("8_yur6x")]
+position = Vector2(-49, 10)
+
+[node name="BuildingSlot5" parent="Church/BuildingSlots" unique_id=872134112 instance=ExtResource("8_yur6x")]
+position = Vector2(71, 10)
+
+[node name="BuildingSlot6" parent="Church/BuildingSlots" unique_id=1261087743 instance=ExtResource("8_yur6x")]
+position = Vector2(-72, 10)
+
+[node name="BuildingSlot7" parent="Church/BuildingSlots" unique_id=1731865182 instance=ExtResource("8_yur6x")]
+position = Vector2(94, 10)
+
+[node name="BuildingSlot8" parent="Church/BuildingSlots" unique_id=1258922241 instance=ExtResource("8_yur6x")]
+position = Vector2(-95, 10)
+
+[node name="Bell" parent="Church" unique_id=1390920429 instance=ExtResource("8_f345f")]
+position = Vector2(-1, -28)
+building_data = ExtResource("9_bqa5m")
+
+[node name="Door" parent="Church" unique_id=1241614851 instance=ExtResource("8_f345f")]
+position = Vector2(-1, 12)
+scale = Vector2(1.1, 1.1)
+building_data = ExtResource("10_a0bac")
+
 [node name="SqaureCenter" type="Marker2D" parent="." unique_id=829838975]
-position = Vector2(964, 305)
+position = Vector2(-1, 53)
 
 [node name="ExitPoint" type="Marker2D" parent="." unique_id=1871861004]
-position = Vector2(966, 634)
+position = Vector2(1, 233)
 
 [node name="DeadZone" type="Area2D" parent="ExitPoint" unique_id=1102521605]
 collision_layer = 0
@@ -46,18 +133,22 @@ script = ExtResource("4_m5mgf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitPoint/DeadZone" unique_id=365235130]
 shape = SubResource("RectangleShape2D_w4qq1")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1766226342]
-z_index = -2
-custom_minimum_size = Vector2(5000, 5000)
-offset_left = -525.0
-offset_top = -403.0
-offset_right = 4475.0
-offset_bottom = 4597.0
-color = Color(0.31764707, 0.32156864, 0.4, 1)
+[node name="Background" type="TextureRect" parent="." unique_id=744030806]
+self_modulate = Color(0.7304475, 0.7304475, 0.7304475, 1)
+z_index = -1
+custom_minimum_size = Vector2(1920, 1920)
+offset_left = -994.0
+offset_top = -716.0
+offset_right = 926.0
+offset_bottom = 1204.0
+rotation = 0.008726646
+texture = ExtResource("10_jsnws")
+expand_mode = 1
+stretch_mode = 1
 
 [node name="Main" type="PointLight2D" parent="." unique_id=683296594]
 z_index = 1
-position = Vector2(972, 423)
+position = Vector2(6, 247)
 color = Color(0.10794056, 0.10010644, 0.08182704, 0.5647059)
 energy = 16.0
 blend_mode = 2
@@ -70,7 +161,7 @@ height = 1.0
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=458645343]
 z_index = 1
-position = Vector2(905, 216)
+position = Vector2(-61, 40)
 color = Color(0.83808523, 0.42469373, 0.42862898, 0.5647059)
 energy = 1.5
 shadow_filter = 2
@@ -80,7 +171,7 @@ height = 1.0
 
 [node name="PointLight2D3" type="PointLight2D" parent="." unique_id=694389299]
 z_index = 1
-position = Vector2(1028, 216)
+position = Vector2(62, 40)
 color = Color(0.83808523, 0.42469373, 0.42862898, 0.5647059)
 energy = 1.5
 shadow_filter = 2
@@ -89,8 +180,25 @@ texture_scale = 1.7
 height = 1.0
 
 [node name="PointLight2D5" type="PointLight2D" parent="." unique_id=956693239]
-position = Vector2(965, 150)
+position = Vector2(-1, -26)
 color = Color(0.8012719, 0.2289229, 0.35079432, 0.5647059)
 energy = 1.5
 shadow_filter = 2
 texture = SubResource("GradientTexture2D_m5mgf")
+
+[node name="Camera" type="Camera2D" parent="." unique_id=1411148121]
+position = Vector2(0, 53)
+zoom = Vector2(5, 5)
+script = ExtResource("11_na5tu")
+metadata/_custom_type_script = "uid://6bj883f8j7nx"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=507732146]
+
+[node name="CharacterHoverPanel" parent="CanvasLayer" unique_id=2143309417 instance=ExtResource("12_hovr0")]
+
+[node name="MainScreen" parent="CanvasLayer" unique_id=1745498329 instance=ExtResource("10_7ghph")]
+
+[editable path="Church/BuildingSlots/BuildingSlot9"]
+[editable path="Church/BuildingSlots/BuildingSlot9/SelectableComponent"]
+[editable path="Church/BuildingSlots/BuildingSlot10"]
+[editable path="Church/BuildingSlots/BuildingSlot10/SelectableComponent"]

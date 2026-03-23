@@ -4,21 +4,25 @@
 [ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_esn85"]
 [ext_resource type="Script" uid="uid://oiijucci5mx5" path="res://system/upgrades/upgrade_effect.gd" id="3_7fbxx"]
 [ext_resource type="Resource" uid="uid://dlwjnv8ca4sps" path="res://data/stat/stat_soul.tres" id="3_esn85"]
-[ext_resource type="Resource" uid="uid://dyf1hexff0mt6" path="res://data/upgrade_effect/task_efficiency/task_efficiency_cult.tres" id="4_vkxde"]
+[ext_resource type="Script" uid="uid://bpr8pmbpupgcn" path="res://data/upgrade_effect/building_efficiency/building_efficiency_effect.gd" id="4_vkxde"]
 [ext_resource type="Script" uid="uid://emabm8r8bin6" path="res://system/upgrades/upgrade_data.gd" id="5_r7pqk"]
 [ext_resource type="Texture2D" uid="uid://bijpbkg0mxu3y" path="res://asset/TinyTomes_Atlas_16x16.png" id="6_7drwj"]
 
 [sub_resource type="Resource" id="Resource_xig6h"]
 script = ExtResource("1_xig6h")
 stat = ExtResource("2_esn85")
-amount = 200.0
+amount = 20.0
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [sub_resource type="Resource" id="Resource_esn85"]
 script = ExtResource("1_xig6h")
 stat = ExtResource("3_esn85")
-amount = 10.0
+amount = 1.0
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
+
+[sub_resource type="Resource" id="Resource_effect"]
+script = ExtResource("4_vkxde")
+building_type = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ywqx8"]
 atlas = ExtResource("6_7drwj")
@@ -30,5 +34,5 @@ upgrade_name = "KEY_UPGRADE_FRENZY_1"
 upgrade_description = "KEY_UDESC_FRENZY_1"
 upgrade_icon = SubResource("AtlasTexture_ywqx8")
 costs = Array[ExtResource("1_xig6h")]([SubResource("Resource_xig6h"), SubResource("Resource_esn85")])
-effects = Array[ExtResource("3_7fbxx")]([ExtResource("4_vkxde")])
+effects = Array[ExtResource("3_7fbxx")]([SubResource("Resource_effect")])
 metadata/_custom_type_script = "uid://emabm8r8bin6"

@@ -4,6 +4,7 @@
 [ext_resource type="Resource" uid="uid://d1b3tjc0uirwo" path="res://data/task/task_get_cult_member.tres" id="2_5poxo"]
 [ext_resource type="Theme" uid="uid://b06wmmglo7w7v" path="res://asset/themes/action_button_theme.tres" id="2_em4ww"]
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="2_ypjg7"]
+[ext_resource type="Texture2D" uid="uid://c2p4tb2ytqor2" path="res://asset/ui/uiPanelSprites/uiPanel_Fancy.png" id="3_5poxo"]
 [ext_resource type="PackedScene" uid="uid://dkus2ytbao1qb" path="res://system/task/task_button.tscn" id="3_em4ww"]
 [ext_resource type="Script" uid="uid://ct8speor44bgy" path="res://system/task/task_button.gd" id="3_ypjg7"]
 [ext_resource type="Resource" uid="uid://bk2kqcxwgmm5i" path="res://data/task/task_sacrifice_cult_member.tres" id="5_krdqj"]
@@ -11,48 +12,54 @@
 [ext_resource type="PackedScene" uid="uid://k4eyfmopulqj" path="res://system/task/task_slot.tscn" id="7_fbshx"]
 
 [node name="TaskManager" type="Control" unique_id=1403057597 node_paths=PackedStringArray("task_btns", "task_slots")]
-custom_minimum_size = Vector2(580, 820)
+custom_minimum_size = Vector2(580, 1080)
 layout_mode = 3
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -600.0
-offset_top = -410.0
-offset_right = -20.0
-offset_bottom = 410.0
-grow_horizontal = 0
-grow_vertical = 2
-script = ExtResource("1_lmd8u")
-task_btns = [NodePath("Background/MarginContainer/HBoxContainer/Control/TaskButtons/ButtonGet"), NodePath("Background/MarginContainer/HBoxContainer/Control/TaskButtons/ButonSacrifice"), NodePath("Background/MarginContainer/HBoxContainer/Control/TaskButtons/ButonBuild")]
-task_slots = [NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot1"), NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot2"), NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot3"), NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot4"), NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot5"), NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot6"), NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot7"), NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot8"), NodePath("Background/MarginContainer/HBoxContainer/Gap/TaskSlot9")]
-recruit_task = ExtResource("2_5poxo")
-
-[node name="Background" type="PanelContainer" parent="." unique_id=18296509]
-custom_minimum_size = Vector2(590, 820)
-layout_mode = 0
+anchors_preset = 0
 offset_right = 580.0
 offset_bottom = 820.0
+mouse_filter = 2
+script = ExtResource("1_lmd8u")
+task_btns = [NodePath("MarginContainer/HBoxContainer/Control/TaskButtons/ButtonGet"), NodePath("MarginContainer/HBoxContainer/Control/TaskButtons/ButonSacrifice"), NodePath("MarginContainer/HBoxContainer/Control/TaskButtons/ButonBuild")]
+task_slots = [NodePath("MarginContainer/HBoxContainer/Gap/TaskSlot1"), NodePath("MarginContainer/HBoxContainer/Gap/TaskSlot2"), NodePath("MarginContainer/HBoxContainer/Gap/TaskSlot3"), NodePath("MarginContainer/HBoxContainer/Gap/TaskSlot4"), NodePath("MarginContainer/HBoxContainer/Gap/TaskSlot5"), NodePath("MarginContainer/HBoxContainer/Gap/TaskSlot6"), NodePath("MarginContainer/HBoxContainer/Gap/TaskSlot7"), NodePath("MarginContainer/HBoxContainer/Gap/TaskSlot8"), NodePath("MarginContainer/HBoxContainer/Gap/TaskSlot9")]
+recruit_task = ExtResource("2_5poxo")
 
-[node name="MarginContainer" type="MarginContainer" parent="Background" unique_id=182526162]
-layout_mode = 2
+[node name="TextureRect" type="NinePatchRect" parent="." unique_id=404265336]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+texture = ExtResource("3_5poxo")
+region_rect = Rect2(12, 12, 40, 40)
+patch_margin_left = 18
+patch_margin_top = 18
+patch_margin_right = 18
+patch_margin_bottom = 18
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=182526162]
+layout_mode = 0
+offset_left = -10.0
+offset_right = 590.0
+offset_bottom = 1080.0
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 20
 
-[node name="Control" type="Control" parent="Background/MarginContainer" unique_id=963386751]
+[node name="Control" type="Control" parent="MarginContainer" unique_id=963386751]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="BG" type="Panel" parent="Background/MarginContainer/Control" unique_id=1313695790]
+[node name="BG" type="Panel" parent="MarginContainer/Control" unique_id=1313695790]
 custom_minimum_size = Vector2(200, 320)
 layout_mode = 1
 offset_right = 200.0
 offset_bottom = 260.0
 
-[node name="MarginContainer" type="MarginContainer" parent="Background/MarginContainer/Control/BG" unique_id=1614034550]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Control/BG" unique_id=1614034550]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -64,22 +71,22 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="TaskInfo" type="VBoxContainer" parent="Background/MarginContainer/Control/BG/MarginContainer" unique_id=1719834311]
+[node name="TaskInfo" type="VBoxContainer" parent="MarginContainer/Control/BG/MarginContainer" unique_id=1719834311]
 clip_contents = true
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Background/MarginContainer/Control/BG/MarginContainer/TaskInfo" unique_id=1481936286]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Control/BG/MarginContainer/TaskInfo" unique_id=1481936286]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Background/MarginContainer/Control/BG/MarginContainer/TaskInfo/VBoxContainer" unique_id=215079129]
+[node name="Label" type="Label" parent="MarginContainer/Control/BG/MarginContainer/TaskInfo/VBoxContainer" unique_id=215079129]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9372549, 0.93333334, 0, 1)
 theme_override_fonts/font = ExtResource("2_ypjg7")
 theme_override_font_sizes/font_size = 32
 text = "COST"
 
-[node name="TaskCostLabel" type="RichTextLabel" parent="Background/MarginContainer/Control/BG/MarginContainer/TaskInfo/VBoxContainer" unique_id=1768033449]
+[node name="TaskCostLabel" type="RichTextLabel" parent="MarginContainer/Control/BG/MarginContainer/TaskInfo/VBoxContainer" unique_id=1768033449]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 110)
 layout_mode = 2
@@ -89,17 +96,17 @@ theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 scroll_active = false
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Background/MarginContainer/Control/BG/MarginContainer/TaskInfo" unique_id=1204971918]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Control/BG/MarginContainer/TaskInfo" unique_id=1204971918]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Background/MarginContainer/Control/BG/MarginContainer/TaskInfo/VBoxContainer2" unique_id=224801311]
+[node name="Label" type="Label" parent="MarginContainer/Control/BG/MarginContainer/TaskInfo/VBoxContainer2" unique_id=224801311]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9372549, 0.93333334, 0, 1)
 theme_override_fonts/font = ExtResource("2_ypjg7")
 theme_override_font_sizes/font_size = 32
 text = "GET"
 
-[node name="TaskEffectLabel" type="RichTextLabel" parent="Background/MarginContainer/Control/BG/MarginContainer/TaskInfo/VBoxContainer2" unique_id=426323755]
+[node name="TaskEffectLabel" type="RichTextLabel" parent="MarginContainer/Control/BG/MarginContainer/TaskInfo/VBoxContainer2" unique_id=426323755]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 110)
 layout_mode = 2
@@ -109,7 +116,7 @@ theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 scroll_active = false
 
-[node name="TaskDurationLabel" type="RichTextLabel" parent="Background/MarginContainer/Control/BG/MarginContainer/TaskInfo" unique_id=283784683]
+[node name="TaskDurationLabel" type="RichTextLabel" parent="MarginContainer/Control/BG/MarginContainer/TaskInfo" unique_id=283784683]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
@@ -120,14 +127,14 @@ bbcode_enabled = true
 text = "Duration"
 scroll_active = false
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Background/MarginContainer" unique_id=2129212755]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=2129212755]
 layout_mode = 2
 
-[node name="Control" type="Control" parent="Background/MarginContainer/HBoxContainer" unique_id=403337573]
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer" unique_id=403337573]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="TaskButtons" type="VBoxContainer" parent="Background/MarginContainer/HBoxContainer/Control" unique_id=293111277]
+[node name="TaskButtons" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Control" unique_id=293111277]
 custom_minimum_size = Vector2(0, 420)
 layout_mode = 1
 anchors_preset = 2
@@ -138,11 +145,11 @@ offset_right = 200.0
 grow_vertical = 0
 theme_override_constants/separation = 24
 
-[node name="ButtonGet" parent="Background/MarginContainer/HBoxContainer/Control/TaskButtons" unique_id=1426943850 instance=ExtResource("3_em4ww")]
+[node name="ButtonGet" parent="MarginContainer/HBoxContainer/Control/TaskButtons" unique_id=1426943850 instance=ExtResource("3_em4ww")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="ButonSacrifice" type="Button" parent="Background/MarginContainer/HBoxContainer/Control/TaskButtons" unique_id=279778992]
+[node name="ButonSacrifice" type="Button" parent="MarginContainer/HBoxContainer/Control/TaskButtons" unique_id=279778992]
 unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2(200, 40)
@@ -153,7 +160,7 @@ text = "Sacrifice"
 script = ExtResource("3_ypjg7")
 task = ExtResource("5_krdqj")
 
-[node name="ButonBuild" type="Button" parent="Background/MarginContainer/HBoxContainer/Control/TaskButtons" unique_id=1544701901]
+[node name="ButonBuild" type="Button" parent="MarginContainer/HBoxContainer/Control/TaskButtons" unique_id=1544701901]
 unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2(200, 40)
@@ -164,7 +171,7 @@ text = "Build Church"
 script = ExtResource("3_ypjg7")
 task = ExtResource("6_itbx4")
 
-[node name="MaxActionLabel" type="Label" parent="Background/MarginContainer/HBoxContainer/Control/TaskButtons" unique_id=563480566]
+[node name="MaxActionLabel" type="Label" parent="MarginContainer/HBoxContainer/Control/TaskButtons" unique_id=563480566]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
@@ -172,73 +179,73 @@ theme_override_fonts/font = ExtResource("2_ypjg7")
 theme_override_font_sizes/font_size = 33
 text = "Max Action: 1"
 
-[node name="Gap" type="Control" parent="Background/MarginContainer/HBoxContainer" unique_id=743543523]
+[node name="Gap" type="Control" parent="MarginContainer/HBoxContainer" unique_id=743543523]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 
-[node name="TaskSlot1" parent="Background/MarginContainer/HBoxContainer/Gap" unique_id=297168396 instance=ExtResource("7_fbshx")]
+[node name="TaskSlot1" parent="MarginContainer/HBoxContainer/Gap" unique_id=297168396 instance=ExtResource("7_fbshx")]
 layout_mode = 0
 offset_left = 236.0
 offset_right = 526.0
 
-[node name="TaskSlot2" parent="Background/MarginContainer/HBoxContainer/Gap" unique_id=1123278875 instance=ExtResource("7_fbshx")]
+[node name="TaskSlot2" parent="MarginContainer/HBoxContainer/Gap" unique_id=1123278875 instance=ExtResource("7_fbshx")]
 layout_mode = 0
 offset_left = 236.0
 offset_top = 85.0
 offset_right = 526.0
 offset_bottom = 160.0
 
-[node name="TaskSlot3" parent="Background/MarginContainer/HBoxContainer/Gap" unique_id=1278553361 instance=ExtResource("7_fbshx")]
+[node name="TaskSlot3" parent="MarginContainer/HBoxContainer/Gap" unique_id=1278553361 instance=ExtResource("7_fbshx")]
 layout_mode = 0
 offset_left = 236.0
 offset_top = 170.0
 offset_right = 526.0
 offset_bottom = 245.0
 
-[node name="TaskSlot4" parent="Background/MarginContainer/HBoxContainer/Gap" unique_id=629676167 instance=ExtResource("7_fbshx")]
+[node name="TaskSlot4" parent="MarginContainer/HBoxContainer/Gap" unique_id=629676167 instance=ExtResource("7_fbshx")]
 layout_mode = 0
 offset_left = 236.0
 offset_top = 255.0
 offset_right = 526.0
 offset_bottom = 330.0
 
-[node name="TaskSlot5" parent="Background/MarginContainer/HBoxContainer/Gap" unique_id=114940830 instance=ExtResource("7_fbshx")]
+[node name="TaskSlot5" parent="MarginContainer/HBoxContainer/Gap" unique_id=114940830 instance=ExtResource("7_fbshx")]
 layout_mode = 0
 offset_left = 236.0
 offset_top = 340.0
 offset_right = 526.0
 offset_bottom = 415.0
 
-[node name="TaskSlot6" parent="Background/MarginContainer/HBoxContainer/Gap" unique_id=1483319379 instance=ExtResource("7_fbshx")]
+[node name="TaskSlot6" parent="MarginContainer/HBoxContainer/Gap" unique_id=1483319379 instance=ExtResource("7_fbshx")]
 layout_mode = 0
 offset_left = 236.0
 offset_top = 425.0
 offset_right = 526.0
 offset_bottom = 500.0
 
-[node name="TaskSlot7" parent="Background/MarginContainer/HBoxContainer/Gap" unique_id=652257652 instance=ExtResource("7_fbshx")]
+[node name="TaskSlot7" parent="MarginContainer/HBoxContainer/Gap" unique_id=652257652 instance=ExtResource("7_fbshx")]
 layout_mode = 0
 offset_left = 236.0
 offset_top = 510.0
 offset_right = 526.0
 offset_bottom = 585.0
 
-[node name="TaskSlot8" parent="Background/MarginContainer/HBoxContainer/Gap" unique_id=1609270633 instance=ExtResource("7_fbshx")]
+[node name="TaskSlot8" parent="MarginContainer/HBoxContainer/Gap" unique_id=1609270633 instance=ExtResource("7_fbshx")]
 layout_mode = 0
 offset_left = 236.0
 offset_top = 595.0
 offset_right = 526.0
 offset_bottom = 670.0
 
-[node name="TaskSlot9" parent="Background/MarginContainer/HBoxContainer/Gap" unique_id=1687080587 instance=ExtResource("7_fbshx")]
+[node name="TaskSlot9" parent="MarginContainer/HBoxContainer/Gap" unique_id=1687080587 instance=ExtResource("7_fbshx")]
 layout_mode = 0
 offset_left = 236.0
 offset_top = 680.0
 offset_right = 526.0
 offset_bottom = 755.0
 
-[node name="TaskSlots" type="VBoxContainer" parent="Background/MarginContainer/HBoxContainer" unique_id=1807612860]
+[node name="TaskSlots" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1807612860]
 layout_mode = 2
 theme_override_constants/separation = 10

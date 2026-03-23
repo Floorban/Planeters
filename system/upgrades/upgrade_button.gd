@@ -59,7 +59,7 @@ func _on_pressed() -> void:
 	if level == upgrade.max_level or not GameManager.stats_manager.can_pay(upgrade.costs):
 		#Sound.fx("res://asset/sound/fx/f_locked.ogg")
 		return
-	
+
 	self_modulate = Color.LIGHT_GREEN
 	upgrade_branch.default_color = Color.GREEN
 	level = min(level + 1, upgrade.max_level)

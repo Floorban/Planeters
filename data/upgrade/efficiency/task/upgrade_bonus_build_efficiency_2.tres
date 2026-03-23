@@ -4,8 +4,7 @@
 [ext_resource type="Resource" uid="uid://ch8hsblfhl7ak" path="res://data/stat/stat_coin.tres" id="2_wg4hl"]
 [ext_resource type="Resource" uid="uid://dn5di2eias4nk" path="res://data/stat/stat_member.tres" id="3_1obvg"]
 [ext_resource type="Script" uid="uid://oiijucci5mx5" path="res://system/upgrades/upgrade_effect.gd" id="3_o8qdy"]
-[ext_resource type="Script" uid="uid://by2eapd0unlmt" path="res://data/upgrade_effect/task_efficiency/task_efficiency_effect.gd" id="4_wg4hl"]
-[ext_resource type="Resource" uid="uid://bquc4n36cd6g3" path="res://data/task/task_build_cult_church.tres" id="5_wg4hl"]
+[ext_resource type="Script" uid="uid://bpr8pmbpupgcn" path="res://data/upgrade_effect/building_efficiency/building_efficiency_effect.gd" id="4_wg4hl"]
 [ext_resource type="Script" uid="uid://emabm8r8bin6" path="res://system/upgrades/upgrade_data.gd" id="5_xpn6u"]
 [ext_resource type="Texture2D" uid="uid://bijpbkg0mxu3y" path="res://asset/TinyTomes_Atlas_16x16.png" id="6_8hkbd"]
 
@@ -23,9 +22,8 @@ metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [sub_resource type="Resource" id="Resource_o8qdy"]
 script = ExtResource("4_wg4hl")
-task = ExtResource("5_wg4hl")
-change_amount = -0.2
-metadata/_custom_type_script = "uid://by2eapd0unlmt"
+building_type = 3
+change_amount = 0.35
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ifnkl"]
 atlas = ExtResource("6_8hkbd")

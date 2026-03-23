@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dbpm1lbps7b07"]
+
+[ext_resource type="Script" uid="uid://biee0o15km04e" path="res://system/interaction/fade_in_out_component.gd" id="1_8hqar"]
+
+[node name="FadeInOutComponent" type="Node" unique_id=124886435]
+script = ExtResource("1_8hqar")

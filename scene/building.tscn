@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cv4kkxyjh8pix"]
+
+[ext_resource type="Script" uid="uid://fcqaf1xfy3hm" path="res://scene/building.gd" id="1_8eyry"]
+[ext_resource type="Shader" uid="uid://benyoh88f818t" path="res://shader/selectable_shader.tres" id="2_gl3d0"]
+[ext_resource type="SpriteFrames" uid="uid://du3gry3k5db3n" path="res://data/building_data/sprite_frame/bell_sprite_frames.tres" id="3_gl3d0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_miva3"]
+shader = ExtResource("2_gl3d0")
+shader_parameter/enable_shadow = true
+shader_parameter/outline_mode = 0
+shader_parameter/outline_color = Color(0.5238004, 0.5238004, 0.5238004, 1)
+shader_parameter/outline_width = 1.0
+shader_parameter/shadow_dist = 2.0
+shader_parameter/shadow_color = Color(0, 0, 0, 0.5)
+shader_parameter/shadow_angle = 80.454003821565
+shader_parameter/progress = 0.190000009025
+shader_parameter/pending_alpha = 0.750000035625
+shader_parameter/fill_style = 2
+shader_parameter/fill_start = 0.25
+shader_parameter/fill_end = 0.62
+
+[node name="Building" type="Node2D" unique_id=1390920429]
+z_index = 1
+script = ExtResource("1_8eyry")
+
+[node name="BuildingSprite" type="AnimatedSprite2D" parent="." unique_id=909124454]
+unique_name_in_owner = true
+modulate = Color(4.415934, 4.415934, 4.415934, 1)
+texture_filter = 1
+material = SubResource("ShaderMaterial_miva3")
+sprite_frames = ExtResource("3_gl3d0")
+animation = &"interact"
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"scale": "1.0",
+"should_round_fps": true,
+"slice": "",
+"source": "res://asset/church_assets/Animations/Door.aseprite",
+"source_uid": 3876260898149676536
+}
+metadata/_aseprite_wizard_source_file_hash_ = "ecc0e9b85b078279c23f29b9e5fed161"

@@ -8,7 +8,8 @@
 [ext_resource type="Resource" uid="uid://be706omug5uo3" path="res://data/stat/stat_church.tres" id="4_neqvg"]
 [ext_resource type="Resource" uid="uid://dlwjnv8ca4sps" path="res://data/stat/stat_soul.tres" id="5_83inl"]
 [ext_resource type="Resource" uid="uid://t4owggge5keo" path="res://data/stat/stat_loyal.tres" id="6_02dsw"]
-[ext_resource type="PackedScene" uid="uid://rhf5s5wn0yep" path="res://system/events/event_manager.tscn" id="9_8iaj1"]
+[ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="7_8iaj1"]
+[ext_resource type="Texture2D" uid="uid://c2p4tb2ytqor2" path="res://asset/ui/uiPanelSprites/uiPanel_Fancy.png" id="7_hpl2g"]
 
 [sub_resource type="Resource" id="Resource_3qpn0"]
 script = ExtResource("2_3qpn0")
@@ -18,7 +19,7 @@ metadata/_custom_type_script = "uid://bbx72fbwp681v"
 [sub_resource type="Resource" id="Resource_8iaj1"]
 script = ExtResource("2_3qpn0")
 stat = ExtResource("4_neqvg")
-amount = 1.0
+amount = 3.0
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [sub_resource type="Resource" id="Resource_hpl2g"]
@@ -33,7 +34,7 @@ stat = ExtResource("5_83inl")
 metadata/_custom_type_script = "uid://bbx72fbwp681v"
 
 [node name="StatsManager" type="Panel" unique_id=654268750 node_paths=PackedStringArray("stat_slots")]
-custom_minimum_size = Vector2(380, 920)
+custom_minimum_size = Vector2(350, 920)
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -48,6 +49,22 @@ mouse_filter = 2
 script = ExtResource("1_q63yl")
 starting_stats = Array[ExtResource("2_3qpn0")]([SubResource("Resource_3qpn0"), SubResource("Resource_8iaj1"), SubResource("Resource_hpl2g"), SubResource("Resource_xheid")])
 stat_slots = [NodePath("MarginContainer/VBoxContainer/Statsbar/StatSlotMember"), NodePath("MarginContainer/VBoxContainer/Statsbar/StatSlotChurch"), NodePath("MarginContainer/VBoxContainer/Statsbar/StatSlotCoin"), NodePath("MarginContainer/VBoxContainer/Statsbar/StatSlotSoul")]
+
+[node name="TextureRect" type="NinePatchRect" parent="." unique_id=1782263218]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+texture = ExtResource("7_hpl2g")
+region_rect = Rect2(12, 12, 40, 40)
+patch_margin_left = 18
+patch_margin_top = 18
+patch_margin_right = 18
+patch_margin_bottom = 18
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=148964352]
 layout_mode = 1
@@ -64,6 +81,14 @@ theme_override_constants/margin_bottom = 10
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=463214209]
 layout_mode = 2
 theme_override_constants/separation = 48
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=528626147]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_8iaj1")
+theme_override_font_sizes/font_size = 48
+text = "YOUR CULT NAME"
+horizontal_alignment = 1
 
 [node name="Statsbar" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=295244314]
 layout_mode = 2
@@ -89,6 +114,3 @@ stat = ExtResource("5_83inl")
 visible = false
 layout_mode = 2
 stat = ExtResource("6_02dsw")
-
-[node name="EventsManager" parent="MarginContainer/VBoxContainer" unique_id=131518069 instance=ExtResource("9_8iaj1")]
-layout_mode = 2

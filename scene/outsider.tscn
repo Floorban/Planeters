@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dvceomfk1n7l3"]
+
+[ext_resource type="Script" uid="uid://b6wmfhgonecl1" path="res://scene/outsider.gd" id="1_k8rrn"]
+[ext_resource type="PackedScene" uid="uid://d28ro7rbb85ru" path="res://system/interaction/selectable_component.tscn" id="2_6k5wm"]
+[ext_resource type="Shader" uid="uid://benyoh88f818t" path="res://shader/selectable_shader.tres" id="3_6k5wm"]
+[ext_resource type="SpriteFrames" uid="uid://cse143l70pej3" path="res://asset/character_assets/character_sprite_frames.tres" id="4_f58py"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7v2w7"]
+size = Vector2(8, 21)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7v2w7"]
+shader = ExtResource("3_6k5wm")
+shader_parameter/enable_shadow = true
+shader_parameter/outline_mode = 0
+shader_parameter/outline_color = Color(0.5238004, 0.5238004, 0.5238004, 1)
+shader_parameter/outline_width = 1.0
+shader_parameter/shadow_dist = 1.0
+shader_parameter/shadow_color = Color(0, 0, 0, 0.7058824)
+shader_parameter/shadow_angle = 90.9750043213125
+shader_parameter/progress = 0.190000009025
+shader_parameter/pending_alpha = 0.70000003325
+shader_parameter/fill_style = 2
+shader_parameter/fill_start = 0.0
+shader_parameter/fill_end = 1.0
+
+[node name="Outsider" type="CharacterBody2D" unique_id=1617641724]
+z_index = 2
+texture_filter = 1
+script = ExtResource("1_k8rrn")
+
+[node name="SelectableComponent" parent="." unique_id=480340802 instance=ExtResource("2_6k5wm")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" parent="SelectableComponent" index="0" unique_id=1423258604]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_7v2w7")
+
+[node name="CharacterSprite" type="AnimatedSprite2D" parent="." unique_id=151410775]
+unique_name_in_owner = true
+modulate = Color(0.78, 0.74, 0.7, 1)
+texture_filter = 1
+material = SubResource("ShaderMaterial_7v2w7")
+sprite_frames = ExtResource("4_f58py")
+animation = &"land"
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": false,
+"layer_section": false,
+"output_section": false,
+"pending_changes": {},
+"slice_section": false
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"scale": "1.0",
+"should_round_fps": true,
+"slice": "",
+"source": "res://asset/character_assets/character_default.aseprite",
+"source_uid": 3881246563850973964
+}
+metadata/_aseprite_wizard_source_file_hash_ = "d21af66915efa6c042b3fa2b42344717"
+
+[editable path="SelectableComponent"]

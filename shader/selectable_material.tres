@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bphqrqk7823ml"]
+
+[ext_resource type="Shader" uid="uid://benyoh88f818t" path="res://shader/selectable_shader.tres" id="1_4p6xd"]
+
+[resource]
+shader = ExtResource("1_4p6xd")
+shader_parameter/enable_shadow = false
+shader_parameter/outline_mode = 0
+shader_parameter/outline_color = Color(0.5238004, 0.5238004, 0.5238004, 1)
+shader_parameter/outline_width = 1.0
+shader_parameter/shadow_dist = 2.0
+shader_parameter/shadow_color = Color(0, 0, 0, 0.5)
+shader_parameter/shadow_angle = 80.454003821565
+shader_parameter/progress = 0.190000009025
+shader_parameter/pending_alpha = 0.750000035625
+shader_parameter/fill_style = 2
+shader_parameter/fill_start = 0.0
+shader_parameter/fill_end = 1.0

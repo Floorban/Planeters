@@ -1,0 +1,78 @@
+[gd_scene format=4 uid="uid://d3rgqbelgo2vq"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_k4l3k"]
+_data = PackedByteArray("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")
+size_override = Vector2(320, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o76gv"]
+atlas = SubResource("PortableCompressedTexture2D_k4l3k")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwjbu"]
+atlas = SubResource("PortableCompressedTexture2D_k4l3k")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfgbi"]
+atlas = SubResource("PortableCompressedTexture2D_k4l3k")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_305fx"]
+atlas = SubResource("PortableCompressedTexture2D_k4l3k")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c71g2"]
+atlas = SubResource("PortableCompressedTexture2D_k4l3k")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a8s23"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o76gv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwjbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfgbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_305fx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c71g2")
+}],
+"loop": false,
+"name": &"interact",
+"speed": 10.0
+}]
+
+[node name="AnimTest" type="Node2D" unique_id=1580272793]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=458203950]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_a8s23")
+animation = &"interact"
+frame = 4
+frame_progress = 1.0
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": false,
+"layer_section": false,
+"output_section": true,
+"pending_changes": {},
+"slice_section": false
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"scale": "1.0",
+"should_round_fps": true,
+"slice": "",
+"source": "res://asset/church_assets/Animations/Altar.aseprite",
+"source_uid": 7693952752077300056
+}
+metadata/_aseprite_wizard_source_file_hash_ = "26e5647484c9009042d60dd5b4e39304"

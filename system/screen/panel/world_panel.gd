@@ -1,1 +1,2 @@
-class_name World extends SubPanel
+class_name World
+extends SubPanel

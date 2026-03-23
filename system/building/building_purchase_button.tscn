@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bb4oprgq514mv"]
+
+[ext_resource type="Script" uid="uid://callykprltd1s" path="res://system/building/building_purchase_button.gd" id="2_ulnya"]
+
+[node name="BuildingPurchaseButton" type="TextureButton" unique_id=218322936]
+self_modulate = Color(0.36078432, 0.36078432, 0.36078432, 1)
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+disabled = true
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("2_ulnya")

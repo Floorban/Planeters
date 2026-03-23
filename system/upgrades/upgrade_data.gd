@@ -10,6 +10,10 @@ class_name UpgradeData
 @export var effects: Array[UpgradeEffect]
 
 
+func can_apply_effect() -> bool:
+	return true
+
+
 func apply_upgrade_effect(current_level: int) -> void:
 	if effects.is_empty():
 		push_error("no upgrade effects in the array")

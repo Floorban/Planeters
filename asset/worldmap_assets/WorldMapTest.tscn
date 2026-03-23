@@ -1,0 +1,2944 @@
+[gd_scene format=4 uid="uid://bo8ypb7nhfjgk"]
+
+[ext_resource type="Texture2D" uid="uid://c2p4tb2ytqor2" path="res://asset/ui/uiPanelSprites/uiPanel_Fancy.png" id="1_vaug4"]
+[ext_resource type="Texture2D" uid="uid://cb7tkyhtx18dj" path="res://asset/worldmap_assets/cemetery_Icon.png" id="2_p8a06"]
+[ext_resource type="Texture2D" uid="uid://b6npbevjcka33" path="res://asset/worldmap_assets/city_Icon.png" id="3_65vtj"]
+[ext_resource type="Texture2D" uid="uid://crgvfbsg8s4yq" path="res://asset/worldmap_assets/field_Icon.png" id="4_sdb5l"]
+[ext_resource type="Texture2D" uid="uid://b0xo8grkrdkua" path="res://asset/worldmap_assets/Forest_Icon.png" id="5_qcrg5"]
+[ext_resource type="Texture2D" uid="uid://c7o4kajmchsx4" path="res://asset/worldmap_assets/map overlay.png" id="6_sdb5l"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_vaug4"]
+_data = PackedByteArray("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")
+size_override = Vector2(512, 512)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_72c0c"]
+_data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAAA2AQAAUklGRi4BAABXRUJQVlA4TCEBAAAvP8APEC+gqG0jNtX37WOyyaRtk717jVmZiCloI0mNHeP/C8H5DwD+f6bUNlVRF0iubbtuG8LLBfCCLiC4QQV+KCCmjub5of9i+BEw9Sii/xOwfDNcc5oka1JxTlPWYmuObaVpmiHbecpXta00bp3HicbpechKo9Y/Jx6nfpY16k9nr7atNKhfWWN+9w5nOQ35359nuVgjfvUDBzmnKR8qVnpp/d87DaqNZCu9ov/9SZxtKrZeWP90nu1xsjfJzrqnDpxU721TsXO6s34BxAGbtqnYugXQAjDVEJuK8x0dIqDt4B0iVHwlAbQAAqifQNvK25l00iIe0B5A3YH6tlwViCPQgqN3eL9Ylh+2/RmcBFR7Mdy4PBDx015GH1r18r0QAA==")
+size_override = Vector2(64, 64)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_0v7vf"]
+_data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAADsAAAAUklGRuQAAABXRUJQVlA4TNgAAAAvP8APEC+gqG0jNtX37WOyyaRtk717jVmZiCloI0mNHeP/C8H5DwD+f6bUNlVRF0CqbbtuI4XBfQ4A6dQE3CcE8gsDiz+Y/KRpO4no/wSkf5Ylr8KWkZdZXlIAW9N3kVfQMSzPKwQG0rweWAVTnsT1wLQDmlP6i3sFy1PoI0CHKtKMwjX2jo5N1ZQn0MeIwA6XkL6DGI8Wu1XfVO27Qr9G+LmjX5dQ/gL6NR7h0bDqm0CfAfF8RnMTLrCPCvSn9uTm/kP6GugRHuHP3L5LKZUe7Yzm7tzS31E=")
+size_override = Vector2(64, 64)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_65vtj"]
+_data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAACUAAAAUklGRowAAABXRUJQVlA4TIAAAAAvP8APEC+gqG0jNtX37WOyyaRtk717jVmZiCloI0mNHeP/C8H5DwD+f6bUNlVRFzCKZCvORwJfwa8hDkDB5gD8i8nGv6ZyiOj/BMjPpqkXGnwM1KkWH6MXggd1ZaKDMUc7dJ9RVx9JwzbqHHMk4jah91FcDGoG3Xc2NPqIRPkYAg==")
+size_override = Vector2(64, 64)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_sdb5l"]
+_data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAAB8AAAAUklGRnQAAABXRUJQVlA4TGcAAAAvP8APEC+gqG0jNtX37WOyyaRtk717jVmZiCloI0mNHeP/C8H5DwD+f6bUNlVRFyiKJKm5wwEouEoOUJAMJP969kvxiOj/BNBvVFGiCaReQCsKQ+QMxegdmhHSZvXMAB2jmiJE6cEFAA==")
+size_override = Vector2(64, 64)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_qcrg5"]
+_data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAACGAAAAUklGRn4AAABXRUJQVlA4THEAAAAvP8APEB+gkG0EGJ/CmfwCATIlwYsIato2YHHuQpnzHwD/qSgDm9ramyQ0BdkwEwm04KGY6SL61DsSkIIKvsPGYYro/wSQv6ChIreOtC59xrNee3YGOXD5AgjFpAJbDhgNwoucvuUBxBMEFAxhGPkMAQA=")
+size_override = Vector2(64, 64)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_tu642"]
+_data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAABsAAAAUklGRmQAAABXRUJQVlA4TFgAAAAvP8APEB+gkG0EGJ/CmfwCATIlwYsIato2YHHuQpnzHwD/qSgDmwAA0qAVNA15yEMJfm9BGJgkcL8i+j8B4K+pF1W6pKklfpEzS2a1xJslZZFlSzQ82oMH")
+size_override = Vector2(64, 64)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_d1x0t"]
+_data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAABoAAAAUklGRmAAAABXRUJQVlA4TFQAAAAvP8APEBcgEEhxCsMsEEhxCFstFkzx7mCa/4B/BYxi22rzPsUB+CHNQY+AKu0J5U12mawi+j8B+KeW90wapDlF4bl3hbS6g5yFh7QaYBo3ASXjIwQ=")
+size_override = Vector2(64, 64)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_ogkol"]
+_data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAAB4AAAAUklGRnAAAABXRUJQVlA4TGMAAAAvP8APEBcgEEhxCsMsEEhxCFstFkzx7mCa/4B/BWxr220im1BH7UMaQWICKs/D8Q5o0GBX0EX0fwLgpx1MZBqKUXUcShFY7/oGEz5Xp0tvCros0mtWyiKoOVdmBC22YET4EAEA")
+size_override = Vector2(64, 64)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_p8a06"]
+_data = PackedByteArray("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")
+size_override = Vector2(512, 512)
+
+[node name="WorldMapTest" type="Node2D" unique_id=613558877]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1765924263]
+offset_right = 1921.0
+offset_bottom = 1080.0
+texture = ExtResource("1_vaug4")
+region_rect = Rect2(12, 12, 40, 40)
+patch_margin_left = 18
+patch_margin_top = 18
+patch_margin_right = 18
+patch_margin_bottom = 18
+
+[node name="map_landmass1" type="Sprite2D" parent="." unique_id=745157393]
+texture_filter = 1
+position = Vector2(388, 541)
+texture = SubResource("PortableCompressedTexture2D_vaug4")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"output_section": true,
+"pending_changes": {},
+"slice_section": true
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_landmass1.aseprite",
+"source_uid": 7744149430297611883
+}
+metadata/_aseprite_wizard_source_file_hash_ = "634e04af5ec06978d20ecd86c8838bd7"
+
+[node name="Overlays" type="Node2D" parent="map_landmass1" unique_id=1718965660]
+
+[node name="map_elements" type="Node2D" parent="map_landmass1" unique_id=390801403]
+
+[node name="mountain_big" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=1076773218]
+texture_filter = 1
+position = Vector2(-172, -78)
+texture = SubResource("PortableCompressedTexture2D_72c0c")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_big"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_big2" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=713374263]
+texture_filter = 1
+position = Vector2(11, -140)
+texture = SubResource("PortableCompressedTexture2D_72c0c")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_big"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_mid2" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=1186308370]
+texture_filter = 1
+position = Vector2(3, -130)
+texture = SubResource("PortableCompressedTexture2D_0v7vf")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_mid"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_big3" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=862248845]
+texture_filter = 1
+position = Vector2(-20, -113)
+texture = SubResource("PortableCompressedTexture2D_72c0c")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_big"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_big4" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=1974063661]
+texture_filter = 1
+position = Vector2(0, -74)
+texture = SubResource("PortableCompressedTexture2D_72c0c")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_big"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_mid" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=869523320]
+texture_filter = 1
+position = Vector2(-140, -72)
+texture = SubResource("PortableCompressedTexture2D_0v7vf")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_mid"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_mid3" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=1290220601]
+texture_filter = 1
+position = Vector2(-23, -92)
+texture = SubResource("PortableCompressedTexture2D_0v7vf")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_mid"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_mid4" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=193867581]
+texture_filter = 1
+position = Vector2(25, -59)
+texture = SubResource("PortableCompressedTexture2D_0v7vf")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_mid"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_s1" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=210648212]
+texture_filter = 1
+position = Vector2(-179, -68)
+texture = SubResource("PortableCompressedTexture2D_65vtj")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_s1"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_s3" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=1797947137]
+texture_filter = 1
+position = Vector2(-32, -82)
+texture = SubResource("PortableCompressedTexture2D_65vtj")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_s1"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_s10" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=82237079]
+texture_filter = 1
+position = Vector2(200, -70)
+texture = SubResource("PortableCompressedTexture2D_65vtj")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_s1"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_s4" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=1142634545]
+texture_filter = 1
+position = Vector2(8, -110)
+texture = SubResource("PortableCompressedTexture2D_65vtj")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_s1"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_s5" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=931241015]
+texture_filter = 1
+position = Vector2(42, -51)
+texture = SubResource("PortableCompressedTexture2D_65vtj")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_s1"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_s2" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=651850032]
+texture_filter = 1
+position = Vector2(-112, -68)
+texture = SubResource("PortableCompressedTexture2D_sdb5l")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_s2"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_s9" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=885288832]
+texture_filter = 1
+position = Vector2(156, -67)
+texture = SubResource("PortableCompressedTexture2D_sdb5l")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_s2"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_s11" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=1245630911]
+texture_filter = 1
+position = Vector2(196, -63)
+texture = SubResource("PortableCompressedTexture2D_sdb5l")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_s2"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_s6" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=1548616934]
+texture_filter = 1
+position = Vector2(24, -55)
+texture = SubResource("PortableCompressedTexture2D_sdb5l")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_s2"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_s7" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=1712902229]
+texture_filter = 1
+position = Vector2(-5, -64)
+texture = SubResource("PortableCompressedTexture2D_sdb5l")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_s2"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_s8" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=995786703]
+texture_filter = 1
+position = Vector2(-39, -106)
+texture = SubResource("PortableCompressedTexture2D_sdb5l")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_s2"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=751918934]
+texture_filter = 1
+position = Vector2(-172, -52)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk2" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=945877979]
+texture_filter = 1
+position = Vector2(-178, -42)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk3" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=676108753]
+texture_filter = 1
+position = Vector2(-191, -42)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk4" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=519380477]
+texture_filter = 1
+position = Vector2(114, 16)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk5" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=710935108]
+texture_filter = 1
+position = Vector2(108, 26)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk6" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=2000643234]
+texture_filter = 1
+position = Vector2(95, 26)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk7" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=125854633]
+texture_filter = 1
+position = Vector2(119, 24)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk8" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=1875774713]
+texture_filter = 1
+position = Vector2(113, 34)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk9" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=179580621]
+texture_filter = 1
+position = Vector2(100, 34)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk10" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=1471232670]
+texture_filter = 1
+position = Vector2(78, 34)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk11" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=1607949701]
+texture_filter = 1
+position = Vector2(85, 39)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk12" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=868769321]
+texture_filter = 1
+position = Vector2(97, 53)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk13" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=753381482]
+texture_filter = 1
+position = Vector2(126, 30)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk14" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=2046915462]
+texture_filter = 1
+position = Vector2(136, 25)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk15" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=1710994577]
+texture_filter = 1
+position = Vector2(146, 20)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_singular" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=1005077862]
+texture_filter = 1
+position = Vector2(-158, -41)
+texture = SubResource("PortableCompressedTexture2D_tu642")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_singular"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_singular2" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=833753888]
+texture_filter = 1
+position = Vector2(76, 52)
+texture = SubResource("PortableCompressedTexture2D_tu642")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_singular"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_singular3" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=223857284]
+texture_filter = 1
+position = Vector2(126, -17)
+texture = SubResource("PortableCompressedTexture2D_tu642")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_singular"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_singular4" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=877793276]
+texture_filter = 1
+position = Vector2(211, -28)
+texture = SubResource("PortableCompressedTexture2D_tu642")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_singular"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="ruin1" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=1208717041]
+texture_filter = 1
+position = Vector2(-160, -64)
+texture = SubResource("PortableCompressedTexture2D_d1x0t")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["ruin_1"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="ruin3" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=1963354227]
+texture_filter = 1
+position = Vector2(80, -10)
+texture = SubResource("PortableCompressedTexture2D_d1x0t")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["ruin_1"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="ruin2" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=1983395030]
+texture_filter = 1
+position = Vector2(-197, -57)
+texture = SubResource("PortableCompressedTexture2D_ogkol")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["ruin_2"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="ruin4" type="Sprite2D" parent="map_landmass1/map_elements" unique_id=435692055]
+texture_filter = 1
+position = Vector2(171, -76)
+texture = SubResource("PortableCompressedTexture2D_ogkol")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["ruin_2"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="Interactables" type="Node2D" parent="map_landmass1" unique_id=894052210]
+
+[node name="cemetery" type="Sprite2D" parent="map_landmass1/Interactables" unique_id=1639529968]
+position = Vector2(-115, -31)
+texture = ExtResource("2_p8a06")
+
+[node name="city" type="Sprite2D" parent="map_landmass1/Interactables" unique_id=788606349]
+position = Vector2(112, -57)
+texture = ExtResource("3_65vtj")
+
+[node name="city2" type="Sprite2D" parent="map_landmass1/Interactables" unique_id=1203225542]
+position = Vector2(-80, 93)
+texture = ExtResource("3_65vtj")
+
+[node name="field" type="Sprite2D" parent="map_landmass1/Interactables" unique_id=2103864130]
+position = Vector2(-87, -98)
+texture = ExtResource("4_sdb5l")
+
+[node name="field2" type="Sprite2D" parent="map_landmass1/Interactables" unique_id=375393202]
+position = Vector2(159, -15)
+texture = ExtResource("4_sdb5l")
+
+[node name="forest" type="Sprite2D" parent="map_landmass1/Interactables" unique_id=1788383876]
+position = Vector2(-40, 10)
+texture = ExtResource("5_qcrg5")
+
+[node name="forest2" type="Sprite2D" parent="map_landmass1/Interactables" unique_id=1246932483]
+position = Vector2(66, 92)
+texture = ExtResource("5_qcrg5")
+
+[node name="map_landmass2" type="Sprite2D" parent="." unique_id=660035009]
+texture_filter = 1
+position = Vector2(999, 578)
+texture = SubResource("PortableCompressedTexture2D_p8a06")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"output_section": true,
+"pending_changes": {},
+"slice_section": true
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_landmass2.aseprite",
+"source_uid": 857476061123277938
+}
+metadata/_aseprite_wizard_source_file_hash_ = "c6385d7265b3648d55db6c2f01d43a42"
+
+[node name="Overlays2" type="Node2D" parent="map_landmass2" unique_id=1538754212]
+position = Vector2(-611, -37)
+
+[node name="map_elements2" type="Node2D" parent="map_landmass2" unique_id=1570249599]
+position = Vector2(0, 51)
+
+[node name="mountain_big" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1167180893]
+texture_filter = 1
+position = Vector2(95, 19)
+texture = SubResource("PortableCompressedTexture2D_72c0c")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_big"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_big2" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1500065252]
+texture_filter = 1
+position = Vector2(11, -140)
+texture = SubResource("PortableCompressedTexture2D_72c0c")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_big"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_big5" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=14107638]
+texture_filter = 1
+position = Vector2(55, -189)
+texture = SubResource("PortableCompressedTexture2D_72c0c")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_big"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_mid2" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1419593458]
+texture_filter = 1
+position = Vector2(3, -130)
+texture = SubResource("PortableCompressedTexture2D_0v7vf")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_mid"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_mid5" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=850396692]
+texture_filter = 1
+position = Vector2(70, -179)
+texture = SubResource("PortableCompressedTexture2D_0v7vf")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_mid"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_big3" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=774870227]
+texture_filter = 1
+position = Vector2(-20, -113)
+texture = SubResource("PortableCompressedTexture2D_72c0c")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_big"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_big4" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=2039563298]
+texture_filter = 1
+position = Vector2(0, -74)
+texture = SubResource("PortableCompressedTexture2D_72c0c")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_big"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_mid" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=966835054]
+texture_filter = 1
+position = Vector2(-134, -78)
+texture = SubResource("PortableCompressedTexture2D_0v7vf")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_mid"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_mid3" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1355781119]
+texture_filter = 1
+position = Vector2(-23, -92)
+texture = SubResource("PortableCompressedTexture2D_0v7vf")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_mid"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_mid4" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=374241443]
+texture_filter = 1
+position = Vector2(25, -59)
+texture = SubResource("PortableCompressedTexture2D_0v7vf")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_mid"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_s1" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1183449480]
+texture_filter = 1
+position = Vector2(173, 9)
+texture = SubResource("PortableCompressedTexture2D_65vtj")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_s1"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_s3" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=264502279]
+texture_filter = 1
+position = Vector2(-32, -82)
+texture = SubResource("PortableCompressedTexture2D_65vtj")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_s1"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_s10" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=708127919]
+texture_filter = 1
+position = Vector2(163, -117)
+texture = SubResource("PortableCompressedTexture2D_65vtj")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_s1"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_s4" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=63898083]
+texture_filter = 1
+position = Vector2(8, -110)
+texture = SubResource("PortableCompressedTexture2D_65vtj")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_s1"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_s5" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1530071525]
+texture_filter = 1
+position = Vector2(42, -51)
+texture = SubResource("PortableCompressedTexture2D_65vtj")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_s1"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_s2" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=758384833]
+texture_filter = 1
+position = Vector2(112, 29)
+texture = SubResource("PortableCompressedTexture2D_sdb5l")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_s2"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_s9" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=666215381]
+texture_filter = 1
+position = Vector2(156, -67)
+texture = SubResource("PortableCompressedTexture2D_sdb5l")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_s2"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_s12" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=428560192]
+texture_filter = 1
+position = Vector2(173, -127)
+texture = SubResource("PortableCompressedTexture2D_sdb5l")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_s2"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_s13" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1081348366]
+texture_filter = 1
+position = Vector2(158, -112)
+texture = SubResource("PortableCompressedTexture2D_sdb5l")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_s2"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_s11" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1523594306]
+texture_filter = 1
+position = Vector2(196, -63)
+texture = SubResource("PortableCompressedTexture2D_sdb5l")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_s2"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_s6" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=768883821]
+texture_filter = 1
+position = Vector2(24, -55)
+texture = SubResource("PortableCompressedTexture2D_sdb5l")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_s2"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_s7" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1492840494]
+texture_filter = 1
+position = Vector2(-5, -64)
+texture = SubResource("PortableCompressedTexture2D_sdb5l")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_s2"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="mountain_s8" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=882736392]
+texture_filter = 1
+position = Vector2(-39, -106)
+texture = SubResource("PortableCompressedTexture2D_sdb5l")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["mountain_s2"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=89669011]
+texture_filter = 1
+position = Vector2(-10, -51)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk2" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=2025658187]
+texture_filter = 1
+position = Vector2(-21, -60)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk3" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=7218530]
+texture_filter = 1
+position = Vector2(-57, 63)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk4" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=109219334]
+texture_filter = 1
+position = Vector2(-51, 73)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk5" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1351549161]
+texture_filter = 1
+position = Vector2(-76, 71)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk6" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=28380554]
+texture_filter = 1
+position = Vector2(-85, 58)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk7" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1978837571]
+texture_filter = 1
+position = Vector2(-59, 71)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk8" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1867041556]
+texture_filter = 1
+position = Vector2(-129, -2)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk9" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1132671359]
+texture_filter = 1
+position = Vector2(-67, 71)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk10" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1293369588]
+texture_filter = 1
+position = Vector2(-131, 5)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk11" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=983257115]
+texture_filter = 1
+position = Vector2(-87, 77)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk12" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=523321372]
+texture_filter = 1
+position = Vector2(-142, 8)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk13" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1287092746]
+texture_filter = 1
+position = Vector2(-69, 55)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk14" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=741542068]
+texture_filter = 1
+position = Vector2(-64, 55)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk17" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=623982121]
+texture_filter = 1
+position = Vector2(133, -144)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk18" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1290000885]
+texture_filter = 1
+position = Vector2(124, -137)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk19" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1732465257]
+texture_filter = 1
+position = Vector2(135, -136)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk20" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1703578449]
+texture_filter = 1
+position = Vector2(148, -136)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk21" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=225885438]
+texture_filter = 1
+position = Vector2(122, -119)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk22" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=192034035]
+texture_filter = 1
+position = Vector2(131, -115)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk23" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1390068218]
+texture_filter = 1
+position = Vector2(121, -111)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk15" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1441358309]
+texture_filter = 1
+position = Vector2(-125, 11)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_chunk16" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1819951883]
+texture_filter = 1
+position = Vector2(-125, 11)
+texture = SubResource("PortableCompressedTexture2D_qcrg5")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_chunk"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_singular" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1788134325]
+texture_filter = 1
+position = Vector2(-142, -71)
+texture = SubResource("PortableCompressedTexture2D_tu642")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_singular"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_singular2" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=2055466799]
+texture_filter = 1
+position = Vector2(-153, 16)
+texture = SubResource("PortableCompressedTexture2D_tu642")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_singular"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_singular3" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1075461418]
+texture_filter = 1
+position = Vector2(-42, 80)
+texture = SubResource("PortableCompressedTexture2D_tu642")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_singular"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_singular5" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1794945633]
+texture_filter = 1
+position = Vector2(-77, 11)
+texture = SubResource("PortableCompressedTexture2D_tu642")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_singular"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_singular6" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=537504652]
+texture_filter = 1
+position = Vector2(-77, 11)
+texture = SubResource("PortableCompressedTexture2D_tu642")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_singular"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="forest_singular4" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=821970677]
+texture_filter = 1
+position = Vector2(88, 51)
+texture = SubResource("PortableCompressedTexture2D_tu642")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["forest_singular"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="ruin1" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1995513330]
+texture_filter = 1
+position = Vector2(-91, 8)
+texture = SubResource("PortableCompressedTexture2D_d1x0t")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["ruin_1"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="ruin3" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=695790615]
+texture_filter = 1
+position = Vector2(104, 45)
+texture = SubResource("PortableCompressedTexture2D_d1x0t")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["ruin_1"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="ruin2" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1074438231]
+texture_filter = 1
+position = Vector2(-44, -66)
+texture = SubResource("PortableCompressedTexture2D_ogkol")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["ruin_2"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="ruin4" type="Sprite2D" parent="map_landmass2/map_elements2" unique_id=1822577910]
+texture_filter = 1
+position = Vector2(171, -76)
+texture = SubResource("PortableCompressedTexture2D_ogkol")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["ruin_2"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://asset/worldmap_assets/map_elements.aseprite",
+"source_uid": 3514344573223553847
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1df3ee9819483d06ca13b9987907028a"
+
+[node name="Interactables2" type="Node2D" parent="map_landmass2" unique_id=70135180]
+position = Vector2(15, 24)
+
+[node name="cemetery" type="Sprite2D" parent="map_landmass2/Interactables2" unique_id=537954631]
+position = Vector2(-115, -31)
+texture = ExtResource("2_p8a06")
+
+[node name="city" type="Sprite2D" parent="map_landmass2/Interactables2" unique_id=556343286]
+position = Vector2(107, -40)
+texture = ExtResource("3_65vtj")
+
+[node name="city2" type="Sprite2D" parent="map_landmass2/Interactables2" unique_id=938119915]
+position = Vector2(-141, 93)
+texture = ExtResource("3_65vtj")
+
+[node name="field" type="Sprite2D" parent="map_landmass2/Interactables2" unique_id=1461098232]
+position = Vector2(-89, -75)
+texture = ExtResource("4_sdb5l")
+
+[node name="field2" type="Sprite2D" parent="map_landmass2/Interactables2" unique_id=546765183]
+position = Vector2(29, 83)
+texture = ExtResource("4_sdb5l")
+
+[node name="forest" type="Sprite2D" parent="map_landmass2/Interactables2" unique_id=1306008697]
+position = Vector2(-62, 11)
+texture = ExtResource("5_qcrg5")
+
+[node name="forest2" type="Sprite2D" parent="map_landmass2/Interactables2" unique_id=362125089]
+position = Vector2(78, -124)
+texture = ExtResource("5_qcrg5")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="." unique_id=421116925]
+modulate = Color(1, 1, 1, 0.0627451)
+offset_right = 1921.0
+offset_bottom = 1080.0
+texture = ExtResource("6_sdb5l")
+region_rect = Rect2(0, 0, 256, 256)
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1

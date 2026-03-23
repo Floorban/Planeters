@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://b6lpepwhprd43"]
+
+[ext_resource type="Script" uid="uid://b1b5kvlcgcely" path="res://system/screen/panel/panel_manager.gd" id="1_gdews"]
+[ext_resource type="PackedScene" uid="uid://cl11d77lbfnnt" path="res://system/screen/panel/overview_panel.tscn" id="2_ktfpp"]
+[ext_resource type="PackedScene" uid="uid://kseiabufssdw" path="res://system/screen/panel/upgrades_manager.tscn" id="3_7k07d"]
+[ext_resource type="PackedScene" uid="uid://cntb8wqbeiybl" path="res://system/screen/panel/task_manager.tscn" id="4_ne37k"]
+[ext_resource type="PackedScene" uid="uid://drk220wxciily" path="res://system/screen/button/tab_button.tscn" id="5_hbfx4"]
+[ext_resource type="PackedScene" uid="uid://d28ro7rbb85ru" path="res://system/interaction/selectable_component.tscn" id="6_ktfpp"]
+[ext_resource type="Script" uid="uid://4u6g7k6hfvjf" path="res://scene/localization.gd" id="7_ne37k"]
+[ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="8_hbfx4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7k07d"]
+size = Vector2(739, 1106)
+
+[node name="PanelManager" type="Control" unique_id=1503756686]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 600.0
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_gdews")
+
+[node name="OverviewPanel" parent="." unique_id=952982154 instance=ExtResource("2_ktfpp")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UpgradesPanel" parent="." unique_id=351442206 instance=ExtResource("3_7k07d")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TaskManager" parent="." unique_id=1403057597 instance=ExtResource("4_ne37k")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bookmark" type="VBoxContainer" parent="." unique_id=147057800]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_right = 15.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="TabButton1" parent="Bookmark" unique_id=524473809 instance=ExtResource("5_hbfx4")]
+custom_minimum_size = Vector2(35, 100)
+layout_mode = 2
+
+[node name="TabButton2" parent="Bookmark" unique_id=266895345 instance=ExtResource("5_hbfx4")]
+custom_minimum_size = Vector2(35, 100)
+layout_mode = 2
+
+[node name="TabButton3" parent="Bookmark" unique_id=1628944293 instance=ExtResource("5_hbfx4")]
+custom_minimum_size = Vector2(35, 100)
+layout_mode = 2
+
+[node name="SelectableComponent" parent="." unique_id=480340802 instance=ExtResource("6_ktfpp")]
+
+[node name="CollisionShape2D" parent="SelectableComponent" index="0" unique_id=1423258604]
+position = Vector2(309.5, 543)
+shape = SubResource("RectangleShape2D_7k07d")
+
+[node name="Localization" type="HBoxContainer" parent="." unique_id=396144212]
+layout_mode = 0
+offset_right = 188.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("7_ne37k")
+
+[node name="ButtonENG" type="Button" parent="Localization" unique_id=1623454338]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_hbfx4")
+theme_override_font_sizes/font_size = 32
+text = "ENG"
+
+[node name="ButtonCN" type="Button" parent="Localization" unique_id=1503829354]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_hbfx4")
+theme_override_font_sizes/font_size = 32
+text = "CN"
+
+[node name="ButtonJA" type="Button" parent="Localization" unique_id=1748244547]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_hbfx4")
+theme_override_font_sizes/font_size = 32
+text = "JA"
+
+[editable path="SelectableComponent"]

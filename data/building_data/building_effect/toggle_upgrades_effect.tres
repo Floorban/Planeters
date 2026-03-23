@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ToggleUpgradesEffect" format=3 uid="uid://cfbc8q1r1si67"]
+
+[ext_resource type="Script" uid="uid://b0nupa1pxpfbs" path="res://data/building_data/building_effect/toggle_upgrades_effect.gd" id="1_plt7r"]
+
+[resource]
+script = ExtResource("1_plt7r")
+metadata/_custom_type_script = "uid://b0nupa1pxpfbs"
