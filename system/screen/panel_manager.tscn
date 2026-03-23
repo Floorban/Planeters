@@ -6,13 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://kseiabufssdw" path="res://system/screen/panel/upgrades_manager.tscn" id="3_7k07d"]
 [ext_resource type="PackedScene" uid="uid://cntb8wqbeiybl" path="res://system/screen/panel/task_manager.tscn" id="4_ne37k"]
 [ext_resource type="PackedScene" uid="uid://drk220wxciily" path="res://system/screen/button/tab_button.tscn" id="5_hbfx4"]
-[ext_resource type="PackedScene" uid="uid://d28ro7rbb85ru" path="res://system/interaction/selectable_component.tscn" id="6_ktfpp"]
 [ext_resource type="Script" uid="uid://4u6g7k6hfvjf" path="res://system/autoload/localization.gd" id="7_ne37k"]
 [ext_resource type="FontFile" uid="uid://qam21etqgarc" path="res://asset/font/windows-xp-tahoma.ttf" id="8_hbfx4"]
 [ext_resource type="PackedScene" uid="uid://dbpm1lbps7b07" path="res://system/interaction/fade_in_out_component.tscn" id="9_hbfx4"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7k07d"]
-size = Vector2(706, 1106)
 
 [node name="PanelManager" type="Control" unique_id=1503756686]
 custom_minimum_size = Vector2(650, 0)
@@ -23,7 +19,12 @@ offset_right = 600.0
 grow_vertical = 2
 script = ExtResource("1_gdews")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1760854933]
+[node name="FadeInOutComponent" parent="." unique_id=124886435 node_paths=PackedStringArray("target") instance=ExtResource("9_hbfx4")]
+unique_name_in_owner = true
+target = NodePath("..")
+panel_folded_pos = Vector2(-660, 0)
+
+[node name="BackgroundContainer" type="MarginContainer" parent="." unique_id=1760854933]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,7 +33,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_right = 40
 
-[node name="TextureRect" type="NinePatchRect" parent="MarginContainer" unique_id=1078694236]
+[node name="TextureRect" type="NinePatchRect" parent="BackgroundContainer" unique_id=1078694236]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("2_qnfao")
@@ -41,18 +42,6 @@ patch_margin_left = 18
 patch_margin_top = 18
 patch_margin_right = 18
 patch_margin_bottom = 18
-
-[node name="FadeInOutComponent" parent="." unique_id=124886435 node_paths=PackedStringArray("target") instance=ExtResource("9_hbfx4")]
-unique_name_in_owner = true
-target = NodePath("..")
-panel_folded_pos = Vector2(-660, 0)
-
-[node name="SelectableComponent" parent="." unique_id=480340802 instance=ExtResource("6_ktfpp")]
-unique_name_in_owner = true
-
-[node name="CollisionShape2D" parent="SelectableComponent" index="0" unique_id=1423258604]
-position = Vector2(336, 543)
-shape = SubResource("RectangleShape2D_7k07d")
 
 [node name="OverviewPanel" parent="." unique_id=952982154 instance=ExtResource("2_ktfpp")]
 custom_minimum_size = Vector2(0, 0)
@@ -141,5 +130,3 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("8_hbfx4")
 theme_override_font_sizes/font_size = 32
 text = "JA"
-
-[editable path="SelectableComponent"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://beryd784carvp"]
 
 [ext_resource type="Script" uid="uid://bpoy846u2aj7u" path="res://system/interaction/building_manager.gd" id="1_7jr1a"]
-[ext_resource type="PackedScene" uid="uid://cv4kkxyjh8pix" path="res://scene/building.tscn" id="2_ejqqx"]
+[ext_resource type="PackedScene" uid="uid://cv4kkxyjh8pix" path="res://system/building/building.tscn" id="2_ejqqx"]
 
 [node name="BuildingManager" type="Node2D" unique_id=1647197743]
 script = ExtResource("1_7jr1a")

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c1vwhsfjae0kh" path="res://system/building/building_shop_manager.tscn" id="3_ckf3p"]
 [ext_resource type="PackedScene" uid="uid://dpdrr8e6dwttd" path="res://system/stats/stats_manager.tscn" id="16_n3x1c"]
 
-[node name="MainScreen" type="Control" unique_id=1745498329]
+[node name="MainUI" type="Control" unique_id=1745498329]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
